@@ -6,12 +6,19 @@ import {
   ClerkExpressWithAuth,
 } from '@clerk/clerk-sdk-node';
 import { clerkMiddleware, getAuth, requireAuth } from '@clerk/express';
-
 import 'dotenv/config';
 import { morganMiddleware } from './src/middleware/morgan.ts';
 import { logger } from './src/utils/logger.ts';
-// import swaggerFile from './swagger_output.json';
-// import swaggerFile from './swagger_output.json' assert { type: 'json' };
+
+import fs from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const configPath = join(
+  dirname(fileURLToPath(import.meta.url)),
+  './swagger_output.json'
+);
+const swaggerFile = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
 const app = express();
 
@@ -61,7 +68,7 @@ app.get('/protected-auth-optional', ClerkExpressWithAuth(), (req, res) => {
 
 // Swagger docs
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs));
-// app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
+app.use('/doc', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 // All routes have access to the auth based on token
 app.get('/api/protected', (req, res) => {
