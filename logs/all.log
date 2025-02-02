@@ -84,3 +84,226 @@
 2025-02-02 15:49:33:4933 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
 2025-02-02 16:33:15:3315 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
 2025-02-02 16:33:21:3321 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:37:54:3754 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:38:37:3837 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:38:49:3849 [35mhttp[39m: [35m::1 GET /api-docs/ 307 - - 10.716 ms[39m
+[35m[39m
+2025-02-02 16:38:53:3853 [35mhttp[39m: [35m::1 GET /api-docs/?__clerk_handshake=eyJhbGciOiJSUzI1NiIsImNhdCI6ImNsX0I3ZDRQRDExMUFBQSIsImtpZCI6Imluc18yc090clNDeUtxcHZkdzlBTm5ZbHZnUjJPc1kiLCJ0eXAiOiJKV1QifQ.eyJoYW5kc2hha2UiOlsiX19jbGllbnRfdWF0PTsgUGF0aD0vOyBFeHBpcmVzPVRodSwgMDEgSmFuIDE5NzAgMDA6MDA6MDAgR01UOyBTYW1lU2l0ZT1MYXgiLCJfX2NsaWVudF91YXQ9MDsgUGF0aD0vOyBEb21haW49bG9jYWxob3N0OyBNYXgtQWdlPTMxNTM2MDAwMDsgU2FtZVNpdGU9TGF4IiwiX19zZXNzaW9uPTsgUGF0aD0vOyBFeHBpcmVzPVRodSwgMDEgSmFuIDE5NzAgMDA6MDA6MDAgR01UOyBTYW1lU2l0ZT1MYXgiLCJfX2NsZXJrX2RiX2p3dD1kdmJfMnNVV2VyakJkOXBRemNIbHcyWmhXaVIwNEkxOyBQYXRoPS87IEV4cGlyZXM9TW9uLCAwMiBGZWIgMjAyNiAxNTozODo1MSBHTVQ7IFNhbWVTaXRlPUxheCJdfQ.Jecbzg2baGqswCJXLND8rvyn2N-UfVV9AjTBlfhy2Per52T2KUCdcpw4qBbj39Cq-9pwKHgE9u_Ov0zeomF0427Pwu1KgfNVcBuvgCqnm0et0TAVxiQNwnYn8qawKYYd30aj5GDlOYNs1CBdLUfe-QLWtIRxesiedCPB4_SJwkvg-5dimO58bxZ_0EjyeOhKD864XyA2MxaawHhdDBc4X5DXpMk9f0qPPEwTeeBSqsjvocEHV6LT-BygJCk5zPiooctO_Ac8bEPfcBeQ3Jbzjpjg-NvNZoAd_arvXemEtGYTZaD8r8xL0Y7F2SxGr3b6k3qg8w6gZJzAAm-mzUtyXA 307 - - 2062.386 ms[39m
+[35m[39m
+2025-02-02 16:38:53:3853 [35mhttp[39m: [35m::1 GET /api-docs/ 404 148 - 3.580 ms[39m
+[35m[39m
+2025-02-02 16:38:56:3856 [35mhttp[39m: [35m::1 GET /api-docs/ 404 148 - 4.158 ms[39m
+[35m[39m
+2025-02-02 16:39:03:393 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:39:05:395 [35mhttp[39m: [35m::1 GET /api-docs/ 200 3106 - 15.599 ms[39m
+[35m[39m
+2025-02-02 16:39:05:395 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-init.js 200 1868 - 0.888 ms[39m
+[35m[39m
+2025-02-02 16:39:05:395 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui.css 200 152072 - 8.937 ms[39m
+[35m[39m
+2025-02-02 16:39:05:395 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-standalone-preset.js 200 230007 - 3.885 ms[39m
+[35m[39m
+2025-02-02 16:39:05:395 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-bundle.js 200 1458834 - 6.159 ms[39m
+[35m[39m
+2025-02-02 16:39:05:395 [35mhttp[39m: [35m::1 GET /api-docs/favicon-32x32.png 200 628 - 2.140 ms[39m
+[35m[39m
+2025-02-02 16:39:23:3923 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:39:34:3934 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:40:05:405 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:40:06:406 [35mhttp[39m: [35m::1 GET /api-docs/ 304 - - 14.513 ms[39m
+[35m[39m
+2025-02-02 16:40:06:406 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-bundle.js 304 - - 4.247 ms[39m
+[35m[39m
+2025-02-02 16:40:06:406 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui.css 304 - - 3.310 ms[39m
+[35m[39m
+2025-02-02 16:40:06:406 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-standalone-preset.js 304 - - 2.178 ms[39m
+[35m[39m
+2025-02-02 16:40:06:406 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-init.js 304 - - 2.125 ms[39m
+[35m[39m
+2025-02-02 16:40:06:406 [35mhttp[39m: [35m::1 GET /api-docs/favicon-32x32.png 304 - - 1.744 ms[39m
+[35m[39m
+2025-02-02 16:40:31:4031 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:40:38:4038 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:41:30:4130 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:41:36:4136 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:41:39:4139 [35mhttp[39m: [35m::1 GET /api-docs/ 304 - - 14.066 ms[39m
+[35m[39m
+2025-02-02 16:41:39:4139 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui.css 304 - - 4.533 ms[39m
+[35m[39m
+2025-02-02 16:41:39:4139 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-bundle.js 304 - - 4.434 ms[39m
+[35m[39m
+2025-02-02 16:41:39:4139 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-init.js 304 - - 0.707 ms[39m
+[35m[39m
+2025-02-02 16:41:39:4139 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-standalone-preset.js 304 - - 1.280 ms[39m
+[35m[39m
+2025-02-02 16:41:39:4139 [35mhttp[39m: [35m::1 GET /api-docs/favicon-32x32.png 304 - - 2.687 ms[39m
+[35m[39m
+2025-02-02 16:42:10:4210 [35mhttp[39m: [35m::1 GET /api/user 404 147 - 2719.146 ms[39m
+[35m[39m
+2025-02-02 16:43:54:4354 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:44:04:444 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:44:14:4414 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:44:31:4431 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:44:56:4456 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:45:31:4531 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:45:42:4542 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:46:34:4634 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:46:54:4654 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:48:29:4829 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:48:40:4840 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:49:01:491 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:49:06:496 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:49:11:4911 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:49:20:4920 [35mhttp[39m: [35m::1 GET /api-docs/ 304 - - 10.607 ms[39m
+[35m[39m
+2025-02-02 16:49:20:4920 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui.css 304 - - 3.552 ms[39m
+[35m[39m
+2025-02-02 16:49:20:4920 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-bundle.js 304 - - 4.484 ms[39m
+[35m[39m
+2025-02-02 16:49:20:4920 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-standalone-preset.js 304 - - 1.965 ms[39m
+[35m[39m
+2025-02-02 16:49:20:4920 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-init.js 200 1884 - 2.204 ms[39m
+[35m[39m
+2025-02-02 16:49:20:4920 [35mhttp[39m: [35m::1 GET /api-docs/favicon-32x32.png 304 - - 1.406 ms[39m
+[35m[39m
+2025-02-02 16:50:15:5015 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:51:38:5138 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:52:42:5242 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:52:45:5245 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:53:17:5317 [35mhttp[39m: [35m::1 GET /api-docs/ 304 - - 14.395 ms[39m
+[35m[39m
+2025-02-02 16:53:17:5317 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-bundle.js 304 - - 4.470 ms[39m
+[35m[39m
+2025-02-02 16:53:17:5317 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui.css 304 - - 4.095 ms[39m
+[35m[39m
+2025-02-02 16:53:17:5317 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-standalone-preset.js 304 - - 1.560 ms[39m
+[35m[39m
+2025-02-02 16:53:17:5317 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-init.js 200 1929 - 1.779 ms[39m
+[35m[39m
+2025-02-02 16:53:17:5317 [35mhttp[39m: [35m::1 GET /api-docs/favicon-32x32.png 304 - - 2.445 ms[39m
+[35m[39m
+2025-02-02 16:53:21:5321 [35mhttp[39m: [35m::1 GET /api-docs/ 304 - - 2.736 ms[39m
+[35m[39m
+2025-02-02 16:53:21:5321 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui.css 304 - - 4.983 ms[39m
+[35m[39m
+2025-02-02 16:53:21:5321 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-bundle.js 304 - - 5.006 ms[39m
+[35m[39m
+2025-02-02 16:53:21:5321 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-standalone-preset.js 304 - - 4.170 ms[39m
+[35m[39m
+2025-02-02 16:53:21:5321 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-init.js 304 - - 2.472 ms[39m
+[35m[39m
+2025-02-02 16:53:21:5321 [35mhttp[39m: [35m::1 GET /api-docs/favicon-32x32.png 304 - - 2.566 ms[39m
+[35m[39m
+2025-02-02 16:53:27:5327 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:53:29:5329 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:53:32:5332 [35mhttp[39m: [35m::1 GET /api-docs/ 304 - - 12.889 ms[39m
+[35m[39m
+2025-02-02 16:53:32:5332 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-bundle.js 304 - - 3.572 ms[39m
+[35m[39m
+2025-02-02 16:53:32:5332 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui.css 304 - - 3.626 ms[39m
+[35m[39m
+2025-02-02 16:53:32:5332 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-standalone-preset.js 304 - - 1.645 ms[39m
+[35m[39m
+2025-02-02 16:53:32:5332 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-init.js 200 1993 - 2.123 ms[39m
+[35m[39m
+2025-02-02 16:53:32:5332 [35mhttp[39m: [35m::1 GET /api-docs/favicon-32x32.png 304 - - 0.758 ms[39m
+[35m[39m
+2025-02-02 16:53:42:5342 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:53:45:5345 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:54:17:5417 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:57:18:5718 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:57:22:5722 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:57:37:5737 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:57:51:5751 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:57:54:5754 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:58:00:580 [35mhttp[39m: [35m::1 GET /api-docs/ 304 - - 15.131 ms[39m
+[35m[39m
+2025-02-02 16:58:00:580 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-bundle.js 304 - - 4.350 ms[39m
+[35m[39m
+2025-02-02 16:58:00:580 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui.css 304 - - 3.238 ms[39m
+[35m[39m
+2025-02-02 16:58:00:580 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-standalone-preset.js 304 - - 1.631 ms[39m
+[35m[39m
+2025-02-02 16:58:00:580 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-init.js 200 2014 - 1.891 ms[39m
+[35m[39m
+2025-02-02 16:58:00:580 [35mhttp[39m: [35m::1 GET /api-docs/favicon-32x32.png 304 - - 1.780 ms[39m
+[35m[39m
+2025-02-02 16:58:05:585 [35mhttp[39m: [35m::1 POST /protected-auth-required 404 163 - 2.056 ms[39m
+[35m[39m
+2025-02-02 16:58:55:5855 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 16:59:18:5918 [35mhttp[39m: [35m::1 GET /api/protected-auth-required 404 166 - 2276.444 ms[39m
+[35m[39m
+2025-02-02 16:59:20:5920 [35mhttp[39m: [35m::1 GET /api/v1/protected-auth-required 404 169 - 5.917 ms[39m
+[35m[39m
+2025-02-02 16:59:23:5923 [35mhttp[39m: [35m::1 GET /api/v1/protected-auth-required 404 169 - 4.003 ms[39m
+[35m[39m
+2025-02-02 16:59:38:5938 [35mhttp[39m: [35m::1 GET /api/v1/protected-auth-required 404 169 - 2.792 ms[39m
+[35m[39m
+2025-02-02 16:59:40:5940 [35mhttp[39m: [35m::1 GET /api/v1/protected-auth-required 404 169 - 4.502 ms[39m
+[35m[39m
+2025-02-02 16:59:45:5945 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 17:00:11:011 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 17:00:21:021 [35mhttp[39m: [35m::1 POST /protected-auth-required 404 163 - 11.627 ms[39m
+[35m[39m
+2025-02-02 17:00:22:022 [35mhttp[39m: [35m::1 POST /protected-auth-required 404 163 - 1.792 ms[39m
+[35m[39m
+2025-02-02 17:00:26:026 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 17:00:39:039 [35mhttp[39m: [35m::1 GET /api/v1/protected-auth-required 404 169 - 2261.165 ms[39m
+[35m[39m
+2025-02-02 17:00:48:048 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 17:00:55:055 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 17:01:00:10 [35mhttp[39m: [35m::1 GET /api/v1/protected-auth-required 404 169 - 2709.497 ms[39m
+[35m[39m
+2025-02-02 17:01:46:146 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 17:01:50:150 [35mhttp[39m: [35m::1 GET /api/v1/protected-auth-required 404 169 - 1570.310 ms[39m
+[35m[39m
+2025-02-02 17:01:51:151 [35mhttp[39m: [35m::1 GET /api/v1/protected-auth-required 404 169 - 4.212 ms[39m
+[35m[39m
+2025-02-02 17:01:52:152 [35mhttp[39m: [35m::1 GET /api/v1/protected-auth-required 404 169 - 3.904 ms[39m
+[35m[39m
+2025-02-02 17:01:58:158 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 17:02:04:24 [35mhttp[39m: [35m::1 GET /api/v1/protected-auth-required 404 169 - 2350.784 ms[39m
+[35m[39m
+2025-02-02 17:02:11:211 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 17:02:17:217 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 17:02:21:221 [35mhttp[39m: [35m::1 GET /api/v1/protected-auth-required 404 169 - 1869.603 ms[39m
+[35m[39m
+2025-02-02 17:02:43:243 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 17:02:47:247 [35mhttp[39m: [35m::1 GET /api/v1/protected-auth-required 200 549 - 1587.175 ms[39m
+[35m[39m
+2025-02-02 17:04:06:46 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 17:04:08:48 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 17:04:12:412 [35mhttp[39m: [35m::1 GET /api-docs/ 304 - - 13.625 ms[39m
+[35m[39m
+2025-02-02 17:04:12:412 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-bundle.js 304 - - 3.853 ms[39m
+[35m[39m
+2025-02-02 17:04:12:412 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui.css 304 - - 3.339 ms[39m
+[35m[39m
+2025-02-02 17:04:12:412 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-standalone-preset.js 304 - - 1.546 ms[39m
+[35m[39m
+2025-02-02 17:04:12:412 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-init.js 200 2019 - 1.798 ms[39m
+[35m[39m
+2025-02-02 17:04:12:412 [35mhttp[39m: [35m::1 GET /api-docs/favicon-32x32.png 304 - - 2.382 ms[39m
+[35m[39m
+2025-02-02 17:04:29:429 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 17:04:31:431 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 17:04:33:433 [35mhttp[39m: [35m::1 GET /api-docs/ 304 - - 14.492 ms[39m
+[35m[39m
+2025-02-02 17:04:33:433 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui.css 304 - - 4.429 ms[39m
+[35m[39m
+2025-02-02 17:04:33:433 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-bundle.js 304 - - 4.211 ms[39m
+[35m[39m
+2025-02-02 17:04:33:433 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-standalone-preset.js 304 - - 1.801 ms[39m
+[35m[39m
+2025-02-02 17:04:33:433 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-init.js 200 2020 - 1.980 ms[39m
+[35m[39m
+2025-02-02 17:04:33:433 [35mhttp[39m: [35m::1 GET /api-docs/favicon-32x32.png 304 - - 1.342 ms[39m
+[35m[39m
+2025-02-02 17:04:38:438 [35mhttp[39m: [35m::1 GET /api/v1/protected-auth-required 500 288 - 12.019 ms[39m
+[35m[39m
+2025-02-02 17:04:40:440 [35mhttp[39m: [35m::1 GET /api/v1/protected-auth-required 500 288 - 5.831 ms[39m
+[35m[39m
+2025-02-02 17:04:41:441 [35mhttp[39m: [35m::1 GET /api/v1/protected-auth-required 500 288 - 2.455 ms[39m
+[35m[39m
+2025-02-02 17:04:42:442 [35mhttp[39m: [35m::1 GET /api/v1/protected-auth-required 500 288 - 1.558 ms[39m
+[35m[39m

@@ -1,5 +1,12 @@
-import { app } from '../..';
+import { ClerkExpressRequireAuth } from '@clerk/clerk-sdk-node';
+import express from 'express';
 
-app.get('/api/user', (req, res) => {
-  res.json([{ id: 1, name: 'John Doe' }]);
-});
+const router = express.Router();
+
+router
+  .route('/protected-auth-required')
+  .get(ClerkExpressRequireAuth(), (req: Request, res: Response) => {
+    res.json(req.auth);
+  });
+
+export default router;

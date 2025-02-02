@@ -2,16 +2,21 @@
   "swagger": "2.0",
   "info": {
     "version": "1.0.0",
-    "title": "REST API",
-    "description": ""
+    "title": "Diaspora",
+    "description": "Diaspora backend API documentation "
   },
-  "host": "localhost:3000",
-  "basePath": "/",
-  "schemes": [
-    "http"
+  "host": "localhost:8000/api/v1",
+  "basePath": "",
+  "tags": [
+    {
+      "name": "",
+      "description": ""
+    }
   ],
+  "schemes": [],
+  "securityDefinitions": {},
   "paths": {
-    "/api/user": {
+    "/protected-auth-required": {
       "get": {
         "description": "",
         "responses": {
