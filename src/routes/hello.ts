@@ -1,6 +1,6 @@
+import type { AuthenticatedRequest } from '@/types/globals';
 import { ClerkExpressRequireAuth } from '@clerk/clerk-sdk-node';
 import express, { type Response } from 'express';
-import type { AuthenticatedRequest } from '../../types/globals';
 
 const router = express.Router();
 
