@@ -1,0 +1,84 @@
+2025-02-02 11:19:57:1957 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 11:20:25:2025 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 11:20:29:2029 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 11:20:41:2041 [32minfo[39m: [32m{[39m
+[32m  actor: undefined,[39m
+[32m  sessionClaims: {[39m
+[32m    azp: 'https://amusing-sparrow-88.accounts.dev',[39m
+[32m    exp: 2053844900,[39m
+[32m    iat: 1738484900,[39m
+[32m    iss: 'https://amusing-sparrow-88.clerk.accounts.dev',[39m
+[32m    jti: '637c8018aabcc7a79084',[39m
+[32m    nbf: 1738484895,[39m
+[32m    sub: 'user_2sTfcgBPzlZk5nVjFsKrgpmn3zp'[39m
+[32m  },[39m
+[32m  sessionId: undefined,[39m
+[32m  userId: 'user_2sTfcgBPzlZk5nVjFsKrgpmn3zp',[39m
+[32m  orgId: undefined,[39m
+[32m  orgRole: undefined,[39m
+[32m  orgSlug: undefined,[39m
+[32m  orgPermissions: undefined,[39m
+[32m  factorVerificationAge: null,[39m
+[32m  getToken: [AsyncFunction (anonymous)],[39m
+[32m  has: [Function (anonymous)],[39m
+[32m  debug: [Function (anonymous)][39m
+[32m}[39m
+2025-02-02 11:20:41:2041 [35mhttp[39m: [35m::1 GET /protected 200 14 - 1825.045 ms[39m
+[35m[39m
+2025-02-02 11:20:55:2055 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 11:22:31:2231 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 11:23:26:2326 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 11:23:38:2338 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 11:23:47:2347 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 11:25:34:2534 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 11:25:43:2543 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 11:25:47:2547 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 11:27:28:2728 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 11:30:32:3032 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 11:32:51:3251 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 11:33:17:3317 [35mhttp[39m: [35m::1 GET /protectedk 404 149 - 2082.852 ms[39m
+[35m[39m
+2025-02-02 11:34:07:347 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 11:34:15:3415 [32minfo[39m: [32m{[39m
+[32m  actor: undefined,[39m
+[32m  sessionClaims: {[39m
+[32m    azp: 'https://amusing-sparrow-88.accounts.dev',[39m
+[32m    exp: 2053844900,[39m
+[32m    iat: 1738484900,[39m
+[32m    iss: 'https://amusing-sparrow-88.clerk.accounts.dev',[39m
+[32m    jti: '637c8018aabcc7a79084',[39m
+[32m    nbf: 1738484895,[39m
+[32m    sub: 'user_2sTfcgBPzlZk5nVjFsKrgpmn3zp'[39m
+[32m  },[39m
+[32m  sessionId: undefined,[39m
+[32m  userId: 'user_2sTfcgBPzlZk5nVjFsKrgpmn3zp',[39m
+[32m  orgId: undefined,[39m
+[32m  orgRole: undefined,[39m
+[32m  orgSlug: undefined,[39m
+[32m  orgPermissions: undefined,[39m
+[32m  factorVerificationAge: null,[39m
+[32m  getToken: [AsyncFunction (anonymous)],[39m
+[32m  has: [Function (anonymous)],[39m
+[32m  debug: [Function (anonymous)][39m
+[32m}[39m
+2025-02-02 11:34:15:3415 [35mhttp[39m: [35m::1 GET /protected 200 14 - 1514.122 ms[39m
+[35m[39m
+2025-02-02 11:54:20:5420 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 11:57:00:570 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 11:57:25:5725 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 11:58:37:5837 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 11:58:40:5840 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 12:05:37:537 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 12:06:18:618 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 12:06:38:638 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 12:07:12:712 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 12:07:14:714 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 12:07:52:752 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 12:07:55:755 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 12:08:31:831 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 12:08:34:834 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 12:08:39:839 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 12:08:42:842 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 15:49:09:499 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 15:49:17:4917 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-02 15:49:33:4933 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
