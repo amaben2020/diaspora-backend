@@ -6,6 +6,7 @@ const doc = {
     title: 'Diaspora', // by default: 'REST API'
     description: 'Diaspora backend API documentation ', // by default: ''
   },
+  // TODO: add backend url here
   host: 'localhost:8000/api/v1', // by default: 'localhost:3000'
   basePath: '', // by default: '/'
   schemes: [], // by default: ['http']
@@ -19,7 +20,17 @@ const doc = {
     },
     // { ... }
   ],
-  securityDefinitions: {}, // by default: empty object
+
+  securityDefinitions: {
+    apiKeyAuth: {
+      type: 'apiKey',
+      in: 'header', // can be 'header', 'query' or 'cookie'
+      name: 'Authorization', // name of the header, query parameter or cookie
+      description:
+        "Bearer token for authentication. Please type in 'Bearer' followed by a space and then the token.",
+    },
+  },
+  security: [],
   definitions: {}, // by default: empty object
 };
 

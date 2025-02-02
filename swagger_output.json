@@ -14,7 +14,14 @@
     }
   ],
   "schemes": [],
-  "securityDefinitions": {},
+  "securityDefinitions": {
+    "apiKeyAuth": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "Authorization",
+      "description": "Some description..."
+    }
+  },
   "paths": {
     "/protected-auth-required": {
       "get": {
@@ -23,8 +30,14 @@
           "200": {
             "description": "OK"
           }
-        }
+        },
+        "security": [
+          {
+            "apiKeyAuth": []
+          }
+        ]
       }
     }
-  }
+  },
+  "security": []
 }
