@@ -4,11 +4,14 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\"",
     "start": "ts-node index.ts",
     "dev": "nodemon index.ts",
     "build": "npx tsc",
-    "swagger-autogen": "ts-node swagger.ts"
+    "swagger-autogen": "ts-node swagger.ts",
+    "prepare": "husky",
+    "lint": "eslint .",
+    "format": "prettier --write ."
   },
   "keywords": [],
   "author": "",
@@ -37,6 +40,10 @@
     "@types/morgan": "^1.9.9",
     "@types/swagger-jsdoc": "^6.0.4",
     "@types/swagger-ui-express": "^4.1.7",
+    "eslint": "^9.19.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "husky": "^9.1.7",
     "prettier": "^3.4.2",
     "typescript": "^5.7.3"
   }

@@ -1,1 +1,5 @@
+Running the app:
+docker build -t my-express-app .
+docker run -p 3000:3000 my-express-app
+
 Swagger: http://localhost:8000/api-docs/#/default/get_protected_auth_required
