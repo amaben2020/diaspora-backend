@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { type Request, type Response } from 'express';
 import swaggerUi from 'swagger-ui-express';
 import swaggerJSDoc from 'swagger-jsdoc';
 import {
@@ -49,7 +49,7 @@ app.use(
 app.get(
   '/protected-auth-required',
   ClerkExpressRequireAuth(),
-  (req: express.Request, res) => {
+  (req: Request, res: Response) => {
     res.json(req.auth);
   }
 );
