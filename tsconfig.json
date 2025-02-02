@@ -11,12 +11,16 @@
     "isolatedModules": true,
     "outDir": "./dist",
     "rootDir": "./src",
+    "baseUrl": ".",
     "noEmit": true,
     "types": ["node"],
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
     "incremental": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules", "dist"]
