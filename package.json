@@ -20,6 +20,8 @@
   "description": "",
   "dependencies": {
     "@clerk/clerk-sdk-node": "^5.1.6",
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "express-oas-generator": "^1.0.46",
