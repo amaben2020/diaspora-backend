@@ -22,6 +22,17 @@
       "description": "Bearer token for authentication. Please type in 'Bearer' followed by a space and then the token."
     }
   },
-  "paths": {},
+  "paths": {
+    "/protected-auth-required": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
   "security": []
 }

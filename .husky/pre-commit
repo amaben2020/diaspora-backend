@@ -1,1 +1,2 @@
- npm run swagger
+npm run lint-staged  
+npm run swagger
