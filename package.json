@@ -3,11 +3,6 @@
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint-staged"
-    }
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\"",
     "start": "ts-node index.ts",
