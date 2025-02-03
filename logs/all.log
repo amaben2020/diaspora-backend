@@ -678,3 +678,14 @@
 2025-02-02 20:52:54:5254 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
 2025-02-03 16:22:14:2214 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
 2025-02-03 16:49:15:4915 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-03 21:41:15:4115 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-03 21:41:25:4125 [35mhttp[39m: [35m::1 GET /api-docs/ 304 - - 12.757 ms[39m
+[35m[39m
+2025-02-03 21:41:25:4125 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-init.js 200 2280 - 1.882 ms[39m
+[35m[39m
+2025-02-03 21:41:25:4125 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui.css 200 152072 - 13.984 ms[39m
+[35m[39m
+2025-02-03 21:41:25:4125 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-standalone-preset.js 200 230007 - 10.369 ms[39m
+[35m[39m
+2025-02-03 21:41:25:4125 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-bundle.js 200 1458834 - 10.599 ms[39m
+[35m[39m
