@@ -17,7 +17,7 @@ import router from './src/routes/index.ts';
 
 const configPath = join(
   dirname(fileURLToPath(import.meta.url)),
-  './swagger_output.json'
+  './swagger_output.json',
 );
 const swaggerFile = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
@@ -31,7 +31,7 @@ app.use(
   clerkMiddleware({
     secretKey: process.env.CLERK_SECRET_KEY,
     publishableKey: process.env.CLERK_PUBLISHABLE_KEY,
-  })
+  }),
 );
 
 // app.get(
@@ -80,7 +80,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerFile));
 
 // Error handling middleware
 app.use((err, req, res, next) => {
-  res.status(500).send('Internal Server Error');
+  res.status(500).send('Internal Server Error..');
 });
 
 app.use('/api/v1', router);

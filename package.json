@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\"",
     "start": "ts-node index.ts",
@@ -12,7 +17,15 @@
     "prepare": "husky",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "lint-staged": "lint-staged"
+    "lint-staged": {
+      "**/*.{js,jsx,ts,tsx}": [
+        "eslint --max-warnings=0",
+        "prettier --write"
+      ],
+      "**/*.{html,json,css,scss,md,mdx}": [
+        "prettier -w"
+      ]
+    }
   },
   "keywords": [],
   "author": "",
