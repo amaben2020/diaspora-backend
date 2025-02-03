@@ -19,7 +19,7 @@
       "type": "apiKey",
       "in": "header",
       "name": "Authorization",
-      "description": "Some description..."
+      "description": "Bearer token for authentication. Please type in 'Bearer' followed by a space and then the token."
     }
   },
   "paths": {
@@ -30,12 +30,7 @@
           "200": {
             "description": "OK"
           }
-        },
-        "security": [
-          {
-            "apiKeyAuth": []
-          }
-        ]
+        }
       }
     }
   },

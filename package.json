@@ -8,7 +8,7 @@
     "start": "ts-node index.ts",
     "dev": "nodemon index.ts",
     "build": "npx tsc",
-    "swagger-autogen": "ts-node swagger.ts",
+    "swagger": "ts-node swagger.ts",
     "prepare": "husky",
     "lint": "eslint .",
     "format": "prettier --write ."

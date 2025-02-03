@@ -1,11 +1,12 @@
 import request from 'supertest';
-import { app } from '..';
+
 import { describe, expect, it } from 'vitest';
+import { app } from '..';
 
 const userToken = process.env.TEST_USER_TOKEN;
 if (!userToken) {
   throw new Error(
-    'Provide a TEST_USER_TOKEN env variable for testing - visit: https://dev.to/mad/api-testing-with-clerk-and-express-2i56'
+    'Provide a TEST_USER_TOKEN env variable for testing - visit: https://dev.to/mad/api-testing-with-clerk-and-express-2i56',
   );
 }
 
