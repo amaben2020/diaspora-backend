@@ -690,3 +690,4 @@
 2025-02-03 21:41:25:4125 [35mhttp[39m: [35m::1 GET /api-docs/swagger-ui-bundle.js 200 1458834 - 10.599 ms[39m
 [35m[39m
 2025-02-03 22:24:50:2450 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-03 22:55:38:5538 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
