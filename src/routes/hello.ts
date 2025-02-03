@@ -10,7 +10,7 @@ router
     ClerkExpressRequireAuth(),
     (req: AuthenticatedRequest, res: Response) => {
       console.log('Auth', req.auth);
-      res.json(req.auth);
+      res.json({ user: req.auth, name: 'Ben' });
     },
   );
 
