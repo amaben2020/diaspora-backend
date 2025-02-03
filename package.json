@@ -11,7 +11,16 @@
     "swagger": "ts-node swagger.ts",
     "prepare": "husky",
     "lint": "eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "lint-staged": {
+      "*.{js,jsx,ts,tsx}": [
+        "eslint --fix",
+        "prettier --write"
+      ],
+      "*.{css,scss,md}": [
+        "prettier --write"
+      ]
+    }
   },
   "keywords": [],
   "author": "",
