@@ -1,7 +1,7 @@
 name: Generate Swagger Docs
 
 on:
-  pull_request:
+  push:
     branches:
       - main
       - dev
@@ -11,42 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0 # Ensures full commit history for pushing
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-          cache: 'npm'
+      - name: Run a one-line script
+        run: echo Hello, world!
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Ensure ts-node is installed
-        run: npm install -g ts-node
-
-      - name: Run Swagger Autogen
-        run: npx ts-node swagger.ts
-
-      - name: Check for changes
-        id: check_changes
+      - name: Run a multi-line script
         run: |
-          git add swagger_output.json
-          if git diff --cached --quiet; then
-            echo "No changes detected."
-            echo "has_changes=false" >> $GITHUB_ENV
-          else
-            echo "Changes detected."
-            echo "has_changes=true" >> $GITHUB_ENV
-          fi
-
-      - name: Commit and push changes
-        if: env.has_changes == 'true'
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -m "Update Swagger docs [ci skip]"
-          git push
+          echo Add other actions to build,
+          echo Add other actions to build,

@@ -9,8 +9,9 @@ router
   .get(
     ClerkExpressRequireAuth(),
     (req: AuthenticatedRequest, res: Response) => {
+      console.log('Auth', req.auth);
       res.json(req.auth);
-    }
+    },
   );
 
 export default router;
