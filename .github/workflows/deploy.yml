@@ -31,4 +31,4 @@ jobs:
           fi
 
       - name: Build and deploy
-        run: npm run build && npm run deploy
+        run: npm run build
