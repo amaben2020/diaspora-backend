@@ -745,3 +745,96 @@
 2025-02-04 18:00:35:035 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
 2025-02-04 18:03:54:354 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
 2025-02-04 18:03:58:358 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-04 18:05:29:529 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-04 18:05:48:548 [35mhttp[39m: [35m::1 GET /api/v1/protected-auth-required 200 337 - 1287.897 ms[39m
+[35m[39m
+2025-02-04 18:05:56:556 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-04 18:07:13:713 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-04 18:08:00:80 [32minfo[39m: [32m{[39m
+[32m  actor: undefined,[39m
+[32m  sessionClaims: {[39m
+[32m    azp: 'https://amusing-sparrow-88.accounts.dev',[39m
+[32m    exp: 2053844900,[39m
+[32m    iat: 1738484900,[39m
+[32m    iss: 'https://amusing-sparrow-88.clerk.accounts.dev',[39m
+[32m    jti: '637c8018aabcc7a79084',[39m
+[32m    nbf: 1738484895,[39m
+[32m    sub: 'user_2sTfcgBPzlZk5nVjFsKrgpmn3zp'[39m
+[32m  },[39m
+[32m  sessionId: undefined,[39m
+[32m  userId: 'user_2sTfcgBPzlZk5nVjFsKrgpmn3zp',[39m
+[32m  orgId: undefined,[39m
+[32m  orgRole: undefined,[39m
+[32m  orgSlug: undefined,[39m
+[32m  orgPermissions: undefined,[39m
+[32m  factorVerificationAge: null,[39m
+[32m  getToken: [AsyncFunction (anonymous)],[39m
+[32m  has: [Function (anonymous)],[39m
+[32m  debug: [Function (anonymous)][39m
+[32m}[39m
+2025-02-04 18:08:00:80 [35mhttp[39m: [35m::1 GET /api/v1/protected 200 14 - 1733.996 ms[39m
+[35m[39m
+2025-02-04 18:10:37:1037 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-04 18:10:47:1047 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-04 18:10:54:1054 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-04 18:11:40:1140 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-04 18:12:02:122 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-04 18:13:16:1316 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-04 18:13:26:1326 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-04 18:13:35:1335 [35mhttp[39m: [35m::1 GET /api/v1/protected-auth-required 200 337 - 1605.919 ms[39m
+[35m[39m
+2025-02-04 18:13:37:1337 [32minfo[39m: [32m{[39m
+[32m  actor: undefined,[39m
+[32m  sessionClaims: {[39m
+[32m    azp: 'https://amusing-sparrow-88.accounts.dev',[39m
+[32m    exp: 2053844900,[39m
+[32m    iat: 1738484900,[39m
+[32m    iss: 'https://amusing-sparrow-88.clerk.accounts.dev',[39m
+[32m    jti: '637c8018aabcc7a79084',[39m
+[32m    nbf: 1738484895,[39m
+[32m    sub: 'user_2sTfcgBPzlZk5nVjFsKrgpmn3zp'[39m
+[32m  },[39m
+[32m  sessionId: undefined,[39m
+[32m  userId: 'user_2sTfcgBPzlZk5nVjFsKrgpmn3zp',[39m
+[32m  orgId: undefined,[39m
+[32m  orgRole: undefined,[39m
+[32m  orgSlug: undefined,[39m
+[32m  orgPermissions: undefined,[39m
+[32m  factorVerificationAge: null,[39m
+[32m  getToken: [AsyncFunction (anonymous)],[39m
+[32m  has: [Function (anonymous)],[39m
+[32m  debug: [Function (anonymous)][39m
+[32m}[39m
+2025-02-04 18:13:54:1354 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-04 18:13:58:1358 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-04 18:14:03:143 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-04 18:14:07:147 [32minfo[39m: [32m{[39m
+[32m  actor: undefined,[39m
+[32m  sessionClaims: {[39m
+[32m    azp: 'https://amusing-sparrow-88.accounts.dev',[39m
+[32m    exp: 2053844900,[39m
+[32m    iat: 1738484900,[39m
+[32m    iss: 'https://amusing-sparrow-88.clerk.accounts.dev',[39m
+[32m    jti: '637c8018aabcc7a79084',[39m
+[32m    nbf: 1738484895,[39m
+[32m    sub: 'user_2sTfcgBPzlZk5nVjFsKrgpmn3zp'[39m
+[32m  },[39m
+[32m  sessionId: undefined,[39m
+[32m  userId: 'user_2sTfcgBPzlZk5nVjFsKrgpmn3zp',[39m
+[32m  orgId: undefined,[39m
+[32m  orgRole: undefined,[39m
+[32m  orgSlug: undefined,[39m
+[32m  orgPermissions: undefined,[39m
+[32m  factorVerificationAge: null,[39m
+[32m  getToken: [AsyncFunction (anonymous)],[39m
+[32m  has: [Function (anonymous)],[39m
+[32m  debug: [Function (anonymous)][39m
+[32m}[39m
+2025-02-04 18:14:07:147 [35mhttp[39m: [35m::1 GET /api/v1/protected 201 647 - 1870.893 ms[39m
+[35m[39m
+2025-02-04 18:15:08:158 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-04 18:15:47:1547 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-04 18:15:55:1555 [35mhttp[39m: [35m::1 GET /api/v1/protected-auth-required 200 337 - 2790.366 ms[39m
+[35m[39m
+2025-02-04 18:16:30:1630 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-04 18:19:00:190 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
