@@ -1,7 +1,7 @@
 import morgan from 'morgan';
 import { logger } from '../utils/logger.ts';
 const stream = {
-  write: (message: any) => logger.http(message),
+  write: (message: string) => logger.http(message),
 };
 const skip = () => {
   const env = process.env.NODE_ENV || 'development';
