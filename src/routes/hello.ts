@@ -14,6 +14,10 @@ router
     },
   );
 
+router.route('/').get((_: AuthenticatedRequest, res: Response) => {
+  res.json({ message: 'Running' });
+});
+
 export default router;
 
 //import {
