@@ -1,4 +1,8 @@
-import express, { type Request, type Response } from 'express';
+import express, {
+  type NextFunction,
+  type Request,
+  type Response,
+} from 'express';
 import dotenv from 'dotenv';
 import helmet from 'helmet';
 import morgan from 'morgan';
@@ -80,15 +84,17 @@ app.use(
     },
     req: Request,
     res: Response,
+    next: NextFunction,
   ) => {
     err.status = err.status || 'fail';
     err.statusCode = err.statusCode || 500;
 
-    res.status(err.statusCode).json({
+    res?.status(err.statusCode).json({
       status: err.status,
       // message: transformMessage(err.message),
       message: err.message + 'Benneth',
-      stack: process.env.NODE_ENV === 'development' ? err.status : undefined,
+      stack:
+        process.env.NODE_ENV === 'development' ? err.statusCode : undefined,
     });
   },
 );
