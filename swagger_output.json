@@ -32,6 +32,26 @@
           }
         }
       }
+    },
+    "/protected": {
+      "get": {
+        "description": "",
+        "responses": {
+          "201": {
+            "description": "Created"
+          }
+        }
+      }
+    },
+    "/": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "security": []
