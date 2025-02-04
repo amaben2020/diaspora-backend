@@ -4,7 +4,6 @@ import express, { type Response } from 'express';
 import { logger } from '../utils/logger.ts';
 
 const router = express.Router();
-
 router
   .route('/protected-auth-required')
   .get(clerkMiddleware(), (req: AuthenticatedRequest, res: Response) => {
