@@ -1,6 +1,7 @@
 import express, { type Response } from 'express';
-import { logger } from '@/utils/logger';
-import { INTERESTS } from '@/constants';
+
+import { logger } from '../utils/logger.ts';
+import { INTERESTS } from '../constants/index.ts';
 
 const router = express.Router();
 
@@ -11,3 +12,5 @@ router.route('/interests').get((_, res: Response) => {
   res.json({ interests: INTERESTS });
   logger.log({ level: '4', message: 'Success' });
 });
+
+export default router;
