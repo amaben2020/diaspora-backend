@@ -8,6 +8,13 @@
       "when": 1738686302796,
       "tag": "0000_friendly_mimic",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1738770891806,
+      "tag": "0001_damp_mastermind",
+      "breakpoints": true
     }
   ]
 }
