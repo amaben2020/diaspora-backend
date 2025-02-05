@@ -852,3 +852,9 @@
 2025-02-05 16:55:38:5538 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
 2025-02-05 17:23:14:2314 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
 2025-02-05 17:31:26:3126 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-05 17:34:15:3415 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-05 17:34:20:3420 [35mhttp[39m: [35m::1 GET /api/v1/interests 200 1026 - 2084.268 ms[39m
+[35m[39m
+2025-02-05 17:34:41:3441 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-05 17:34:47:3447 [35mhttp[39m: [35m::1 GET /api/v1/interests 200 1026 - 1920.949 ms[39m
+[35m[39m
