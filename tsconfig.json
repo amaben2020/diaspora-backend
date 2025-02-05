@@ -19,7 +19,7 @@
     "incremental": true,
     "resolveJsonModule": true,
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*", "./src/*", "./tests/*"]
     }
   },
   "include": ["src/**/*", "global.d.ts"],
