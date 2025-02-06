@@ -1116,3 +1116,4 @@
 2025-02-06 19:47:09:479 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
 2025-02-06 19:47:55:4755 [35mhttp[39m: [35m::1 POST /api/v1/preference 201 293 - 2199.120 ms[39m
 [35m[39m
+2025-02-06 19:48:10:4810 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
