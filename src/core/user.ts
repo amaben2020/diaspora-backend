@@ -4,11 +4,12 @@ import { usersTable } from '../schema/usersTable.ts';
 import type { userSchema } from '../models/index.ts';
 import { eq } from 'drizzle-orm';
 
-export const createUser = async (clerkId: string) => {
+export const createUser = async (clerkId: string, phone: string) => {
   const [user = undefined] = await db
     .insert(usersTable)
     .values({
       id: clerkId,
+      phone,
     })
     .returning();
 
