@@ -1,0 +1,1 @@
+ALTER TABLE "preferences" ALTER COLUMN "looking_to_date" SET DATA TYPE text[];

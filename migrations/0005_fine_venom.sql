@@ -1,0 +1,1 @@
+ALTER TABLE "preferences" ALTER COLUMN "interests" SET DATA TYPE text[];

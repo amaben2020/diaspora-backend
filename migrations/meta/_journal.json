@@ -36,6 +36,20 @@
       "when": 1738845576439,
       "tag": "0004_lazy_ken_ellis",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1738845954409,
+      "tag": "0005_fine_venom",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1738846057026,
+      "tag": "0006_tiny_mandrill",
+      "breakpoints": true
     }
   ]
 }
