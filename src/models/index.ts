@@ -19,7 +19,7 @@ export const userSchema = z.object({
 });
 
 export const preferencesSchema = z.object({
-  userId: z.string(),
+  userId: z.string().optional(),
   createdAt: z.string().datetime().optional(),
   updatedAt: z.string().datetime().optional(),
   ethnicity: z.string().max(50).optional(),
@@ -38,4 +38,8 @@ export const imagesSchema = z.object({
   userId: z.string(),
   imageUrl: z.string().url(),
   order: z.number().int().positive().default(1),
+});
+
+export const paramSchema = z.object({
+  id: z.string(),
 });

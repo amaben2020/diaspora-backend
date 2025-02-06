@@ -3,7 +3,6 @@ import { db } from '../db.ts';
 import { usersTable } from '../schema/usersTable.ts';
 import type { userSchema } from '../models/index.ts';
 import { eq } from 'drizzle-orm';
-import { DateTime } from 'luxon';
 
 export const createUser = async (clerkId: string) => {
   const [user = undefined] = await db
@@ -28,11 +27,8 @@ export const updateUser = async (
     lastLogin,
     displayName,
     subscriptionType,
+    phone,
   } = data;
-
-  const bday = DateTime.fromFormat(String(birthday), 'dd-MM-yyyy').toJSDate();
-
-  console.log('bday', bday);
 
   const [user = undefined] = await db
     .update(usersTable)
@@ -44,6 +40,7 @@ export const updateUser = async (
       lastLogin: lastLogin ? new Date(lastLogin) : null,
       displayName,
       subscriptionType,
+      phone,
     })
     .where(eq(usersTable.id, id))
     .returning();

@@ -1,7 +1,6 @@
-import { userSchema } from '../../models/index.ts';
+import { paramSchema, userSchema } from '../../models/index.ts';
 import { createUser, updateUser } from '../../core/user.ts';
 import { tryCatchFn } from '../../utils/tryCatch.ts';
-import { z } from 'zod';
 
 export const userCreateController = tryCatchFn(async (req, res, next) => {
   const { clerkId } = userSchema.parse(req.body);
@@ -13,10 +12,6 @@ export const userCreateController = tryCatchFn(async (req, res, next) => {
   if (!data) next(new Error('User not created'));
 
   res.status(201).json(data);
-});
-
-const paramSchema = z.object({
-  id: z.string(),
 });
 
 export const userUpdateController = tryCatchFn(async (req, res, next) => {

@@ -3,6 +3,7 @@ import { Router } from 'express';
 
 import {
   preferenceCreateController,
+  preferenceUpdateController,
   // preferenceUpdateController,
 } from '../controller/preference/preference.ts';
 
@@ -12,10 +13,8 @@ preferenceRouter
   .route('/preference')
   .post(clerkMiddleware(), preferenceCreateController);
 
-//   preferenceRouter
-//     .route('/preference/:id')
-//     .patch(clerkMiddleware(), preferenceUpdateController);
-
-// ;
+preferenceRouter
+  .route('/preference/:id')
+  .patch(clerkMiddleware(), preferenceUpdateController);
 
 export default preferenceRouter;
