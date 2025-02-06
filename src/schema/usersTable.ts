@@ -21,6 +21,7 @@ export const usersTable = pgTable('users', {
   subscriptionType: varchar('subscription_type', { length: 20 }).default(
     'free',
   ),
+  phone: varchar('phone', { length: 11 }),
   createdAt: timestamp('created_at', { withTimezone: true }).defaultNow(),
   updatedAt: timestamp('updated_at')
     .notNull()
