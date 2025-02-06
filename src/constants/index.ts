@@ -22,3 +22,5 @@ export const INTERESTS = [
   { title: 'Singing', icon: 'mic-outline' },
   { title: 'Confidence', icon: 'shield-checkmark-outline' },
 ] as const;
+
+export const GENDERS = ['women', 'man', 'nonbinary'] as const;

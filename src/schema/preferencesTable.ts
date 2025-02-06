@@ -8,7 +8,7 @@ import {
   serial,
   // pgEnum,
 } from 'drizzle-orm/pg-core';
-import { usersTable } from './usersTable';
+import { usersTable } from './usersTable.ts';
 import { relations } from 'drizzle-orm';
 // import { INTERESTS } from '../constants';
 
