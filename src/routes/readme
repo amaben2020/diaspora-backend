@@ -1,0 +1,24 @@
+// import type { AuthenticatedRequest } from '@/types/globals.ts';
+// import { clerkMiddleware, getAuth, requireAuth } from '@clerk/express';
+// import { Router } from 'express';
+
+// import { userCreateController } from '../controller/user/user.ts';
+
+// const router = Router();
+// router.route('/user').post(clerkMiddleware(), userCreateController);
+
+// router.route('/protected').get(requireAuth(), async (req, res) => {
+// const data = await getAuth(req);
+
+// console.log(req.auth);
+// logger.info(req.auth);
+// res.status(201).json({ data, auth: req.auth });
+// });
+
+// router
+// .route('/')
+// .get(clerkMiddleware(), (req: AuthenticatedRequest, res: Response) => {
+// res.json({ message: 'Running', auth: req.auth });
+// });
+
+// export default router;

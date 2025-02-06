@@ -50,6 +50,13 @@
       "when": 1738846057026,
       "tag": "0006_tiny_mandrill",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1738852948241,
+      "tag": "0007_large_lord_hawal",
+      "breakpoints": true
     }
   ]
 }
