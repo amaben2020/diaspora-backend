@@ -1095,3 +1095,24 @@
 2025-02-06 16:31:13:3113 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
 2025-02-06 16:32:07:327 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
 2025-02-06 16:33:24:3324 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 19:44:17:4417 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 19:44:48:4448 [35mhttp[39m: [35m::1 POST /api/v1/preference 404 157 - 1279.780 ms[39m
+[35m[39m
+2025-02-06 19:45:11:4511 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 19:45:19:4519 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 19:45:23:4523 [35mhttp[39m: [35m::1 POST /api/v1/preference 404 157 - 398.291 ms[39m
+[35m[39m
+2025-02-06 19:45:26:4526 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 19:45:29:4529 [35mhttp[39m: [35m::1 POST /api/v1/preference 404 157 - 556.444 ms[39m
+[35m[39m
+2025-02-06 19:45:49:4549 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 19:45:53:4553 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 19:46:14:4614 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 19:46:18:4618 [35mhttp[39m: [35m::1 POST /api/v1/preference 500 93 - 3076.677 ms[39m
+[35m[39m
+2025-02-06 19:46:53:4653 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 19:46:59:4659 [35mhttp[39m: [35m::1 POST /api/v1/preference 500 109 - 1416.664 ms[39m
+[35m[39m
+2025-02-06 19:47:09:479 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 19:47:55:4755 [35mhttp[39m: [35m::1 POST /api/v1/preference 201 293 - 2199.120 ms[39m
+[35m[39m

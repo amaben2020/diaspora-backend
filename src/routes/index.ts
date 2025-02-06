@@ -10,6 +10,6 @@ const router = express.Router();
 router.use('', test);
 router.use('', interests);
 router.use('', user);
-preferenceRouter.use('', user);
+router.use('', preferenceRouter);
 
 export default router;

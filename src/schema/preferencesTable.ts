@@ -37,8 +37,8 @@ export const preferencesTable = pgTable(
       .$onUpdate(() => new Date()),
     ethnicity: varchar('ethnicity', { length: 50 }),
     pronouns: varchar('pronouns', { length: 50 }),
-    zodiac: varchar('pronouns', { length: 50 }),
-    bio: varchar('pronouns', { length: 50 }),
+    zodiac: varchar('zodiac', { length: 50 }),
+    bio: varchar('bio', { length: 50 }),
     // interest: interestPreferenceEnum('interests'),
 
     interests: text('interests').array(),

@@ -57,6 +57,13 @@
       "when": 1738852948241,
       "tag": "0007_large_lord_hawal",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1738867628918,
+      "tag": "0008_vengeful_alex_power",
+      "breakpoints": true
     }
   ]
 }
