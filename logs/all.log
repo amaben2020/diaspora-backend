@@ -1117,3 +1117,49 @@
 2025-02-06 19:47:55:4755 [35mhttp[39m: [35m::1 POST /api/v1/preference 201 293 - 2199.120 ms[39m
 [35m[39m
 2025-02-06 19:48:10:4810 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 19:49:55:4955 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 19:52:52:5252 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 19:53:38:5338 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 19:54:44:5444 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 19:56:04:564 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 19:56:14:5614 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 19:57:04:574 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 19:57:33:5733 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 19:58:11:5811 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 19:58:17:5817 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 20:03:21:321 [35mhttp[39m: [35m::1 GET / 404 139 - 32.904 ms[39m
+[35m[39m
+2025-02-06 20:03:52:352 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 20:04:19:419 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 20:04:52:452 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 20:07:18:718 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 20:07:54:754 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 20:08:27:827 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 20:09:17:917 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 20:09:24:924 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 20:09:46:946 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 20:10:39:1039 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 20:11:19:1119 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 20:12:40:1240 [35mhttp[39m: [35m::1 PATCH /api/v1/user/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 500 389 - 985.058 ms[39m
+[35m[39m
+2025-02-06 20:15:03:153 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 20:16:18:1618 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 20:16:23:1623 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 20:16:43:1643 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 20:17:42:1742 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 20:17:45:1745 [35mhttp[39m: [35m::1 PATCH /api/v1/user/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 500 389 - 612.522 ms[39m
+[35m[39m
+2025-02-06 20:18:27:1827 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 20:18:33:1833 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 20:18:35:1835 [35mhttp[39m: [35m::1 PATCH /api/v1/user/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 500 389 - 265.534 ms[39m
+[35m[39m
+2025-02-06 20:19:17:1917 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 20:19:28:1928 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 20:19:33:1933 [35mhttp[39m: [35m::1 PATCH /api/v1/user/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 500 205 - 1101.120 ms[39m
+[35m[39m
+2025-02-06 20:20:13:2013 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 20:20:36:2036 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-06 20:20:41:2041 [35mhttp[39m: [35m::1 PATCH /api/v1/user/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 201 283 - 2819.602 ms[39m
+[35m[39m
+2025-02-06 20:21:11:2111 [35mhttp[39m: [35m::1 PATCH /api/v1/user/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 201 283 - 1065.863 ms[39m
+[35m[39m

@@ -1,13 +1,13 @@
 import { z } from 'zod';
 
 export const userSchema = z.object({
-  clerkId: z.string(),
+  clerkId: z.string().optional(),
   displayName: z.string().max(50).optional(),
   email: z.string().email().optional(),
   gender: z.string().max(20).optional(),
   birthday: z
     .string()
-    .regex(/\d{4}-\d{2}-\d{2}/)
+    .regex(/\d{2}-\d{2}-\d{4}/)
     .optional(),
   verified: z.boolean().default(false),
   onlineStatus: z.boolean().default(false),
