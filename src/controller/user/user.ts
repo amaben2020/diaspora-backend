@@ -5,7 +5,7 @@ import { tryCatchFn } from '../../utils/tryCatch.ts';
 export const userCreateController = tryCatchFn(async (req, res, next) => {
   const { clerkId, phone } = userSchema.parse(req.body);
 
-  const data = await createUser(clerkId!, phone!);
+  const data = await createUser(clerkId!, phone);
 
   if (!clerkId) res.status(400).send('Clerk id not found');
 
