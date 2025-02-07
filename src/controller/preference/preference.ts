@@ -25,7 +25,9 @@ export const preferenceUpdateController = tryCatchFn(async (req, res, next) => {
     String(userId),
   );
 
-  if (!data) next(new Error('User not created'));
+  if (!data) {
+    return next(new Error('User not created'));
+  }
 
   res.status(201).json(data);
 });
