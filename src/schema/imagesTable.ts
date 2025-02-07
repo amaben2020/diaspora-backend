@@ -1,10 +1,4 @@
-import {
-  integer,
-  pgTable,
-  serial,
-  text,
-  uniqueIndex,
-} from 'drizzle-orm/pg-core';
+import { integer, pgTable, serial, text } from 'drizzle-orm/pg-core';
 import { usersTable } from './usersTable.ts';
 import { relations } from 'drizzle-orm';
 
@@ -18,9 +12,9 @@ export const imagesTable = pgTable(
     imageUrl: text('image_url').notNull(),
     order: integer('order').notNull().default(1),
   },
-  (table) => ({
-    uniqueUser: uniqueIndex('unique_images').on(table.userId),
-  }),
+  // (table) => ({
+  //   uniqueUser: uniqueIndex('unique_images').on(table.userId),
+  // }),
 );
 
 export const imagesRelations = relations(imagesTable, ({ one }) => ({
