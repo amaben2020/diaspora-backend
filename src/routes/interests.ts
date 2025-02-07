@@ -8,11 +8,11 @@ import { tryCatchFn } from '../utils/tryCatch.ts';
 const router = express.Router();
 
 router.route('/interests').get(
-  tryCatchFn(async (_, res, next) => {
+  tryCatchFn(async (req, res, next) => {
     // Check cache first
     const cachedData = await redisClient.get('interests');
     if (cachedData) {
-      return res.json({ cache: true, interests: JSON.parse(cachedData) });
+      res.json({ cache: true, interests: JSON.parse(cachedData) });
     }
 
     if (!INTERESTS) {
@@ -24,7 +24,7 @@ router.route('/interests').get(
     // Store in Redis (expire in 1 hour)
     await redisClient.set('interests', JSON.stringify(INTERESTS), 3600);
 
-    return res.json({ interests: INTERESTS });
+    res.json({ interests: INTERESTS });
   }),
 );
 

@@ -7,7 +7,7 @@ export const preferenceCreateController = tryCatchFn(async (req, res, next) => {
 
   if (!userId) res.status(400).send('User id not found');
 
-  const data = await createPreference(lookingToDate!, userId);
+  const data = await createPreference(lookingToDate!, String(userId));
 
   if (!data) next(new Error('Preference not created'));
 

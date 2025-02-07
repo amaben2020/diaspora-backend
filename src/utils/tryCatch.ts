@@ -2,7 +2,7 @@ import type { AuthenticatedRequest } from '@/types/globals';
 import { type NextFunction, type Request, type Response } from 'express';
 
 export const tryCatchFn = (
-  fn: (req: Request, res: Response, next: NextFunction) => Promise<Response>,
+  fn: (req: Request, res: Response, next: NextFunction) => Promise<void>,
 ) => {
   return (
     req: Request | AuthenticatedRequest,
