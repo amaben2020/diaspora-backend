@@ -35,7 +35,7 @@ export const userUpdateController = tryCatchFn(async (req, res, next) => {
   const data = await updateUser(sanitizedBody, id);
 
   if (!data) {
-    return next(new Error('User not updated')); // Ensure response is not sent twice
+    return next(new Error('User not updated'));
   }
 
   console.log('data', data);

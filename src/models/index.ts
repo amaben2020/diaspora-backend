@@ -10,6 +10,7 @@ export const userSchema = z.object({
     .regex(/\d{2}-\d{2}-\d{4}/)
     .optional(),
   verified: z.boolean().default(false),
+  showGender: z.boolean().default(false),
   onlineStatus: z.boolean().default(false),
   lastLogin: z.string().datetime().optional(),
   subscriptionType: z.string().max(20).default('free'),

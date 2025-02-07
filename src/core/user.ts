@@ -29,6 +29,7 @@ export const updateUser = async (
     displayName,
     subscriptionType,
     phone,
+    showGender,
   } = data;
 
   const [user = undefined] = await db
@@ -42,6 +43,7 @@ export const updateUser = async (
       displayName,
       subscriptionType,
       phone,
+      showGender,
     })
     .where(eq(usersTable.id, id))
     .returning();
