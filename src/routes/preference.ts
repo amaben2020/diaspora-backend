@@ -14,7 +14,7 @@ preferenceRouter
   .post(clerkMiddleware(), preferenceCreateController);
 
 preferenceRouter
-  .route('/preference/:id')
+  .route('/preference/:id/:userId')
   .patch(clerkMiddleware(), preferenceUpdateController);
 
 export default preferenceRouter;

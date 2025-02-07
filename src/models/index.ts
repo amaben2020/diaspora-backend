@@ -43,4 +43,5 @@ export const imagesSchema = z.object({
 
 export const paramSchema = z.object({
   id: z.string(),
+  userId: z.string().optional(),
 });

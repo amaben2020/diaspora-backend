@@ -15,11 +15,15 @@ export const preferenceCreateController = tryCatchFn(async (req, res, next) => {
 });
 
 export const preferenceUpdateController = tryCatchFn(async (req, res, next) => {
-  const { id } = paramSchema.parse(req.params);
+  const { id, userId } = paramSchema.parse(req.params);
 
   const sanitizedBody = preferencesSchema.parse(req.body);
 
-  const data = await updatePreference(sanitizedBody, Number(id));
+  const data = await updatePreference(
+    sanitizedBody,
+    Number(id),
+    String(userId),
+  );
 
   if (!data) next(new Error('User not created'));
 

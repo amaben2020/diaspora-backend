@@ -1,4 +1,4 @@
-import { eq } from 'drizzle-orm';
+import { and, eq } from 'drizzle-orm';
 import { db } from '../db.ts';
 import { preferencesTable } from '../schema/preferencesTable.ts';
 import type { preferencesSchema } from '../models/index.ts';
@@ -22,6 +22,7 @@ export const createPreference = async (
 export const updatePreference = async (
   data: z.infer<typeof preferencesSchema>,
   id: number,
+  userId: string,
 ) => {
   const {
     lookingToDate,
@@ -33,6 +34,8 @@ export const updatePreference = async (
     religion,
     smoking,
   } = data;
+
+  // TODO: assign to userId that has the preference
 
   const [user = undefined] = await db
     .update(preferencesTable)
@@ -46,7 +49,12 @@ export const updatePreference = async (
       religion,
       smoking,
     })
-    .where(eq(preferencesTable.id, id))
+    .where(
+      and(
+        eq(preferencesTable.id, id),
+        eq(preferencesTable.userId, String(userId)),
+      ),
+    )
     .returning();
 
   return user;
