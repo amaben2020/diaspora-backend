@@ -1349,3 +1349,7 @@
 2025-02-07 21:35:11:3511 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
 2025-02-07 21:35:41:3541 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
 2025-02-07 21:36:01:361 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-07 21:36:36:3636 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-07 23:44:38:4438 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-07 23:44:46:4446 [35mhttp[39m: [35m::1 GET /api/v1/image/upload-url 200 178 - 664.723 ms[39m
+[35m[39m

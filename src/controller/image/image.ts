@@ -11,15 +11,42 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
+// export const getImageUploadUrlController = async (
+//   req: Request,
+//   res: Response,
+// ) => {
+//   try {
+//     const timestamp = Math.round(new Date().getTime() / 1000);
+
+//     const signature = cloudinary.utils.api_sign_request(
+//       { timestamp },
+//       process.env.CLOUDINARY_API_SECRET!,
+//     );
+
+//     res.json({
+//       cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+//       apiKey: process.env.CLOUDINARY_API_KEY,
+//       timestamp,
+//       signature,
+//       folder: 'user_uploads',
+//     });
+//   } catch (error) {
+//     if (error instanceof Error) res.status(500).json({ error: error.message });
+//   }
+// };
+
 export const getImageUploadUrlController = async (
   req: Request,
   res: Response,
 ) => {
   try {
-    const timestamp = Math.round(new Date().getTime() / 1000);
+    const timestamp = Math.floor(Date.now() / 1000);
+    const folder = 'user_uploads';
+    const upload_preset = 'diaspora';
 
+    // Ensure signature includes all necessary parameters
     const signature = cloudinary.utils.api_sign_request(
-      { timestamp },
+      { timestamp, folder, upload_preset },
       process.env.CLOUDINARY_API_SECRET!,
     );
 
@@ -28,7 +55,8 @@ export const getImageUploadUrlController = async (
       apiKey: process.env.CLOUDINARY_API_KEY,
       timestamp,
       signature,
-      folder: 'user_uploads',
+      folder,
+      upload_preset,
     });
   } catch (error) {
     if (error instanceof Error) res.status(500).json({ error: error.message });
