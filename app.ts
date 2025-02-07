@@ -92,7 +92,7 @@ app.use(
     res?.status(err.statusCode).json({
       status: err.status,
       // message: transformMessage(err.message),
-      message: err.message + 'Benneth',
+      message: err.message + ' ' + 'Benneth',
       stack:
         process.env.NODE_ENV === 'development' ? err.statusCode : undefined,
     });
