@@ -110,12 +110,18 @@
         }
       }
     },
-    "/preference/{id}": {
+    "/preference/{id}/{userId}": {
       "patch": {
         "description": "",
         "parameters": [
           {
             "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "userId",
             "in": "path",
             "required": true,
             "type": "string"

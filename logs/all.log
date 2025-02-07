@@ -1252,3 +1252,4 @@
 2025-02-07 10:53:25:5325 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
 2025-02-07 10:53:30:5330 [35mhttp[39m: [35m::1 PATCH /api/v1/preference/1/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 201 307 - 2660.312 ms[39m
 [35m[39m
+2025-02-07 10:53:43:5343 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
