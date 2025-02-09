@@ -1445,3 +1445,4 @@
 [35m[39m
 2025-02-09 21:33:34:3334 [35mhttp[39m: [35m::1 GET /api/v1/preference/user_2snhfeqOfWDLkOfMsJac2DisDgz 200 357 - 600.259 ms[39m
 [35m[39m
+2025-02-09 21:34:12:3412 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
