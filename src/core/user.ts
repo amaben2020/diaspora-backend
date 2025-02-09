@@ -50,3 +50,16 @@ export const updateUser = async (
 
   return user;
 };
+
+export const getUser = async (id: string) => {
+  const [user = undefined] = await db
+    .select({
+      displayName: usersTable.displayName,
+      email: usersTable.email,
+      id: usersTable.id,
+    })
+    .from(usersTable)
+    .where(eq(usersTable.id, id));
+
+  return user;
+};

@@ -52,3 +52,12 @@ export const updatePreference = async (
 
   return updatedPreference;
 };
+
+export const getPreference = async (id: string) => {
+  const [user = undefined] = await db
+    .select()
+    .from(preferencesTable)
+    .where(eq(preferencesTable.userId, id));
+
+  return user;
+};

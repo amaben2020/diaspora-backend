@@ -1,5 +1,5 @@
 import { paramSchema, userSchema } from '../../models/index.ts';
-import { createUser, updateUser } from '../../core/user.ts';
+import { createUser, getUser, updateUser } from '../../core/user.ts';
 import { tryCatchFn } from '../../utils/tryCatch.ts';
 
 export const userCreateController = tryCatchFn(async (req, res, next) => {
@@ -14,20 +14,6 @@ export const userCreateController = tryCatchFn(async (req, res, next) => {
   res.status(201).json(data);
 });
 
-// export const userUpdateController = tryCatchFn(async (req, res, next) => {
-//   const { id } = paramSchema.parse(req.params);
-
-//   const sanitizedBody = userSchema.parse(req.body);
-
-//   const data = await updateUser(sanitizedBody, id);
-
-//   console.log('data', data);
-
-//   if (!data) next(new Error('User not created'));
-
-//   res.status(204).json(data);
-// });
-
 export const userUpdateController = tryCatchFn(async (req, res, next) => {
   const { id } = paramSchema.parse(req.params);
   const sanitizedBody = userSchema.parse(req.body);
@@ -38,7 +24,18 @@ export const userUpdateController = tryCatchFn(async (req, res, next) => {
     return next(new Error('User not updated'));
   }
 
-  console.log('data', data);
+  res.status(200).json(data);
+});
 
-  res.status(200).json(data); // Send a valid response
+export const userGetController = tryCatchFn(async (req, res, next) => {
+  const { id } = paramSchema.parse(req.params);
+
+  const data = await getUser(id);
+
+  // TODO: add a method isUserExist
+  if (!data) {
+    return next(new Error('User not found'));
+  }
+
+  res.status(200).json(data);
 });

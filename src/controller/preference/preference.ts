@@ -1,6 +1,10 @@
 import { paramSchema, preferencesSchema } from '../../models/index.ts';
 import { tryCatchFn } from '../../utils/tryCatch.ts';
-import { createPreference, updatePreference } from '../../core/preference.ts';
+import {
+  createPreference,
+  getPreference,
+  updatePreference,
+} from '../../core/preference.ts';
 
 export const preferenceCreateController = tryCatchFn(async (req, res, next) => {
   const { userId, lookingToDate } = preferencesSchema.parse(req.body);
@@ -26,4 +30,17 @@ export const preferenceUpdateController = tryCatchFn(async (req, res, next) => {
   }
 
   res.status(201).json(data);
+});
+
+export const preferenceGetController = tryCatchFn(async (req, res, next) => {
+  const { id } = paramSchema.parse(req.params);
+
+  const data = await getPreference(id);
+
+  // TODO: add a method isUserExist
+  if (!data) {
+    return next(new Error('User not found'));
+  }
+
+  res.status(200).json(data);
 });
