@@ -1446,3 +1446,10 @@
 2025-02-09 21:33:34:3334 [35mhttp[39m: [35m::1 GET /api/v1/preference/user_2snhfeqOfWDLkOfMsJac2DisDgz 200 357 - 600.259 ms[39m
 [35m[39m
 2025-02-09 21:34:12:3412 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-09 22:02:10:210 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-10 12:27:26:2726 [35mhttp[39m: [35m::1 GET /api/v1/interests 200 1039 - 2217.153 ms[39m
+[35m[39m
+2025-02-10 12:27:30:2730 [35mhttp[39m: [35m::1 GET /api/v1/interests 200 1039 - 261.655 ms[39m
+[35m[39m
+2025-02-10 12:27:33:2733 [35mhttp[39m: [35m::1 GET /api/v1/interests 200 1039 - 239.827 ms[39m
+[35m[39m
