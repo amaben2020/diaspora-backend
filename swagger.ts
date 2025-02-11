@@ -7,7 +7,6 @@ const URL =
   process.env.NODE_ENV === 'development'
     ? 'http://localhost:8000'
     : process.env.BACKEND_URL!;
-console.log('swagger ===> url', URL);
 
 if (!URL) {
   throw new Error('BACKEND_URL is not defined in the environment variables.');
@@ -20,10 +19,8 @@ const doc = {
     description: 'Diaspora backend API documentation',
   },
   host: URL.replace(/https?:\/\//, ''),
-  // host: 'localhost:8000',
   basePath: '/api/v1',
   schemes: [URL.startsWith('https') ? 'https' : 'http'],
-  // schemes: [],
   consumes: ['application/json'],
   produces: ['application/json'],
   tags: [
