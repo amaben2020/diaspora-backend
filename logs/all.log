@@ -1453,3 +1453,4 @@
 [35m[39m
 2025-02-10 12:27:33:2733 [35mhttp[39m: [35m::1 GET /api/v1/interests 200 1039 - 239.827 ms[39m
 [35m[39m
+2025-02-10 14:26:20:2620 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
