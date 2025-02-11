@@ -3,17 +3,19 @@
   "info": {
     "version": "1.0.0",
     "title": "Diaspora",
-    "description": "Diaspora backend API documentation "
+    "description": "Diaspora backend API documentation"
   },
-  "host": "undefined/api/v1",
-  "basePath": "",
+  "host": "localhost:8000",
+  "basePath": "/api/v1",
   "tags": [
     {
-      "name": "",
-      "description": ""
+      "name": "Auth",
+      "description": "Authentication related endpoints"
     }
   ],
-  "schemes": [],
+  "schemes": [
+    "http"
+  ],
   "securityDefinitions": {
     "apiKeyAuth": {
       "type": "apiKey",
@@ -22,6 +24,12 @@
       "description": "Bearer token for authentication. Please type in 'Bearer' followed by a space and then the token."
     }
   },
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
   "paths": {
     "/protected-auth-required": {
       "get": {
@@ -106,6 +114,16 @@
             "type": "string"
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "description": "",
         "responses": {
           "200": {
             "description": "OK"

@@ -63,3 +63,9 @@ export const getUser = async (id: string) => {
 
   return user;
 };
+
+export const getUsers = async () => {
+  const user = await db.select().from(usersTable);
+
+  return user;
+};

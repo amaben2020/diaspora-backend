@@ -1,5 +1,5 @@
 import { paramSchema, userSchema } from '../../models/index.ts';
-import { createUser, getUser, updateUser } from '../../core/user.ts';
+import { createUser, getUser, getUsers, updateUser } from '../../core/user.ts';
 import { tryCatchFn } from '../../utils/tryCatch.ts';
 
 export const userCreateController = tryCatchFn(async (req, res, next) => {
@@ -31,6 +31,17 @@ export const userGetController = tryCatchFn(async (req, res, next) => {
   const { id } = paramSchema.parse(req.params);
 
   const data = await getUser(id);
+
+  // TODO: add a method isUserExist
+  if (!data) {
+    return next(new Error('User not found'));
+  }
+
+  res.status(200).json(data);
+});
+
+export const userGetsController = tryCatchFn(async (req, res, next) => {
+  const data = await getUsers();
 
   // TODO: add a method isUserExist
   if (!data) {
