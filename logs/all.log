@@ -1557,3 +1557,4 @@
 [35m[39m
 2025-02-16 17:26:03:263 [35mhttp[39m: [35m::1 POST /api/v1/location 201 157 - 1482.350 ms[39m
 [35m[39m
+2025-02-16 17:27:10:2710 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
