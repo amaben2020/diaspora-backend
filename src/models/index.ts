@@ -45,3 +45,9 @@ export const paramSchema = z.object({
   id: z.string(),
   userId: z.string().optional(),
 });
+
+export const locationSchema = z.object({
+  userId: z.string(),
+  latitude: z.string(),
+  longitude: z.string(),
+});

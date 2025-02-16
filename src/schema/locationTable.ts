@@ -5,11 +5,11 @@ import {
   timestamp,
   uniqueIndex,
 } from 'drizzle-orm/pg-core';
-import { usersTable } from './usersTable';
+import { usersTable } from './usersTable.ts';
 import { relations } from 'drizzle-orm';
 
 export const locationsTable = pgTable(
-  'locations',
+  'location',
   {
     id: serial('id').primaryKey(),
     userId: text('user_id')

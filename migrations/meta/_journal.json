@@ -78,6 +78,13 @@
       "when": 1738969198460,
       "tag": "0010_heavy_strong_guy",
       "breakpoints": true
+    },
+    {
+      "idx": 11,
+      "version": "7",
+      "when": 1739718657721,
+      "tag": "0011_large_robin_chapel",
+      "breakpoints": true
     }
   ]
 }
