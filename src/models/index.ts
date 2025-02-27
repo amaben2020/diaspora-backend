@@ -11,7 +11,6 @@ export const userSchema = z.object({
     .optional(),
   verified: z.boolean().default(false),
   showGender: z.boolean().default(false),
-  onlineStatus: z.boolean().default(false),
   lastLogin: z.string().datetime().optional(),
   subscriptionType: z.string().max(20).default('free'),
   phone: z.string().max(11).optional(),

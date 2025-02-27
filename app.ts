@@ -11,11 +11,12 @@ import router from './src/routes/index.ts';
 import { morganMiddleware } from './src/middleware/morgan.ts';
 import { clerkMiddleware } from '@clerk/express';
 import swaggerUi from 'swagger-ui-express';
-
+import http from 'http';
 import fs from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { logger } from './src/utils/logger.ts';
+import { wss } from './websocket.ts';
 
 dotenv.config();
 
@@ -98,6 +99,13 @@ app.use(
     });
   },
 );
+const server = http.createServer(app);
+// Attach WebSocket to the same server
+server.on('upgrade', (request, socket, head) => {
+  wss.handleUpgrade(request, socket, head, (ws) => {
+    wss.emit('connection', ws, request);
+  });
+});
 
 const PORT = 8000;
 

@@ -15,7 +15,6 @@ export const usersTable = pgTable('users', {
   birthday: date('birthday'),
   verified: boolean('verified').default(false),
   showGender: boolean('show_gender').default(false),
-  onlineStatus: boolean('online_status').default(false),
   lastLogin: timestamp('last_login', { withTimezone: true }),
   subscriptionType: varchar('subscription_type', { length: 20 }).default(
     'free',
