@@ -65,15 +65,33 @@ export const getUser = async (id: string) => {
 };
 
 export const getUsers = async () => {
-  const users = await db
-    .select()
+  const usersWithImages = await db
+    .select({
+      user: usersTable,
+      imageUrl: imagesTable.imageUrl,
+      order: imagesTable.order,
+      onlineStatus: userActivityTable.onlineStatus,
+    })
     .from(usersTable)
-    .leftJoin(userActivityTable, eq(usersTable.id, userActivityTable.userId))
-    .leftJoin(imagesTable, eq(usersTable.id, imagesTable.userId));
+    .leftJoin(imagesTable, eq(usersTable.id, imagesTable.userId))
+    .leftJoin(userActivityTable, eq(usersTable.id, userActivityTable.userId));
 
-  return users.map((elem) => ({
-    ...elem.users,
-    ...elem.images,
-    ...elem.user_activity,
-  }));
+  // Efficiently group images into an array per user
+  const userMap = new Map();
+
+  usersWithImages.forEach(({ user, onlineStatus, imageUrl, order }) => {
+    if (!userMap.has(user.id)) {
+      userMap.set(user.id, {
+        ...user,
+        onlineStatus,
+        images: [],
+      });
+    }
+
+    if (imageUrl) {
+      userMap.get(user.id).images.push({ imageUrl, order });
+    }
+  });
+
+  return Array.from(userMap.values());
 };

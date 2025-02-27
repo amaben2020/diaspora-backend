@@ -2,6 +2,9 @@ import { paramSchema, userSchema } from '../../models/index.ts';
 import { createUser, getUser, getUsers, updateUser } from '../../core/user.ts';
 import { tryCatchFn } from '../../utils/tryCatch.ts';
 
+import { redisClient } from '../../utils/redis.ts';
+import { logger } from '../../utils/logger.ts';
+
 export const userCreateController = tryCatchFn(async (req, res, next) => {
   const { clerkId, phone } = userSchema.parse(req.body);
 
@@ -42,15 +45,28 @@ export const userGetController = tryCatchFn(async (req, res, next) => {
 });
 
 export const userGetsController = tryCatchFn(async (req, res, next) => {
-  const data = await getUsers();
-
-  console.log(data);
-
   // TODO: add a method isUserExist and cache with redis
-  if (!data) {
-    res.status(401).json({ message: 'Not Found' });
-    return next(new Error('User not found'));
+  const users = await getUsers();
+
+  // Check cache first
+  const cachedUsers = await redisClient.get('all-users');
+
+  if (!cachedUsers) {
+    logger.info('Cache: false');
+    res.json({ cache: false, users });
   }
 
-  res.status(200).json(data);
+  if (cachedUsers) {
+    logger.info('Cache: true');
+    res.json({ cache: true, users: JSON.parse(cachedUsers) });
+  }
+
+  if (!users) {
+    logger.error('Users not found');
+    res.status(404).json({ error: 'Users not found' });
+    next(new Error('User not found'));
+  }
+
+  // Store in Redis (expire in 1 hour)
+  await redisClient.set('all-users', JSON.stringify(users), 3600);
 });

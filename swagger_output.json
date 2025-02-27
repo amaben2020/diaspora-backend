@@ -215,7 +215,7 @@
                 "userId": {
                   "example": "any"
                 },
-                "imageUrl": {
+                "images": {
                   "example": "any"
                 }
               }
