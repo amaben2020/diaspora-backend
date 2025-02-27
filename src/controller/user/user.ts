@@ -44,8 +44,11 @@ export const userGetController = tryCatchFn(async (req, res, next) => {
 export const userGetsController = tryCatchFn(async (req, res, next) => {
   const data = await getUsers();
 
+  console.log(data);
+
   // TODO: add a method isUserExist
   if (!data) {
+    res.status(401).json({ message: 'Not Found' });
     return next(new Error('User not found'));
   }
 

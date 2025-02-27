@@ -3,6 +3,8 @@ import { db } from '../db.ts';
 import { usersTable } from '../schema/usersTable.ts';
 import type { userSchema } from '../models/index.ts';
 import { eq } from 'drizzle-orm';
+import { userActivityTable } from '../schema/userActivityTable.ts';
+import { imagesTable } from '../schema/imagesTable.ts';
 
 export const createUser = async (clerkId: string, phone?: string) => {
   const [user = undefined] = await db
@@ -22,7 +24,6 @@ export const updateUser = async (
 ) => {
   const {
     birthday,
-    onlineStatus,
     gender,
     email,
     lastLogin,
@@ -36,7 +37,6 @@ export const updateUser = async (
     .update(usersTable)
     .set({
       birthday,
-      onlineStatus,
       gender,
       email,
       lastLogin: lastLogin ? new Date(lastLogin) : null,
@@ -65,7 +65,11 @@ export const getUser = async (id: string) => {
 };
 
 export const getUsers = async () => {
-  const user = await db.select().from(usersTable);
+  const user = await db
+    .select()
+    .from(usersTable)
+    .leftJoin(userActivityTable, eq(usersTable.id, userActivityTable.userId))
+    .leftJoin(imagesTable, eq(usersTable.id, imagesTable.userId));
 
   return user;
 };
