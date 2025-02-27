@@ -30,6 +30,7 @@ export const userUpdateController = tryCatchFn(async (req, res, next) => {
 export const userGetController = tryCatchFn(async (req, res, next) => {
   const { id } = paramSchema.parse(req.params);
 
+  // TODO: join with location
   const data = await getUser(id);
 
   // TODO: add a method isUserExist
