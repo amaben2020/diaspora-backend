@@ -1851,3 +1851,4 @@
 2025-02-27 17:37:08:378 [32minfo[39m: [32mCache: true[39m
 2025-02-27 17:37:08:378 [35mhttp[39m: [35m::1 GET /api/v1/users 200 1787 - 2112.755 ms[39m
 [35m[39m
+2025-02-27 17:37:38:3738 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
