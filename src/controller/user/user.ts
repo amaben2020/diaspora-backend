@@ -46,7 +46,7 @@ export const userGetsController = tryCatchFn(async (req, res, next) => {
 
   console.log(data);
 
-  // TODO: add a method isUserExist
+  // TODO: add a method isUserExist and cache with redis
   if (!data) {
     res.status(401).json({ message: 'Not Found' });
     return next(new Error('User not found'));

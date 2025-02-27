@@ -65,11 +65,15 @@ export const getUser = async (id: string) => {
 };
 
 export const getUsers = async () => {
-  const user = await db
+  const users = await db
     .select()
     .from(usersTable)
     .leftJoin(userActivityTable, eq(usersTable.id, userActivityTable.userId))
     .leftJoin(imagesTable, eq(usersTable.id, imagesTable.userId));
 
-  return user;
+  return users.map((elem) => ({
+    ...elem.users,
+    ...elem.images,
+    ...elem.user_activity,
+  }));
 };
