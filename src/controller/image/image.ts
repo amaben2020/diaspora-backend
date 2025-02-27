@@ -42,22 +42,51 @@ export const getImageUploadUrlController = async (
 };
 
 // Save image URL to the database
-export const createImageUrlController = tryCatchFn(async (req, res, next) => {
-  const { userId, imageUrl } = req.body;
+// export const createImageUrlController = tryCatchFn(async (req, res, next) => {
+//   const { userId, imageUrl } = req.body;
 
-  if (!userId || !imageUrl) {
-    res.status(400).json({ error: 'Missing userId or imageUrl' });
-    return next(new Error('Missing userId or imageUrl'));
+//   if (!userId || !imageUrl) {
+//     res.status(400).json({ error: 'Missing userId or imageUrl' });
+//     return next(new Error('Missing userId or imageUrl'));
+//   }
+
+//   // Insert image URL into the database
+//   const insertedImage = await db
+//     .insert(imagesTable)
+//     .values({
+//       userId,
+//       imageUrl,
+//     })
+//     .returning();
+
+//   res.json(insertedImage);
+// });
+
+// Controller to add images for a user
+export const createImageUrlController = tryCatchFn(async (req, res, next) => {
+  const { userId, images } = req.body;
+
+  if (!userId || !images || !Array.isArray(images)) {
+    res
+      .status(400)
+      .json({ error: 'Missing userId or images, or images is not an array' });
+    return next(new Error('Invalid input'));
   }
 
-  // Insert image URL into the database
-  const insertedImage = await db
-    .insert(imagesTable)
-    .values({
-      userId,
-      imageUrl,
-    })
-    .returning();
+  // Insert each image URL into the database
+  const insertedImages = await Promise.all(
+    images.map(async (image) => {
+      const [insertedImage] = await db
+        .insert(imagesTable)
+        .values({
+          userId,
+          imageUrl: image.imageUrl,
+          order: image.order || 1, // Default order is 1
+        })
+        .returning();
+      return insertedImage;
+    }),
+  );
 
-  res.json(insertedImage);
+  res.json(insertedImages);
 });

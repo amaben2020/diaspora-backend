@@ -1686,3 +1686,19 @@
 [35m[39m
 2025-02-27 14:45:41:4541 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
 2025-02-27 14:46:00:460 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-27 14:58:44:5844 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-27 15:53:43:5343 [35mhttp[39m: [35m::1 POST /api/v1/images 200 224 - 5455.975 ms[39m
+[35m[39m
+2025-02-27 16:06:23:623 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-02-27 16:08:03:83 [35mhttp[39m: [35m::1 POST /api/v1/images 400 63 - 1270.407 ms[39m
+[35m[39m
+2025-02-27 16:08:18:818 [35mhttp[39m: [35m::1 POST /api/v1/images 400 63 - 4.061 ms[39m
+[35m[39m
+2025-02-27 16:08:19:819 [35mhttp[39m: [35m::1 POST /api/v1/images 400 63 - 0.820 ms[39m
+[35m[39m
+2025-02-27 16:08:25:825 [35mhttp[39m: [35m::1 POST /api/v1/images 400 63 - 2.886 ms[39m
+[35m[39m
+2025-02-27 16:08:59:859 [35mhttp[39m: [35m::1 POST /api/v1/images 500 136 - 2954.184 ms[39m
+[35m[39m
+2025-02-27 16:09:28:928 [35mhttp[39m: [35m::1 POST /api/v1/images 200 291 - 1096.791 ms[39m
+[35m[39m
