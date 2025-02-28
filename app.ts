@@ -11,13 +11,13 @@ import router from './src/routes/index.ts';
 import { morganMiddleware } from './src/middleware/morgan.ts';
 import { clerkMiddleware } from '@clerk/express';
 import swaggerUi from 'swagger-ui-express';
-import http from 'http';
+// import http from 'http';
 import fs from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { logger } from './src/utils/logger.ts';
 // import { wss } from './websocket.ts';
-import { Server } from 'socket.io';
+// import { Server } from 'socket.io';
 
 dotenv.config();
 
@@ -100,7 +100,7 @@ app.use(
     });
   },
 );
-const server = http.createServer(app);
+// const server = http.createServer(app);
 // Attach WebSocket to the same server
 // server.on('upgrade', (request, socket, head) => {
 //   wss.handleUpgrade(request, socket, head, (ws) => {
@@ -108,19 +108,19 @@ const server = http.createServer(app);
 //   });
 // });
 
-const io = new Server(server, {
-  cors: {
-    origin: '*',
-  },
-});
+// const io = new Server(server, {
+//   cors: {
+//     origin: '*',
+//   },
+// });
 
-io.on('connection', (socket) => {
-  console.log('A user connected:', socket.id);
+// io.on('connection', (socket) => {
+//   console.log('A user connected:', socket.id);
 
-  socket.on('disconnect', () => {
-    console.log('User disconnected:', socket.id);
-  });
-});
+//   socket.on('disconnect', () => {
+//     console.log('User disconnected:', socket.id);
+//   });
+// });
 
 const PORT = 8000;
 
