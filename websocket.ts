@@ -4,10 +4,10 @@ import { eq } from 'drizzle-orm';
 import { db } from './src/db.ts';
 import { userActivityTable } from './src/schema/userActivityTable.ts';
 
-const wss = new WebSocketServer({ port: 10000 });
+const wss = new WebSocketServer({ port: 8080 });
 
 wss.on('connection', (ws) => {
-  console.log('Client connected');
+  console.log('Client connected ☘️');
 
   ws.on('message', async (message) => {
     try {
