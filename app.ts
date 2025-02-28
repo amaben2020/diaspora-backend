@@ -100,7 +100,7 @@ app.use(
     });
   },
 );
-const server = http.createServer(app);
+// const server = http.createServer(app);
 // Attach WebSocket to the same server
 // server.on('upgrade', (request, socket, head) => {
 //   wss.handleUpgrade(request, socket, head, (ws) => {
@@ -108,21 +108,23 @@ const server = http.createServer(app);
 //   });
 // });
 
-const io = new Server(server, {
-  cors: {
-    origin: '*',
-  },
-});
+// const io = new Server(server, {
+//   cors: {
+//     origin: '*',
+//   },
+// });
 
-io.on('connection', (socket) => {
-  console.log('A user connected:', socket.id);
+// io.on('connection', (socket) => {
+//   console.log('A user connected:', socket.id);
 
-  socket.on('disconnect', () => {
-    console.log('User disconnected:', socket.id);
-  });
-});
+//   socket.on('disconnect', () => {
+//     console.log('User disconnected:', socket.id);
+//   });
+// });
 
-const PORT = process.env.PORT || 8001;
+const PORT = process.env.PORT || 8000;
+
+console.log('port====>', PORT);
 
 app.listen(PORT, () => {
   logger.info(`Server is running on http://localhost:${PORT}`);
