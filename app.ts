@@ -16,7 +16,8 @@ import fs from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { logger } from './src/utils/logger.ts';
-import { wss } from './websocket.ts';
+// import { wss } from './websocket.ts';
+import { Server } from 'socket.io';
 
 dotenv.config();
 
@@ -101,9 +102,23 @@ app.use(
 );
 const server = http.createServer(app);
 // Attach WebSocket to the same server
-server.on('upgrade', (request, socket, head) => {
-  wss.handleUpgrade(request, socket, head, (ws) => {
-    wss.emit('connection', ws, request);
+// server.on('upgrade', (request, socket, head) => {
+//   wss.handleUpgrade(request, socket, head, (ws) => {
+//     wss.emit('connection', ws, request);
+//   });
+// });
+
+const io = new Server(server, {
+  cors: {
+    origin: '*',
+  },
+});
+
+io.on('connection', (socket) => {
+  console.log('A user connected:', socket.id);
+
+  socket.on('disconnect', () => {
+    console.log('User disconnected:', socket.id);
   });
 });
 
