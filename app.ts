@@ -202,3 +202,12 @@ const PORT = process.env.PORT || 8000;
 server.listen(PORT, () => {
   logger.info(`Server is running on http://localhost:${PORT}`);
 });
+
+// Handle server shutdown gracefully
+process.on('SIGINT', () => {
+  logger.info('Shutting down server...');
+  server.close(() => {
+    logger.info('Server has been shut down.');
+    process.exit(0);
+  });
+});

@@ -66,12 +66,6 @@ import { Server } from 'http';
 export function setupWebSocket(server: Server) {
   const wss = new WebSocketServer({ server });
 
-  server.on('upgrade', (request, socket, head) => {
-    wss.handleUpgrade(request, socket, head, (ws) => {
-      wss.emit('connection', ws, request);
-    });
-  });
-
   wss.on('connection', (ws) => {
     console.log('Client connected');
 
@@ -79,7 +73,6 @@ export function setupWebSocket(server: Server) {
       try {
         const { userId, onlineStatus } = JSON.parse(message.toString());
 
-        // TODO: ensure other users can view online status
         // Update user activity in DB
         try {
           const [userOnlineStatus = undefined] = await db
