@@ -196,9 +196,10 @@ app.use(
 
 // Create HTTP server and attach WebSocket
 const server = http.createServer(app);
-const servers = createServer();
 
-setupWebSocket(servers); // Attach WebSocket to the server
+setupWebSocket(server); // ✅ Attach WebSocket to the Express server
+
+setupWebSocket(server); // Attach WebSocket to the server
 
 const PORT = process.env.PORT || 8000;
 server.listen(PORT, () => {
