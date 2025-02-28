@@ -132,6 +132,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { logger } from './src/utils/logger.ts';
 import { setupWebSocket } from './websocket.ts'; // Import WebSocket setup function
+import { createServer } from 'node:http';
 
 dotenv.config();
 
@@ -195,8 +196,9 @@ app.use(
 
 // Create HTTP server and attach WebSocket
 const server = http.createServer(app);
+const servers = createServer();
 
-setupWebSocket(server); // Attach WebSocket to the server
+setupWebSocket(servers); // Attach WebSocket to the server
 
 const PORT = process.env.PORT || 8000;
 server.listen(PORT, () => {
