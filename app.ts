@@ -126,7 +126,7 @@ const PORT = process.env.PORT || 8000;
 
 console.log('port====>', PORT);
 
-app.listen(PORT, () => {
+app.listen(8000, () => {
   logger.info(`Server is running on http://localhost:${PORT}`);
 });
 
