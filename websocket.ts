@@ -61,10 +61,10 @@ import { WebSocketServer } from 'ws';
 import { eq } from 'drizzle-orm';
 import { db } from './src/db.ts';
 import { userActivityTable } from './src/schema/userActivityTable.ts';
-import { createServer, Server } from 'http';
+import { Server } from 'http';
 
 export function setupWebSocket(server: Server) {
-  const wss = new WebSocketServer({ port: 8080 });
+  const wss = new WebSocketServer({ server }); // Attach to existing server
 
   wss.on('connection', (ws) => {
     console.log('Client connected');
@@ -113,5 +113,6 @@ export function setupWebSocket(server: Server) {
 
     ws.on('close', () => console.log('Client disconnected'));
   });
+
   console.log('WebSocket server is running');
 }
