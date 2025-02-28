@@ -113,6 +113,5 @@ export function setupWebSocket(server: Server) {
 
     ws.on('close', () => console.log('Client disconnected'));
   });
-
   console.log('WebSocket server is running');
 }
