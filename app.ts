@@ -68,7 +68,7 @@ app.use(
 // routes
 app.use('/api/v1', router);
 
-app.get('/api/test', (req, res) => {
+app.get('/api/v1/health', (req, res) => {
   res.json({
     status: 200,
     message: 'Running...',
