@@ -2,9 +2,10 @@ import type { z } from 'zod';
 import { db } from '../db.ts';
 import { usersTable } from '../schema/usersTable.ts';
 import type { userSchema } from '../models/index.ts';
-import { eq } from 'drizzle-orm';
+import { and, eq, not, notExists } from 'drizzle-orm';
 import { userActivityTable } from '../schema/userActivityTable.ts';
 import { imagesTable } from '../schema/imagesTable.ts';
+import { likesTable } from '../schema/likesTable.ts';
 
 export const createUser = async (clerkId: string, phone?: string) => {
   const [user = undefined] = await db
@@ -64,7 +65,7 @@ export const getUser = async (id: string) => {
   return user;
 };
 
-export const getUsers = async () => {
+export const getUsers = async (currentUserId: string) => {
   const usersWithImages = await db
     .select({
       user: usersTable,
@@ -74,7 +75,80 @@ export const getUsers = async () => {
     })
     .from(usersTable)
     .leftJoin(imagesTable, eq(usersTable.id, imagesTable.userId))
-    .leftJoin(userActivityTable, eq(usersTable.id, userActivityTable.userId));
+    .leftJoin(userActivityTable, eq(usersTable.id, userActivityTable.userId))
+    .where(
+      and(
+        // Exclude the current user
+        not(eq(usersTable.id, currentUserId)),
+        // Exclude users the current user has liked
+        notExists(
+          db
+            .select()
+            .from(likesTable)
+            .where(
+              and(
+                eq(likesTable.likerId, currentUserId),
+                eq(likesTable.likedId, usersTable.id),
+              ),
+            ),
+        ),
+        // Exclude users the current user has disliked
+        // notExists(
+        //   db
+        //     .select()
+        //     .from(dislikesTable)
+        //     .where(
+        //       and(
+        //         eq(dislikesTable.userId, currentUserId), // Ensure this matches your schema
+        //         eq(dislikesTable.dislikedId, usersTable.id), // Ensure this matches your schema
+        //       ),
+        //     ),
+        // ),
+      ),
+    );
+
+  // Log the query for debugging
+  console.log(
+    'Generated SQL Query:',
+    db
+      .select({
+        user: usersTable,
+        imageUrl: imagesTable.imageUrl,
+        order: imagesTable.order,
+        onlineStatus: userActivityTable.onlineStatus,
+      })
+      .from(usersTable)
+      .leftJoin(imagesTable, eq(usersTable.id, imagesTable.userId))
+      .leftJoin(userActivityTable, eq(usersTable.id, userActivityTable.userId))
+      .where(
+        and(
+          not(eq(usersTable.id, currentUserId)),
+          notExists(
+            db
+              .select()
+              .from(likesTable)
+              .where(
+                and(
+                  eq(likesTable.likerId, currentUserId),
+                  eq(likesTable.likedId, usersTable.id),
+                ),
+              ),
+          ),
+          // notExists(
+          //   db
+          //     .select()
+          //     .from(dislikesTable)
+          //     .where(
+          //       and(
+          //         eq(dislikesTable.userId, currentUserId),
+          //         eq(dislikesTable.dislikedId, usersTable.id),
+          //       ),
+          //     ),
+          // ),
+        ),
+      )
+      .toSQL(),
+  );
 
   // Efficiently group images into an array per user
   const userMap = new Map();

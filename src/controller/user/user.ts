@@ -46,7 +46,9 @@ export const userGetController = tryCatchFn(async (req, res, next) => {
 
 export const userGetsController = tryCatchFn(async (req, res, next) => {
   // TODO: add a method isUserExist and cache with redis
-  const users = await getUsers();
+
+  const currentUser = 'user_2sqXP056VpAlQlvRzgU44E3A8mj';
+  const users = await getUsers(currentUser);
 
   // Check cache first
   const cachedUsers = await redisClient.get('all-users');
