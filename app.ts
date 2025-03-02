@@ -238,7 +238,7 @@ const server = http.createServer(app);
 setupWebSocket(server); // ✅ Attach WebSocket to the Express server
 
 const PORT = process.env.PORT || 8000;
-console.log('Port ===> ', PORT);
+console.log(PORT);
 server.listen(8000, () => {
   logger.info(`Server is running on http://localhost:${PORT}`);
 });
