@@ -1,5 +1,5 @@
 import { pgTable, primaryKey, text, timestamp } from 'drizzle-orm/pg-core';
-import { usersTable } from './usersTable';
+import { usersTable } from './usersTable.ts';
 import { relations } from 'drizzle-orm';
 
 export const likesTable = pgTable(
