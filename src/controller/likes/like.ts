@@ -50,3 +50,24 @@ export const likeUserController = tryCatchFn(async (req, res, next) => {
 //       origin: "https://riggle.onrender.com",
 //       methods: ["GET", "POST"]
 //   }
+
+// Dislike a user (just prevent from showing again)
+// router.post('/dislike', async (req, res) => {
+//   try {
+//     const { likerId, likedId } = req.body;
+//     if (!likerId || !likedId) {
+//       return res.status(400).json({ message: 'Missing user IDs' });
+//     }
+
+//     // Remove like if it exists (optional)
+//     await db.delete(likesTable).where(
+//       and(eq(likesTable.likerId, likerId), eq(likesTable.likedId, likedId))
+//     );
+
+//     res.json({ message: 'User disliked successfully' });
+//   } catch (error) {
+//     res.status(500).json({ message: 'Internal Server Error', error });
+//   }
+// });
+
+// export default router;
