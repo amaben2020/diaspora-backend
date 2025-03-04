@@ -6,6 +6,8 @@ import { and, eq, not, notExists } from 'drizzle-orm';
 import { userActivityTable } from '../schema/userActivityTable.ts';
 import { imagesTable } from '../schema/imagesTable.ts';
 import { likesTable } from '../schema/likesTable.ts';
+import { locationsTable } from '../schema/locationTable.ts';
+import { getTravelTimeFromAPI } from '../utils/index.ts';
 
 export const createUser = async (clerkId: string, phone?: string) => {
   const [user = undefined] = await db
@@ -66,22 +68,24 @@ export const getUser = async (id: string) => {
 };
 
 export const getUsers = async (currentUserId: string) => {
-  const usersWithImages = await db
+  const users = await db
     .select({
       user: usersTable,
       imageUrl: imagesTable.imageUrl,
       order: imagesTable.order,
       onlineStatus: userActivityTable.onlineStatus,
+      latitude: locationsTable.latitude,
+      longitude: locationsTable.longitude,
     })
     .from(usersTable)
+    .leftJoin(locationsTable, eq(usersTable.id, locationsTable.userId))
     .leftJoin(imagesTable, eq(usersTable.id, imagesTable.userId))
     .leftJoin(userActivityTable, eq(usersTable.id, userActivityTable.userId))
     .where(
       and(
-        // Exclude the current user
         not(eq(usersTable.id, currentUserId)),
-        // Exclude users the current user has liked
         notExists(
+          //TODO: Extract to subquery
           db
             .select()
             .from(likesTable)
@@ -92,80 +96,48 @@ export const getUsers = async (currentUserId: string) => {
               ),
             ),
         ),
-        // Exclude users the current user has disliked
-        // notExists(
-        //   db
-        //     .select()
-        //     .from(dislikesTable)
-        //     .where(
-        //       and(
-        //         eq(dislikesTable.userId, currentUserId), // Ensure this matches your schema
-        //         eq(dislikesTable.dislikedId, usersTable.id), // Ensure this matches your schema
-        //       ),
-        //     ),
-        // ),
       ),
     );
 
-  // Log the query for debugging
-  console.log(
-    'Generated SQL Query:',
-    db
-      .select({
-        user: usersTable,
-        imageUrl: imagesTable.imageUrl,
-        order: imagesTable.order,
-        onlineStatus: userActivityTable.onlineStatus,
-      })
-      .from(usersTable)
-      .leftJoin(imagesTable, eq(usersTable.id, imagesTable.userId))
-      .leftJoin(userActivityTable, eq(usersTable.id, userActivityTable.userId))
-      .where(
-        and(
-          not(eq(usersTable.id, currentUserId)),
-          notExists(
-            db
-              .select()
-              .from(likesTable)
-              .where(
-                and(
-                  eq(likesTable.likerId, currentUserId),
-                  eq(likesTable.likedId, usersTable.id),
-                ),
-              ),
-          ),
-          // notExists(
-          //   db
-          //     .select()
-          //     .from(dislikesTable)
-          //     .where(
-          //       and(
-          //         eq(dislikesTable.userId, currentUserId),
-          //         eq(dislikesTable.dislikedId, usersTable.id),
-          //       ),
-          //     ),
-          // ),
-        ),
-      )
-      .toSQL(),
+  // Fetch the current user's location
+  const [currentUserLocation = undefined] = await db
+    .select({
+      latitude: locationsTable.latitude,
+      longitude: locationsTable.longitude,
+    })
+    .from(locationsTable)
+    .where(eq(locationsTable.userId, currentUserId))
+    .limit(1);
+
+  if (!currentUserLocation) {
+    throw new Error('Current user location not found');
+  }
+
+  const { latitude: lat1, longitude: lng1 } = currentUserLocation;
+
+  // Process users with async distance calculation
+  const usersWithDistances = await Promise.all(
+    users.map(
+      async ({ user, onlineStatus, imageUrl, order, latitude, longitude }) => {
+        if (!latitude || !longitude) return null;
+
+        const { travelTimeMinutes, distanceKm } = await getTravelTimeFromAPI(
+          parseFloat(lat1),
+          parseFloat(lng1),
+          parseFloat(latitude),
+          parseFloat(longitude),
+        );
+
+        return {
+          ...user,
+          onlineStatus,
+          distanceKm,
+          travelTimeMinutes,
+          images: imageUrl ? [{ imageUrl, order }] : [],
+        };
+      },
+    ),
   );
 
-  // Efficiently group images into an array per user
-  const userMap = new Map();
-
-  usersWithImages.forEach(({ user, onlineStatus, imageUrl, order }) => {
-    if (!userMap.has(user.id)) {
-      userMap.set(user.id, {
-        ...user,
-        onlineStatus,
-        images: [],
-      });
-    }
-
-    if (imageUrl) {
-      userMap.get(user.id).images.push({ imageUrl, order });
-    }
-  });
-
-  return Array.from(userMap.values());
+  return usersWithDistances.filter(Boolean);
 };

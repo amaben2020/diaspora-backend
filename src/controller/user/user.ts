@@ -53,7 +53,7 @@ export const userGetsController = tryCatchFn(async (req, res, next) => {
   const users = await getUsers(currentUser);
 
   // Check cache first
-  const cachedUsers = await redisClient.get('all-users');
+  const cachedUsers = await redisClient.get('all-users-with-location');
 
   if (!cachedUsers) {
     logger.info('Cache: false');
@@ -71,6 +71,10 @@ export const userGetsController = tryCatchFn(async (req, res, next) => {
     next(new Error('User not found'));
   }
 
-  // Store in Redis (expire in 1 hour)
-  await redisClient.set('all-users', JSON.stringify(users), 3600);
+  // Store in Redis (expire in 30mins due to stale data)
+  await redisClient.set(
+    'all-users-with-location',
+    JSON.stringify(users),
+    3600 / 2,
+  );
 });
