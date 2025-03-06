@@ -3078,3 +3078,4 @@
 2025-03-06 15:58:25:5825 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=[1,6378.14]&age=[18,56] 200 2816 - 268.264 ms[39m
 [35m[39m
 2025-03-06 15:58:32:5832 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
+2025-03-06 15:58:39:5839 [32minfo[39m: [32mServer is running on http://localhost:8000[39m
