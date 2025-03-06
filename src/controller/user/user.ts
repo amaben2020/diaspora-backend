@@ -44,26 +44,62 @@ export const userGetController = tryCatchFn(async (req, res, next) => {
   res.status(200).json(data);
 });
 
-export const userGetsController = tryCatchFn(async (req, res) => {
-  const { userId, radius } = req.query;
+export const userGetsController = tryCatchFn(async (req, res, next) => {
+  try {
+    const { userId, radius, age } = req.query;
 
-  const cacheKey = `all-users-with-locations-${userId}-${radius}`;
-  const cachedUsers = await redisClient.get(cacheKey);
+    const cacheKey = `all-users-with-locations-${userId}-${radius}-${age}`;
+    const cachedUsers = await redisClient.get(cacheKey);
 
-  if (cachedUsers) {
-    logger.info('Cache hit');
-    res.json({ cache: true, users: JSON.parse(cachedUsers) });
+    if (cachedUsers) {
+      logger.info('Cache hit');
+      res.json({ cache: true, users: JSON.parse(cachedUsers) });
+    }
+
+    if (!userId)
+      res.status(400).json({ status: 'fail', message: 'User ID is required' });
+
+    // Parse radius and age into number arrays
+    const parsedRadius = Array.isArray(radius)
+      ? radius.map(Number)
+      : radius
+        ? JSON.parse(radius as string).map(Number)
+        : undefined;
+
+    const parsedAge = Array.isArray(age)
+      ? age.map(Number)
+      : age
+        ? JSON.parse(age as string).map(Number)
+        : undefined;
+
+    if (parsedRadius[0] < 0 || parsedRadius[1] > 6378.14) {
+      next(Error('Something went wrong'));
+      res.status(409).json({
+        status: 'unprocessable entity',
+        message: 'Invalid distance range',
+      });
+    }
+
+    if (parsedAge[0] < 18 || parsedAge[1] > 199) {
+      res.status(409).json({
+        status: 'Invalid',
+        message: 'Invalid age range',
+      });
+    }
+
+    if (parsedRadius?.some(isNaN) || parsedAge?.some(isNaN)) {
+      res
+        .status(400)
+        .json({ status: 'fail', message: 'Invalid number format' });
+    }
+
+    const users = await getUsers(String(userId), parsedRadius, parsedAge);
+
+    // Store in Redis with 30-minute expiry
+    await redisClient.set(cacheKey, JSON.stringify(users), 1800);
+    res.json({ cache: false, users });
+  } catch (error) {
+    if (error instanceof Error)
+      res.status(500).json({ status: 'fail', message: error.message });
   }
-
-  logger.info('Cache miss. Fetching fresh data...');
-  const users = await getUsers(String(userId), +radius!);
-
-  if (!users) {
-    logger.error('Users not found');
-    res.status(404).json({ error: 'Users not found' });
-  }
-
-  // Store in Redis with 30-minute expiry
-  await redisClient.set(cacheKey, JSON.stringify(users), 1800);
-  res.json({ cache: false, users });
 });

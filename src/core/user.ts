@@ -67,11 +67,15 @@ export const getUser = async (id: string) => {
   return user;
 };
 
-// TODO: get a radius i.e 10km away and update location
-export const getUsers = async (currentUserId: string, radius: number) => {
+export const getUsers = async (
+  currentUserId: string,
+  radiusRange: number[], // [minRadius, maxRadius]
+  ageRange: number[], // [minAge, maxAge]
+) => {
   const users = await db
     .select({
       user: usersTable,
+      birthday: usersTable.birthday,
       imageUrl: imagesTable.imageUrl,
       order: imagesTable.order,
       onlineStatus: userActivityTable.onlineStatus,
@@ -100,7 +104,7 @@ export const getUsers = async (currentUserId: string, radius: number) => {
     );
 
   // Fetch the current user's location
-  const [currentUserLocation = undefined] = await db
+  const [currentUserLocation] = await db
     .select({
       latitude: locationsTable.latitude,
       longitude: locationsTable.longitude,
@@ -115,6 +119,13 @@ export const getUsers = async (currentUserId: string, radius: number) => {
 
   const { latitude: lat1, longitude: lng1 } = currentUserLocation;
 
+  // Helper function to calculate age
+  const calculateAge = (birthday: string | null) => {
+    if (!birthday) return null;
+    const birthYear = new Date(birthday).getFullYear();
+    return new Date().getFullYear() - birthYear;
+  };
+
   // Use a Map to group users by their id
   const userMap = new Map();
 
@@ -125,8 +136,12 @@ export const getUsers = async (currentUserId: string, radius: number) => {
     order,
     latitude,
     longitude,
+    birthday,
   } of users) {
-    if (!latitude || !longitude) continue;
+    if (!latitude || !longitude || !birthday) continue; // Ensure required fields exist
+
+    const age = calculateAge(birthday);
+    if (age === null || age < ageRange[0] || age > ageRange[1]) continue; // Age filter
 
     if (!userMap.has(user.id)) {
       userMap.set(user.id, {
@@ -134,17 +149,17 @@ export const getUsers = async (currentUserId: string, radius: number) => {
         onlineStatus,
         latitude,
         longitude,
-        images: [], // Initialize an empty array for images
+        age,
+        images: [],
       });
     }
 
-    // Add the image to the user's images array if it exists
     if (imageUrl) {
       userMap.get(user.id).images.push({ imageUrl, order });
     }
   }
 
-  // Process users with async distance calculation
+  // Fetch distances using Google Maps API
   const usersWithDistances = await Promise.all(
     Array.from(userMap.values()).map(async (user) => {
       try {
@@ -161,15 +176,17 @@ export const getUsers = async (currentUserId: string, radius: number) => {
           travelTimeMinutes,
         };
       } catch (error) {
-        console.log(error);
+        console.error('Error fetching distance:', error);
         return null;
       }
     }),
   );
 
-  // TODO: filter by location distance
-
+  // Filter users by travel distance
   return usersWithDistances
     .filter(Boolean)
-    .filter((user) => user.distanceKm <= radius);
+    .filter(
+      (user) =>
+        user.distanceKm >= radiusRange[0] && user.distanceKm <= radiusRange[1],
+    );
 };
