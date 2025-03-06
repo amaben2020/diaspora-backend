@@ -12,6 +12,6 @@ const router = Router();
 router.route('/user').post(clerkMiddleware(), userCreateController);
 router.route('/user/:id').patch(clerkMiddleware(), userUpdateController);
 router.route('/user/:id').get(clerkMiddleware(), userGetController);
-router.route('/users/:id').get(clerkMiddleware(), userGetsController);
+router.route('/users').get(clerkMiddleware(), userGetsController);
 
 export default router;

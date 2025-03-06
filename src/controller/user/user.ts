@@ -44,37 +44,26 @@ export const userGetController = tryCatchFn(async (req, res, next) => {
   res.status(200).json(data);
 });
 
-export const userGetsController = tryCatchFn(async (req, res, next) => {
-  // TODO: add a method isUserExist and cache with redis
+export const userGetsController = tryCatchFn(async (req, res) => {
+  const { userId, radius } = req.query;
 
-  const currentUser = req.params.id;
-
-  // const currentUser = 'user_2sqXP056VpAlQlvRzgU44E3A8mj';
-  const users = await getUsers(currentUser);
-
-  // Check cache first
-  const cachedUsers = await redisClient.get('all-users-with-locationss');
-
-  if (!cachedUsers) {
-    logger.info('Cache: false');
-    res.json({ cache: false, users });
-  }
+  const cacheKey = `all-users-with-locations-${userId}-${radius}`;
+  const cachedUsers = await redisClient.get(cacheKey);
 
   if (cachedUsers) {
-    logger.info('Cache: true');
+    logger.info('Cache hit');
     res.json({ cache: true, users: JSON.parse(cachedUsers) });
   }
+
+  logger.info('Cache miss. Fetching fresh data...');
+  const users = await getUsers(String(userId), +radius!);
 
   if (!users) {
     logger.error('Users not found');
     res.status(404).json({ error: 'Users not found' });
-    next(new Error('User not found'));
   }
 
-  // Store in Redis (expire in 30mins due to stale data)
-  await redisClient.set(
-    'all-users-with-locationss',
-    JSON.stringify(users),
-    3600 / 2,
-  );
+  // Store in Redis with 30-minute expiry
+  await redisClient.set(cacheKey, JSON.stringify(users), 1800);
+  res.json({ cache: false, users });
 });

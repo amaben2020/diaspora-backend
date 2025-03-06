@@ -67,92 +67,8 @@ export const getUser = async (id: string) => {
   return user;
 };
 
-// export const getUsers = async (currentUserId: string) => {
-//   const users = await db
-//     .select({
-//       user: usersTable,
-//       imageUrl: imagesTable.imageUrl,
-//       order: imagesTable.order,
-//       onlineStatus: userActivityTable.onlineStatus,
-//       latitude: locationsTable.latitude,
-//       longitude: locationsTable.longitude,
-//     })
-//     .from(usersTable)
-//     .leftJoin(locationsTable, eq(usersTable.id, locationsTable.userId))
-//     .leftJoin(imagesTable, eq(usersTable.id, imagesTable.userId))
-//     .leftJoin(userActivityTable, eq(usersTable.id, userActivityTable.userId))
-//     .where(
-//       and(
-//         not(eq(usersTable.id, currentUserId)),
-//         notExists(
-//           //TODO: Extract to subquery
-//           db
-//             .select()
-//             .from(likesTable)
-//             .where(
-//               and(
-//                 eq(likesTable.likerId, currentUserId),
-//                 eq(likesTable.likedId, usersTable.id),
-//               ),
-//             ),
-//         ),
-//       ),
-//     );
-
-//   // Fetch the current user's location
-//   const [currentUserLocation = undefined] = await db
-//     .select({
-//       latitude: locationsTable.latitude,
-//       longitude: locationsTable.longitude,
-//     })
-//     .from(locationsTable)
-//     .where(eq(locationsTable.userId, currentUserId))
-//     .limit(1);
-
-//   if (!currentUserLocation) {
-//     throw new Error('Current user location not found');
-//   }
-
-//   const { latitude: lat1, longitude: lng1 } = currentUserLocation;
-//   const imgs = [];
-//   // Process users with async distance calculation
-
-//   console.log('Users', users);
-
-//   const usersWithDistances = await Promise.all(
-//     users.map(
-//       async ({ user, onlineStatus, imageUrl, order, latitude, longitude }) => {
-//         if (!latitude || !longitude) return null;
-//         try {
-//           const { travelTimeMinutes, distanceKm } = await getTravelTimeFromAPI(
-//             parseFloat(lat1),
-//             parseFloat(lng1),
-//             parseFloat(latitude),
-//             parseFloat(longitude),
-//           );
-//           if (imageUrl) {
-//             console.log('Image Url ===>', imageUrl, user.id);
-//             imgs.push({ imageUrl, order });
-//           }
-
-//           return {
-//             ...user,
-//             onlineStatus,
-//             distanceKm,
-//             travelTimeMinutes,
-//             images: imgs ?? [],
-//           };
-//         } catch (error) {
-//           console.log(error);
-//         }
-//       },
-//     ),
-//   );
-
-//   return usersWithDistances.filter(Boolean);
-// };
-
-export const getUsers = async (currentUserId: string) => {
+// TODO: get a radius i.e 10km away and update location
+export const getUsers = async (currentUserId: string, radius: number) => {
   const users = await db
     .select({
       user: usersTable,
@@ -251,22 +167,9 @@ export const getUsers = async (currentUserId: string) => {
     }),
   );
 
-  return usersWithDistances.filter(Boolean);
+  // TODO: filter by location distance
+
+  return usersWithDistances
+    .filter(Boolean)
+    .filter((user) => user.distanceKm <= radius);
 };
-
-// Efficiently group images into an array per user
-// const userMap = new Map();
-
-// usersWithImages.forEach(({ user, onlineStatus, imageUrl, order }) => {
-//   if (!userMap.has(user.id)) {
-//     userMap.set(user.id, {
-//       ...user,
-//       onlineStatus,
-//       images: [],
-//     });
-//   }
-
-//   if (imageUrl) {
-//     userMap.get(user.id).images.push({ imageUrl, order });
-//   }
-// });
