@@ -92,6 +92,13 @@
       "when": 1740663960138,
       "tag": "0012_calm_sway",
       "breakpoints": true
+    },
+    {
+      "idx": 13,
+      "version": "7",
+      "when": 1741275960227,
+      "tag": "0013_same_tarantula",
+      "breakpoints": true
     }
   ]
 }

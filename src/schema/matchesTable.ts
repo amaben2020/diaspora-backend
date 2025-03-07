@@ -5,15 +5,15 @@ import {
   timestamp,
   varchar,
 } from 'drizzle-orm/pg-core';
-import { usersTable } from './usersTable';
+import { usersTable } from './usersTable.ts';
 import { relations } from 'drizzle-orm';
 
 export const matchesTable = pgTable(
   'matches',
   {
-    user1Id: text('user1_id')
-      .notNull()
-      .references(() => usersTable.id, { onDelete: 'cascade' }),
+    user1Id: text('user1_id').references(() => usersTable.id, {
+      onDelete: 'cascade',
+    }),
     user2Id: text('user2_id')
       .notNull()
       .references(() => usersTable.id, { onDelete: 'cascade' }),

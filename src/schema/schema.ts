@@ -7,6 +7,7 @@ export { profileViewsTable } from './profileViewsTable.ts';
 export { userActivityTable } from './userActivityTable.ts';
 export { videoCallsTable } from './videoCallsTable.ts';
 export { likesTable } from './likesTable.ts';
+export { dislikesTable } from './dislikeTable.ts';
 export { locationsTable } from './locationTable.ts';
 export { usersTable } from './usersTable.ts';
 export { chatsTable } from './chatTable.ts';

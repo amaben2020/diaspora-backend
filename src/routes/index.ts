@@ -6,6 +6,8 @@ import preferenceRouter from './preference.ts';
 import imagesRouter from './image.ts';
 import locationRouter from './location.ts';
 import likesRouter from './likes.ts';
+import dislikesRouter from './dislikes.ts';
+import matchesRouter from './matches.ts';
 
 const router = express.Router();
 
@@ -17,5 +19,7 @@ router.use('', preferenceRouter);
 router.use('', imagesRouter);
 router.use('', locationRouter);
 router.use('', likesRouter);
+router.use('', dislikesRouter);
+router.use('', matchesRouter);
 
 export default router;
