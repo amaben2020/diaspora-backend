@@ -8,6 +8,7 @@ import { imagesTable } from '../schema/imagesTable.ts';
 import { likesTable } from '../schema/likesTable.ts';
 import { locationsTable } from '../schema/locationTable.ts';
 import { getTravelTimeFromAPI } from '../utils/index.ts';
+import { dislikesTable } from '../schema/dislikeTable.ts';
 
 export const createUser = async (clerkId: string, phone?: string) => {
   const [user = undefined] = await db
@@ -100,6 +101,17 @@ export const getUsers = async (
               ),
             ),
         ),
+        notExists(
+          db
+            .select()
+            .from(dislikesTable)
+            .where(
+              and(
+                eq(dislikesTable.dislikerId, currentUserId),
+                eq(dislikesTable.dislikedId, usersTable.id),
+              ),
+            ),
+        ), // Exclude disliked users
       ),
     );
 
