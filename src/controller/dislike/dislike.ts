@@ -5,12 +5,13 @@ import { usersTable } from '../../schema/usersTable.ts';
 import { dislikesTable } from '../../schema/dislikeTable.ts';
 import { likesTable } from '../../schema/likesTable.ts';
 
-export const dislikeUserController = tryCatchFn(async (req, res) => {
+export const dislikeUserController = tryCatchFn(async (req, res, next) => {
   const { dislikerId, dislikedId } = req.body;
 
   // Validate input
   if (!dislikerId || !dislikedId) {
-    return res.status(400).json({ error: 'Missing dislikerId or dislikedId' });
+    next('Error');
+    res.status(400).json({ error: 'Missing dislikerId or dislikedId' });
   }
 
   // Check if both users exist before proceeding
@@ -28,7 +29,7 @@ export const dislikeUserController = tryCatchFn(async (req, res) => {
     .limit(1);
 
   if (!dislikerExists || !dislikedExists) {
-    return res.status(404).json({ error: 'One or both users do not exist' });
+    res.status(404).json({ error: 'One or both users do not exist' });
   }
 
   const existingLike = await db
@@ -42,7 +43,7 @@ export const dislikeUserController = tryCatchFn(async (req, res) => {
     );
 
   if (existingLike.length > 0) {
-    return res.status(400).json({ error: 'Like already exists' });
+    res.status(400).json({ error: 'Like already exists' });
   }
 
   // Check if the like already exists
@@ -57,7 +58,7 @@ export const dislikeUserController = tryCatchFn(async (req, res) => {
     );
 
   if (existingDislike.length > 0) {
-    return res.status(400).json({ error: 'Like already exists' });
+    res.status(400).json({ error: 'Like already exists' });
   }
 
   // Insert the like into the database
@@ -67,8 +68,8 @@ export const dislikeUserController = tryCatchFn(async (req, res) => {
     .returning();
 
   if (!dislike) {
-    return res.status(500).json({ error: 'Failed to create dislike' });
+    res.status(500).json({ error: 'Failed to create dislike' });
   }
 
-  return res.status(201).json(dislike);
+  res.status(201).json(dislike);
 });

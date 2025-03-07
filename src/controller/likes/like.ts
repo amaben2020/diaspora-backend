@@ -5,12 +5,13 @@ import { matchesTable } from '../../schema/matchesTable.ts';
 import { usersTable } from '../../schema/usersTable.ts';
 import { likesTable } from '../../schema/likesTable.ts';
 
-export const likeUserController = tryCatchFn(async (req, res) => {
+export const likeUserController = tryCatchFn(async (req, res, next) => {
   const { likerId, likedId } = req.body;
 
   // Validate input
   if (!likerId || !likedId) {
-    return res.status(400).json({ error: 'Missing likerId or likedId' });
+    next('Error');
+    res.status(400).json({ error: 'Missing likerId or likedId' });
   }
 
   // Check if both users exist before proceeding
@@ -27,7 +28,7 @@ export const likeUserController = tryCatchFn(async (req, res) => {
     .limit(1);
 
   if (!likerExists || !likedExists) {
-    return res.status(404).json({ error: 'One or both users do not exist' });
+    res.status(404).json({ error: 'One or both users do not exist' });
   }
 
   // Check if the like already exists
@@ -39,7 +40,7 @@ export const likeUserController = tryCatchFn(async (req, res) => {
     );
 
   if (existingLike.length > 0) {
-    return res.status(400).json({ error: 'Like already exists' });
+    res.status(400).json({ error: 'Like already exists' });
   }
 
   // Insert the like into the database
@@ -49,7 +50,7 @@ export const likeUserController = tryCatchFn(async (req, res) => {
     .returning();
 
   if (!like) {
-    return res.status(500).json({ error: 'Failed to create like' });
+    res.status(500).json({ error: 'Failed to create like' });
   }
 
   // Check for a match (if the liked user has also liked the liker)
@@ -73,7 +74,7 @@ export const likeUserController = tryCatchFn(async (req, res) => {
       .returning();
 
     if (!newMatch) {
-      return res.status(500).json({ error: 'Failed to create match' });
+      res.status(500).json({ error: 'Failed to create match' });
     }
 
     // Notify both users of the match (e.g., using WebSocket or a notification service)
@@ -96,8 +97,8 @@ export const likeUserController = tryCatchFn(async (req, res) => {
     //   }
     // });
 
-    return res.status(201).json({ like, match: newMatch });
+    res.status(201).json({ like, match: newMatch });
   }
 
-  return res.status(201).json(like);
+  res.status(201).json(like);
 });
