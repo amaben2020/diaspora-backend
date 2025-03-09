@@ -6,7 +6,7 @@ export const getMatches = async (id: string) => {
   const matches = await db
     .select()
     .from(matchesTable)
-    .where(or(eq(matchesTable.user1Id, id)));
+    .where(or(eq(matchesTable.user1Id, id), eq(matchesTable.user2Id, id)));
 
   return matches;
 };
