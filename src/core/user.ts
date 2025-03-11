@@ -7,7 +7,10 @@ import { userActivityTable } from '../schema/userActivityTable.ts';
 import { imagesTable } from '../schema/imagesTable.ts';
 import { likesTable } from '../schema/likesTable.ts';
 import { locationsTable } from '../schema/locationTable.ts';
-import { getTravelTimeFromAPI } from '../utils/index.ts';
+import {
+  getCountryFromCoordinates,
+  getTravelTimeFromAPI,
+} from '../utils/index.ts';
 import { dislikesTable } from '../schema/dislikeTable.ts';
 
 export const createUser = async (clerkId: string, phone?: string) => {
@@ -182,10 +185,16 @@ export const getUsers = async (
           parseFloat(user.longitude),
         );
 
+        const country = await getCountryFromCoordinates(
+          parseFloat(user.latitude),
+          parseFloat(user.longitude),
+        );
+
         return {
           ...user,
           distanceKm,
           travelTimeMinutes,
+          country,
         };
       } catch (error) {
         console.error('Error fetching distance:', error);

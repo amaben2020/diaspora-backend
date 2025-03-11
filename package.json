@@ -37,6 +37,7 @@
     "@neondatabase/serverless": "^0.10.4",
     "cloudinary": "^2.5.1",
     "cookie-parser": "^1.4.7",
+    "country-flag-emoji": "^1.0.3",
     "cross-env": "^7.0.3",
     "dotenv": "^16.4.7",
     "drizzle-orm": "^0.39.1",
