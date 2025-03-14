@@ -1551,6 +1551,8 @@ const countryFlagEmoji = {
   },
 };
 
+type CountryCode = keyof typeof countryFlagEmoji;
+
 const countryCodes = Object.keys(countryFlagEmoji);
 const list = Object.values(countryFlagEmoji);
 /**
@@ -1560,7 +1562,7 @@ const list = Object.values(countryFlagEmoji);
  * @return {Object|Undefined}
  */
 
-const get = (countryCode) => {
+const get = (countryCode: string) => {
   if (countryCode === undefined) {
     return list;
   }
@@ -1571,7 +1573,7 @@ const get = (countryCode) => {
 
   const code = countryCode.toUpperCase();
   return Object.prototype.hasOwnProperty.call(countryFlagEmoji, code)
-    ? countryFlagEmoji[code]
+    ? countryFlagEmoji[code as CountryCode]
     : undefined;
 };
 
