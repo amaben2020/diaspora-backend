@@ -19,9 +19,9 @@
     "incremental": true,
     "resolveJsonModule": true,
     "paths": {
-      "@/*": ["./*", "./src/*", "./tests/*", "./src/utils/*"]
+      "@/*": ["./*", "./src/*", "__tests__/*", "./src/utils/*"]
     }
   },
-  "include": ["src/**/*", "global.d.ts"],
+  "include": ["src/**/*", "global.d.ts", "__tests__/config"],
   "exclude": ["node_modules", "dist"]
 }
