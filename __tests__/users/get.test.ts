@@ -5,6 +5,8 @@ import { testDB } from '../../src/testDb';
 import { usersTable } from '../../src/schema/usersTable';
 import { TEST_CLERK_USER_ID } from '../config';
 
+// npm run test -- -t "should return 200 and the correct user info"
+
 describe('GET /api/v1/user/{id}', () => {
   beforeAll(async () => {
     const existingUser = await testDB
