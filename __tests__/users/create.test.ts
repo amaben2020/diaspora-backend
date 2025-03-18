@@ -1,4 +1,4 @@
-import { afterAll, describe, expect, it } from 'vitest';
+import { describe, expect, it } from 'vitest';
 
 import { eq } from 'drizzle-orm';
 import { usersTable } from '../../src/schema/usersTable';
@@ -6,7 +6,7 @@ import { testDB } from '../../src/testDb';
 import { TEST_CLERK_USER_ID } from '../config/index';
 
 describe('POST /api/v1/user', () => {
-  it('should create a new user', async () => {
+  it('should create a new user if not exist', async () => {
     const existingUser = await testDB
       .select()
       .from(usersTable)
@@ -27,12 +27,4 @@ describe('POST /api/v1/user', () => {
       console.log('Test user already exists. 🔥');
     }
   });
-
-  // afterAll(async () => {
-  //   await testDB
-  //     .delete(usersTable)
-  //     .where(eq(usersTable.id, TEST_CLERK_USER_ID))
-  //     .execute();
-  //   console.log('Test user deleted.');
-  // });
 });

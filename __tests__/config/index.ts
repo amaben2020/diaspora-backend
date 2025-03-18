@@ -16,3 +16,5 @@ export const userToken = () => {
 
   return userToken;
 };
+
+export const TEST_TIMEOUT_DURATION = 30000;

@@ -1,5 +1,3 @@
-// npm run test __tests__/health.test.ts
-
 import { describe, expect, it } from 'vitest';
 import { app } from '../app';
 
