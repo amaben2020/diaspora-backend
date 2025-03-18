@@ -61,8 +61,6 @@ export const likeUserController = tryCatchFn(async (req, res, next) => {
       and(eq(likesTable.likerId, likedId), eq(likesTable.likedId, likerId)),
     );
 
-  console.log('MATCH', match);
-
   if (match.length > 0) {
     // Create a match record
     const [newMatch = undefined] = await db

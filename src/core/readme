@@ -1,4 +1,4 @@
-Core shouldn't throw error but simply return values
+Core shouldn't throw error but simply return values required by the controller
 
 The controller should throw errors as it so wishes based on the response of the core
 i.e !user ? '' : ''

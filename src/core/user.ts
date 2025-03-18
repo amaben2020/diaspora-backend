@@ -211,3 +211,13 @@ export const getUsers = async (
         user.distanceKm >= radiusRange[0] && user.distanceKm <= radiusRange[1],
     );
 };
+
+export const isUserExists = async (userId: string) => {
+  const existingUser = await db
+    .select()
+    .from(usersTable)
+    .where(eq(usersTable.id, userId))
+    .execute();
+
+  return existingUser;
+};
