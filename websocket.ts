@@ -57,65 +57,65 @@
 
 // export { wss };
 
-import { WebSocketServer } from 'ws';
-import { eq } from 'drizzle-orm';
-import { db } from './src/db.ts';
-import { userActivityTable } from './src/schema/userActivityTable.ts';
-import { Server } from 'http';
+// import { WebSocketServer } from 'ws';
+// import { eq } from 'drizzle-orm';
+// import { db } from './src/db.ts';
+// import { userActivityTable } from './src/schema/userActivityTable.ts';
+// import { Server } from 'http';
 
-export function setupWebSocket(server: Server) {
-  const wss = new WebSocketServer({ server }); // Attach to existing server
+// export function setupWebSocket(server: Server) {
+//   const wss = new WebSocketServer({ server }); // Attach to existing server
 
-  wss.on('connection', (ws) => {
-    console.log('Client connected');
+//   wss.on('connection', (ws) => {
+//     console.log('Client connected');
 
-    ws.on('message', async (message) => {
-      try {
-        const { userId, onlineStatus } = JSON.parse(message.toString());
+//     ws.on('message', async (message) => {
+//       try {
+//         const { userId, onlineStatus } = JSON.parse(message.toString());
 
-        // Update user activity in DB
-        try {
-          const [userOnlineStatus = undefined] = await db
-            .select()
-            .from(userActivityTable)
-            .where(eq(userActivityTable.userId, userId));
+//         // Update user activity in DB
+//         try {
+//           const [userOnlineStatus = undefined] = await db
+//             .select()
+//             .from(userActivityTable)
+//             .where(eq(userActivityTable.userId, userId));
 
-          if (!userOnlineStatus) {
-            await db
-              .insert(userActivityTable)
-              .values({ userId, onlineStatus, lastActive: new Date() });
-          } else {
-            await db
-              .update(userActivityTable)
-              .set({ onlineStatus, lastActive: new Date() })
-              .where(eq(userActivityTable.userId, userId));
-          }
-        } catch (error) {
-          console.error('Database error:', error);
-        }
+//           if (!userOnlineStatus) {
+//             await db
+//               .insert(userActivityTable)
+//               .values({ userId, onlineStatus, lastActive: new Date() });
+//           } else {
+//             await db
+//               .update(userActivityTable)
+//               .set({ onlineStatus, lastActive: new Date() })
+//               .where(eq(userActivityTable.userId, userId));
+//           }
+//         } catch (error) {
+//           console.error('Database error:', error);
+//         }
 
-        // Broadcast updated status to all clients
-        wss.clients.forEach((client) => {
-          if (client.readyState === ws.OPEN) {
-            client.send(
-              JSON.stringify({
-                userId,
-                onlineStatus,
-                type: 'onlineStatusUpdated',
-              }),
-            );
-          }
-        });
-      } catch (error) {
-        console.error('Error processing message:', error);
-      }
-    });
+//         // Broadcast updated status to all clients
+//         wss.clients.forEach((client) => {
+//           if (client.readyState === ws.OPEN) {
+//             client.send(
+//               JSON.stringify({
+//                 userId,
+//                 onlineStatus,
+//                 type: 'onlineStatusUpdated',
+//               }),
+//             );
+//           }
+//         });
+//       } catch (error) {
+//         console.error('Error processing message:', error);
+//       }
+//     });
 
-    ws.on('close', () => console.log('Client disconnected'));
-  });
+//     ws.on('close', () => console.log('Client disconnected'));
+//   });
 
-  console.log('WebSocket server is running');
-}
+//   console.log('WebSocket server is running');
+// }
 
 // import { WebSocketServer } from 'ws';
 
@@ -175,3 +175,49 @@ export function setupWebSocket(server: Server) {
 
 //   console.log('WebSocket server is running');
 // }
+
+import Ably from 'ably';
+import { eq } from 'drizzle-orm';
+import { db } from './src/db.ts';
+import { userActivityTable } from './src/schema/userActivityTable.ts';
+
+export const ably = new Ably.Realtime({ key: process.env.ABLY_API_KEY });
+const channel = ably.channels.get('user-presence');
+
+export async function updateUserStatus(userId: string, onlineStatus: boolean) {
+  try {
+    const [userOnlineStatus = undefined] = await db
+      .select()
+      .from(userActivityTable)
+      .where(eq(userActivityTable.userId, userId));
+
+    if (!userOnlineStatus) {
+      await db.insert(userActivityTable).values({
+        userId,
+        onlineStatus,
+        lastActive: new Date(),
+      });
+    } else {
+      await db
+        .update(userActivityTable)
+        .set({ onlineStatus, lastActive: new Date() })
+        .where(eq(userActivityTable.userId, userId));
+    }
+
+    // Publish status update to Ably
+    await channel.publish('onlineStatusUpdated', { userId, onlineStatus });
+  } catch (error) {
+    console.error('Database error:', error);
+  }
+}
+
+// Subscribe to presence updates
+channel.presence.subscribe('enter', async (member) => {
+  console.log(`${member.clientId} is online`);
+  await updateUserStatus(member.clientId, true);
+});
+
+channel.presence.subscribe('leave', async (member) => {
+  console.log(`${member.clientId} is offline`);
+  await updateUserStatus(member.clientId, false);
+});

@@ -170,7 +170,8 @@ import fs from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { logger } from './src/utils/logger.ts';
-import { setupWebSocket } from './websocket.ts'; // Import WebSocket setup function
+import { updateUserStatus } from './websocket.ts';
+import Ably from 'ably';
 
 dotenv.config();
 
@@ -234,8 +235,21 @@ app.use(
 
 // Create HTTP server and attach WebSocket
 const server = http.createServer(app);
+// ✅ Initialize Ably Realtime
+const ably = new Ably.Realtime({ key: process.env.ABLY_API_KEY });
+const channel = ably.channels.get('user-presence');
 
-setupWebSocket(server);
+// setupWebSocket(server);
+// ✅ Subscribe to presence updates
+channel.presence.subscribe('enter', async (member) => {
+  console.log(`${member.clientId} is online`);
+  await updateUserStatus(member.clientId, true);
+});
+
+channel.presence.subscribe('leave', async (member) => {
+  console.log(`${member.clientId} is offline`);
+  await updateUserStatus(member.clientId, false);
+});
 
 const PORT = process.env.PORT || 8000;
 console.log(PORT);
