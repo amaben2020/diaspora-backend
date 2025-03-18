@@ -33,13 +33,13 @@ export async function updateUserStatus(userId: string, onlineStatus: boolean) {
   }
 }
 
-// // Subscribe to presence updates
-// channel.presence.subscribe('enter', async (member) => {
-//   console.log(`${member.clientId} is online`);
-//   await updateUserStatus(member.clientId, true);
-// });
+// Subscribe to presence updates
+channel.presence.subscribe('enter', async (member) => {
+  console.log(`${member.clientId} is online`);
+  await updateUserStatus(member.clientId, true);
+});
 
-// channel.presence.subscribe('leave', async (member) => {
-//   console.log(`${member.clientId} is offline`);
-//   await updateUserStatus(member.clientId, false);
-// });
+channel.presence.subscribe('leave', async (member) => {
+  console.log(`${member.clientId} is offline`);
+  await updateUserStatus(member.clientId, false);
+});
