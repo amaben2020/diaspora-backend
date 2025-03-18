@@ -7,9 +7,8 @@ import { config } from 'dotenv';
 import { testApi } from './config';
 import { userToken as token } from './config/index';
 
-config({ path: '.env.test' });
-
 const userToken = token();
+config({ path: '.env.test' });
 
 describe('GET /api/v1/health', () => {
   it('should return 200 and the correct health status', async () => {

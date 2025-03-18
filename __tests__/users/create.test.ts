@@ -28,11 +28,11 @@ describe('POST /api/v1/user', () => {
     }
   });
 
-  afterAll(async () => {
-    await testDB
-      .delete(usersTable)
-      .where(eq(usersTable.id, TEST_CLERK_USER_ID))
-      .execute();
-    console.log('Test user deleted.');
-  });
+  // afterAll(async () => {
+  //   await testDB
+  //     .delete(usersTable)
+  //     .where(eq(usersTable.id, TEST_CLERK_USER_ID))
+  //     .execute();
+  //   console.log('Test user deleted.');
+  // });
 });

@@ -10,7 +10,9 @@ config({ path: '.env' }); // or .env.local
 const DATABASE_URL =
   process.env.NODE_ENV === 'production'
     ? process.env.PROD_DATABASE_URL
-    : process.env.DEV_DATABASE_URL;
+    : process.env.NODE_ENV === 'development'
+      ? process.env.DEV_DATABASE_URL
+      : process.env.TEST_DATABASE_URL;
 
 console.log(`DATABASE_URL FOR ${process.env.NODE_ENV}:`, DATABASE_URL);
 if (!DATABASE_URL) {

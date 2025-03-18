@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "cross-env DOTENV_CONFIG_PATH=.env.test vitest --config vitest.config.ts",
+    "test": "cross-env NODE_ENV=test DOTENV_CONFIG_PATH=.env.test vitest --config vitest.config.ts",
     "coverage": "vitest run --coverage",
     "start": "cross-env NODE_ENV=production ts-node index.ts",
     "dev": "cross-env NODE_ENV=development nodemon index.ts",
@@ -76,6 +76,7 @@
     "eslint-plugin-prettier": "^5.2.3",
     "globals": "^15.14.0",
     "husky": "^8.0.0",
+    "msw": "^2.7.3",
     "prettier": "^3.4.2",
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.23.0",
