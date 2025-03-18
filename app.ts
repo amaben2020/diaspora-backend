@@ -11,11 +11,9 @@ import router from './src/routes/index.ts';
 import { morganMiddleware } from './src/middleware/morgan.ts';
 import { clerkMiddleware } from '@clerk/express';
 import swaggerUi from 'swagger-ui-express';
-import http from 'http';
 import fs from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { logger } from './src/utils/logger.ts';
 import { updateUserStatus } from './websocket.ts';
 import Ably from 'ably';
 
@@ -79,13 +77,10 @@ app.use(
   },
 );
 
-// Create HTTP server and attach WebSocket
-const server = http.createServer(app);
 // ✅ Initialize Ably Realtime
 const ably = new Ably.Realtime({ key: process.env.ABLY_API_KEY });
 const channel = ably.channels.get('user-presence');
 
-// setupWebSocket(server);
 // ✅ Subscribe to presence updates
 channel.presence.subscribe('enter', async (member) => {
   console.log(`${member.clientId} is online`);
@@ -95,19 +90,4 @@ channel.presence.subscribe('enter', async (member) => {
 channel.presence.subscribe('leave', async (member) => {
   console.log(`${member.clientId} is offline`);
   await updateUserStatus(member.clientId, false);
-});
-
-const PORT = process.env.PORT || 8000;
-console.log(PORT);
-server.listen(8000, () => {
-  logger.info(`Server is running on http://localhost:${PORT}`);
-});
-
-// Handle server shutdown gracefully
-process.on('SIGINT', () => {
-  logger.info('Shutting down server...');
-  server.close(() => {
-    logger.info('Server has been shut down.');
-    process.exit(0);
-  });
 });
