@@ -124,33 +124,6 @@
     "/users": {
       "get": {
         "description": "",
-        "parameters": [
-          {
-            "name": "userId",
-            "in": "query",
-            "type": "string"
-          },
-          {
-            "name": "radius",
-            "in": "query",
-            "type": "string"
-          },
-          {
-            "name": "age",
-            "in": "query",
-            "type": "string"
-          },
-          {
-            "name": "gender",
-            "in": "query",
-            "type": "string"
-          },
-          {
-            "name": "activity",
-            "in": "query",
-            "type": "string"
-          }
-        ],
         "responses": {
           "200": {
             "description": "OK"
