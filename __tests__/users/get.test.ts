@@ -10,7 +10,7 @@ describe('GET /api/v1/user/{id}', () => {
   beforeAll(async () => {
     const existingUser = await isUserExists(TEST_CLERK_USER_ID);
 
-    if (existingUser.length === 0) {
+    if (existingUser) {
       await createUser(TEST_CLERK_USER_ID, '07033333333');
       console.log('Test user created.');
     } else {

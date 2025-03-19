@@ -139,6 +139,16 @@
             "name": "age",
             "in": "query",
             "type": "string"
+          },
+          {
+            "name": "gender",
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "activity",
+            "in": "query",
+            "type": "string"
           }
         ],
         "responses": {

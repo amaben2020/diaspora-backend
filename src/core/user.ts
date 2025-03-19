@@ -70,13 +70,13 @@ export const getUser = async (id: string) => {
 
   return user;
 };
-
+export type TGender = 'man' | 'woman' | 'nonbinary';
 export const getUsers = async (
   currentUserId: string,
   radiusRange: number[], // [minRadius, maxRadius]
   ageRange: number[], // [minAge, maxAge]
-  gender: string,
-  activity: string,
+  gender: TGender | undefined,
+  activity: 'justJoined' | undefined,
 ) => {
   const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
 

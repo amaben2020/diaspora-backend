@@ -4,6 +4,7 @@ import { tryCatchFn } from '../../utils/tryCatch.ts';
 
 import { redisClient } from '../../utils/redis.ts';
 import { logger } from '../../utils/logger.ts';
+import { z } from 'zod';
 
 export const userCreateController = tryCatchFn(async (req, res, next) => {
   const { clerkId, phone } = userSchema.parse(req.body);
@@ -44,12 +45,19 @@ export const userGetController = tryCatchFn(async (req, res, next) => {
   res.status(200).json(data);
 });
 
+const userGetSchema = z.object({
+  userId: z.string(),
+  radius: z.string(),
+  age: z.string(),
+  gender: z.enum(['man', 'woman', 'nonbinary']).optional(),
+  activity: z.literal('justJoined').optional(),
+});
+
 export const userGetsController = tryCatchFn(async (req, res) => {
   try {
-    const { userId, radius, age, gender, activity } = req.query;
-    console.log('Gender', gender);
-    console.log('Activity', activity);
-    // we need a way to invalidate the cache per actions
+    const { userId, radius, age, gender, activity } = userGetSchema.parse(
+      req.query,
+    );
 
     const cacheKey = `all-users-with-locations-${userId}-${radius}-${age}-${gender}-${activity}`;
     const cachedUsers = await redisClient.get(cacheKey);
