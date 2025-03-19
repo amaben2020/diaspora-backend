@@ -1,6 +1,6 @@
 import { app } from './app.ts';
 
-export const server = app.listen(process.env.PORT, () => {
+export const server = app.listen(process.env.PORT || 8000, () => {
   console.log('Server Healthy...🍀🍀🍀🍀');
 });
 

@@ -212,12 +212,12 @@ export const getUsers = async (
     );
 };
 
-export const isUserExists = async (userId: string) => {
+export const isUserExists = async (userId: string): Promise<boolean> => {
   const existingUser = await db
     .select()
     .from(usersTable)
     .where(eq(usersTable.id, userId))
     .execute();
 
-  return existingUser;
+  return existingUser as unknown as boolean;
 };

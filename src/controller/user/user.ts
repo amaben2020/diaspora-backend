@@ -44,20 +44,25 @@ export const userGetController = tryCatchFn(async (req, res, next) => {
   res.status(200).json(data);
 });
 
-export const userGetsController = tryCatchFn(async (req, res, next) => {
+export const userGetsController = tryCatchFn(async (req, res) => {
   try {
     const { userId, radius, age } = req.query;
+
+    // we need a way to invalidate the cache per actions
 
     const cacheKey = `all-users-with-locations-${userId}-${radius}-${age}`;
     const cachedUsers = await redisClient.get(cacheKey);
 
     if (cachedUsers) {
       logger.info('Cache hit');
-      res.json({ cache: true, users: JSON.parse(cachedUsers) });
+      return res.json({ cache: true, users: JSON.parse(cachedUsers) });
     }
 
-    if (!userId)
-      res.status(400).json({ status: 'fail', message: 'User ID is required' });
+    if (!userId) {
+      return res
+        .status(400)
+        .json({ status: 'fail', message: 'User ID is required' });
+    }
 
     // Parse radius and age into number arrays
     const parsedRadius = Array.isArray(radius)
@@ -73,33 +78,33 @@ export const userGetsController = tryCatchFn(async (req, res, next) => {
         : undefined;
 
     if (parsedRadius[0] < 0 || parsedRadius[1] > 6378.14) {
-      next(Error('Something went wrong'));
-      res.status(409).json({
+      return res.status(409).json({
         status: 'unprocessable entity',
         message: 'Invalid distance range',
       });
     }
 
     if (parsedAge[0] < 18 || parsedAge[1] > 199) {
-      res.status(409).json({
+      return res.status(409).json({
         status: 'Invalid',
         message: 'Invalid age range',
       });
     }
 
     if (parsedRadius?.some(isNaN) || parsedAge?.some(isNaN)) {
-      res
+      return res
         .status(400)
         .json({ status: 'fail', message: 'Invalid number format' });
     }
 
     const users = await getUsers(String(userId), parsedRadius, parsedAge);
 
-    // Store in Redis with 30-minute expiry
-    await redisClient.set(cacheKey, JSON.stringify(users), 1800);
-    res.json({ cache: false, users });
+    // Store in Redis with 2-minute expiry
+    await redisClient.set(cacheKey, JSON.stringify(users), 120);
+    return res.json({ cache: false, users });
   } catch (error) {
-    if (error instanceof Error)
-      res.status(500).json({ status: 'fail', message: error.message });
+    if (error instanceof Error) {
+      return res.status(500).json({ status: 'fail', message: error.message });
+    }
   }
 });

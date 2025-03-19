@@ -57,6 +57,21 @@ app.get('/api/v1/health', (req, res) => {
   });
 });
 
+// ✅ Initialize Ably Realtime
+const ably = new Ably.Realtime({ key: process.env.ABLY_API_KEY });
+
+const channel = ably.channels.get('user-presence');
+// ✅ Subscribe to presence updates
+channel.presence.subscribe('enter', async (member) => {
+  console.log(`${member.clientId} is online`);
+  await updateUserStatus(member.clientId, true);
+});
+
+channel.presence.subscribe('leave', async (member) => {
+  console.log(`${member.clientId} is offline`);
+  await updateUserStatus(member.clientId, false);
+});
+
 // 👇 Add global error handler
 app.use(
   (
@@ -76,18 +91,3 @@ app.use(
     });
   },
 );
-
-// ✅ Initialize Ably Realtime
-const ably = new Ably.Realtime({ key: process.env.ABLY_API_KEY });
-const channel = ably.channels.get('user-presence');
-
-// ✅ Subscribe to presence updates
-channel.presence.subscribe('enter', async (member) => {
-  console.log(`${member.clientId} is online`);
-  await updateUserStatus(member.clientId, true);
-});
-
-channel.presence.subscribe('leave', async (member) => {
-  console.log(`${member.clientId} is offline`);
-  await updateUserStatus(member.clientId, false);
-});
