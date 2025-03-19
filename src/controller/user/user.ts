@@ -46,11 +46,12 @@ export const userGetController = tryCatchFn(async (req, res, next) => {
 
 export const userGetsController = tryCatchFn(async (req, res) => {
   try {
-    const { userId, radius, age } = req.query;
-
+    const { userId, radius, age, gender, activity } = req.query;
+    console.log('Gender', gender);
+    console.log('Activity', activity);
     // we need a way to invalidate the cache per actions
 
-    const cacheKey = `all-users-with-locations-${userId}-${radius}-${age}`;
+    const cacheKey = `all-users-with-locations-${userId}-${radius}-${age}-${gender}-${activity}`;
     const cachedUsers = await redisClient.get(cacheKey);
 
     if (cachedUsers) {
@@ -97,7 +98,13 @@ export const userGetsController = tryCatchFn(async (req, res) => {
         .json({ status: 'fail', message: 'Invalid number format' });
     }
 
-    const users = await getUsers(String(userId), parsedRadius, parsedAge);
+    const users = await getUsers(
+      String(userId),
+      parsedRadius,
+      parsedAge,
+      gender,
+      activity,
+    );
 
     // Store in Redis with 2-minute expiry
     await redisClient.set(cacheKey, JSON.stringify(users), 120);

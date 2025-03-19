@@ -2,7 +2,7 @@ import type { z } from 'zod';
 import { db } from '../db.ts';
 import { usersTable } from '../schema/usersTable.ts';
 import type { userSchema } from '../models/index.ts';
-import { and, eq, not, notExists } from 'drizzle-orm';
+import { and, eq, gte, not, notExists } from 'drizzle-orm';
 import { userActivityTable } from '../schema/userActivityTable.ts';
 import { imagesTable } from '../schema/imagesTable.ts';
 import { likesTable } from '../schema/likesTable.ts';
@@ -75,7 +75,11 @@ export const getUsers = async (
   currentUserId: string,
   radiusRange: number[], // [minRadius, maxRadius]
   ageRange: number[], // [minAge, maxAge]
+  gender: string,
+  activity: string,
 ) => {
+  const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
+
   const users = await db
     .select({
       user: usersTable,
@@ -92,6 +96,10 @@ export const getUsers = async (
     .leftJoin(userActivityTable, eq(usersTable.id, userActivityTable.userId))
     .where(
       and(
+        gender ? eq(usersTable.gender, String(gender)) : undefined,
+        activity === 'justJoined'
+          ? gte(usersTable.createdAt, twentyFourHoursAgo)
+          : undefined,
         not(eq(usersTable.id, currentUserId)),
         notExists(
           db
