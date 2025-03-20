@@ -99,6 +99,27 @@
       "when": 1741275960227,
       "tag": "0013_same_tarantula",
       "breakpoints": true
+    },
+    {
+      "idx": 14,
+      "version": "7",
+      "when": 1742417021530,
+      "tag": "0014_typical_retro_girl",
+      "breakpoints": true
+    },
+    {
+      "idx": 15,
+      "version": "7",
+      "when": 1742417214563,
+      "tag": "0015_abnormal_william_stryker",
+      "breakpoints": true
+    },
+    {
+      "idx": 16,
+      "version": "7",
+      "when": 1742419142513,
+      "tag": "0016_natural_kingpin",
+      "breakpoints": true
     }
   ]
 }

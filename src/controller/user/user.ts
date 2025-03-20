@@ -51,15 +51,15 @@ const userGetSchema = z.object({
   age: z.string(),
   gender: z.enum(['man', 'woman', 'nonbinary']).optional(),
   activity: z.literal('justJoined').optional(),
+  country: z.string().optional(),
 });
 
 export const userGetsController = tryCatchFn(async (req, res) => {
   try {
-    const { userId, radius, age, gender, activity } = userGetSchema.parse(
-      req.query,
-    );
+    const { userId, radius, age, gender, activity, country } =
+      userGetSchema.parse(req.query);
 
-    const cacheKey = `all-users-with-locations-${userId}-${radius}-${age}-${gender}-${activity}`;
+    const cacheKey = `all-users-with-locations-${userId}-${radius}-${age}-${gender}-${activity}-${country}`;
     const cachedUsers = await redisClient.get(cacheKey);
 
     if (cachedUsers) {
@@ -86,7 +86,9 @@ export const userGetsController = tryCatchFn(async (req, res) => {
         ? JSON.parse(age as string).map(Number)
         : undefined;
 
-    if (parsedRadius[0] < 0 || parsedRadius[1] > 6378.14) {
+    const MAX_DISTANCE = 22226378.14;
+
+    if (parsedRadius[0] < 0 || parsedRadius[1] > MAX_DISTANCE) {
       return res.status(409).json({
         status: 'unprocessable entity',
         message: 'Invalid distance range',
@@ -112,6 +114,7 @@ export const userGetsController = tryCatchFn(async (req, res) => {
       parsedAge,
       gender,
       activity,
+      country?.toUpperCase(),
     );
 
     // Store in Redis with 2-minute expiry

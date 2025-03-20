@@ -77,6 +77,7 @@ export const getUsers = async (
   ageRange: number[], // [minAge, maxAge]
   gender: TGender | undefined,
   activity: 'justJoined' | undefined,
+  country: string | undefined,
 ) => {
   const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
 
@@ -89,6 +90,7 @@ export const getUsers = async (
       onlineStatus: userActivityTable.onlineStatus,
       latitude: locationsTable.latitude,
       longitude: locationsTable.longitude,
+      countryAbbreviation: locationsTable.countryAbbreviation,
     })
     .from(usersTable)
     .leftJoin(locationsTable, eq(usersTable.id, locationsTable.userId))
@@ -100,6 +102,7 @@ export const getUsers = async (
         activity === 'justJoined'
           ? gte(usersTable.createdAt, twentyFourHoursAgo)
           : undefined,
+        country ? eq(locationsTable.countryAbbreviation, country) : undefined,
         not(eq(usersTable.id, currentUserId)),
         notExists(
           db
@@ -160,6 +163,7 @@ export const getUsers = async (
     latitude,
     longitude,
     birthday,
+    countryAbbreviation,
   } of users) {
     if (!latitude || !longitude || !birthday) continue; // Ensure required fields exist
 
@@ -172,6 +176,7 @@ export const getUsers = async (
         onlineStatus,
         latitude,
         longitude,
+        countryAbbreviation,
         age,
         images: [],
       });
@@ -197,6 +202,8 @@ export const getUsers = async (
           parseFloat(user.latitude),
           parseFloat(user.longitude),
         );
+
+        console.log('COUNTRY', country);
 
         return {
           ...user,

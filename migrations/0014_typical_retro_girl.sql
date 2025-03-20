@@ -1,0 +1,1 @@
+ALTER TABLE "matches" ALTER COLUMN "user1_id" DROP NOT NULL;

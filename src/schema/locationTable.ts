@@ -17,6 +17,7 @@ export const locationsTable = pgTable(
       .references(() => usersTable.id, { onDelete: 'cascade' }),
     latitude: text('latitude').notNull(),
     longitude: text('longitude').notNull(),
+    countryAbbreviation: text('countryAbbreviation').default('NG'),
     lastUpdated: timestamp('last_updated', { withTimezone: true }).defaultNow(),
   },
   (table) => ({
