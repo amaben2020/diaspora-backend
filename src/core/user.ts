@@ -134,6 +134,7 @@ export const getUsers = async (
     .select({
       latitude: locationsTable.latitude,
       longitude: locationsTable.longitude,
+      countryAbbreviation: locationsTable.countryAbbreviation,
     })
     .from(locationsTable)
     .where(eq(locationsTable.userId, currentUserId))
@@ -143,8 +144,12 @@ export const getUsers = async (
     throw new Error('Current user location not found');
   }
 
-  const { latitude: lat1, longitude: lng1 } = currentUserLocation;
-
+  const {
+    latitude: lat1,
+    longitude: lng1,
+    countryAbbreviation: abrv,
+  } = currentUserLocation;
+  console.log('ABRV', abrv);
   // Helper function to calculate age
   const calculateAge = (birthday: string | null) => {
     if (!birthday) return null;
@@ -182,6 +187,8 @@ export const getUsers = async (
       });
     }
 
+    console.log('ORIGIN USER', countryAbbreviation);
+
     if (imageUrl) {
       userMap.get(user.id).images.push({ imageUrl, order });
     }
@@ -190,6 +197,7 @@ export const getUsers = async (
   // Fetch distances using Google Maps API
   const usersWithDistances = await Promise.all(
     Array.from(userMap.values()).map(async (user) => {
+      console.log('CA', user);
       try {
         const { travelTimeMinutes, distanceKm } = await getTravelTimeFromAPI(
           parseFloat(lat1),
@@ -198,16 +206,22 @@ export const getUsers = async (
           parseFloat(user.longitude),
         );
 
-        const country = await getCountryFromCoordinates(
-          parseFloat(user.latitude),
-          parseFloat(user.longitude),
-        );
+        const [originCountry, country] = await Promise.all([
+          await getCountryFromCoordinates(parseFloat(lat1), parseFloat(lng1)),
+          await getCountryFromCoordinates(
+            parseFloat(user.latitude),
+            parseFloat(user.longitude),
+          ),
+        ]);
 
-        console.log('COUNTRY', country);
+        const distanceAway =
+          originCountry?.abrv == country?.abrv
+            ? distanceKm
+            : `Currently in ${country?.name.includes('United') ? 'The' : ''}${country?.name} ${country?.flag}`;
 
         return {
           ...user,
-          distanceKm,
+          distanceKm: distanceAway,
           travelTimeMinutes,
           country,
         };
@@ -219,12 +233,16 @@ export const getUsers = async (
   );
 
   // Filter users by travel distance
-  return usersWithDistances
-    .filter(Boolean)
-    .filter(
-      (user) =>
-        user.distanceKm >= radiusRange[0] && user.distanceKm <= radiusRange[1],
-    );
+  return usersWithDistances.filter(Boolean).filter((user) => {
+    let distanceKm = user.distanceKm;
+
+    if (typeof distanceKm !== 'number') {
+      // Assign maximum distance from the frontend range for overseas users
+      distanceKm = radiusRange[1];
+    }
+
+    return distanceKm >= radiusRange[0] && distanceKm <= radiusRange[1];
+  });
 };
 
 export const isUserExists = async (userId: string): Promise<boolean> => {

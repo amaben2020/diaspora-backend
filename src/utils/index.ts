@@ -29,7 +29,7 @@ export async function getTravelTimeFromAPI(
   destinationLongitude: number,
 ): Promise<{ travelTimeMinutes: number; distanceKm: number }> {
   const url = `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${originLatitude},${originLongitude}&destinations=${destinationLatitude},${destinationLongitude}&key=${GOOGLE_MAPS_API_KEY}`;
-
+  console.log(originLatitude, originLongitude);
   try {
     const response = await fetch(url);
     const data = await response.json();
@@ -38,7 +38,7 @@ export async function getTravelTimeFromAPI(
       console.error('Error fetching distance:', data);
       return { travelTimeMinutes: 0, distanceKm: 0 };
     }
-
+    console.dir(data.rows, { depth: null });
     const element = data.rows[0].elements[0];
     if (element.status !== 'OK') {
       console.error('Invalid location data:', element);
