@@ -14,12 +14,8 @@ export async function updateUserStatus(userId: string, onlineStatus: boolean) {
       .from(userActivityTable)
       .where(eq(userActivityTable.userId, userId));
 
-    console.log('userOnlineStatus', userOnlineStatus);
-
     if (!userOnlineStatus?.userId) {
       // create the activity for the user
-
-      console.log('onlineStatus', onlineStatus);
       await db.insert(userActivityTable).values({
         userId,
         onlineStatus,
@@ -40,20 +36,3 @@ export async function updateUserStatus(userId: string, onlineStatus: boolean) {
     console.error('Database error:', error);
   }
 }
-
-// // Subscribe to presence updates
-// channel.presence.subscribe('enter', async (member) => {
-//   console.log(`${member.clientId} is online`);
-//   await updateUserStatus(member.clientId, true);
-// });
-
-// channel.presence.subscribe('leave', async (member) => {
-//   console.log(`${member.clientId} is offline`);
-//   await updateUserStatus(member.clientId, false);
-// });
-
-// channel.subscribe((event) => {
-//   console.log('evt', event);
-// });
-
-// channel.publish('update', { message: 'Hey Jude' });

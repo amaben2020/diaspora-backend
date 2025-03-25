@@ -8,6 +8,7 @@ import locationRouter from './location.ts';
 import likesRouter from './likes.ts';
 import dislikesRouter from './dislikes.ts';
 import matchesRouter from './matches.ts';
+import profileViewsRouter from './profileViews.ts';
 
 const router = express.Router();
 
@@ -21,5 +22,6 @@ router.use('', locationRouter);
 router.use('', likesRouter);
 router.use('', dislikesRouter);
 router.use('', matchesRouter);
+router.use('', profileViewsRouter);
 
 export default router;
