@@ -5,6 +5,7 @@ import { profileViewsTable } from '../../schema/profileViews.ts';
 import { tryCatchFn } from '../../utils/tryCatch.ts';
 import { z } from 'zod';
 import { ably } from '../../../websocket.ts';
+import { imagesTable } from '../../schema/imagesTable.ts';
 
 const recordProfileViewSchema = z.object({
   viewerId: z.string(),
@@ -96,6 +97,7 @@ export const getProfileViewsController = tryCatchFn(async (req, res) => {
         viewer: {
           id: usersTable.id,
           displayName: usersTable.displayName,
+          image: imagesTable.imageUrl,
         },
         viewedAt: profileViewsTable.viewedAt,
         isNew: profileViewsTable.isNew,
@@ -103,6 +105,7 @@ export const getProfileViewsController = tryCatchFn(async (req, res) => {
       .from(profileViewsTable)
       .where(eq(profileViewsTable.viewedId, userId))
       .leftJoin(usersTable, eq(profileViewsTable.viewerId, usersTable.id))
+      .leftJoin(imagesTable, eq(profileViewsTable.viewerId, imagesTable.userId))
       .orderBy(desc(profileViewsTable.viewedAt))
       .limit(Number(limit))
       .offset(Number(offset));
