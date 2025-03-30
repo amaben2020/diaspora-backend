@@ -1,4 +1,4 @@
-import express, { Router } from 'express';
+import { Router } from 'express';
 
 import {
   createPaymentIntent,
@@ -15,7 +15,7 @@ const router = Router();
 // Webhook endpoint must use raw body
 router.post(
   '/stripe-webhooks',
-  express.raw({ type: 'application/json' }),
+  // express.raw({ type: 'application/json' }),
   stripeWebhookMiddleware,
 );
 

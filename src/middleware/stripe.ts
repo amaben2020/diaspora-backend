@@ -54,7 +54,7 @@ export const stripeWebhookMiddleware = tryCatchFn(
     let event: Stripe.Event;
 
     try {
-      event = stripe.webhooks.constructEvent(req?.rawBody, sig, endpointSecret);
+      event = stripe.webhooks.constructEvent(req?.body, sig, endpointSecret);
 
       console.log('Handling event:', event.type);
       await handleWebhookEvent(event);

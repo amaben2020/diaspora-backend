@@ -52,18 +52,14 @@ app.use(helmet());
 //   stripeWebhookMiddleware,
 // );
 
-app.use(
-  bodyParser.json({
-    // Because Stripe needs the raw body, we compute it but only when hitting the Stripe callback URL.
-    verify: function (req, res, buf) {
-      var url = req.originalUrl;
-      if (url.startsWith('/stripe-webhooks')) {
-        req.rawBody = buf.toString();
-        console.log(req.rawBody);
-      }
-    },
-  }),
-);
+// Middleware
+app.use((req, res, next) => {
+  if (req.originalUrl === '/stripe-webhooks') {
+    next();
+  } else {
+    express.json()(req, res, next);
+  }
+});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
