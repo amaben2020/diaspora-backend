@@ -50,7 +50,13 @@ app.use(
     publishableKey: process.env.CLERK_PUBLISHABLE_KEY,
   }),
 );
-
+app.use((req, res, next) => {
+  if (req.originalUrl === '/webhook') {
+    next(); // Do nothing with the body because I need it in a raw state.
+  } else {
+    express.json()(req, res, next); // ONLY do express.json() if the received request is NOT a WebHook from Stripe.
+  }
+});
 app.use('/api/v1', router);
 
 app.get('/api/v1/health', (req, res) => {

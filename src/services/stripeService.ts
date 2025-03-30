@@ -110,6 +110,10 @@ export const handleWebhookEvent = async (event: Stripe.Event) => {
     //     .where(eq(paymentsTable.stripeCustomerId, customerId));
     //   break;
 
+    case 'payment_intent.succeeded':
+      console.log('yeah man');
+      break;
+
     case 'invoice.payment_succeeded':
       const invoice = event.data.object as Stripe.Invoice;
       const subscriptionId = invoice.subscription as string;
