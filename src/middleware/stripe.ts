@@ -36,6 +36,7 @@ export const stripeWebhookMiddleware = tryCatchFn(
 
     console.log('endpointSecret', endpointSecret);
     console.log('req.body', req.body);
+    console.log('req.headers', req.headers);
     console.log('sig', sig);
 
     if (!sig) {
