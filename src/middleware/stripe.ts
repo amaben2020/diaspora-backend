@@ -34,8 +34,12 @@ export const stripeWebhookMiddleware = tryCatchFn(
     const sig = req.headers['stripe-signature'] as string;
     const endpointSecret = process.env.STRIPE_WEBHOOK_SECRET_ID!;
 
+    console.log(req);
+
     console.log('endpointSecret', endpointSecret);
     console.log('req.body', req.body);
+    // console.log('req.body', req?.rawBody);
+
     console.log('req.headers', req.headers);
     console.log('sig', sig);
 
@@ -43,18 +47,14 @@ export const stripeWebhookMiddleware = tryCatchFn(
       return res.status(400).send('No Stripe signature header');
     }
 
-    if (!req.body) {
-      return res.status(400).send('No request body');
-    }
+    // if (!req.body) {
+    //   return res.status(400).send('No request body');
+    // }
 
     let event: Stripe.Event;
 
     try {
-      event = stripe.webhooks.constructEvent(
-        req.body, // Raw body buffer
-        sig,
-        endpointSecret,
-      );
+      event = stripe.webhooks.constructEvent(req?.rawBody, sig, endpointSecret);
 
       console.log('Handling event:', event.type);
       await handleWebhookEvent(event);

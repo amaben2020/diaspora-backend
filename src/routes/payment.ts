@@ -14,7 +14,7 @@ const router = Router();
 
 // Webhook endpoint must use raw body
 router.post(
-  '/webhook',
+  '/stripe-webhooks',
   express.raw({ type: 'application/json' }),
   stripeWebhookMiddleware,
 );
@@ -22,6 +22,7 @@ router.post(
 // Regular endpoints
 router.get('/plans', getPlans);
 router.post('/customer', clerkMiddleware(), getOrCreateCustomer);
+
 router.post('/subscription', createPaymentIntent);
 router.get('/status/:userId', getPaymentStatus);
 router.get('/customer/:userId', getCustomer);

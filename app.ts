@@ -21,7 +21,8 @@ import cron from 'node-cron';
 import { db } from './src/db.ts';
 import { lt } from 'drizzle-orm';
 import { updateUserStatus } from './src/websocket.ts';
-
+import { stripeWebhookMiddleware } from './src/middleware/stripe.ts';
+import bodyParser from 'body-parser';
 dotenv.config();
 
 export const app = express();
@@ -37,6 +38,33 @@ if (String(process.env.NODE_ENV) === 'development') {
 }
 
 app.use(helmet());
+// app.use((req, res, next) => {
+//   if (req.originalUrl === '/webhook') {
+//     next(); // Do nothing with the body because I need it in a raw state.
+//   } else {
+//     express.json()(req, res, next); // ONLY do express.json() if the received request is NOT a WebHook from Stripe.
+//   }
+// });
+// // Webhook endpoint must use raw body
+// router.post(
+//   '/webhook',
+//   express.raw({ type: 'application/json' }),
+//   stripeWebhookMiddleware,
+// );
+
+app.use(
+  bodyParser.json({
+    // Because Stripe needs the raw body, we compute it but only when hitting the Stripe callback URL.
+    verify: function (req, res, buf) {
+      var url = req.originalUrl;
+      if (url.startsWith('/stripe-webhooks')) {
+        req.rawBody = buf.toString();
+        console.log(req.rawBody);
+      }
+    },
+  }),
+);
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
@@ -50,13 +78,7 @@ app.use(
     publishableKey: process.env.CLERK_PUBLISHABLE_KEY,
   }),
 );
-app.use((req, res, next) => {
-  if (req.originalUrl === '/webhook') {
-    next(); // Do nothing with the body because I need it in a raw state.
-  } else {
-    express.json()(req, res, next); // ONLY do express.json() if the received request is NOT a WebHook from Stripe.
-  }
-});
+
 app.use('/api/v1', router);
 
 app.get('/api/v1/health', (req, res) => {

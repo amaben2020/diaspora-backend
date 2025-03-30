@@ -53,56 +53,62 @@ export const createCustomer = tryCatchFn(async (req, res) => {
   }
 });
 
-export const createPaymentIntent = async (req: Request, res: Response) => {
-  const { userId, priceId } = req.body;
+export const createPaymentIntent = tryCatchFn(
+  async (req: Request, res: Response) => {
+    const { userId, priceId } = req.body;
 
-  try {
-    // Get user's Stripe customer ID
-    const paymentRecord = await db
-      .select()
-      .from(paymentsTable)
-      .where(eq(paymentsTable.userId, userId));
+    try {
+      // Get user's Stripe customer ID
+      const paymentRecord = await db
+        .select()
+        .from(paymentsTable)
+        .where(eq(paymentsTable.userId, userId));
 
-    if (!paymentRecord.length || !paymentRecord[0].stripeCustomerId) {
-      return res.status(400).json({ error: 'User has no Stripe customer ID' });
+      if (!paymentRecord.length || !paymentRecord[0].stripeCustomerId) {
+        return res
+          .status(400)
+          .json({ error: 'User has no Stripe customer ID' });
+      }
+
+      const { subscriptionId, clientSecret } = await createSubscription(
+        paymentRecord[0].stripeCustomerId,
+        priceId,
+        userId,
+      );
+
+      return res.json({ subscriptionId, clientSecret });
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ error: 'Failed to create payment intent' });
     }
+  },
+);
 
-    const { subscriptionId, clientSecret } = await createSubscription(
-      paymentRecord[0].stripeCustomerId,
-      priceId,
-      userId,
-    );
+export const getPaymentStatus = tryCatchFn(
+  async (req: Request, res: Response) => {
+    const { userId } = req.params;
 
-    return res.json({ subscriptionId, clientSecret });
-  } catch (error) {
-    console.log(error);
-    return res.status(500).json({ error: 'Failed to create payment intent' });
-  }
-};
+    try {
+      const paymentRecord = await db
+        .select()
+        .from(paymentsTable)
+        .where(eq(paymentsTable.userId, userId));
 
-export const getPaymentStatus = async (req: Request, res: Response) => {
-  const { userId } = req.params;
+      if (!paymentRecord.length) {
+        return res.status(404).json({ error: 'Payment record not found' });
+      }
 
-  try {
-    const paymentRecord = await db
-      .select()
-      .from(paymentsTable)
-      .where(eq(paymentsTable.userId, userId));
-
-    if (!paymentRecord.length) {
-      return res.status(404).json({ error: 'Payment record not found' });
+      return res.json({
+        subscriptionType: paymentRecord[0].subscriptionType,
+        paymentStatus: paymentRecord[0].paymentStatus,
+        nextBillingDate: paymentRecord[0].nextBillingDate,
+      });
+    } catch (error) {
+      console.log(error);
+      return res.status(500).json({ error: 'Failed to fetch payment status' });
     }
-
-    return res.json({
-      subscriptionType: paymentRecord[0].subscriptionType,
-      paymentStatus: paymentRecord[0].paymentStatus,
-      nextBillingDate: paymentRecord[0].nextBillingDate,
-    });
-  } catch (error) {
-    console.log(error);
-    return res.status(500).json({ error: 'Failed to fetch payment status' });
-  }
-};
+  },
+);
 
 export const getOrCreateCustomer = tryCatchFn(async (req, res) => {
   const { userId, email } = req.body;

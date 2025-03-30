@@ -138,7 +138,9 @@ export const handleWebhookEvent = async (event: Stripe.Event) => {
             typeof lineItem.price.product === 'string'
               ? await stripe.products.retrieve(lineItem.price.product)
               : lineItem.price.product;
-          subscriptionType = product?.name.toLowerCase().replace(/\s+/g, '-');
+          subscriptionType = (product as { name: string })?.name
+            ?.toLowerCase()
+            .replace(/\s+/g, '-');
         }
       }
 
