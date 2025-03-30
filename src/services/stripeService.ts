@@ -154,7 +154,7 @@ export const handleWebhookEvent = async (event: Stripe.Event) => {
     case 'invoice.created':
       // Update user's payment status and next billing date
       console.log('yeahhhhh');
-      // generate pdf if needed
+      // TODO: generate pdf if needed and send to user's email
       break;
 
     case 'customer.subscription.deleted':
