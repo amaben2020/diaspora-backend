@@ -6,7 +6,7 @@ import {
   uniqueIndex,
   varchar,
 } from 'drizzle-orm/pg-core';
-import { usersTable } from './usersTable';
+import { usersTable } from './usersTable.ts';
 import { relations } from 'drizzle-orm';
 
 export const paymentsTable = pgTable(
@@ -25,6 +25,7 @@ export const paymentsTable = pgTable(
 
     lastUpdated: timestamp('last_updated', { withTimezone: true }).defaultNow(),
   },
+  // defines additional table properties or constraints beyond the basic column definitions
   (table) => ({
     uniqueUser: uniqueIndex('unique_payment').on(table.userId),
   }),

@@ -4,7 +4,7 @@ import { and, desc, eq, lt } from 'drizzle-orm';
 import { profileViewsTable } from '../../schema/profileViews.ts';
 import { tryCatchFn } from '../../utils/tryCatch.ts';
 import { z } from 'zod';
-import { ably } from '../../../websocket.ts';
+import { ably } from '../../websocket.ts';
 import { imagesTable } from '../../schema/imagesTable.ts';
 
 const recordProfileViewSchema = z.object({

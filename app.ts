@@ -15,11 +15,12 @@ import swaggerUi from 'swagger-ui-express';
 import fs from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { updateUserStatus } from './websocket.ts';
+
 import Ably from 'ably';
 import cron from 'node-cron';
 import { db } from './src/db.ts';
 import { lt } from 'drizzle-orm';
+import { updateUserStatus } from './src/websocket.ts';
 
 dotenv.config();
 
@@ -112,3 +113,18 @@ cron.schedule('0 2 * * 0', async () => {
     console.error('Failed to clear old profile views:', error);
   }
 });
+
+// cron.schedule('* * * * * *', async () => {
+//   try {
+//     const oneWeekAgo = new Date();
+//     oneWeekAgo.setDate(oneWeekAgo.getDate() - 7);
+
+// await db
+//   .delete(profileViewsTable)
+//   .where(lt(profileViewsTable.viewedAt, oneWeekAgo));
+
+//     console.log('Cleared old profile views');
+//   } catch (error) {
+//     console.error('Failed to clear old profile views:', error);
+//   }
+// });
