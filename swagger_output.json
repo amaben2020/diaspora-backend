@@ -103,12 +103,14 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/user/{userId}": {
       "get": {
         "description": "",
         "parameters": [
           {
-            "name": "id",
+            "name": "userId",
             "in": "path",
             "required": true,
             "type": "string"
