@@ -12,6 +12,7 @@ import {
   getTravelTimeFromAPI,
 } from '../utils/index.ts';
 import { dislikesTable } from '../schema/dislikeTable.ts';
+import { paymentsTable } from '../schema/paymentsTable.ts';
 
 export const createUser = async (clerkId: string, phone?: string) => {
   const [user = undefined] = await db
@@ -64,9 +65,11 @@ export const getUser = async (id: string) => {
       displayName: usersTable.displayName,
       email: usersTable.email,
       id: usersTable.id,
+      subscription: paymentsTable.subscriptionType,
     })
     .from(usersTable)
-    .where(eq(usersTable.id, id));
+    .where(eq(usersTable.id, id))
+    .leftJoin(paymentsTable, eq(usersTable.id, paymentsTable.userId));
 
   return user;
 };

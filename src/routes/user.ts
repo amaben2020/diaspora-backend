@@ -18,7 +18,7 @@ const getUsersLimiter = rateLimit({
 const router = Router();
 router.route('/user').post(clerkMiddleware(), userCreateController);
 router.route('/user/:id').patch(clerkMiddleware(), userUpdateController);
-router.route('/user/:id').get(clerkMiddleware(), userGetController);
+router.route('/user/:userId').get(clerkMiddleware(), userGetController);
 router
   .route('/users')
   .get(clerkMiddleware(), getUsersLimiter, userGetsController);
