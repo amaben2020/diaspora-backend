@@ -16,6 +16,7 @@ export const stripeWebhookMiddleware = tryCatchFn(
 
     try {
       event = stripe.webhooks.constructEvent(req.body, sig, endpointSecret);
+      console.log('EVENT', event);
       await handleWebhookEvent(event);
     } catch (err) {
       if (err instanceof Error)

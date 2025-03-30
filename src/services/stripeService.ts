@@ -89,25 +89,72 @@ export const getSubscriptionPlans = async () => {
 
 export const handleWebhookEvent = async (event: Stripe.Event) => {
   switch (event.type) {
+    // case 'invoice.payment_succeeded':
+    //   const invoice = event.data.object as Stripe.Invoice;
+    //   const subscriptionId = invoice.subscription as string;
+    //   const subscription = await stripe.subscriptions.retrieve(subscriptionId);
+    //   const customerId = subscription.customer as string;
+    //   console.log('INVOICE OBJECT=====>', invoice);
+    //   console.log('SUBSCRIPTION =====>', subscription);
+
+    //   // Update user's payment status and next billing date
+    //   await db
+    //     .update(paymentsTable)
+    //     .set({
+    //       paymentStatus: 'active',
+    //       nextBillingDate: new Date(subscription.current_period_end * 1000),
+    //       lastUpdated: new Date(),
+    //       // TODO: i need to pass in diaspora-economy, business or first class here
+    //       subscriptionType: 'paid',
+    //     })
+    //     .where(eq(paymentsTable.stripeCustomerId, customerId));
+    //   break;
+
     case 'invoice.payment_succeeded':
       const invoice = event.data.object as Stripe.Invoice;
       const subscriptionId = invoice.subscription as string;
-      const subscription = await stripe.subscriptions.retrieve(subscriptionId);
+      const subscription = await stripe.subscriptions.retrieve(subscriptionId, {
+        expand: ['items.data.price.product'],
+      });
       const customerId = subscription.customer as string;
-      console.log('INVOICE OBJECT=====>', invoice);
-      console.log('SUBSCRIPTION =====>', subscription);
 
-      // Update user's payment status and next billing date
+      // Extract plan name from the first line item
+      let subscriptionType = 'paid'; // default fallback
+      if (invoice.lines?.data?.length > 0) {
+        const lineItem = invoice.lines.data[0];
+        if (lineItem.description) {
+          // Extract the plan name from description
+          const match = lineItem.description.match(/Diaspora (.+?) \(at/);
+          if (match && match[1]) {
+            subscriptionType = match[1].toLowerCase().replace(/\s+/g, '-');
+          }
+        } else if (lineItem.price?.product) {
+          // Fallback to product name if description isn't available
+          const product =
+            typeof lineItem.price.product === 'string'
+              ? await stripe.products.retrieve(lineItem.price.product)
+              : lineItem.price.product;
+          subscriptionType = product?.name.toLowerCase().replace(/\s+/g, '-');
+        }
+      }
+
+      console.log('Determined subscription type:', subscriptionType);
+
       await db
         .update(paymentsTable)
         .set({
           paymentStatus: 'active',
           nextBillingDate: new Date(subscription.current_period_end * 1000),
           lastUpdated: new Date(),
-          // TODO: i need to pass in diaspora-economy, business or first class here
-          subscriptionType: 'paid',
+          subscriptionType, // e.g. "business-class", "first-class", etc.
         })
         .where(eq(paymentsTable.stripeCustomerId, customerId));
+      break;
+
+    case 'invoice.created':
+      // Update user's payment status and next billing date
+      console.log('yeahhhhh');
+      // generate pdf if needed
       break;
 
     case 'customer.subscription.deleted':
