@@ -36,6 +36,7 @@
     "@commitlint/cli": "^19.7.1",
     "@commitlint/config-conventional": "^19.7.1",
     "@neondatabase/serverless": "^0.10.4",
+    "@sendgrid/mail": "^8.1.4",
     "@stripe/stripe-js": "^6.1.0",
     "ably": "^2.6.4",
     "axios": "^1.8.3",
