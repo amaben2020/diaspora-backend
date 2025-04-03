@@ -11,3 +11,5 @@ export { dislikesTable } from './dislikeTable.ts';
 export { locationsTable } from './locationTable.ts';
 export { usersTable } from './usersTable.ts';
 export { chatsTable } from './chatTable.ts';
+export { profilesTable } from './profileTable.ts';
+export { favoritesTable } from './favoriteTable.ts';

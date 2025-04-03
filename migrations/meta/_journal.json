@@ -127,6 +127,20 @@
       "when": 1742941022890,
       "tag": "0017_tearful_mole_man",
       "breakpoints": true
+    },
+    {
+      "idx": 18,
+      "version": "7",
+      "when": 1743358603709,
+      "tag": "0018_married_tiger_shark",
+      "breakpoints": true
+    },
+    {
+      "idx": 19,
+      "version": "7",
+      "when": 1743358673547,
+      "tag": "0019_brainy_pretty_boy",
+      "breakpoints": true
     }
   ]
 }
