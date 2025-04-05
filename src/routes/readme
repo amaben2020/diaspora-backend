@@ -20,5 +20,4 @@
 // .get(clerkMiddleware(), (req: AuthenticatedRequest, res: Response) => {
 // res.json({ message: 'Running', auth: req.auth });
 // });
-
 // export default router;
