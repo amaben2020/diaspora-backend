@@ -30,11 +30,10 @@ const configPath = join(
   dirname(fileURLToPath(import.meta.url)),
   './swagger_output.json',
 );
+
 const swaggerFile = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
-if (String(process.env.NODE_ENV) === 'development') {
-  app.use(morgan('dev'));
-}
+if (String(process.env.NODE_ENV) === 'development') app.use(morgan('dev'));
 
 app.use(helmet());
 
