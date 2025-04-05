@@ -6,7 +6,9 @@ dotenv.config();
 const isLocalServer = process.env.ENVIRONMENT === 'development';
 const URL = isLocalServer
   ? process.env.DEV_SWAGGER_URL
-  : 'http://localhost:8000';
+  : process.env.ENVIRONMENT === 'local'
+    ? 'http://localhost:8000'
+    : '';
 
 if (!URL) {
   throw new Error('BACKEND_URL is not defined in the environment variables.');
