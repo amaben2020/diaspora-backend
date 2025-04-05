@@ -6,15 +6,17 @@ import { config } from 'dotenv';
 // Load environment variables
 config({ path: '.env' }); // or .env.local
 
-// Determine which database URL to use based on NODE_ENV
+// Determine which database URL to use based on ENVIRONMENT
 const DATABASE_URL =
-  process.env.NODE_ENV === 'production'
+  process.env.ENVIRONMENT === 'production'
     ? process.env.PROD_DATABASE_URL
-    : process.env.NODE_ENV === 'development'
+    : process.env.ENVIRONMENT === 'development'
       ? process.env.DEV_DATABASE_URL
-      : process.env.TEST_DATABASE_URL;
+      : process.env.ENVIRONMENT === 'staging'
+        ? process.env.STAGING_DATABASE_URL
+        : process.env.TEST_DATABASE_URL;
 
-console.log(`DATABASE_URL FOR ${process.env.NODE_ENV}:`, DATABASE_URL);
+console.log(`DATABASE_URL FOR ${process.env.ENVIRONMENT}:`, DATABASE_URL);
 if (!DATABASE_URL) {
   throw new Error(
     `${DATABASE_URL} is not defined in the environment variables.`,
