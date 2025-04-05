@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 // Set the backend URL based on the environment
-const isLocalServer = process.env.ENVIRONMENT === 'local';
+const isLocalServer = process.env.ENVIRONMENT === 'development';
 const URL = isLocalServer
   ? process.env.DEV_SWAGGER_URL
   : 'http://localhost:8000';
