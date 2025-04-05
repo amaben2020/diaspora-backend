@@ -2,7 +2,6 @@ import swaggerAutogen from 'swagger-autogen';
 import dotenv from 'dotenv';
 
 dotenv.config();
-
 const URL =
   process.env.NODE_ENV === 'development'
     ? 'http://localhost:8000'
