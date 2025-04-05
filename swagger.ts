@@ -3,7 +3,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 const URL =
-  process.env.NODE_ENV === 'development'
+  process.env.ENVIRONMENT === 'development'
     ? 'http://localhost:8000'
     : process.env.NODE_ENV === 'dev'
       ? 'https://diaspora-backend-dev.onrender.com/'
