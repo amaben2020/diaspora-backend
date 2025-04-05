@@ -18,6 +18,7 @@ const doc = {
   },
   host: URL.replace(/https?:\/\//, ''),
   basePath: '/api/v1',
+  urls: [{}],
   schemes: [URL.startsWith('https') ? 'https' : 'http'],
   consumes: ['application/json'],
   produces: ['application/json'],
