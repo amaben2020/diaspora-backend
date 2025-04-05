@@ -45,6 +45,7 @@ export const getProfileController = tryCatchFn(async (req, res) => {
         id: usersTable.id,
         name: usersTable.displayName,
         email: usersTable.email,
+        age: usersTable.birthday,
       },
       preferences: {
         id: preferencesTable.id,
