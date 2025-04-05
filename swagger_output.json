@@ -5,7 +5,7 @@
     "title": "Diaspora",
     "description": "Diaspora backend API documentation"
   },
-  "host": "diaspora-backend-dev.onrender.com/",
+  "host": "diaspora-backend-prod.onrender.com",
   "basePath": "/api/v1",
   "tags": [
     {
