@@ -2,7 +2,9 @@ import swaggerAutogen from 'swagger-autogen';
 import dotenv from 'dotenv';
 
 dotenv.config();
-const URL = process.env.BACKEND_URL! ?? '';
+// Set the backend URL based on the environment
+const isProduction = process.env.NODE_ENV !== 'development';
+const URL = isProduction ? process.env.BACKEND_URL : 'http://localhost:8000'; // Default to local if not in production
 
 if (!URL) {
   throw new Error('BACKEND_URL is not defined in the environment variables.');
