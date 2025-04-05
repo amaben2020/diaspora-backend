@@ -2,11 +2,7 @@ import swaggerAutogen from 'swagger-autogen';
 import dotenv from 'dotenv';
 
 dotenv.config();
-
-const URL =
-  process.env.NODE_ENV === 'development'
-    ? 'http://localhost:8000'
-    : process.env.BACKEND_URL!;
+const URL = process.env.BACKEND_URL! ?? '';
 
 if (!URL) {
   throw new Error('BACKEND_URL is not defined in the environment variables.');

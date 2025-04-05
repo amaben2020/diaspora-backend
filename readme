@@ -5,3 +5,9 @@ docker run -p 3000:3000 my-express-app
 Swagger: http://localhost:8000/api-docs
 
 TODO: Create scalable error class and return statusCodes, use commonJS
+
+Environment var
+production
+staging
+development
+dev : local instance

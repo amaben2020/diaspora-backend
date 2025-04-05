@@ -272,7 +272,7 @@ export const createImageUrlController = tryCatchFn(async (req, res, next) => {
             .update(imagesTable)
             .set({
               imageUrl: image.imageUrl,
-              updatedAt: new Date(),
+              // updatedAt: new Date(),
             })
             .where(
               and(
