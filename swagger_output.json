@@ -3,27 +3,27 @@
   "info": {
     "version": "1.0.0",
     "title": "Diaspora",
-    "description": "Diaspora backend API documentation (development environment)"
+    "description": "Diaspora backend API documentation"
   },
-  "host": "localhost:8000",
-  "servers": [
+  "host": "diaspora-backend.onrender.com",
+  "basePath": "/api/v1",
+  "tags": [
     {
-      "url": "http://localhost:8000/api/v1",
-      "description": "Local Development Server"
-    },
-    {
-      "url": "https://diaspora-backend.onrender.com/api/v1",
-      "description": "Production Server"
-    },
-    {
-      "url": "https://staging.diaspora-backend.onrender.com/api/v1",
-      "description": "Staging Server"
+      "name": "Auth",
+      "description": "Authentication related endpoints"
     }
   ],
-  "basePath": "/api/v1",
   "schemes": [
-    "http"
+    "https"
   ],
+  "securityDefinitions": {
+    "apiKeyAuth": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "Authorization",
+      "description": "Bearer token for authentication. Please type in 'Bearer' followed by a space and then the token."
+    }
+  },
   "consumes": [
     "application/json"
   ],
@@ -784,5 +784,6 @@
         }
       }
     }
-  }
+  },
+  "security": []
 }
