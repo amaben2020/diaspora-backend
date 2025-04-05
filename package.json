@@ -8,7 +8,7 @@
     "coverage": "vitest run --coverage",
     "start": "cross-env NODE_ENV=production ts-node index.ts",
     "dev": "cross-env NODE_ENV=development nodemon index.ts",
-    "build": "npx tsc && cross-env NODE_ENV=production",
+    "build": "npx tsc && cross-env NODE_ENV=production && npm run swagger",
     "precommit": "npm run swagger && npm run lint",
     "swagger": "ts-node swagger.ts",
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}' --fix",
