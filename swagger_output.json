@@ -5,7 +5,7 @@
     "title": "Diaspora",
     "description": "Diaspora backend API documentation"
   },
-  "host": "localhost:8000",
+  "host": "diaspora-backend-prod.onrender.com",
   "basePath": "/api/v1",
   "tags": [
     {
@@ -14,7 +14,7 @@
     }
   ],
   "schemes": [
-    "http"
+    "https"
   ],
   "securityDefinitions": {
     "apiKeyAuth": {

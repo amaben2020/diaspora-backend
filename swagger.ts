@@ -5,7 +5,7 @@ dotenv.config();
 const URL =
   process.env.ENVIRONMENT === 'development'
     ? 'http://localhost:8000'
-    : process.env.NODE_ENV === 'dev'
+    : process.env.NODE_ENV === 'development'
       ? 'https://diaspora-backend-dev.onrender.com/'
       : process.env.BACKEND_URL!;
 
