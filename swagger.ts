@@ -3,11 +3,9 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 const URL =
-  process.env.ENVIRONMENT === 'development'
+  process.env.ENVIRONMENT === 'dev'
     ? 'http://localhost:8000'
-    : process.env.NODE_ENV === 'development'
-      ? 'https://diaspora-backend-dev.onrender.com/'
-      : process.env.BACKEND_URL!;
+    : process.env.BACKEND_URL!;
 
 if (!URL) {
   throw new Error('BACKEND_URL is not defined in the environment variables.');
