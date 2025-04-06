@@ -1,5 +1,12 @@
+import { createHash } from 'crypto';
+
 import { countryIndex } from './countryEmojis.ts';
-// using Haversine formula
+import redis from './redis.ts';
+
+const CACHE_TTL = 86400; // 24 hours in seconds
+const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API;
+const RESULTS_CACHE_TTL = 3600; // 1 hour
+const COUNTRY_CACHE_TTL = 604800; // 1 week (country data changes rarely)
 
 export function calculateDistance(
   lat1: number,
@@ -20,8 +27,6 @@ export function calculateDistance(
   return R * c; // Distance in km
 }
 
-const GOOGLE_MAPS_API_KEY = process.env.GOOGLE_MAPS_API;
-
 export async function getTravelTimeFromAPI(
   originLatitude: number,
   originLongitude: number,
@@ -29,7 +34,7 @@ export async function getTravelTimeFromAPI(
   destinationLongitude: number,
 ): Promise<{ travelTimeMinutes: number; distanceKm: number }> {
   const url = `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${originLatitude},${originLongitude}&destinations=${destinationLatitude},${destinationLongitude}&key=${GOOGLE_MAPS_API_KEY}`;
-  console.log(originLatitude, originLongitude);
+
   try {
     const response = await fetch(url);
     const data = await response.json();
@@ -38,7 +43,7 @@ export async function getTravelTimeFromAPI(
       console.error('Error fetching distance:', data);
       return { travelTimeMinutes: 0, distanceKm: 0 };
     }
-    console.dir(data.rows, { depth: null });
+
     const element = data.rows[0].elements[0];
     if (element.status !== 'OK') {
       console.error('Invalid location data:', element);
@@ -94,4 +99,67 @@ export async function getCountryFromCoordinates(
     console.error('Error calling Google Geocoding API:', error);
     return null;
   }
+}
+
+export async function getCachedCountry(
+  lat: number,
+  lng: number,
+): Promise<{ name: string; abrv: string; flag: string } | null> {
+  const cacheKey = `country:${lat},${lng}`;
+  const cached = await redis.get(cacheKey);
+  return cached ? JSON.parse(cached) : null;
+}
+
+export async function setCachedCountry(
+  lat: number,
+  lng: number,
+  data: { name: string; abrv: string; flag: string },
+): Promise<void> {
+  const cacheKey = `country:${lat},${lng}`;
+  await redis.setex(cacheKey, COUNTRY_CACHE_TTL, JSON.stringify(data));
+}
+
+// caches the distance data
+export async function setCachedDistance(
+  origin: { lat: number; lng: number },
+  destination: { lat: number; lng: number },
+  data: { distanceKm: number; travelTimeMinutes: number },
+): Promise<void> {
+  const cacheKey = `distance:${origin.lat},${origin.lng}:${destination.lat},${destination.lng}`;
+  await redis.setex(cacheKey, CACHE_TTL, JSON.stringify(data));
+}
+
+export async function getCachedDistance(
+  origin: { lat: number; lng: number },
+  destination: { lat: number; lng: number },
+): Promise<{ distanceKm: number; travelTimeMinutes: number } | null> {
+  const cacheKey = `distance:${origin.lat},${origin.lng}:${destination.lat},${destination.lng}`;
+  const cached = await redis.get(cacheKey);
+  return cached ? JSON.parse(cached) : null;
+}
+
+export function createQueryHash(params: Record<string, string>): string {
+  return createHash('sha256').update(JSON.stringify(params)).digest('hex');
+}
+
+export function createLocationHash(lat: string, lng: string): string {
+  const precision = 3; // ~100m precision
+  const latFixed = parseFloat(lat).toFixed(precision);
+  const lngFixed = parseFloat(lng).toFixed(precision);
+  return createHash('sha256').update(`${latFixed},${lngFixed}`).digest('hex');
+}
+
+export async function getCachedResults(userId: string, queryHash: string) {
+  const cacheKey = `user_results:${userId}:${queryHash}`;
+  const cached = await redis.get(cacheKey);
+  return cached ? JSON.parse(cached) : null;
+}
+
+export async function cacheResults(
+  userId: string,
+  queryHash: string,
+  results: unknown[],
+) {
+  const cacheKey = `user_results:${userId}:${queryHash}`;
+  await redis.setex(cacheKey, RESULTS_CACHE_TTL, JSON.stringify(results));
 }
