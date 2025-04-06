@@ -191,14 +191,29 @@ export async function getUsers(
       : [];
 
   // Group images by user ID
-  const imagesByUser = allImages.reduce((acc, image) => {
+  // const imagesByUser = allImages.reduce((acc, image) => {
+  //   if (!acc[image.userId]) acc[image.userId] = [];
+  //   acc[image.userId].push({
+  //     imageUrl: image.imageUrl,
+  //     order: image.order,
+  //   });
+  //   return acc;
+  // }, {});
+
+  interface ImagesByUser {
+    [userId: string]: { imageUrl: string; order: number }[];
+  }
+
+  const imagesByUser: ImagesByUser = allImages.reduce((acc, image) => {
     if (!acc[image.userId]) acc[image.userId] = [];
     acc[image.userId].push({
       imageUrl: image.imageUrl,
       order: image.order,
     });
     return acc;
-  }, {});
+  }, {} as ImagesByUser);
+
+  console.log(imagesByUser);
 
   // Process users with caching
   const origin = {
