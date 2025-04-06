@@ -138,7 +138,9 @@ export async function getCachedDistance(
   return cached ? JSON.parse(cached) : null;
 }
 
-export function createQueryHash(params: Record<string, string>): string {
+export function createQueryHash(
+  params: Record<string, number | string>,
+): string {
   return createHash('sha256').update(JSON.stringify(params)).digest('hex');
 }
 
