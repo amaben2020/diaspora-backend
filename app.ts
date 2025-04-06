@@ -97,7 +97,7 @@ app.use(
   },
 );
 
-// extract and modularize
+// extract and modularize: profile views table cleared after one week
 // Run every Sunday at 2 AM: https://www.npmjs.com/package/node-cron
 cron.schedule('0 2 * * 0', async () => {
   try {
@@ -128,3 +128,29 @@ cron.schedule('0 2 * * 0', async () => {
 //     console.error('Failed to clear old profile views:', error);
 //   }
 // });
+
+// // Every 3 days
+// myQueue.add(
+//   "job_name",
+//   {
+//     /* your job data here */
+//   },
+//   {
+//     repeat: {
+//       cron: "0 0 */3 * *",
+//     },
+//   }
+// );
+
+// // Every 3 weeks
+// myQueue.add(
+//   "job_name",
+//   {
+//     /* your job data here */
+//   },
+//   {
+//     repeat: {
+//       cron: "0 0 */21 * *",
+//     },
+//   }
+// );
