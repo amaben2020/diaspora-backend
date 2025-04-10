@@ -183,6 +183,13 @@
       "when": 1744297729828,
       "tag": "0025_keen_calypso",
       "breakpoints": true
+    },
+    {
+      "idx": 26,
+      "version": "7",
+      "when": 1744298179697,
+      "tag": "0026_curved_mystique",
+      "breakpoints": true
     }
   ]
 }
