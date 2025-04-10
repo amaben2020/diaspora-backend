@@ -12,6 +12,7 @@ import profileViewsRouter from './profileViews.ts';
 import paymentRouter from './payment.ts';
 import favoritesRouter from './favorites.ts';
 import profilesRouter from './profiles.ts';
+import rouletteRouter from './roulette.ts';
 
 const router = express.Router();
 
@@ -29,5 +30,6 @@ router.use('', profileViewsRouter);
 router.use('', paymentRouter);
 router.use('', favoritesRouter);
 router.use('', profilesRouter);
+router.use('', rouletteRouter);
 
 export default router;
