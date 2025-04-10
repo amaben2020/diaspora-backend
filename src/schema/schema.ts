@@ -13,3 +13,5 @@ export { usersTable } from './usersTable.ts';
 export { chatsTable } from './chatTable.ts';
 export { profilesTable } from './profileTable.ts';
 export { favoritesTable } from './favoriteTable.ts';
+export { rouletteSessionsTable } from './rouletteTable.ts';
+export { rouletteMatchesTable } from './rouletteTable.ts';
