@@ -2,11 +2,13 @@ import { eq } from 'drizzle-orm';
 import { Router, type Request, type Response } from 'express';
 import { db } from '../db.ts';
 import { premiumFeaturesTable } from '../schema/premiumFeatureTable.ts';
+import { tryCatchFn } from '../utils/tryCatch.ts';
 
 const router = Router();
 // TODO: Refactor endpoint
-router.post('/boost/:userId', async (request: Request, res: Response) => {
-  try {
+router.post(
+  '/boost/:userId',
+  tryCatchFn(async (request: Request, res: Response) => {
     const { userId } = await request.params;
 
     if (!userId) {
@@ -50,10 +52,7 @@ router.post('/boost/:userId', async (request: Request, res: Response) => {
 
       return res.json(newPremium);
     }
-  } catch (error) {
-    console.error('Boost error:', error);
-    return res.status(500).json({ error: 'Internal server error' });
-  }
-});
+  }),
+);
 
 export default router;

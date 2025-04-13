@@ -4,16 +4,24 @@ import { db } from '../db.ts';
 import { randomUUID } from 'crypto';
 import { blocksTable } from '../schema/blockTable.ts';
 import { and, eq } from 'drizzle-orm';
+import { tryCatchFn } from '../utils/tryCatch.ts';
+// import { redisClient } from '../utils/redis.ts';
 
 const router = Router();
 
 // Report a user
 
 // Block a user
-router.post('/block', async (req, res) => {
-  const { blockerId, blockedId } = req.body;
+router.post(
+  '/block',
+  tryCatchFn(async (req, res) => {
+    const { blockerId, blockedId } = req.body;
 
-  try {
+    // Invalidate all relevant cache keys
+    // const pattern = `all-users-with-locations-${blockerId}-*`;
+    // console.log(pattern);
+    // await redisClient.del(pattern);
+
     // Validate input
     if (!blockerId || !blockedId) {
       return res.status(400).json({ error: 'Missing required fields' });
@@ -51,10 +59,7 @@ router.post('/block', async (req, res) => {
       .returning();
 
     res.json({ success: true, block });
-  } catch (error) {
-    console.error('Block error:', error);
-    res.status(500).json({ error: 'Failed to block user' });
-  }
-});
+  }),
+);
 
 export default router;
