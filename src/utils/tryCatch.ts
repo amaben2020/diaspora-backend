@@ -1,9 +1,16 @@
 import type { AuthenticatedRequest } from '@/types/globals';
 import { type NextFunction, type Request, type Response } from 'express';
 
+export type TRequest = Request & {
+  query?: {
+    userId?: string;
+  };
+  blockedUserIds?: string[];
+};
+
 export const tryCatchFn = (
   fn: (
-    req: Request,
+    req: TRequest,
     res: Response,
     next: NextFunction,
   ) => Promise<void | unknown>,

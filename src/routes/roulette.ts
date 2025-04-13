@@ -600,4 +600,68 @@ rouletteRouter.get('/roulette/stats', async (req, res) => {
   }
 });
 
+/**
+ * @route GET /api/matches
+ * @description Get all matches for the authenticated user
+ * @access Private
+//  */
+// rouletteRouter.get('/', async (req, res) => {
+//   try {
+//     const userId = req.user.id;
+
+//     // Get current session status (includes active match if exists)
+//     const sessionStatus = await checkSessionStatus(userId);
+
+//     // Get match history
+//     const limit = req.query.limit ? parseInt(req.query.limit as string) : 20;
+//     const history = await getMatchHistory(userId, limit);
+
+//     return res.json({
+//       success: true,
+//       activeMatch: sessionStatus.match || null,
+//       session: sessionStatus.session || null,
+//       history,
+//     });
+//   } catch (error) {
+//     console.error('Error fetching user matches:', error);
+//     return res.status(500).json({
+//       success: false,
+//       message: 'Failed to fetch matches',
+//     });
+//   }
+// });
+
+// /**
+//  * @route GET /api/matches/active
+//  * @description Get only the active match for the authenticated user
+//  * @access Private
+//  */
+// rouletteRouter.get('/active', authMiddleware, async (req, res) => {
+//   try {
+//     const userId = req.user.id;
+//     const sessionStatus = await checkSessionStatus(userId);
+
+//     if (!sessionStatus.match) {
+//       return res.json({
+//         success: true,
+//         hasActiveMatch: false,
+//         message: 'No active match found',
+//       });
+//     }
+
+//     return res.json({
+//       success: true,
+//       hasActiveMatch: true,
+//       match: sessionStatus.match,
+//       session: sessionStatus.session,
+//     });
+//   } catch (error) {
+//     console.error('Error fetching active match:', error);
+//     return res.status(500).json({
+//       success: false,
+//       message: 'Failed to fetch active match',
+//     });
+//   }
+// });
+
 export default rouletteRouter;

@@ -21,26 +21,49 @@ export async function findMatch(userId: string) {
     .where(eq(rouletteSessionsTable.userId, userId))
     .limit(1);
 
-  // If user already has a session and it's not in 'completed' state
-  if (existingSession.length > 0 && existingSession[0].status !== 'completed') {
+  // If user already has a session, check its status and validity
+  if (existingSession.length > 0) {
     const session = existingSession[0];
 
-    // If user is already in a match
+    // If user is in a 'matched' state, verify the match is still valid
     if (session.status === 'matched') {
       // Get match details
       const match = await getActiveMatchForSession(session.id);
 
+      // If match exists and is still valid
       if (match) {
+        // Check if match has expired but not properly ended
+        const now = new Date();
+        if (match.scheduledEndTime < now) {
+          // This match has expired - end it now before proceeding
+          await endMatch(match.id);
+
+          // Return waiting state so user can be rematched
+          return {
+            message:
+              'Your previous match has ended. Looking for a new match now.',
+            previousMatchEnded: true,
+          };
+        }
+
+        // Match is still valid
         return {
           alreadyMatched: true,
           message: "You're already in an active match!",
           matchDetails: match,
           partnerId: await getPartnerIdFromMatch(match, session.id),
         };
+      } else {
+        // Match not found but user is in matched state - something is wrong
+        // Reset user to waiting state
+        await db
+          .update(rouletteSessionsTable)
+          .set({ status: 'waiting' })
+          .where(eq(rouletteSessionsTable.id, session.id));
       }
     }
 
-    // If user is already waiting
+    // If user is in waiting state, check if they've been waiting for too long
     if (session.status === 'waiting') {
       return {
         alreadyWaiting: true,
@@ -53,7 +76,11 @@ export async function findMatch(userId: string) {
   const sessionId = randomUUID();
   const currentTime = new Date();
 
-  const previousPartners = existingSession[0]?.previousPartners || [];
+  // Keep previous partners if session exists
+  const previousPartners =
+    existingSession.length > 0
+      ? existingSession[0]?.previousPartners || []
+      : [];
 
   const [session] = await db
     .insert(rouletteSessionsTable)
@@ -63,12 +90,14 @@ export async function findMatch(userId: string) {
       status: 'waiting',
       updatedAt: currentTime,
       previousPartners: previousPartners,
+      statusMessage: 'Looking for a match',
     })
     .onConflictDoUpdate({
       target: rouletteSessionsTable.userId,
       set: {
         status: 'waiting',
         updatedAt: currentTime,
+        statusMessage: 'Looking for a match',
       },
     })
     .returning();
@@ -103,7 +132,10 @@ export async function findMatch(userId: string) {
   // Claim the partner (atomic operation)
   const updatedPartner = await db
     .update(rouletteSessionsTable)
-    .set({ status: 'matched' })
+    .set({
+      status: 'matched',
+      statusMessage: 'In active match',
+    })
     .where(
       and(
         eq(rouletteSessionsTable.id, partner.id),
@@ -135,6 +167,7 @@ export async function findMatch(userId: string) {
     .set({
       status: 'matched',
       previousPartners: updatedPreviousPartners,
+      statusMessage: 'In active match',
     })
     .where(eq(rouletteSessionsTable.id, session.id));
 
@@ -180,36 +213,52 @@ export async function findMatch(userId: string) {
  * End a match and update session statuses
  */
 export async function endMatch(matchId: string) {
-  const [match] = await db
-    .update(rouletteMatchesTable)
-    .set({
-      endedAt: new Date(),
-    })
-    .where(
-      and(
-        eq(rouletteMatchesTable.id, matchId),
-        sql`ended_at IS NULL`, // Only end it if it hasn't been ended already
-      ),
-    )
-    .returning();
+  // First get the match to ensure it exists and to get session IDs
+  const existingMatch = await db
+    .select()
+    .from(rouletteMatchesTable)
+    .where(eq(rouletteMatchesTable.id, matchId))
+    .limit(1);
 
-  if (!match) {
-    return { success: false, message: 'Match not found or already ended' };
+  if (existingMatch.length === 0) {
+    return { success: false, message: 'Match not found' };
   }
 
-  // Update both sessions to completed status
-  await Promise.all([
-    db
-      .update(rouletteSessionsTable)
-      .set({ status: 'completed' })
-      .where(eq(rouletteSessionsTable.id, match.session1Id)),
-    db
-      .update(rouletteSessionsTable)
-      .set({ status: 'completed' })
-      .where(eq(rouletteSessionsTable.id, match.session2Id)),
-  ]);
+  const match = existingMatch[0];
 
-  return { success: true, message: 'Match ended successfully' };
+  // Only end the match if it hasn't been ended already
+  if (match.endedAt === null) {
+    await db
+      .update(rouletteMatchesTable)
+      .set({
+        endedAt: new Date(),
+      })
+      .where(eq(rouletteMatchesTable.id, matchId));
+
+    // Update both sessions to completed status
+    await Promise.all([
+      db
+        .update(rouletteSessionsTable)
+        .set({
+          status: 'completed',
+          statusMessage: 'Match completed',
+          updatedAt: new Date(),
+        })
+        .where(eq(rouletteSessionsTable.id, match.session1Id)),
+      db
+        .update(rouletteSessionsTable)
+        .set({
+          status: 'completed',
+          statusMessage: 'Match completed',
+          updatedAt: new Date(),
+        })
+        .where(eq(rouletteSessionsTable.id, match.session2Id)),
+    ]);
+
+    return { success: true, message: 'Match ended successfully' };
+  }
+
+  return { success: false, message: 'Match already ended' };
 }
 
 /**
@@ -224,13 +273,19 @@ function scheduleMatchEnd(matchId: string, endTime: Date) {
     return;
   }
 
-  setTimeout(() => {
-    endMatch(matchId);
+  setTimeout(async () => {
+    try {
+      await endMatch(matchId);
+      console.log(`Match ${matchId} automatically ended as scheduled.`);
+    } catch (error) {
+      console.error(`Failed to end match ${matchId}:`, error);
+    }
   }, timeUntilEnd);
 }
 
 /**
  * Check for expired matches and end them
+ * This should be called regularly via a cron job or similar
  */
 export async function cleanupExpiredMatches() {
   const now = new Date();
@@ -241,17 +296,21 @@ export async function cleanupExpiredMatches() {
     .from(rouletteMatchesTable)
     .where(and(sql`scheduled_end_time < ${now}`, sql`ended_at IS NULL`));
 
+  console.log(`Found ${expiredMatches.length} expired matches to clean up.`);
+
   // End each expired match
-  for (const match of expiredMatches) {
-    await endMatch(match.id);
-  }
+  const results = await Promise.all(
+    expiredMatches.map((match) => endMatch(match.id)),
+  );
+
+  const successful = results.filter((r) => r.success).length;
 
   return {
-    ended: expiredMatches.length,
+    ended: successful,
     message:
-      expiredMatches.length > 0
-        ? `Successfully ended ${expiredMatches.length} expired matches`
-        : 'No expired matches found',
+      successful > 0
+        ? `Successfully ended ${successful} expired matches`
+        : 'No expired matches needed ending',
   };
 }
 
@@ -292,6 +351,138 @@ async function getPartnerIdFromMatch(match, sessionId: string) {
     .where(eq(rouletteSessionsTable.id, partnerSessionId));
 
   return partnerSession?.userId;
+}
+
+/**
+ * Check user's session status and update if needed
+ * This can be called by client to verify/refresh their status
+ */
+export async function checkSessionStatus(userId: string) {
+  // Get the user's session
+  const [session = undefined] = await db
+    .select()
+    .from(rouletteSessionsTable)
+    .where(eq(rouletteSessionsTable.userId, userId))
+    .limit(1);
+
+  if (!session) {
+    return {
+      success: true,
+      exists: false,
+      message: 'No session found for this user.',
+    };
+  }
+
+  // For matched sessions, validate match is still active
+  if (session.status === 'matched') {
+    const match = await getActiveMatchForSession(session.id);
+
+    if (!match) {
+      // Match not found but user in matched state - reset to completed
+      await db
+        .update(rouletteSessionsTable)
+        .set({
+          status: 'completed',
+          statusMessage: 'Match not found - reset',
+          updatedAt: new Date(),
+        })
+        .where(eq(rouletteSessionsTable.id, session.id));
+
+      return {
+        success: true,
+        exists: true,
+        session: {
+          ...session,
+          status: 'completed',
+          statusMessage: 'Match not found - reset',
+        },
+        message: 'Your match has ended.',
+      };
+    }
+
+    // Check if match has expired
+    const now = new Date();
+    if (match.scheduledEndTime < now) {
+      // This should happen automatically, but if it hasn't, end it now
+      await endMatch(match.id);
+
+      return {
+        success: true,
+        exists: true,
+        session: {
+          ...session,
+          status: 'completed',
+          statusMessage: 'Match completed - time expired',
+        },
+        message: 'Your match has ended due to time expiration.',
+      };
+    }
+
+    // Match is valid and active - calculate time remaining
+    const timeRemaining = Math.max(
+      0,
+      match.scheduledEndTime.getTime() - now.getTime(),
+    );
+    const progress = 100 - (timeRemaining / MATCH_DURATION_MS) * 100;
+
+    // Format time remaining in a friendly way
+    let timeRemainingFormatted;
+    if (timeRemaining <= 0) {
+      timeRemainingFormatted = 'less than a minute';
+    } else if (timeRemaining < 60000) {
+      timeRemainingFormatted = 'less than a minute';
+    } else {
+      const minutes = Math.floor(timeRemaining / 60000);
+      timeRemainingFormatted = `${minutes} minute${minutes !== 1 ? 's' : ''}`;
+    }
+
+    // Update status message based on time remaining
+    let statusMessage = 'In active match';
+    if (timeRemaining < 30000) {
+      statusMessage = 'In active match with less than 30 seconds remaining';
+    } else if (timeRemaining < 60000) {
+      statusMessage = 'In active match with less than a minute remaining';
+    } else {
+      statusMessage = `In active match with ${Math.ceil(timeRemaining / 60000)} minutes remaining`;
+    }
+
+    // Update status message in database
+    await db
+      .update(rouletteSessionsTable)
+      .set({ statusMessage })
+      .where(eq(rouletteSessionsTable.id, session.id));
+
+    // Get partner info
+    const partnerId = await getPartnerIdFromMatch(match, session.id);
+    const partner = partnerId ? await getUserDetails(partnerId) : null;
+
+    return {
+      success: true,
+      exists: true,
+      session: {
+        ...session,
+        statusMessage,
+      },
+      match: {
+        id: match.id,
+        roomId: match.roomId,
+        startedAt: match.startedAt,
+        scheduledEndTime: match.scheduledEndTime,
+        timeRemaining,
+        progress,
+        timeRemainingFormatted,
+        partnerId,
+        partner,
+      },
+    };
+  }
+
+  // For other statuses, just return the session
+  return {
+    success: true,
+    exists: true,
+    session,
+  };
 }
 
 /**
@@ -336,14 +527,12 @@ export async function getMatchHistory(userId: string, limit = 20) {
           userId: rouletteSessionsTable.userId,
         })
         .from(rouletteSessionsTable)
-        .where(eq(rouletteSessionsTable.id, partnerSessionId));
+        .where(eq(rouletteSessionsTable.id, partnerSessionId!));
 
       // Get partner's user details if available
       let partnerDetails = null;
       if (partnerSession?.userId) {
         try {
-          // This assumes you have a users table query method
-          // Modify as needed based on your actual user data access
           const user = await getUserDetails(partnerSession.userId);
           if (user) {
             partnerDetails = {
@@ -369,6 +558,11 @@ export async function getMatchHistory(userId: string, limit = 20) {
         match.scheduledEndTime < new Date()
       ) {
         status = 'expired';
+        // If match has expired but not ended, calculate duration to scheduled end time
+        if (match.startedAt) {
+          duration =
+            match.scheduledEndTime.getTime() - match.startedAt.getTime();
+        }
       }
 
       // Calculate time remaining for active sessions
@@ -398,6 +592,43 @@ export async function getMatchHistory(userId: string, limit = 20) {
   );
 
   return enhancedMatches;
+}
+
+/**
+ * Start a new session when a user wants to find a new match
+ */
+export async function startNewSession(userId: string) {
+  // First end any existing matches for this user
+  const existingSession = await db
+    .select()
+    .from(rouletteSessionsTable)
+    .where(eq(rouletteSessionsTable.userId, userId))
+    .limit(1);
+
+  if (existingSession.length > 0) {
+    const session = existingSession[0];
+
+    if (session.status === 'matched') {
+      // End the active match if there is one
+      const match = await getActiveMatchForSession(session.id);
+      if (match) {
+        await endMatch(match.id);
+      }
+    }
+
+    // Mark current session as completed
+    await db
+      .update(rouletteSessionsTable)
+      .set({
+        status: 'completed',
+        statusMessage: 'Session ended by user',
+        updatedAt: new Date(),
+      })
+      .where(eq(rouletteSessionsTable.id, session.id));
+  }
+
+  // Now find a new match
+  return findMatch(userId);
 }
 
 // Helper function to get user details - implement according to your user schema

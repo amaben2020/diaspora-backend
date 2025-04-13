@@ -1,4 +1,4 @@
-import { clerkMiddleware } from '@clerk/express';
+import { clerkMiddleware, requireAuth } from '@clerk/express';
 import { Router } from 'express';
 import { rateLimit } from 'express-rate-limit';
 
@@ -8,6 +8,7 @@ import {
   userGetsController,
   userUpdateController,
 } from '../controller/user/user.ts';
+import { checkBlocked } from '../middleware/block.ts';
 
 const getUsersLimiter = rateLimit({
   windowMs: 60 * 1000,
@@ -15,12 +16,13 @@ const getUsersLimiter = rateLimit({
   message: { error: 'Too many requests, slow down!' },
 });
 
+//TODO: Improve middleware handling and redundancy
 const router = Router();
 router.route('/user').post(clerkMiddleware(), userCreateController);
 router.route('/user/:id').patch(clerkMiddleware(), userUpdateController);
 router.route('/user/:userId').get(clerkMiddleware(), userGetController);
 router
   .route('/users')
-  .get(clerkMiddleware(), getUsersLimiter, userGetsController);
+  .get(clerkMiddleware(), checkBlocked, getUsersLimiter, userGetsController);
 
 export default router;

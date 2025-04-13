@@ -13,6 +13,8 @@ import paymentRouter from './payment.ts';
 import favoritesRouter from './favorites.ts';
 import profilesRouter from './profiles.ts';
 import rouletteRouter from './roulette.ts';
+import reportsRouter from './report.ts';
+import blockRouter from './block.ts';
 
 const router = express.Router();
 
@@ -31,5 +33,7 @@ router.use('', paymentRouter);
 router.use('', favoritesRouter);
 router.use('', profilesRouter);
 router.use('', rouletteRouter);
+router.use('', reportsRouter);
+router.use('', blockRouter);
 
 export default router;

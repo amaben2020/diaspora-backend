@@ -21,10 +21,10 @@ import cron from 'node-cron';
 import { db } from './src/db.ts';
 import { lt } from 'drizzle-orm';
 import { updateUserStatus } from './src/websocket.ts';
-import { createBullBoard } from '@bull-board/api';
-import { BullMQAdapter } from '@bull-board/api/bullMQAdapter.js';
-import { ExpressAdapter } from '@bull-board/express';
-import { emailQueue } from './src/services/bullMq.ts';
+// import { createBullBoard } from '@bull-board/api';
+// import { BullMQAdapter } from '@bull-board/api/bullMQAdapter.js';
+// import { ExpressAdapter } from '@bull-board/express';
+// import { emailQueue } from './src/services/bullMq.ts';
 
 dotenv.config();
 
@@ -35,9 +35,9 @@ const configPath = join(
   './swagger_output.json',
 );
 
-const serverAdapter = new ExpressAdapter();
+// const serverAdapter = new ExpressAdapter();
 
-serverAdapter.setBasePath('/admin');
+// serverAdapter.setBasePath('/admin');
 
 const swaggerFile = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
@@ -105,12 +105,12 @@ app.use(
   },
 );
 
-createBullBoard({
-  queues: [new BullMQAdapter(emailQueue)],
-  serverAdapter: serverAdapter,
-});
+// createBullBoard({
+//   queues: [new BullMQAdapter(emailQueue)],
+//   serverAdapter: serverAdapter,
+// });
 
-app.use('/admin', serverAdapter.getRouter());
+// app.use('/admin', serverAdapter.getRouter());
 
 // extract and modularize: profile views table cleared after one week
 // Run every Sunday at 2 AM: https://www.npmjs.com/package/node-cron
