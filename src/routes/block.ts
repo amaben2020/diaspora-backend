@@ -1,11 +1,10 @@
-// routes/moderation.ts
 import { Router } from 'express';
 import { db } from '../db.ts';
 import { randomUUID } from 'crypto';
 import { blocksTable } from '../schema/blockTable.ts';
 import { and, eq } from 'drizzle-orm';
 import { tryCatchFn } from '../utils/tryCatch.ts';
-// import { redisClient } from '../utils/redis.ts';
+import { invalidateUserCache } from '../utils/invalidateCache.ts';
 
 const router = Router();
 
@@ -16,11 +15,6 @@ router.post(
   '/block',
   tryCatchFn(async (req, res) => {
     const { blockerId, blockedId } = req.body;
-
-    // Invalidate all relevant cache keys
-    // const pattern = `all-users-with-locations-${blockerId}-*`;
-    // console.log(pattern);
-    // await redisClient.del(pattern);
 
     // Validate input
     if (!blockerId || !blockedId) {
@@ -57,7 +51,8 @@ router.post(
         blockedId,
       })
       .returning();
-
+    // After successful block, invalidate cache
+    await invalidateUserCache(blockerId);
     res.json({ success: true, block });
   }),
 );
