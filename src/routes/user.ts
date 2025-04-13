@@ -1,4 +1,4 @@
-import { clerkMiddleware, requireAuth } from '@clerk/express';
+import { clerkMiddleware } from '@clerk/express';
 import { Router } from 'express';
 import { rateLimit } from 'express-rate-limit';
 

@@ -29,6 +29,7 @@ import {
 } from '../utils/index.ts';
 import { dislikesTable } from '../schema/dislikeTable.ts';
 import { paymentsTable } from '../schema/paymentsTable.ts';
+import { applyPremiumVisibility } from './premium-visibility.ts';
 
 export const createUser = async (clerkId: string, phone?: string) => {
   const [user = undefined] = await db
@@ -269,6 +270,14 @@ export async function getUsers(
         distanceKm = `Currently in ${country?.name.includes('United') ? 'The ' : ''}${country?.name} ${country?.flag}`;
       }
 
+      // Apply premium visibility boost
+      const premiumBoost = (await applyPremiumVisibility(user.user.id)) || 1;
+      const boostedVisibilityScore =
+        calculateVisibilityScore(user) * premiumBoost;
+
+      console.log('boostedVisibilityScore', boostedVisibilityScore);
+      console.log('premiumBoost', premiumBoost);
+
       return {
         ...user.user,
         onlineStatus: user.onlineStatus,
@@ -277,16 +286,23 @@ export async function getUsers(
         travelTimeMinutes,
         countryAbbreviation: user.countryAbbreviation,
         country,
+        boostedVisibilityScore,
       };
     }),
   );
 
   // Filter final results
-  const filteredResults = usersWithDistances.filter(Boolean).filter((user) => {
-    const distance =
-      typeof user?.distanceKm === 'number' ? user.distanceKm : radiusRange[1];
-    return distance >= radiusRange[0] && distance <= radiusRange[1];
-  });
+  const filteredResults = usersWithDistances
+    .filter(Boolean)
+    .filter((user) => {
+      const distance =
+        typeof user?.distanceKm === 'number' ? user.distanceKm : radiusRange[1];
+      return distance >= radiusRange[0] && distance <= radiusRange[1];
+    })
+    .sort(
+      (a, b) =>
+        (b?.boostedVisibilityScore || 0) - (a?.boostedVisibilityScore || 0),
+    );
 
   // Cache final results
   await cacheResults(currentUserId, queryHash, filteredResults);
@@ -303,3 +319,18 @@ export const isUserExists = async (userId: string): Promise<boolean> => {
 
   return existingUser as unknown as boolean;
 };
+
+function calculateVisibilityScore({ user }) {
+  console.log('USER', user);
+  // Base score calculation
+  let score = 1;
+
+  // Online status bonus
+  if (user.onlineStatus === 'online') score += 2;
+
+  // Profile completeness bonus
+  if (user?.images?.length > 0) score += 1;
+  if (user.bio) score += 0.5;
+
+  return score;
+}

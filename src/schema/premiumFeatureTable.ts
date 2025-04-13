@@ -1,6 +1,7 @@
 import { boolean, pgTable, text, timestamp } from 'drizzle-orm/pg-core';
-import { usersTable } from './usersTable';
+import { usersTable } from './usersTable.ts';
 
+//TODO: Ensure paid users are up
 export const premiumFeaturesTable = pgTable('premium_features', {
   userId: text('user_id')
     .primaryKey()

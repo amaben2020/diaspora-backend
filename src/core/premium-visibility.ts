@@ -1,13 +1,20 @@
 // services/premium.ts
 import { eq } from 'drizzle-orm';
-import { db } from '../db';
+import { db } from '../db.ts';
 import { premiumFeaturesTable } from '../schema/premiumFeatureTable.ts';
 
 export async function applyPremiumVisibility(userId: string) {
   // Check if user has premium
-  const premium = await db.query.premiumFeaturesTable.findFirst({
-    where: eq(premiumFeaturesTable.userId, userId),
-  });
+  // const premium = await db.query.premiumFeaturesTable.findFirst({
+  //   where: eq(premiumFeaturesTable.userId, userId),
+  // });
+  const [premium] = await db
+    .select()
+    .from(premiumFeaturesTable)
+    .where(eq(premiumFeaturesTable.userId, userId))
+    .limit(1);
+
+  if (typeof premium === undefined) return 1;
 
   if (!premium?.visibilityBoost) return 1; // Default visibility multiplier
 
