@@ -148,7 +148,11 @@ export async function getUsers(
         activity === 'justJoined'
           ? gte(usersTable.createdAt, twentyFourHoursAgo)
           : undefined,
-        country ? eq(locationsTable.countryAbbreviation, country) : undefined,
+        country == '0'
+          ? undefined
+          : country
+            ? eq(locationsTable.countryAbbreviation, country)
+            : undefined,
         not(eq(usersTable.id, currentUserId)),
         notExists(
           db
