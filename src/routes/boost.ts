@@ -3,6 +3,7 @@ import { Router, type Request, type Response } from 'express';
 import { db } from '../db.ts';
 import { premiumFeaturesTable } from '../schema/premiumFeatureTable.ts';
 import { tryCatchFn } from '../utils/tryCatch.ts';
+import { invalidateUserCache } from '../utils/invalidateCache.ts';
 
 const router = Router();
 // TODO: Refactor endpoint
@@ -37,6 +38,7 @@ router.post(
         .where(eq(premiumFeaturesTable.userId, userId))
         .returning();
 
+      await invalidateUserCache(userId);
       return res.json(updatedPremium);
     } else {
       // Create new premium entry
@@ -49,7 +51,7 @@ router.post(
           // any other required fields
         })
         .returning();
-
+      await invalidateUserCache(userId);
       return res.json(newPremium);
     }
   }),
