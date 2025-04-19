@@ -21,6 +21,14 @@ export const createProfileController = tryCatchFn(async (req, res) => {
       bio,
       interests,
     })
+    .onConflictDoUpdate({
+      target: profilesTable.userId,
+      set: {
+        bio: profilesTable.bio,
+        interests: profilesTable.interests,
+        updatedAt: new Date(),
+      },
+    })
     .returning();
 
   return res.status(201).json(profile);

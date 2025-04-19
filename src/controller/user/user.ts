@@ -1,7 +1,6 @@
 import { paramSchema, userSchema } from '../../models/index.ts';
 import { createUser, getUser, getUsers, updateUser } from '../../core/user.ts';
 import { tryCatchFn } from '../../utils/tryCatch.ts';
-
 import { redisClient } from '../../utils/redis.ts';
 import { logger } from '../../utils/logger.ts';
 import { z } from 'zod';
@@ -108,7 +107,7 @@ export const userGetsController = tryCatchFn(async (req, res) => {
         .json({ status: 'fail', message: 'Invalid number format' });
     }
 
-    const users = await getUsers(
+    let users = await getUsers(
       String(userId),
       parsedRadius,
       parsedAge,
@@ -116,6 +115,12 @@ export const userGetsController = tryCatchFn(async (req, res) => {
       activity,
       country?.toUpperCase(),
     );
+
+    // Filter out blocked users if middleware ran
+    if (Array.isArray(req?.blockedUserIds)) {
+      users = users.filter((user) => !req.blockedUserIds.includes(user.id));
+      await redisClient.set(cacheKey, JSON.stringify(users), 120);
+    }
 
     // Store in Redis with 2-minute expiry
     await redisClient.set(cacheKey, JSON.stringify(users), 120);
