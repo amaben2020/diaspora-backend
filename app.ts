@@ -25,6 +25,7 @@ import { updateUserStatus } from './src/websocket.ts';
 // import { BullMQAdapter } from '@bull-board/api/bullMQAdapter.js';
 // import { ExpressAdapter } from '@bull-board/express';
 // import { emailQueue } from './src/services/bullMq.ts';
+import { errorMiddleware } from './src/middleware/error.ts';
 
 dotenv.config();
 
@@ -86,24 +87,7 @@ channel.presence.subscribe('leave', async (member) => {
 });
 
 // 👇 Add global error handler
-app.use(
-  (
-    err: { status: string; statusCode: number; message: string },
-    req: Request,
-    res: Response,
-    next: NextFunction,
-  ) => {
-    err.status = err.status || 'fail';
-    err.statusCode = err.statusCode || 500;
-
-    res.status(err.statusCode).json({
-      status: err.status,
-      message: err.message + ' ' + 'Benneth',
-      stack:
-        process.env.NODE_ENV === 'development' ? err.statusCode : undefined,
-    });
-  },
-);
+app.use(errorMiddleware);
 
 // createBullBoard({
 //   queues: [new BullMQAdapter(emailQueue)],

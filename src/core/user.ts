@@ -321,7 +321,7 @@ export const isUserExists = async (userId: string): Promise<boolean> => {
     .where(eq(usersTable.id, userId))
     .execute();
 
-  return existingUser as unknown as boolean;
+  return (existingUser.length > 0) as unknown as boolean;
 };
 
 function calculateVisibilityScore({ user }) {

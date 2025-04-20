@@ -6,6 +6,7 @@ import { tryCatchFn } from '../../utils/tryCatch.ts';
 import { z } from 'zod';
 import { ably } from '../../websocket.ts';
 import { imagesTable } from '../../schema/imagesTable.ts';
+import { isUserExists } from '../../core/user.ts';
 
 const recordProfileViewSchema = z.object({
   viewerId: z.string(),
@@ -75,19 +76,28 @@ export const recordProfileViewController = tryCatchFn(async (req, res) => {
       console.error('Ably notification failed:', ablyError);
     }
 
-    res.status(201).json(view);
+    return res.status(201).json(view);
   } catch (error) {
     console.error('Error recording profile view:', error);
-    res.status(500).json({ error: 'Failed to record profile view' });
+    return res.status(500).json({ error: 'Failed to record profile view' });
   }
 });
 
+const getProfileViewSchema = z.object({
+  userId: z.string(),
+});
 export const getProfileViewsController = tryCatchFn(async (req, res) => {
-  const { userId } = req.params;
+  const { userId } = getProfileViewSchema.parse(req.params);
+
   const { limit = 20, offset = 0 } = req.query;
+
+  const isExist = await isUserExists(userId);
 
   if (!userId) {
     return res.status(400).json({ error: 'Missing userId' });
+  }
+  if (!isExist) {
+    return res.status(400).json({ error: 'User does not exist' });
   }
 
   try {
@@ -123,10 +133,10 @@ export const getProfileViewsController = tryCatchFn(async (req, res) => {
         );
     }
 
-    res.status(200).json(views);
+    return res.status(200).json(views);
   } catch (error) {
     console.error('Error fetching profile views:', error);
-    res.status(500).json({ error: 'Failed to fetch profile views' });
+    return res.status(500).json({ error: 'Failed to fetch profile views' });
   }
 });
 
@@ -140,9 +150,9 @@ export const clearOldProfileViewsController = tryCatchFn(async (req, res) => {
       .delete(profileViewsTable)
       .where(lt(profileViewsTable.viewedAt, oneWeekAgo));
 
-    res.status(200).json({ deletedCount: result.rowCount });
+    return res.status(200).json({ deletedCount: result.rowCount });
   } catch (error) {
     console.error('Error clearing old profile views:', error);
-    res.status(500).json({ error: 'Failed to clear old profile views' });
+    return res.status(500).json({ error: 'Failed to clear old profile views' });
   }
 });
