@@ -1,5 +1,11 @@
 import { paramSchema, userSchema } from '../../models/index.ts';
-import { createUser, getUser, getUsers, updateUser } from '../../core/user.ts';
+import {
+  createUser,
+  getUser,
+  getUsers,
+  updateUser,
+  userUpdateFcmToken,
+} from '../../core/user.ts';
 import { tryCatchFn } from '../../utils/tryCatch.ts';
 import { redisClient } from '../../utils/redis.ts';
 import { logger } from '../../utils/logger.ts';
@@ -130,4 +136,14 @@ export const userGetsController = tryCatchFn(async (req, res) => {
       return res.status(500).json({ status: 'fail', message: error.message });
     }
   }
+});
+
+export const updateFcmTokenController = tryCatchFn(async (req, res) => {
+  const { fcmToken, userId } = req.body;
+
+  if (!fcmToken) {
+    return res.status(400).json({ error: 'FCM token is required' });
+  }
+  await userUpdateFcmToken(fcmToken, userId);
+  return res.status(200).json({ message: 'Token updated successfully' });
 });

@@ -338,3 +338,10 @@ function calculateVisibilityScore({ user }) {
 
   return score;
 }
+
+export const userUpdateFcmToken = async (fcmToken: string, userId: string) => {
+  await db
+    .update(usersTable)
+    .set({ fcmToken })
+    .where(eq(usersTable.id, userId));
+};

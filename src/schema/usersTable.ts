@@ -54,6 +54,7 @@ export const usersTable = pgTable(
     phone: varchar('phone', { length: 11 }),
     createdAt: timestamp('created_at', { withTimezone: true }).defaultNow(),
     updatedAt: timestamp('updated_at').$onUpdate(() => new Date()),
+    fcmToken: text('fcm_token'),
   },
   (table) => ({
     // Essential query performance indexes

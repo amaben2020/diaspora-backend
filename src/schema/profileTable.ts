@@ -7,8 +7,8 @@ export const profilesTable = pgTable('profiles', {
   userId: text('user_id')
     .references(() => usersTable.id)
     .unique(),
-  bio: text('bio'),
-  interests: jsonb('interests').$type<string[]>(),
+  bio: text('bio').default('...'),
+  interests: jsonb('interests').$type<string[]>().default(['...']),
   createdAt: timestamp('created_at').defaultNow(),
   updatedAt: timestamp('updated_at').defaultNow(),
 });

@@ -3,6 +3,7 @@ import { Router } from 'express';
 import { rateLimit } from 'express-rate-limit';
 
 import {
+  updateFcmTokenController,
   userCreateController,
   userGetController,
   userGetsController,
@@ -24,5 +25,6 @@ router.route('/user/:userId').get(clerkMiddleware(), userGetController);
 router
   .route('/users')
   .get(clerkMiddleware(), checkBlocked, getUsersLimiter, userGetsController);
+router.route('/fcm-token').put(updateFcmTokenController);
 
 export default router;
