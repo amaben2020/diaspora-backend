@@ -54,11 +54,14 @@ export const getProfileController = tryCatchFn(async (req, res) => {
         name: usersTable.displayName,
         email: usersTable.email,
         age: usersTable.birthday,
+        gender: usersTable.gender,
       },
       preferences: {
         id: preferencesTable.id,
         lookingFor: preferencesTable.lookingToDate,
         zodiac: preferencesTable.zodiac,
+        religion: preferencesTable.religion,
+        education: preferencesTable.education,
       },
       images: sql`JSON_ARRAYAGG(${imagesTable.imageUrl})`.as('images'),
     })
