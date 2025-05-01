@@ -10,11 +10,19 @@ import { tryCatchFn } from '../../utils/tryCatch.ts';
 import { redisClient } from '../../utils/redis.ts';
 import { logger } from '../../utils/logger.ts';
 import { z } from 'zod';
+import { createProfile } from '../../core/profile.ts';
 
 export const userCreateController = tryCatchFn(async (req, res, next) => {
   const { clerkId, phone } = userSchema.parse(req.body);
 
   const data = await createUser(clerkId!, phone);
+
+  // create profile with default text, we could use a transaction so it fails
+  await createProfile({
+    userId: data?.id as string,
+    bio: 'Enter your bio',
+    interests: [''],
+  });
 
   if (!clerkId) res.status(400).send('Clerk id not found');
 
