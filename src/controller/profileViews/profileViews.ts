@@ -1,6 +1,6 @@
 import { usersTable } from '../../schema/usersTable.ts';
 import { db } from '../../db.ts';
-import { and, desc, eq, lt, sql } from 'drizzle-orm';
+import { and, desc, eq, lt } from 'drizzle-orm';
 import { profileViewsTable } from '../../schema/profileViews.ts';
 import { tryCatchFn } from '../../utils/tryCatch.ts';
 import { z } from 'zod';
@@ -186,6 +186,7 @@ export const getProfileViewsController = tryCatchFn(async (req, res) => {
     const uniqueViews = Array.from(viewerMap.values())
       .sort((a, b) => new Date(b.viewedAt) - new Date(a.viewedAt))
       .slice(Number(offset), Number(offset) + Number(limit))
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
       .map(({ viewerId, ...rest }) => rest); // Remove the viewerId property from the result
 
     // Mark views as seen if requested
