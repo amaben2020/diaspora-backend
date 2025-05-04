@@ -51,6 +51,7 @@ const sendErrorProd = (err, res: Response) => {
     });
   }
 };
+
 // Send detailed error in development environment
 const sendErrorDev = (err, res: Response) => {
   res.status(err.statusCode).json({
@@ -60,6 +61,7 @@ const sendErrorDev = (err, res: Response) => {
     stack: err.stack,
   });
 };
+
 const environment = process.env.NODE_ENV || 'development';
 
 export const errorMiddleware = (

@@ -45,10 +45,20 @@ export const preferencesTable = pgTable(
     bio: varchar('bio', { length: 50 }),
     // interest: interestPreferenceEnum('interests'),
 
-    smoking: boolean('smoking'),
-    drinking: boolean('drinking'),
+    smoking: boolean('smoking').default(false),
+    drinking: boolean('drinking').default(false),
     religion: varchar('religion', { length: 50 }),
     education: varchar('education', { length: 50 }),
+    pets: varchar('pets', { length: 50 }),
+    age: varchar('age', { length: 50 }),
+    distance: varchar('distance', { length: 50 }),
+    language: varchar('language', { length: 50 }),
+    familyPlans: varchar('familyPlans', { length: 50 }),
+    gender: varchar('gender', { length: 50 }),
+    height: varchar('height', { length: 50 }),
+    hasBio: boolean('hasBio').default(false),
+    minNumberOfPhotos: varchar('min_photos'),
+
     // lookingToDate: datingPreferenceEnum('looking_to_date'),
   },
   (table) => ({

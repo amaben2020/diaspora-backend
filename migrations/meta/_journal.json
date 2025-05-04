@@ -218,6 +218,20 @@
       "when": 1745408315116,
       "tag": "0030_windy_pyro",
       "breakpoints": true
+    },
+    {
+      "idx": 31,
+      "version": "7",
+      "when": 1746349258178,
+      "tag": "0031_cute_havok",
+      "breakpoints": true
+    },
+    {
+      "idx": 32,
+      "version": "7",
+      "when": 1746349554885,
+      "tag": "0032_heavy_gambit",
+      "breakpoints": true
     }
   ]
 }
