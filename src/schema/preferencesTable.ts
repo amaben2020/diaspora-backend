@@ -58,6 +58,7 @@ export const preferencesTable = pgTable(
     height: varchar('height', { length: 50 }).default(''),
     hasBio: boolean('hasBio').default(false),
     minNumberOfPhotos: varchar('min_photos').default(''),
+    connections: varchar('connections').default(''),
 
     // lookingToDate: datingPreferenceEnum('looking_to_date'),
   },
