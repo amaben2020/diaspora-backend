@@ -49,6 +49,7 @@ export const preferencesSchema = z.object({
   distance: z.string().max(50).optional(),
   hasBio: z.boolean().optional(),
   minNumberOfPhotos: z.string().optional(),
+  connections: z.string().optional(),
 });
 
 export const imagesSchema = z.object({

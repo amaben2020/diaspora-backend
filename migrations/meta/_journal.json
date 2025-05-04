@@ -232,6 +232,13 @@
       "when": 1746349554885,
       "tag": "0032_heavy_gambit",
       "breakpoints": true
+    },
+    {
+      "idx": 33,
+      "version": "7",
+      "when": 1746358131279,
+      "tag": "0033_faithful_legion",
+      "breakpoints": true
     }
   ]
 }
