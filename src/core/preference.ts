@@ -19,57 +19,91 @@ export const createPreference = async (
   return preference;
 };
 
+// export const updatePreference = async (
+//   data: z.infer<typeof preferencesSchema>,
+//   id: number,
+//   userId: string,
+// ) => {
+//   const {
+//     lookingToDate,
+//     interests,
+//     bio = '',
+//     drinking,
+//     education = '',
+//     pronouns = '',
+//     religion = '',
+//     smoking,
+//     ethnicity = '',
+//     zodiac = '',
+//     pets = '',
+//     age = '',
+//     distance = '',
+//     language = '',
+//     familyPlans = '',
+//     gender = '',
+//     height = '',
+//     hasBio,
+//     minNumberOfPhotos = '',
+//   } = data;
+
+//   const [updatedPreference = undefined] = await db
+//     .update(preferencesTable)
+//     .set({
+//       lookingToDate,
+//       interests,
+//       bio,
+//       drinking,
+//       education,
+//       pronouns,
+//       religion,
+//       smoking,
+//       ethnicity,
+//       zodiac,
+//       pets,
+//       age,
+//       distance,
+//       language,
+//       familyPlans,
+//       gender,
+//       height,
+//       hasBio,
+//       minNumberOfPhotos,
+//       updatedAt: new Date(),
+//     })
+//     .where(or(eq(preferencesTable.id, id), eq(preferencesTable.userId, userId)))
+//     .returning();
+
+//   return updatedPreference;
+// };
+
 export const updatePreference = async (
-  data: z.infer<typeof preferencesSchema>,
+  data: Partial<z.infer<typeof preferencesSchema>>,
   id: number,
   userId: string,
 ) => {
-  const {
-    lookingToDate,
-    interests,
-    bio = '',
-    drinking,
-    education = '',
-    pronouns = '',
-    religion = '',
-    smoking,
-    ethnicity = '',
-    zodiac = '',
-    pets = '',
-    age = '',
-    distance = '',
-    language = '',
-    familyPlans = '',
-    gender = '',
-    height = '',
-    hasBio,
-    minNumberOfPhotos = '',
-  } = data;
+  // 1. First get the existing preferences from DB
+  const [existingPreference = undefined] = await db
+    .select()
+    .from(preferencesTable)
+    .where(or(eq(preferencesTable.id, id), eq(preferencesTable.userId, userId)))
+    .limit(1);
 
+  // if (!existingPreference) {
+  //   throw new Error('Preference not found');
+  // }
+
+  // 2. Create merged data - existing values + new values
+  const mergedData = {
+    ...existingPreference,
+    ...data, // This overwrites only the provided fields
+    updatedAt: new Date(), // Always update timestamp
+    createdAt: existingPreference?.createdAt,
+  };
+
+  // 3. Update with the merged data
   const [updatedPreference = undefined] = await db
     .update(preferencesTable)
-    .set({
-      lookingToDate,
-      interests,
-      bio,
-      drinking,
-      education,
-      pronouns,
-      religion,
-      smoking,
-      ethnicity,
-      zodiac,
-      pets,
-      age,
-      distance,
-      language,
-      familyPlans,
-      gender,
-      height,
-      hasBio,
-      minNumberOfPhotos,
-      updatedAt: new Date(),
-    })
+    .set(mergedData)
     .where(or(eq(preferencesTable.id, id), eq(preferencesTable.userId, userId)))
     .returning();
 
