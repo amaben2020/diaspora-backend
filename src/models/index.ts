@@ -22,16 +22,33 @@ export const preferencesSchema = z.object({
   userId: z.string().optional(),
   createdAt: z.string().datetime().optional(),
   updatedAt: z.string().datetime().optional(),
+
+  // Personal info
   ethnicity: z.string().max(50).optional(),
   pronouns: z.string().max(50).optional(),
   zodiac: z.string().max(50).optional(),
   bio: z.string().max(50).optional(),
+  gender: z.string().max(50).optional(),
+  height: z.string().max(50).optional(),
+  age: z.string().max(50).optional(),
+
+  // Preferences
   interests: z.array(z.string()).optional(),
+  lookingToDate: z.array(z.string()).optional(),
+
+  // Lifestyle
   smoking: z.boolean().optional(),
   drinking: z.boolean().optional(),
   religion: z.string().max(50).optional(),
   education: z.string().max(50).optional(),
-  lookingToDate: z.array(z.string()).optional(),
+  pets: z.string().max(50).optional(),
+  familyPlans: z.string().max(50).optional(),
+  language: z.string().max(50).optional(),
+
+  // Settings
+  distance: z.string().max(50).optional(),
+  hasBio: z.boolean().optional(),
+  minNumberOfPhotos: z.string().optional(),
 });
 
 export const imagesSchema = z.object({

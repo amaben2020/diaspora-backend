@@ -33,6 +33,17 @@ export const updatePreference = async (
     pronouns,
     religion,
     smoking,
+    ethnicity,
+    zodiac,
+    pets,
+    age,
+    distance,
+    language,
+    familyPlans,
+    gender,
+    height,
+    hasBio,
+    minNumberOfPhotos,
   } = data;
 
   const [updatedPreference = undefined] = await db
@@ -46,6 +57,18 @@ export const updatePreference = async (
       pronouns,
       religion,
       smoking,
+      ethnicity,
+      zodiac,
+      pets,
+      age,
+      distance,
+      language,
+      familyPlans,
+      gender,
+      height,
+      hasBio,
+      minNumberOfPhotos,
+      updatedAt: new Date(), // Explicitly update the timestamp
     })
     .where(or(eq(preferencesTable.id, id), eq(preferencesTable.userId, userId)))
     .returning();
