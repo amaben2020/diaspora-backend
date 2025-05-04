@@ -9,13 +9,13 @@ import {
 export const preferenceCreateController = tryCatchFn(async (req, res, next) => {
   const { userId, lookingToDate } = preferencesSchema.parse(req.body);
 
-  if (!userId) res.status(400).send('User id not found');
+  if (!userId) return res.status(400).send('User id not found');
 
   const data = await createPreference(lookingToDate!, String(userId));
 
   if (!data) next(new Error('Preference not created'));
 
-  res.status(201).json(data);
+  return res.status(201).json(data);
 });
 
 export const preferenceUpdateController = tryCatchFn(async (req, res, next) => {
@@ -29,7 +29,7 @@ export const preferenceUpdateController = tryCatchFn(async (req, res, next) => {
     return next(new Error('Preference not updated'));
   }
 
-  res.status(201).json(data);
+  return res.status(201).json(data);
 });
 
 export const preferenceGetController = tryCatchFn(async (req, res, next) => {
@@ -42,5 +42,5 @@ export const preferenceGetController = tryCatchFn(async (req, res, next) => {
     return next(new Error('User not found'));
   }
 
-  res.status(200).json(data);
+  return res.status(200).json(data);
 });
