@@ -53,7 +53,7 @@ export const preferencesTable = pgTable(
     age: varchar('age', { length: 50 }).default(''),
     distance: varchar('distance', { length: 50 }).default(''),
     language: varchar('language', { length: 50 }).default(''),
-    familyPlans: varchar('familyPlans', { length: 50 }).default('Not sure yet'),
+    familyPlans: varchar('familyPlans', { length: 50 }).default(''),
     gender: varchar('gender', { length: 50 }).default(''),
     height: varchar('height', { length: 50 }).default(''),
     hasBio: boolean('hasBio').default(false),

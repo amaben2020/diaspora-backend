@@ -8,9 +8,12 @@ import {
 } from '../../core/user.ts';
 import { tryCatchFn } from '../../utils/tryCatch.ts';
 import { redisClient } from '../../utils/redis.ts';
-import { logger } from '../../utils/logger.ts';
+// import { logger } from '../../utils/logger.ts';
 import { z } from 'zod';
 import { createProfile } from '../../core/profile.ts';
+import { db } from '../../db.ts';
+import { preferencesTable } from '../../schema/preferencesTable.ts';
+import { inArray } from 'drizzle-orm';
 
 export const userCreateController = tryCatchFn(async (req, res, next) => {
   const { clerkId, phone } = userSchema.parse(req.body);
@@ -70,6 +73,7 @@ const userGetSchema = z.object({
   drinking: z.string().optional(),
   minPhotos: z.string().optional(),
   familyPlans: z.string().optional(),
+  zodiac: z.string().optional(),
 });
 
 export const userGetsController = tryCatchFn(async (req, res) => {
@@ -97,12 +101,12 @@ export const userGetsController = tryCatchFn(async (req, res) => {
     } = userGetSchema.parse(req.query);
 
     const cacheKey = `all-users-with-locations-${userId}-${radius}-${age}-${gender}-${activity}-${country}-${smoking}-${ethnicity}-${zodiac}-${height}-${drinking}-${educationLevel}-${familyPlans}-${lookingFor}-${minPhotos}-${hasBio}`;
-    const cachedUsers = await redisClient.get(cacheKey);
+    // const cachedUsers = await redisClient.get(cacheKey);
 
-    if (cachedUsers) {
-      logger.info('Cache hit');
-      return res.json({ cache: true, users: JSON.parse(cachedUsers) });
-    }
+    // if (cachedUsers) {
+    //   logger.info('Cache hit');
+    //   return res.json({ cache: true, users: JSON.parse(cachedUsers) });
+    // }
 
     if (!userId) {
       return res
@@ -154,6 +158,27 @@ export const userGetsController = tryCatchFn(async (req, res) => {
       country?.toUpperCase(),
     );
 
+    // Get fresh preferences for all users in one query
+    const userIds = users.map((u) => u.id);
+    const freshPreferences =
+      userIds.length > 0
+        ? await db
+            .select()
+            .from(preferencesTable)
+            .where(inArray(preferencesTable.userId, userIds))
+        : [];
+
+    // Create a map of fresh preferences
+    const preferencesMap = new Map(freshPreferences.map((p) => [p.userId, p]));
+
+    console.log('preferencesMap ====>', preferencesMap);
+
+    // Merge fresh preferences into users
+    users = users.map((user) => ({
+      ...user,
+      preferences: preferencesMap.get(user.id) || user.preferences,
+    }));
+
     // Apply advanced filters
     if (smoking === 'true') {
       users = users.filter((u) => u.preferences?.smoking === true);
@@ -169,45 +194,23 @@ export const userGetsController = tryCatchFn(async (req, res) => {
     //     u.preferences?.ethnicity.includes(decodeURI(ethnicity)),
     //   );
     // }
-    // if (zodiac?.length > 0) {
-    //   users = users.filter((u) =>
-    //     u.preferences?.zodiac.includes(decodeURI(zodiac)),
-    //   );
-    // }
+
     // if (educationLevel?.length !== 'Open to any') {
     //   users = users.filter((u) =>
     //     u.preferences?.education.includes(decodeURI(educationLevel)),
     //   );
     // }
 
-    console.log('FAMILY PLANS', encodeURI('Open to children'!));
-    if (
-      ([
-        'Want children',
-        "Don't want children",
-        'Have children',
-        'Open to children',
-        'Not sure yet',
-      ].includes(decodeURI(familyPlans!)) &&
-        decodeURI(familyPlans!) !== 'Open to any') ||
-      decodeURI(familyPlans!) !== 'null'
-    ) {
-      users = users.filter((u) => {
-        console.log('u.preferences?.familyPlans ===>', u.preferences);
-
-        return u.preferences?.familyPlans == decodeURI(familyPlans!);
-      });
-    }
     // if (lookingFor) {
     //   users = users.filter((u) =>
     //     u.preferences?.lookingFor.includes(decodeURI(lookingFor)),
     //   );
     // }
-    // if (height) {
-    //   users = users.filter((u) =>
-    //     u.preferences?.height.includes(decodeURI(height)),
-    //   );
-    // }
+    if (height) {
+      users = users.filter((u) =>
+        u.preferences?.height.includes(decodeURI(height)),
+      );
+    }
 
     if (hasBio === 'true') {
       users = users.filter((u) => {
@@ -216,8 +219,54 @@ export const userGetsController = tryCatchFn(async (req, res) => {
       });
     }
 
-    if (minPhotos) {
+    if (minPhotos?.length) {
       users = users.filter((u) => u.images.length >= Number(minPhotos));
+    }
+
+    if (familyPlans) {
+      const decodedFamilyPlans = decodeURIComponent(familyPlans);
+
+      const validFamilyPlans = [
+        'Want children',
+        "Don't want children",
+        'Have children',
+        'Open to children',
+        'Not sure yet',
+      ];
+
+      if (validFamilyPlans.includes(decodedFamilyPlans)) {
+        users = users.filter((u) => {
+          return u.preferences?.familyPlans == decodedFamilyPlans;
+        });
+      }
+    }
+
+    console.log('zodiac ===>', zodiac);
+    if (zodiac) {
+      const decodedZodiac = decodeURIComponent(zodiac);
+      console.log('decodedZodiac ===>', decodedZodiac);
+      const validZodiac = [
+        'Aries',
+        'Taurus',
+        'Gemini',
+        'Cancer',
+        'Leo',
+        'Virgo',
+        'Libra',
+        'Scorpio',
+        'Sagittarius',
+        'Capricorn',
+        'Aquarius',
+        'Pisces',
+        "I don't believe in zodiac signs",
+      ];
+
+      if (validZodiac.includes(decodedZodiac)) {
+        users = users.filter((u) => {
+          console.log(u.preferences);
+          return u.preferences?.zodiac == decodedZodiac;
+        });
+      }
     }
 
     // Filter out blocked users if middleware ran
