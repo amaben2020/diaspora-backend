@@ -158,13 +158,9 @@ export const userGetsController = tryCatchFn(async (req, res) => {
     if (smoking === 'true') {
       users = users.filter((u) => u.preferences?.smoking === true);
     }
+    console.log('DRINKING', drinking);
     if (drinking === 'true') {
       users = users.filter((u) => {
-        console.log(
-          'u.preferences?.drinking ',
-          u.preferences?.drinking,
-          typeof u.preferences?.drinking,
-        );
         return u.preferences?.drinking === true;
       });
     }
@@ -183,13 +179,23 @@ export const userGetsController = tryCatchFn(async (req, res) => {
     //     u.preferences?.education.includes(decodeURI(educationLevel)),
     //   );
     // }
-    console.log('FAMILY PLANS', decodeURI(familyPlans!));
-    console.log(familyPlans);
-    if (familyPlans && decodeURI(familyPlans!) !== 'Open to any') {
+
+    console.log('FAMILY PLANS', encodeURI('Open to children'!));
+    if (
+      ([
+        'Want children',
+        "Don't want children",
+        'Have children',
+        'Open to children',
+        'Not sure yet',
+      ].includes(decodeURI(familyPlans!)) &&
+        decodeURI(familyPlans!) !== 'Open to any') ||
+      decodeURI(familyPlans!) !== 'null'
+    ) {
       users = users.filter((u) => {
         console.log('u.preferences?.familyPlans ===>', u.preferences);
 
-        return u.preferences?.familyPlans == decodeURI(familyPlans);
+        return u.preferences?.familyPlans == decodeURI(familyPlans!);
       });
     }
     // if (lookingFor) {
@@ -203,10 +209,6 @@ export const userGetsController = tryCatchFn(async (req, res) => {
     //   );
     // }
 
-    console.log('🍺', typeof drinking);
-    console.log('hasBio ===>🍺', typeof hasBio, hasBio);
-
-    console.log('users ====>', users);
     if (hasBio === 'true') {
       users = users.filter((u) => {
         console.log(u?.preferences);
