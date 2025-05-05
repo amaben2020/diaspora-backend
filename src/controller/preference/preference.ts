@@ -51,7 +51,7 @@ export const preferenceUpdateController = tryCatchFn(async (req, res, next) => {
     return next(new Error('Preference not updated'));
   }
 
-  return res.status(200).json(updatedPreference);
+  return res.status(201).json(updatedPreference);
 });
 
 export const preferenceGetController = tryCatchFn(async (req, res, next) => {

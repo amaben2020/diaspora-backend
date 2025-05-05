@@ -1,7 +1,7 @@
 import type { z } from 'zod';
 import { db } from '../db.ts';
 import { usersTable } from '../schema/usersTable.ts';
-import type { userSchema } from '../models/index.ts';
+import { type userSchema } from '../models/index.ts';
 import {
   and,
   asc,
@@ -30,6 +30,7 @@ import {
 import { dislikesTable } from '../schema/dislikeTable.ts';
 import { paymentsTable } from '../schema/paymentsTable.ts';
 import { applyPremiumVisibility } from './premium-visibility.ts';
+import { preferencesTable } from '../schema/preferencesTable.ts';
 
 export const createUser = async (clerkId: string, phone?: string) => {
   const [user = undefined] = await db
@@ -138,9 +139,11 @@ export async function getUsers(
       latitude: locationsTable.latitude,
       longitude: locationsTable.longitude,
       countryAbbreviation: locationsTable.countryAbbreviation,
+      preferences: preferencesTable,
     })
     .from(usersTable)
     .leftJoin(locationsTable, eq(usersTable.id, locationsTable.userId))
+    .leftJoin(preferencesTable, eq(usersTable.id, preferencesTable.userId))
     .leftJoin(userActivityTable, eq(usersTable.id, userActivityTable.userId))
     .where(
       and(
@@ -279,8 +282,7 @@ export async function getUsers(
       const boostedVisibilityScore =
         calculateVisibilityScore(user) * premiumBoost;
 
-      console.log('boostedVisibilityScore', boostedVisibilityScore);
-      console.log('premiumBoost', premiumBoost);
+      console.log('user.preferences===>', user.preferences);
 
       return {
         ...user.user,
@@ -291,6 +293,7 @@ export async function getUsers(
         countryAbbreviation: user.countryAbbreviation,
         country,
         boostedVisibilityScore,
+        preferences: user.preferences,
       };
     }),
   );

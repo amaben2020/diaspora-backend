@@ -65,14 +65,38 @@ const userGetSchema = z.object({
   gender: z.enum(['man', 'woman', 'nonbinary']).optional(),
   activity: z.literal('justJoined').optional(),
   country: z.string().optional(),
+  smoking: z.string().optional(),
+  hasBio: z.string().optional(),
+  drinking: z.string().optional(),
+  minPhotos: z.string().optional(),
+  familyPlans: z.string().optional(),
 });
 
 export const userGetsController = tryCatchFn(async (req, res) => {
+  // TODO: Filter user by preferences ?gender=m&ethnicity=black&.....
   try {
-    const { userId, radius, age, gender, activity, country } =
-      userGetSchema.parse(req.query);
+    const {
+      userId,
+      radius,
+      age,
+      gender,
+      activity,
+      country,
 
-    const cacheKey = `all-users-with-locations-${userId}-${radius}-${age}-${gender}-${activity}-${country}`;
+      // Advanced filters
+      ethnicity,
+      zodiac,
+      height,
+      drinking,
+      smoking,
+      educationLevel,
+      familyPlans,
+      lookingFor,
+      minPhotos,
+      hasBio,
+    } = userGetSchema.parse(req.query);
+
+    const cacheKey = `all-users-with-locations-${userId}-${radius}-${age}-${gender}-${activity}-${country}-${smoking}-${ethnicity}-${zodiac}-${height}-${drinking}-${educationLevel}-${familyPlans}-${lookingFor}-${minPhotos}-${hasBio}`;
     const cachedUsers = await redisClient.get(cacheKey);
 
     if (cachedUsers) {
@@ -129,6 +153,56 @@ export const userGetsController = tryCatchFn(async (req, res) => {
       activity,
       country?.toUpperCase(),
     );
+
+    // Apply advanced filters
+    if (smoking === 'true') {
+      users = users.filter((u) => u.preferences?.smoking === true);
+    }
+    if (drinking === 'true') {
+      users = users.filter((u) => u.preferences?.drinking === true);
+    }
+    // if (ethnicity?.length > 0) {
+    //   users = users.filter((u) =>
+    //     u.preferences?.ethnicity.includes(decodeURI(ethnicity)),
+    //   );
+    // }
+    // if (zodiac?.length > 0) {
+    //   users = users.filter((u) =>
+    //     u.preferences?.zodiac.includes(decodeURI(zodiac)),
+    //   );
+    // }
+    // if (educationLevel?.length !== 'Open to any') {
+    //   users = users.filter((u) =>
+    //     u.preferences?.education.includes(decodeURI(educationLevel)),
+    //   );
+    // }
+    console.log('FAMILY PLANS', decodeURI(familyPlans!));
+    console.log(familyPlans);
+    if (familyPlans && decodeURI(familyPlans!) !== 'Open to any') {
+      users = users.filter((u) => {
+        console.log('u.preferences?.familyPlans ===>', u.preferences);
+
+        return u.preferences?.familyPlans == decodeURI(familyPlans);
+      });
+    }
+    // if (lookingFor) {
+    //   users = users.filter((u) =>
+    //     u.preferences?.lookingFor.includes(decodeURI(lookingFor)),
+    //   );
+    // }
+    // if (height) {
+    //   users = users.filter((u) =>
+    //     u.preferences?.height.includes(decodeURI(height)),
+    //   );
+    // }
+
+    if (hasBio === 'true') {
+      users = users.filter((u) => u.preferences?.bio === true);
+    }
+
+    if (minPhotos) {
+      users = users.filter((u) => u.images.length >= Number(minPhotos));
+    }
 
     // Filter out blocked users if middleware ran
     if (Array.isArray(req?.blockedUserIds)) {
