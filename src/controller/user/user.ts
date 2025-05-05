@@ -159,7 +159,14 @@ export const userGetsController = tryCatchFn(async (req, res) => {
       users = users.filter((u) => u.preferences?.smoking === true);
     }
     if (drinking === 'true') {
-      users = users.filter((u) => u.preferences?.drinking === true);
+      users = users.filter((u) => {
+        console.log(
+          'u.preferences?.drinking ',
+          u.preferences?.drinking,
+          typeof u.preferences?.drinking,
+        );
+        return u.preferences?.drinking === true;
+      });
     }
     // if (ethnicity?.length > 0) {
     //   users = users.filter((u) =>
@@ -196,8 +203,15 @@ export const userGetsController = tryCatchFn(async (req, res) => {
     //   );
     // }
 
+    console.log('🍺', typeof drinking);
+    console.log('hasBio ===>🍺', typeof hasBio, hasBio);
+
+    console.log('users ====>', users);
     if (hasBio === 'true') {
-      users = users.filter((u) => u.preferences?.bio === true);
+      users = users.filter((u) => {
+        console.log(u?.preferences);
+        return u.preferences.hasBio || u.profile?.bio.length > 20;
+      });
     }
 
     if (minPhotos) {

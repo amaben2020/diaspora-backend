@@ -31,6 +31,7 @@ import { dislikesTable } from '../schema/dislikeTable.ts';
 import { paymentsTable } from '../schema/paymentsTable.ts';
 import { applyPremiumVisibility } from './premium-visibility.ts';
 import { preferencesTable } from '../schema/preferencesTable.ts';
+import { profilesTable } from '../schema/profileTable.ts';
 
 export const createUser = async (clerkId: string, phone?: string) => {
   const [user = undefined] = await db
@@ -140,10 +141,12 @@ export async function getUsers(
       longitude: locationsTable.longitude,
       countryAbbreviation: locationsTable.countryAbbreviation,
       preferences: preferencesTable,
+      profile: profilesTable,
     })
     .from(usersTable)
     .leftJoin(locationsTable, eq(usersTable.id, locationsTable.userId))
     .leftJoin(preferencesTable, eq(usersTable.id, preferencesTable.userId))
+    .leftJoin(profilesTable, eq(usersTable.id, profilesTable.userId))
     .leftJoin(userActivityTable, eq(usersTable.id, userActivityTable.userId))
     .where(
       and(
@@ -294,6 +297,7 @@ export async function getUsers(
         country,
         boostedVisibilityScore,
         preferences: user.preferences,
+        profile: user?.profile,
       };
     }),
   );
