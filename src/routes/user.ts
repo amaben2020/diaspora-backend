@@ -3,11 +3,14 @@ import { Router } from 'express';
 import { rateLimit } from 'express-rate-limit';
 
 import {
+  deleteUserController,
+  updateFcmTokenController,
   userCreateController,
   userGetController,
   userGetsController,
   userUpdateController,
 } from '../controller/user/user.ts';
+import { checkBlocked } from '../middleware/block.ts';
 
 const getUsersLimiter = rateLimit({
   windowMs: 60 * 1000,
@@ -15,12 +18,15 @@ const getUsersLimiter = rateLimit({
   message: { error: 'Too many requests, slow down!' },
 });
 
+//TODO: Improve middleware handling and redundancy
 const router = Router();
 router.route('/user').post(clerkMiddleware(), userCreateController);
 router.route('/user/:id').patch(clerkMiddleware(), userUpdateController);
+router.route('/user/:id').delete(clerkMiddleware(), deleteUserController);
 router.route('/user/:userId').get(clerkMiddleware(), userGetController);
 router
   .route('/users')
-  .get(clerkMiddleware(), getUsersLimiter, userGetsController);
+  .get(clerkMiddleware(), checkBlocked, getUsersLimiter, userGetsController);
+router.route('/fcm-token').put(updateFcmTokenController);
 
 export default router;

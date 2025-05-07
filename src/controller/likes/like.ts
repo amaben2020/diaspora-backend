@@ -5,6 +5,7 @@ import { matchesTable } from '../../schema/matchesTable.ts';
 import { usersTable } from '../../schema/usersTable.ts';
 import { likesTable } from '../../schema/likesTable.ts';
 import { imagesTable } from '../../schema/imagesTable.ts';
+import { admin } from './../../services/fcm.ts';
 
 export const likeUserController = tryCatchFn(async (req, res, next) => {
   const { likerId, likedId } = req.body;
@@ -16,6 +17,7 @@ export const likeUserController = tryCatchFn(async (req, res, next) => {
   }
 
   // Check if both users exist before proceeding
+  // TODO: refactor to use isUserExist
   const [likerExists] = await db
     .select()
     .from(usersTable)
@@ -29,7 +31,7 @@ export const likeUserController = tryCatchFn(async (req, res, next) => {
     .limit(1);
 
   if (!likerExists || !likedExists) {
-    res.status(404).json({ error: 'One or both users do not exist' });
+    return res.status(404).json({ error: 'One or both users do not exist' });
   }
 
   // Check if the like already exists
@@ -49,6 +51,24 @@ export const likeUserController = tryCatchFn(async (req, res, next) => {
     .insert(likesTable)
     .values({ likerId, likedId })
     .returning();
+
+  if (likedExists?.fcmToken) {
+    const payload = {
+      notification: {
+        title: `New Like 💖 from ${likerExists.displayName}`,
+        body: `${likerExists.displayName} just liked you! Open the app to check.`,
+      },
+      // the token belongs to who's being liked so they get the notification
+      token: likedExists?.fcmToken,
+    };
+
+    try {
+      await admin.messaging().send(payload);
+      console.log(`Notification sent to ${likedExists.id}`);
+    } catch (err) {
+      console.error('Error sending FCM notification:', err);
+    }
+  }
 
   if (!like) {
     res.status(500).json({ error: 'Failed to create like' });

@@ -21,6 +21,11 @@ import cron from 'node-cron';
 import { db } from './src/db.ts';
 import { lt } from 'drizzle-orm';
 import { updateUserStatus } from './src/websocket.ts';
+// import { createBullBoard } from '@bull-board/api';
+// import { BullMQAdapter } from '@bull-board/api/bullMQAdapter.js';
+// import { ExpressAdapter } from '@bull-board/express';
+// import { emailQueue } from './src/services/bullMq.ts';
+import { errorMiddleware } from './src/middleware/error.ts';
 
 dotenv.config();
 
@@ -30,11 +35,14 @@ const configPath = join(
   dirname(fileURLToPath(import.meta.url)),
   './swagger_output.json',
 );
+
+// const serverAdapter = new ExpressAdapter();
+
+// serverAdapter.setBasePath('/admin');
+
 const swaggerFile = JSON.parse(fs.readFileSync(configPath, 'utf8'));
 
-if (String(process.env.NODE_ENV) === 'development') {
-  app.use(morgan('dev'));
-}
+if (String(process.env.NODE_ENV) === 'development') app.use(morgan('dev'));
 
 app.use(helmet());
 
@@ -79,26 +87,16 @@ channel.presence.subscribe('leave', async (member) => {
 });
 
 // 👇 Add global error handler
-app.use(
-  (
-    err: { status: string; statusCode: number; message: string },
-    req: Request,
-    res: Response,
-    next: NextFunction,
-  ) => {
-    err.status = err.status || 'fail';
-    err.statusCode = err.statusCode || 500;
+app.use(errorMiddleware);
 
-    res.status(err.statusCode).json({
-      status: err.status,
-      message: err.message + ' ' + 'Benneth',
-      stack:
-        process.env.NODE_ENV === 'development' ? err.statusCode : undefined,
-    });
-  },
-);
+// createBullBoard({
+//   queues: [new BullMQAdapter(emailQueue)],
+//   serverAdapter: serverAdapter,
+// });
 
-// extract and modularize
+// app.use('/admin', serverAdapter.getRouter());
+
+// extract and modularize: profile views table cleared after one week
 // Run every Sunday at 2 AM: https://www.npmjs.com/package/node-cron
 cron.schedule('0 2 * * 0', async () => {
   try {
@@ -129,3 +127,29 @@ cron.schedule('0 2 * * 0', async () => {
 //     console.error('Failed to clear old profile views:', error);
 //   }
 // });
+
+// // Every 3 days
+// myQueue.add(
+//   "job_name",
+//   {
+//     /* your job data here */
+//   },
+//   {
+//     repeat: {
+//       cron: "0 0 */3 * *",
+//     },
+//   }
+// );
+
+// // Every 3 weeks
+// myQueue.add(
+//   "job_name",
+//   {
+//     /* your job data here */
+//   },
+//   {
+//     repeat: {
+//       cron: "0 0 */21 * *",
+//     },
+//   }
+// );

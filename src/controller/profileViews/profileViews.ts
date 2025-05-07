@@ -6,6 +6,7 @@ import { tryCatchFn } from '../../utils/tryCatch.ts';
 import { z } from 'zod';
 import { ably } from '../../websocket.ts';
 import { imagesTable } from '../../schema/imagesTable.ts';
+import { isUserExists } from '../../core/user.ts';
 
 const recordProfileViewSchema = z.object({
   viewerId: z.string(),
@@ -75,24 +76,87 @@ export const recordProfileViewController = tryCatchFn(async (req, res) => {
       console.error('Ably notification failed:', ablyError);
     }
 
-    res.status(201).json(view);
+    return res.status(201).json(view);
   } catch (error) {
     console.error('Error recording profile view:', error);
-    res.status(500).json({ error: 'Failed to record profile view' });
+    return res.status(500).json({ error: 'Failed to record profile view' });
   }
 });
 
+const getProfileViewSchema = z.object({
+  userId: z.string(),
+});
+
+// export const getProfileViewsController = tryCatchFn(async (req, res) => {
+//   const { userId } = getProfileViewSchema.parse(req.params);
+
+//   const { limit = 20, offset = 0 } = req.query;
+
+//   const isExist = await isUserExists(userId);
+
+//   if (!userId) {
+//     return res.status(400).json({ error: 'Missing userId' });
+//   }
+//   if (!isExist) {
+//     return res.status(400).json({ error: 'User does not exist' });
+//   }
+
+//   try {
+//     // Get views with viewer details
+//     const views = await db
+//       .select({
+//         viewer: {
+//           id: usersTable.id,
+//           displayName: usersTable.displayName,
+//           image: imagesTable.imageUrl,
+//         },
+//         viewedAt: profileViewsTable.viewedAt,
+//         isNew: profileViewsTable.isNew,
+//       })
+//       .from(profileViewsTable)
+//       .where(eq(profileViewsTable.viewedId, userId))
+//       .leftJoin(usersTable, eq(profileViewsTable.viewerId, usersTable.id))
+//       .leftJoin(imagesTable, eq(profileViewsTable.viewerId, imagesTable.userId))
+//       .orderBy(desc(profileViewsTable.viewedAt))
+//       .limit(Number(limit))
+//       .offset(Number(offset));
+
+//     // Mark views as seen if requested
+//     if (req.query.markAsSeen === 'true') {
+//       await db
+//         .update(profileViewsTable)
+//         .set({ isNew: false })
+//         .where(
+//           and(
+//             eq(profileViewsTable.viewedId, userId),
+//             eq(profileViewsTable.isNew, true),
+//           ),
+//         );
+//     }
+
+//     return res.status(200).json(views);
+//   } catch (error) {
+//     console.error('Error fetching profile views:', error);
+//     return res.status(500).json({ error: 'Failed to fetch profile views' });
+//   }
+// });
 export const getProfileViewsController = tryCatchFn(async (req, res) => {
-  const { userId } = req.params;
+  const { userId } = getProfileViewSchema.parse(req.params);
+
   const { limit = 20, offset = 0 } = req.query;
+
+  const isExist = await isUserExists(userId);
 
   if (!userId) {
     return res.status(400).json({ error: 'Missing userId' });
   }
+  if (!isExist) {
+    return res.status(400).json({ error: 'User does not exist' });
+  }
 
   try {
-    // Get views with viewer details
-    const views = await db
+    // Get all views with viewer details
+    const allViews = await db
       .select({
         viewer: {
           id: usersTable.id,
@@ -101,14 +165,29 @@ export const getProfileViewsController = tryCatchFn(async (req, res) => {
         },
         viewedAt: profileViewsTable.viewedAt,
         isNew: profileViewsTable.isNew,
+        viewerId: profileViewsTable.viewerId,
       })
       .from(profileViewsTable)
       .where(eq(profileViewsTable.viewedId, userId))
       .leftJoin(usersTable, eq(profileViewsTable.viewerId, usersTable.id))
       .leftJoin(imagesTable, eq(profileViewsTable.viewerId, imagesTable.userId))
-      .orderBy(desc(profileViewsTable.viewedAt))
-      .limit(Number(limit))
-      .offset(Number(offset));
+      .orderBy(desc(profileViewsTable.viewedAt));
+
+    // Process in JavaScript to get unique viewers with their most recent view
+    const viewerMap = new Map();
+
+    for (const view of allViews) {
+      if (!viewerMap.has(view.viewerId)) {
+        viewerMap.set(view.viewerId, view);
+      }
+    }
+
+    // Convert map values to array and apply pagination
+    const uniqueViews = Array.from(viewerMap.values())
+      .sort((a, b) => new Date(b.viewedAt) - new Date(a.viewedAt))
+      .slice(Number(offset), Number(offset) + Number(limit))
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      .map(({ viewerId, ...rest }) => rest); // Remove the viewerId property from the result
 
     // Mark views as seen if requested
     if (req.query.markAsSeen === 'true') {
@@ -123,13 +202,12 @@ export const getProfileViewsController = tryCatchFn(async (req, res) => {
         );
     }
 
-    res.status(200).json(views);
+    return res.status(200).json(uniqueViews);
   } catch (error) {
     console.error('Error fetching profile views:', error);
-    res.status(500).json({ error: 'Failed to fetch profile views' });
+    return res.status(500).json({ error: 'Failed to fetch profile views' });
   }
 });
-
 export const clearOldProfileViewsController = tryCatchFn(async (req, res) => {
   try {
     // Delete views older than 1 week
@@ -140,9 +218,9 @@ export const clearOldProfileViewsController = tryCatchFn(async (req, res) => {
       .delete(profileViewsTable)
       .where(lt(profileViewsTable.viewedAt, oneWeekAgo));
 
-    res.status(200).json({ deletedCount: result.rowCount });
+    return res.status(200).json({ deletedCount: result.rowCount });
   } catch (error) {
     console.error('Error clearing old profile views:', error);
-    res.status(500).json({ error: 'Failed to clear old profile views' });
+    return res.status(500).json({ error: 'Failed to clear old profile views' });
   }
 });
