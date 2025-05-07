@@ -37,7 +37,9 @@ export const rouletteSessionsTable = pgTable(
   'roulette_sessions',
   {
     id: text('id').primaryKey(),
-    userId: text('user_id').references(() => usersTable.id),
+    userId: text('user_id').references(() => usersTable.id, {
+      onDelete: 'cascade',
+    }),
     status: varchar('status', {
       length: 20,
     }).$type<'waiting' | 'matched' | 'completed'>(),

@@ -3,6 +3,7 @@ import { Router } from 'express';
 import { rateLimit } from 'express-rate-limit';
 
 import {
+  deleteUserController,
   updateFcmTokenController,
   userCreateController,
   userGetController,
@@ -21,6 +22,7 @@ const getUsersLimiter = rateLimit({
 const router = Router();
 router.route('/user').post(clerkMiddleware(), userCreateController);
 router.route('/user/:id').patch(clerkMiddleware(), userUpdateController);
+router.route('/user/:id').delete(clerkMiddleware(), deleteUserController);
 router.route('/user/:userId').get(clerkMiddleware(), userGetController);
 router
   .route('/users')

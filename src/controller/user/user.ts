@@ -13,7 +13,73 @@ import { z } from 'zod';
 import { createProfile } from '../../core/profile.ts';
 import { db } from '../../db.ts';
 import { preferencesTable } from '../../schema/preferencesTable.ts';
-import { inArray } from 'drizzle-orm';
+import { inArray, or } from 'drizzle-orm';
+
+import { clerkClient } from '@clerk/express';
+
+import { eq } from 'drizzle-orm';
+import { premiumFeaturesTable } from '../../schema/premiumFeatureTable.ts';
+import { usersTable } from '../../schema/usersTable.ts';
+import {
+  rouletteSessionsTable,
+  rouletteMatchesTable,
+} from '../../schema/rouletteTable.ts';
+
+const deleteUserSchema = z.object({
+  id: z.string().min(1, 'User ID is required for this operation'),
+});
+
+export const deleteUserController = tryCatchFn(async (req, res) => {
+  const { id } = deleteUserSchema.parse(req.params);
+
+  try {
+    // Get all session IDs first
+    const sessionIds = await db
+      .select({ id: rouletteSessionsTable.id })
+      .from(rouletteSessionsTable)
+      .where(eq(rouletteSessionsTable.userId, id))
+      .then((res) => res.map((r) => r.id));
+
+    // Execute all deletions in sequence
+    if (sessionIds.length > 0) {
+      await db
+        .delete(rouletteMatchesTable)
+        .where(
+          or(
+            inArray(rouletteMatchesTable.session1Id, sessionIds),
+            inArray(rouletteMatchesTable.session2Id, sessionIds),
+          ),
+        );
+    }
+
+    await db
+      .delete(rouletteSessionsTable)
+      .where(eq(rouletteSessionsTable.userId, id));
+
+    await db
+      .delete(premiumFeaturesTable)
+      .where(eq(premiumFeaturesTable.userId, id));
+
+    const deletedUser = await db
+      .delete(usersTable)
+      .where(eq(usersTable.id, id))
+      .returning();
+
+    if (!deletedUser.length) {
+      throw new Error('User not found in database');
+    }
+
+    const clerkResponse = await clerkClient.users.deleteUser(id);
+
+    if (!clerkResponse.deleted)
+      throw new Error('Failed to delete user from Clerk');
+
+    res.status(204).send('Delete Success');
+  } catch (error) {
+    console.error('User deletion failed:', error);
+    throw error;
+  }
+});
 
 export const userCreateController = tryCatchFn(async (req, res, next) => {
   const { clerkId, phone } = userSchema.parse(req.body);
