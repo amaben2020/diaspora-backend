@@ -5,7 +5,9 @@ import { usersTable } from './usersTable.ts';
 export const premiumFeaturesTable = pgTable('premium_features', {
   userId: text('user_id')
     .primaryKey()
-    .references(() => usersTable.id),
+    .references(() => usersTable.id, {
+      onDelete: 'cascade',
+    }),
   visibilityBoost: boolean('visibility_boost').default(false),
   lastBoostedAt: timestamp('last_boosted_at'),
   expiresAt: timestamp('expires_at'),
