@@ -15,8 +15,12 @@ export const blocksTable = pgTable(
   'blocks',
   {
     id: text('id').primaryKey(),
-    blockerId: text('blocker_id').references(() => usersTable.id),
-    blockedId: text('blocked_id').references(() => usersTable.id),
+    blockerId: text('blocker_id').references(() => usersTable.id, {
+      onDelete: 'cascade',
+    }),
+    blockedId: text('blocked_id').references(() => usersTable.id, {
+      onDelete: 'cascade',
+    }),
     createdAt: timestamp('created_at').defaultNow(),
   },
   (table) => ({

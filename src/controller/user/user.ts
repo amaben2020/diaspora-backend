@@ -20,6 +20,7 @@ import { clerkClient } from '@clerk/express';
 import { eq } from 'drizzle-orm';
 import { premiumFeaturesTable } from '../../schema/premiumFeatureTable.ts';
 import { usersTable } from '../../schema/usersTable.ts';
+import { profilesTable } from '../../schema/profileTable.ts';
 import {
   rouletteSessionsTable,
   rouletteMatchesTable,
@@ -29,18 +30,71 @@ const deleteUserSchema = z.object({
   id: z.string().min(1, 'User ID is required for this operation'),
 });
 
-export const deleteUserController = tryCatchFn(async (req, res) => {
+// export const deleteUserController = tryCatchFn(async (req, res) => {
+//   const { id } = deleteUserSchema.parse(req.params);
+
+//   try {
+//     // Get all session IDs first
+//     const sessionIds = await db
+//       .select({ id: rouletteSessionsTable.id })
+//       .from(rouletteSessionsTable)
+//       .where(eq(rouletteSessionsTable.userId, id))
+//       .then((res) => res.map((r) => r.id));
+
+//     // Execute all deletions in sequence
+//     if (sessionIds.length > 0) {
+//       await db
+//         .delete(rouletteMatchesTable)
+//         .where(
+//           or(
+//             inArray(rouletteMatchesTable.session1Id, sessionIds),
+//             inArray(rouletteMatchesTable.session2Id, sessionIds),
+//           ),
+//         );
+//     }
+
+//     await db
+//       .delete(rouletteSessionsTable)
+//       .where(eq(rouletteSessionsTable.userId, id));
+
+//     await db
+//       .delete(premiumFeaturesTable)
+//       .where(eq(premiumFeaturesTable.userId, id));
+
+//     const deletedUser = await db
+//       .delete(usersTable)
+//       .where(eq(usersTable.id, id))
+//       .returning();
+
+//     if (!deletedUser.length) {
+//       throw new Error('User not found in database');
+//     }
+
+//     const clerkResponse = await clerkClient.users.deleteUser(id);
+
+//     if (!clerkResponse.deleted)
+//       throw new Error('Failed to delete user from Clerk');
+
+//     res.status(204).send('Delete Success');
+//   } catch (error) {
+//     console.error('User deletion failed:', error);
+//     throw error;
+//   }
+// });
+
+export const deleteUserController = tryCatchFn(async (req, res, next) => {
   const { id } = deleteUserSchema.parse(req.params);
 
   try {
-    // Get all session IDs first
-    const sessionIds = await db
-      .select({ id: rouletteSessionsTable.id })
+    // Step 1: Find all sessions for this user
+    const userSessions = await db
+      .select()
       .from(rouletteSessionsTable)
-      .where(eq(rouletteSessionsTable.userId, id))
-      .then((res) => res.map((r) => r.id));
+      .where(eq(rouletteSessionsTable.userId, id));
 
-    // Execute all deletions in sequence
+    const sessionIds = userSessions.map((s) => s.id);
+
+    // Step 2: Delete all matches involving these sessions
     if (sessionIds.length > 0) {
       await db
         .delete(rouletteMatchesTable)
@@ -52,32 +106,40 @@ export const deleteUserController = tryCatchFn(async (req, res) => {
         );
     }
 
+    // Step 3: Delete all user sessions
     await db
       .delete(rouletteSessionsTable)
       .where(eq(rouletteSessionsTable.userId, id));
 
+    // Step 4: Delete premium features
     await db
       .delete(premiumFeaturesTable)
       .where(eq(premiumFeaturesTable.userId, id));
 
+    // Step 5: Delete profile
+    await db.delete(profilesTable).where(eq(profilesTable.userId, id));
+
+    // Step 6: Delete from your database
     const deletedUser = await db
       .delete(usersTable)
       .where(eq(usersTable.id, id))
       .returning();
 
     if (!deletedUser.length) {
-      throw new Error('User not found in database');
+      return next(new Error('User not found in database'));
     }
 
+    // Step 7: Delete from Clerk
     const clerkResponse = await clerkClient.users.deleteUser(id);
+    console.log('clerkResponse ===>', clerkResponse);
+    if (!clerkResponse.deleted) {
+      return next(new Error('Failed to delete user from Clerk'));
+    }
 
-    if (!clerkResponse.deleted)
-      throw new Error('Failed to delete user from Clerk');
-
-    res.status(204).send('Delete Success');
+    return res.status(204).send();
   } catch (error) {
     console.error('User deletion failed:', error);
-    throw error;
+    return next(error);
   }
 });
 
