@@ -137,6 +137,7 @@ rouletteRouter.post('/roulette/start', async (req, res) => {
         message: result.message,
         roomId: result.roomId,
         partnerId: result.partnerId,
+        userId,
         matchId: result.matchId,
         endsAt: result.endsAt,
       });
