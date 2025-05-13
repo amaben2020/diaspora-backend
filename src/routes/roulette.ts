@@ -159,6 +159,106 @@ rouletteRouter.post('/roulette/start', async (req, res) => {
 });
 
 /**
+ * Get Roulette Details (GET version)
+ * Returns current session and match details without modifying state
+ */
+rouletteRouter.get('/roulette/details/:userId', async (req, res) => {
+  const { userId } = req.params; // Get userId from URL params instead of body
+
+  if (!userId) {
+    return res.status(400).json({
+      success: false,
+      error: 'userId is required as a URL parameter',
+    });
+  }
+
+  try {
+    // Get user's current session
+    const [session] = await db
+      .select()
+      .from(rouletteSessionsTable)
+      .where(eq(rouletteSessionsTable.userId, userId))
+      .limit(1);
+
+    if (!session) {
+      return res.json({
+        success: true,
+        exists: false,
+        message: 'No active session found',
+      });
+    }
+
+    // Prepare response data
+    const response = {
+      success: true,
+      exists: true,
+      session: {
+        id: session.id,
+        userId: session.userId,
+        // partnerId: session.us
+        status: session.status,
+        // autoContinue: session.autoContinue,
+        createdAt: session.createdAt,
+        updatedAt: session.updatedAt,
+      },
+    };
+
+    // Add match details if matched
+    if (session.status === 'matched') {
+      const [match] = await db
+        .select()
+        .from(rouletteMatchesTable)
+        .where(
+          and(
+            or(
+              eq(rouletteMatchesTable.session1Id, session.id),
+              eq(rouletteMatchesTable.session2Id, session.id),
+            ),
+            sql`ended_at IS NULL`,
+          ),
+        )
+        .limit(1);
+
+      if (match) {
+        const partnerSessionId =
+          match.session1Id === session.id ? match.session2Id : match.session1Id;
+
+        const [partnerSession] = await db
+          .select({ userId: rouletteSessionsTable.userId })
+          .from(rouletteSessionsTable)
+          .where(eq(rouletteSessionsTable.id, partnerSessionId))
+          .limit(1);
+
+        // Calculate time remaining
+        const now = Date.now();
+        const timeRemaining = match.scheduledEndTime
+          ? Math.max(0, match.scheduledEndTime.getTime() - now)
+          : 0;
+
+        response.match = {
+          id: match.id,
+          roomId: match.roomId,
+          startedAt: match.startedAt,
+          scheduledEndTime: match.scheduledEndTime,
+          timeRemaining,
+          timeRemainingFormatted: formatTimeRemaining(timeRemaining),
+          partnerId: partnerSession?.userId,
+        };
+      }
+    }
+
+    return res.json(response);
+  } catch (error) {
+    console.error('Get details error:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to get roulette details',
+      message: 'An unexpected error occurred while fetching details.',
+    });
+  }
+});
+
+/**
  * End Roulette Session (manually)
  */
 rouletteRouter.post('/roulette/end', async (req, res) => {
