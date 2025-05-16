@@ -12,6 +12,11 @@ import profileViewsRouter from './profileViews.ts';
 import paymentRouter from './payment.ts';
 import favoritesRouter from './favorites.ts';
 import profilesRouter from './profiles.ts';
+import rouletteRouter from './roulette.ts';
+import reportsRouter from './report.ts';
+import blockRouter from './block.ts';
+import boostRouter from './boost.ts';
+import streamRouter from './stream.ts';
 
 const router = express.Router();
 
@@ -29,5 +34,10 @@ router.use('', profileViewsRouter);
 router.use('', paymentRouter);
 router.use('', favoritesRouter);
 router.use('', profilesRouter);
+router.use('', rouletteRouter);
+router.use('', reportsRouter);
+router.use('', blockRouter);
+router.use('', boostRouter);
+router.use('', streamRouter);
 
 export default router;

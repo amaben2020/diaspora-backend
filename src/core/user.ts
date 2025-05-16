@@ -1,18 +1,37 @@
 import type { z } from 'zod';
 import { db } from '../db.ts';
 import { usersTable } from '../schema/usersTable.ts';
-import type { userSchema } from '../models/index.ts';
-import { and, eq, gte, not, notExists } from 'drizzle-orm';
+import { type userSchema } from '../models/index.ts';
+import {
+  and,
+  asc,
+  eq,
+  gte,
+  inArray,
+  isNotNull,
+  not,
+  notExists,
+} from 'drizzle-orm';
 import { userActivityTable } from '../schema/userActivityTable.ts';
 import { imagesTable } from '../schema/imagesTable.ts';
 import { likesTable } from '../schema/likesTable.ts';
 import { locationsTable } from '../schema/locationTable.ts';
 import {
+  cacheResults,
+  createQueryHash,
+  getCachedCountry,
+  getCachedDistance,
+  getCachedResults,
   getCountryFromCoordinates,
   getTravelTimeFromAPI,
+  setCachedCountry,
+  setCachedDistance,
 } from '../utils/index.ts';
 import { dislikesTable } from '../schema/dislikeTable.ts';
 import { paymentsTable } from '../schema/paymentsTable.ts';
+import { applyPremiumVisibility } from './premium-visibility.ts';
+import { preferencesTable } from '../schema/preferencesTable.ts';
+import { profilesTable } from '../schema/profileTable.ts';
 
 export const createUser = async (clerkId: string, phone?: string) => {
   const [user = undefined] = await db
@@ -74,38 +93,72 @@ export const getUser = async (id: string) => {
   return user;
 };
 export type TGender = 'man' | 'woman' | 'nonbinary';
-export const getUsers = async (
+
+export async function getUsers(
   currentUserId: string,
-  radiusRange: number[], // [minRadius, maxRadius]
-  ageRange: number[], // [minAge, maxAge]
-  gender: TGender | undefined,
-  activity: 'justJoined' | undefined,
-  country: string | undefined,
-) => {
+  radiusRange: number[],
+  ageRange: number[],
+  gender?: string,
+  activity?: 'justJoined',
+  country?: string,
+) {
+  // Create query fingerprint for caching
+  const queryHash = createQueryHash({
+    radiusRange,
+    ageRange,
+    gender,
+    activity,
+    country,
+  });
+
+  // Check for cached results first
+  const cachedResults = await getCachedResults(currentUserId, queryHash);
+
+  if (cachedResults) return cachedResults;
+
   const twentyFourHoursAgo = new Date(Date.now() - 24 * 60 * 60 * 1000);
 
-  const users = await db
+  // Get current user's location
+  const [currentLocation] = await db
     .select({
-      user: usersTable,
-      birthday: usersTable.birthday,
-      imageUrl: imagesTable.imageUrl,
-      order: imagesTable.order,
-      onlineStatus: userActivityTable.onlineStatus,
       latitude: locationsTable.latitude,
       longitude: locationsTable.longitude,
       countryAbbreviation: locationsTable.countryAbbreviation,
     })
+    .from(locationsTable)
+    .where(eq(locationsTable.userId, currentUserId))
+    .limit(1);
+
+  if (!currentLocation) throw new Error('Current user location not found');
+
+  // First get all users matching the filters
+  const users = await db
+    .select({
+      user: usersTable,
+      birthday: usersTable.birthday,
+      onlineStatus: userActivityTable.onlineStatus,
+      latitude: locationsTable.latitude,
+      longitude: locationsTable.longitude,
+      countryAbbreviation: locationsTable.countryAbbreviation,
+      preferences: preferencesTable,
+      profile: profilesTable,
+    })
     .from(usersTable)
     .leftJoin(locationsTable, eq(usersTable.id, locationsTable.userId))
-    .leftJoin(imagesTable, eq(usersTable.id, imagesTable.userId))
+    .leftJoin(preferencesTable, eq(usersTable.id, preferencesTable.userId))
+    .leftJoin(profilesTable, eq(usersTable.id, profilesTable.userId))
     .leftJoin(userActivityTable, eq(usersTable.id, userActivityTable.userId))
     .where(
       and(
-        gender ? eq(usersTable.gender, String(gender)) : undefined,
+        gender ? eq(usersTable.gender, gender) : undefined,
         activity === 'justJoined'
           ? gte(usersTable.createdAt, twentyFourHoursAgo)
           : undefined,
-        country ? eq(locationsTable.countryAbbreviation, country) : undefined,
+        country == '0'
+          ? undefined
+          : country
+            ? eq(locationsTable.countryAbbreviation, country)
+            : undefined,
         not(eq(usersTable.id, currentUserId)),
         notExists(
           db
@@ -128,125 +181,145 @@ export const getUsers = async (
                 eq(dislikesTable.dislikedId, usersTable.id),
               ),
             ),
-        ), // Exclude disliked users
+        ),
       ),
     );
 
-  // Fetch the current user's location
-  const [currentUserLocation] = await db
-    .select({
-      latitude: locationsTable.latitude,
-      longitude: locationsTable.longitude,
-      countryAbbreviation: locationsTable.countryAbbreviation,
-    })
-    .from(locationsTable)
-    .where(eq(locationsTable.userId, currentUserId))
-    .limit(1);
+  // Then get all images for these users in a single query
+  const userIds = users.map((u) => u.user.id);
+  const allImages =
+    userIds.length > 0
+      ? await db
+          .select()
+          .from(imagesTable)
+          .where(
+            and(
+              inArray(imagesTable.userId, userIds),
+              isNotNull(imagesTable.imageUrl),
+            ),
+          )
+          .orderBy(asc(imagesTable.order))
+      : [];
 
-  if (!currentUserLocation) {
-    throw new Error('Current user location not found');
+  interface ImagesByUser {
+    [userId: string]: { imageUrl: string; order: number }[];
   }
 
-  const {
-    latitude: lat1,
-    longitude: lng1,
-    countryAbbreviation: abrv,
-  } = currentUserLocation;
-  console.log('ABRV', abrv);
-  // Helper function to calculate age
-  const calculateAge = (birthday: string | null) => {
-    if (!birthday) return null;
-    const birthYear = new Date(birthday).getFullYear();
-    return new Date().getFullYear() - birthYear;
+  const imagesByUser: ImagesByUser = allImages.reduce((acc, image) => {
+    if (!acc[image.userId]) acc[image.userId] = [];
+    acc[image.userId].push({
+      imageUrl: image.imageUrl,
+      order: image.order,
+    });
+    return acc;
+  }, {} as ImagesByUser);
+
+  // Process users with caching
+  const origin = {
+    lat: parseFloat(currentLocation.latitude),
+    lng: parseFloat(currentLocation.longitude),
   };
 
-  // Use a Map to group users by their id
-  const userMap = new Map();
-
-  for (const {
-    user,
-    onlineStatus,
-    imageUrl,
-    order,
-    latitude,
-    longitude,
-    birthday,
-    countryAbbreviation,
-  } of users) {
-    if (!latitude || !longitude || !birthday) continue; // Ensure required fields exist
-
-    const age = calculateAge(birthday);
-    if (age === null || age < ageRange[0] || age > ageRange[1]) continue; // Age filter
-
-    if (!userMap.has(user.id)) {
-      userMap.set(user.id, {
-        ...user,
-        onlineStatus,
-        latitude,
-        longitude,
-        countryAbbreviation,
-        age,
-        images: [],
-      });
-    }
-
-    console.log('ORIGIN USER', countryAbbreviation);
-
-    if (imageUrl) {
-      userMap.get(user.id).images.push({ imageUrl, order });
-    }
+  // Get origin country (cached)
+  let originCountry = await getCachedCountry(origin.lat, origin.lng);
+  if (!originCountry) {
+    originCountry = await getCountryFromCoordinates(origin.lat, origin.lng);
+    await setCachedCountry(origin.lat, origin.lng, originCountry!);
   }
 
-  // Fetch distances using Google Maps API
   const usersWithDistances = await Promise.all(
-    Array.from(userMap.values()).map(async (user) => {
-      console.log('CA', user);
-      try {
-        const { travelTimeMinutes, distanceKm } = await getTravelTimeFromAPI(
-          parseFloat(lat1),
-          parseFloat(lng1),
-          parseFloat(user.latitude),
-          parseFloat(user.longitude),
+    users.map(async (user) => {
+      if (!user.latitude || !user.longitude || !user.birthday) return null;
+
+      const age =
+        new Date().getFullYear() - new Date(user.birthday).getFullYear();
+      if (age < ageRange[0] || age > ageRange[1]) return null;
+
+      const destination = {
+        lat: parseFloat(user.latitude),
+        lng: parseFloat(user.longitude),
+      };
+
+      // Get destination country (cached)
+      let country = await getCachedCountry(destination.lat, destination.lng);
+      if (!country) {
+        country = await getCountryFromCoordinates(
+          destination.lat,
+          destination.lng,
         );
-
-        const [originCountry, country] = await Promise.all([
-          await getCountryFromCoordinates(parseFloat(lat1), parseFloat(lng1)),
-          await getCountryFromCoordinates(
-            parseFloat(user.latitude),
-            parseFloat(user.longitude),
-          ),
-        ]);
-
-        const distanceAway =
-          originCountry?.abrv == country?.abrv
-            ? distanceKm
-            : `Currently in ${country?.name.includes('United') ? 'The' : ''}${country?.name} ${country?.flag}`;
-
-        return {
-          ...user,
-          distanceKm: distanceAway,
-          travelTimeMinutes,
-          country,
-        };
-      } catch (error) {
-        console.error('Error fetching distance:', error);
-        return null;
+        await setCachedCountry(destination.lat, destination.lng, country!);
       }
+
+      // Check if same country
+      const sameCountry = originCountry?.abrv === country?.abrv;
+      let distanceKm: number | string = radiusRange[1];
+      let travelTimeMinutes = 0;
+
+      // For same country: get distance
+      if (sameCountry) {
+        const cachedDistance = await getCachedDistance(origin, destination);
+        if (cachedDistance) {
+          distanceKm = cachedDistance.distanceKm;
+          travelTimeMinutes = cachedDistance.travelTimeMinutes;
+        } else {
+          try {
+            const result = await getTravelTimeFromAPI(
+              origin.lat,
+              origin.lng,
+              destination.lat,
+              destination.lng,
+            );
+            distanceKm = result.distanceKm;
+            travelTimeMinutes = result.travelTimeMinutes;
+            await setCachedDistance(origin, destination, result);
+          } catch (error) {
+            console.error('Error fetching distance:', error);
+          }
+        }
+      } else {
+        distanceKm = `Currently in ${country?.name.includes('United') ? 'The ' : ''}${country?.name} ${country?.flag}`;
+      }
+
+      // Apply premium visibility boost
+      const premiumBoost = (await applyPremiumVisibility(user.user.id)) || 1;
+      const boostedVisibilityScore =
+        calculateVisibilityScore(user) * premiumBoost;
+
+      console.log('user.preferences===>', user.preferences);
+
+      return {
+        ...user.user,
+        onlineStatus: user.onlineStatus,
+        images: imagesByUser[user.user.id] || [],
+        distanceKm,
+        travelTimeMinutes,
+        countryAbbreviation: user.countryAbbreviation,
+        country,
+        boostedVisibilityScore,
+        preferences: user.preferences,
+        profile: user?.profile,
+      };
     }),
   );
 
-  // Filter users by travel distance
-  return usersWithDistances.filter(Boolean).filter((user) => {
-    let distanceKm = user.distanceKm;
+  // Filter final results
+  const filteredResults = usersWithDistances
+    .filter(Boolean)
+    .filter((user) => {
+      const distance =
+        typeof user?.distanceKm === 'number' ? user.distanceKm : radiusRange[1];
+      return distance >= radiusRange[0] && distance <= radiusRange[1];
+    })
+    .sort(
+      (a, b) =>
+        (b?.boostedVisibilityScore || 0) - (a?.boostedVisibilityScore || 0),
+    );
 
-    if (typeof distanceKm !== 'number') {
-      // Assign maximum distance from the frontend range for overseas users
-      distanceKm = radiusRange[1];
-    }
+  // Cache final results
+  await cacheResults(currentUserId, queryHash, filteredResults);
 
-    return distanceKm >= radiusRange[0] && distanceKm <= radiusRange[1];
-  });
-};
+  return filteredResults;
+}
 
 export const isUserExists = async (userId: string): Promise<boolean> => {
   const existingUser = await db
@@ -255,5 +328,27 @@ export const isUserExists = async (userId: string): Promise<boolean> => {
     .where(eq(usersTable.id, userId))
     .execute();
 
-  return existingUser as unknown as boolean;
+  return (existingUser.length > 0) as unknown as boolean;
+};
+
+function calculateVisibilityScore({ user }) {
+  console.log('USER', user);
+  // Base score calculation
+  let score = 1;
+
+  // Online status bonus
+  if (user.onlineStatus === 'online') score += 2;
+
+  // Profile completeness bonus
+  if (user?.images?.length > 0) score += 1;
+  if (user.bio) score += 0.5;
+
+  return score;
+}
+
+export const userUpdateFcmToken = async (fcmToken: string, userId: string) => {
+  await db
+    .update(usersTable)
+    .set({ fcmToken })
+    .where(eq(usersTable.id, userId));
 };
