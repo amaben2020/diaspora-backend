@@ -26,6 +26,7 @@ export const usersTable = pgTable(
     createdAt: timestamp('created_at', { withTimezone: true }).defaultNow(),
     updatedAt: timestamp('updated_at').$onUpdate(() => new Date()),
     fcmToken: text('fcm_token'),
+    streamToken: text('stream_token'),
   },
   (table) => ({
     // Essential query performance indexes

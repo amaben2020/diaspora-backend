@@ -180,6 +180,8 @@ rouletteRouter.get('/roulette/details/:userId', async (req, res) => {
       .where(eq(rouletteSessionsTable.userId, userId))
       .limit(1);
 
+    console.log(session);
+
     if (!session) {
       return res.json({
         success: true,
@@ -195,7 +197,7 @@ rouletteRouter.get('/roulette/details/:userId', async (req, res) => {
       session: {
         id: session.id,
         userId: session.userId,
-        // partnerId: session.us
+        partnerId: session?.previousPartners?.pop(),
         status: session.status,
         // autoContinue: session.autoContinue,
         createdAt: session.createdAt,

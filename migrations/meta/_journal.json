@@ -239,6 +239,13 @@
       "when": 1746358131279,
       "tag": "0033_faithful_legion",
       "breakpoints": true
+    },
+    {
+      "idx": 34,
+      "version": "7",
+      "when": 1747386663735,
+      "tag": "0034_clear_pestilence",
+      "breakpoints": true
     }
   ]
 }

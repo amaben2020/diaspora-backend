@@ -41,7 +41,9 @@ streamRoute.post('/stream/token', async (req, res) => {
     await streamClient.upsertUsers([newUser]);
 
     // Generate token with 1-hour validity
-    const validityInSeconds = 60 * 60 * 3600;
+    // const validityInSeconds = 60 * 60 * 3600; // 1 week
+    const validityInSeconds = 10 * 365 * 24 * 60 * 60; // 10 years
+
     const token = streamClient.generateUserToken({
       user_id: userId,
       validity_in_seconds: validityInSeconds,

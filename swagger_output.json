@@ -118,6 +118,24 @@
         }
       }
     },
+    "/user/stream/{userId}": {
+      "patch": {
+        "description": "",
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
     "/user/{userId}": {
       "get": {
         "description": "",

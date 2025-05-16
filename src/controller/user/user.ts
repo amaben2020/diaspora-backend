@@ -175,6 +175,21 @@ export const userUpdateController = tryCatchFn(async (req, res, next) => {
   res.status(200).json(data);
 });
 
+export const userUpdateStreamTokenController = tryCatchFn(async (req, res) => {
+  const { userId } = req.params;
+  const { streamToken } = req.body;
+
+  const updateUserStreamToken = await db
+    .update(usersTable)
+    .set({
+      streamToken,
+    })
+    .where(eq(usersTable.id, userId))
+    .returning();
+
+  res.status(201).json({ message: updateUserStreamToken[0].streamToken });
+});
+
 export const userGetController = tryCatchFn(async (req, res, next) => {
   const { userId } = z.object({ userId: z.string() }).parse(req.params);
 

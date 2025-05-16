@@ -9,6 +9,7 @@ import {
   userGetController,
   userGetsController,
   userUpdateController,
+  userUpdateStreamTokenController,
 } from '../controller/user/user.ts';
 import { checkBlocked } from '../middleware/block.ts';
 
@@ -22,6 +23,9 @@ const getUsersLimiter = rateLimit({
 const router = Router();
 router.route('/user').post(clerkMiddleware(), userCreateController);
 router.route('/user/:id').patch(clerkMiddleware(), userUpdateController);
+router
+  .route('/user/stream/:userId')
+  .patch(clerkMiddleware(), userUpdateStreamTokenController);
 router.route('/user/:id').delete(clerkMiddleware(), deleteUserController);
 router.route('/user/:userId').get(clerkMiddleware(), userGetController);
 router
