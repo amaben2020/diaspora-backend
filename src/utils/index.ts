@@ -50,6 +50,8 @@ export async function getTravelTimeFromAPI(
       return { travelTimeMinutes: 0, distanceKm: 0 };
     }
 
+    console.log({ element });
+
     return {
       distanceKm: element.distance.value / 1000, // Convert meters to km
       travelTimeMinutes: Math.ceil(element.duration.value / 60), // Convert seconds to minutes

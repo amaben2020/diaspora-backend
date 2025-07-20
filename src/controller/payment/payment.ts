@@ -4,7 +4,6 @@ import { eq } from 'drizzle-orm';
 import {
   createStripeCustomer,
   createSubscription,
-  // getCustomerByUserId,
   getSubscriptionPlans,
 } from '../../services/stripeService.ts';
 import { db } from '../../db.ts';
@@ -22,14 +21,6 @@ export const getPlans = async (req: Request, res: Response) => {
     res.status(500).json({ error: 'Failed to fetch subscription plans' });
   }
 };
-
-// export const getCustomer = tryCatchFn(async (req, res) => {
-//   const { userId } = req.params;
-
-//   const customer = await getCustomerByUserId(userId ?? '');
-
-//   return res.json({ customerId: customer?.stripeCustomerId });
-// });
 
 export const createCustomer = tryCatchFn(async (req, res) => {
   const { userId, email } = req.body;

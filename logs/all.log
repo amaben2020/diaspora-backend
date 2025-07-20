@@ -99909,3 +99909,2064 @@
 [35m[39m
 2025-05-16 10:22:01:221 [35mhttp[39m: [35m::1 PATCH /api/v1/user/stream/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 201 243 - 2390.020 ms[39m
 [35m[39m
+2025-05-18 13:11:35:1135 [35mhttp[39m: [35m::1 GET /api/v1/profile-views/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 710 - 2416.415 ms[39m
+[35m[39m
+2025-05-18 13:12:39:1239 [35mhttp[39m: [35m::1 GET /api/v1/likes/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 771.277 ms[39m
+[35m[39m
+2025-05-19 09:01:40:140 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 200 121 - 3286.116 ms[39m
+[35m[39m
+2025-05-19 09:02:17:217 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 200 312 - 3475.939 ms[39m
+[35m[39m
+2025-05-19 09:02:41:241 [35mhttp[39m: [35m::1 GET /api/v1/roulette/details/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 577 - 1901.377 ms[39m
+[35m[39m
+2025-05-19 09:03:38:338 [35mhttp[39m: [35m::1 GET /api/v1/roulette/details/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 568 - 2305.926 ms[39m
+[35m[39m
+2025-05-19 09:03:50:350 [35mhttp[39m: [35m::1 GET /api/v1/roulette/details/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 568 - 1820.552 ms[39m
+[35m[39m
+2025-05-19 09:03:57:357 [35mhttp[39m: [35m::1 GET /api/v1/roulette/details/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 568 - 1878.992 ms[39m
+[35m[39m
+2025-05-19 09:04:03:43 [35mhttp[39m: [35m::1 GET /api/v1/roulette/details/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 568 - 2068.374 ms[39m
+[35m[39m
+2025-05-19 09:04:06:46 [35mhttp[39m: [35m::1 GET /api/v1/roulette/details/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 566 - 874.950 ms[39m
+[35m[39m
+2025-05-19 09:04:09:49 [35mhttp[39m: [35m::1 GET /api/v1/roulette/details/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 566 - 914.659 ms[39m
+[35m[39m
+2025-05-19 09:04:11:411 [35mhttp[39m: [35m::1 GET /api/v1/roulette/details/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 566 - 899.136 ms[39m
+[35m[39m
+2025-05-19 09:04:16:416 [35mhttp[39m: [35m::1 GET /api/v1/roulette/details/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 274 - 1022.724 ms[39m
+[35m[39m
+2025-05-19 10:54:55:5455 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 500 118 - 4637.895 ms[39m
+[35m[39m
+2025-05-19 10:56:19:5619 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 200 121 - 3304.705 ms[39m
+[35m[39m
+2025-05-19 10:56:36:5636 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 200 312 - 3800.981 ms[39m
+[35m[39m
+2025-05-19 10:57:36:5736 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 200 121 - 2376.269 ms[39m
+[35m[39m
+2025-05-19 10:57:44:5744 [35mhttp[39m: [35m::1 GET /api/v1/roulette/details/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 568 - 2732.006 ms[39m
+[35m[39m
+2025-05-19 10:58:29:5829 [35mhttp[39m: [35m::1 GET /api/v1/roulette/details/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 566 - 2064.804 ms[39m
+[35m[39m
+2025-05-19 10:58:36:5836 [35mhttp[39m: [35m::1 GET /api/v1/roulette/details/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 572 - 1663.846 ms[39m
+[35m[39m
+2025-05-19 10:58:44:5844 [35mhttp[39m: [35m::1 GET /api/v1/roulette/details/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 276 - 1137.252 ms[39m
+[35m[39m
+2025-05-19 10:58:57:5857 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 200 312 - 4292.033 ms[39m
+[35m[39m
+2025-05-19 10:59:05:595 [35mhttp[39m: [35m::1 GET /api/v1/roulette/details/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 578 - 2207.556 ms[39m
+[35m[39m
+2025-05-19 13:32:44:3244 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2wXg8O9oAnf01ioHyfZWPCN9bY0 200 67 - 2283.514 ms[39m
+[35m[39m
+2025-05-19 13:33:07:337 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 200 312 - 3291.007 ms[39m
+[35m[39m
+2025-05-19 13:33:10:3310 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2wXg8O9oAnf01ioHyfZWPCN9bY0 200 781 - 906.824 ms[39m
+[35m[39m
+2025-05-19 13:34:12:3412 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2wXg8O9oAnf01ioHyfZWPCN9bY0 200 67 - 938.379 ms[39m
+[35m[39m
+2025-05-19 13:34:17:3417 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 200 121 - 1710.060 ms[39m
+[35m[39m
+2025-05-19 13:34:20:3420 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2wXg8O9oAnf01ioHyfZWPCN9bY0 200 333 - 334.318 ms[39m
+[35m[39m
+2025-05-20 09:15:37:1537 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2wXg8O9oAnf01ioHyfZWPCN9bY0 200 67 - 2639.776 ms[39m
+[35m[39m
+2025-05-20 10:40:02:402 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2wXg8O9oAnf01ioHyfZWPCN9bY0 200 67 - 2111.597 ms[39m
+[35m[39m
+2025-05-20 14:37:15:3715 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2wXg8O9oAnf01ioHyfZWPCN9bY0 200 67 - 1829.319 ms[39m
+[35m[39m
+2025-05-20 20:31:45:3145 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 200 121 - 3294.520 ms[39m
+[35m[39m
+2025-05-20 20:32:29:3229 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 200 312 - 3654.755 ms[39m
+[35m[39m
+2025-05-21 10:47:00:470 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 200 121 - 4208.860 ms[39m
+[35m[39m
+2025-05-21 10:47:13:4713 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 200 312 - 3884.535 ms[39m
+[35m[39m
+2025-05-21 10:47:20:4720 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2wXg8O9oAnf01ioHyfZWPCN9bY0 200 781 - 2047.766 ms[39m
+[35m[39m
+2025-05-21 10:47:32:4732 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 409 450 - 2464.716 ms[39m
+[35m[39m
+2025-05-21 10:48:17:4817 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2wXg8O9oAnf01ioHyfZWPCN9bY0 200 762 - 2038.494 ms[39m
+[35m[39m
+2025-05-21 10:48:30:4830 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2wXg8O9oAnf01ioHyfZWPCN9bY0 200 750 - 3097.532 ms[39m
+[35m[39m
+2025-05-21 10:48:42:4842 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2wXg8O9oAnf01ioHyfZWPCN9bY0 200 750 - 2136.559 ms[39m
+[35m[39m
+2025-05-21 10:48:52:4852 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2wXg8O9oAnf01ioHyfZWPCN9bY0 200 762 - 2301.986 ms[39m
+[35m[39m
+2025-05-21 10:49:01:491 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2wXg8O9oAnf01ioHyfZWPCN9bY0 200 759 - 2156.370 ms[39m
+[35m[39m
+2025-05-21 10:49:09:499 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2wXg8O9oAnf01ioHyfZWPCN9bY0 200 759 - 2137.222 ms[39m
+[35m[39m
+2025-05-21 10:49:13:4913 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 200 121 - 1185.311 ms[39m
+[35m[39m
+2025-05-21 10:49:22:4922 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 200 121 - 2025.983 ms[39m
+[35m[39m
+2025-05-21 10:49:33:4933 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 409 111 - 1560.233 ms[39m
+[35m[39m
+2025-05-21 10:49:42:4942 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 409 111 - 874.811 ms[39m
+[35m[39m
+2025-05-21 10:49:49:4949 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2wXg8O9oAnf01ioHyfZWPCN9bY0 200 367 - 1069.213 ms[39m
+[35m[39m
+2025-05-21 10:50:06:506 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 200 312 - 3842.731 ms[39m
+[35m[39m
+2025-05-21 14:50:55:5055 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2sqXP056VpAlQlvRzgU44E3A8mj 200 67 - 2393.778 ms[39m
+[35m[39m
+2025-05-21 14:50:59:5059 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2sqXP056VpAlQlvRzgU44E3A8mj 200 67 - 404.511 ms[39m
+[35m[39m
+2025-05-21 14:54:52:5452 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 200 121 - 1962.088 ms[39m
+[35m[39m
+2025-05-21 14:56:33:5633 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 200 312 - 5434.156 ms[39m
+[35m[39m
+2025-05-21 16:21:51:2151 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2sqXP056VpAlQlvRzgU44E3A8mj 200 401 - 2601.209 ms[39m
+[35m[39m
+2025-05-22 08:36:14:3614 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2sqXP056VpAlQlvRzgU44E3A8mj 200 401 - 2981.734 ms[39m
+[35m[39m
+2025-05-22 08:36:36:3636 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 200 121 - 2026.183 ms[39m
+[35m[39m
+2025-05-22 08:36:50:3650 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2sqXP056VpAlQlvRzgU44E3A8mj 200 402 - 861.664 ms[39m
+[35m[39m
+2025-05-22 08:38:04:384 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 200 312 - 3977.527 ms[39m
+[35m[39m
+2025-05-22 08:38:28:3828 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2sqXP056VpAlQlvRzgU44E3A8mj 200 840 - 1897.795 ms[39m
+[35m[39m
+2025-05-22 08:55:19:5519 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2sqXP056VpAlQlvRzgU44E3A8mj 200 401 - 1980.460 ms[39m
+[35m[39m
+2025-05-22 10:10:09:109 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 200 121 - 4559.568 ms[39m
+[35m[39m
+2025-05-22 10:10:13:1013 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2sqXP056VpAlQlvRzgU44E3A8mj 200 67 - 279.664 ms[39m
+[35m[39m
+2025-05-22 10:10:30:1030 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 200 312 - 2939.945 ms[39m
+[35m[39m
+2025-05-22 10:10:37:1037 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2sqXP056VpAlQlvRzgU44E3A8mj 200 768 - 2037.716 ms[39m
+[35m[39m
+2025-05-22 10:10:46:1046 [35mhttp[39m: [35m::1 GET /api/v1/roulette/details/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 578 - 2729.041 ms[39m
+[35m[39m
+2025-05-22 10:11:15:1115 [35mhttp[39m: [35m::1 POST /api/v1/roulette/end 200 53 - 2358.671 ms[39m
+[35m[39m
+2025-05-22 10:11:21:1121 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2sqXP056VpAlQlvRzgU44E3A8mj 200 366 - 779.368 ms[39m
+[35m[39m
+2025-05-22 10:11:32:1132 [35mhttp[39m: [35m::1 POST /api/v1/roulette/start 200 121 - 1836.665 ms[39m
+[35m[39m
+2025-05-22 10:36:33:3633 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2wpApc8YssBieoUSkMZHQFDX5Cq 200 366 - 1844.188 ms[39m
+[35m[39m
+2025-05-22 10:39:25:3925 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2sqXP056VpAlQlvRzgU44E3A8mj 200 67 - 1047.017 ms[39m
+[35m[39m
+2025-05-22 10:44:33:4433 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2sqXP056VpAlQlvRzgU44E3A8mj 200 797 - 2763.697 ms[39m
+[35m[39m
+2025-05-24 13:34:44:3444 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2sqXP056VpAlQlvRzgU44E3A8mj 200 787 - 2940.371 ms[39m
+[35m[39m
+2025-05-25 12:40:11:4011 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2sqXP056VpAlQlvRzgU44E3A8mj 200 787 - 3049.505 ms[39m
+[35m[39m
+2025-05-25 12:40:25:4025 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2sqXP056VpAlQlvRzgU44E3A8mj 200 787 - 2016.181 ms[39m
+[35m[39m
+2025-05-25 12:40:29:4029 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2sqXP056VpAlQlvRzgU44E3A8mj 200 797 - 767.360 ms[39m
+[35m[39m
+2025-05-25 12:40:37:4037 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2sqXP056VpAlQlvRzgU44E3A8mj 200 794 - 1784.986 ms[39m
+[35m[39m
+2025-05-25 12:40:41:4041 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2sqXP056VpAlQlvRzgU44E3A8mj 200 794 - 784.222 ms[39m
+[35m[39m
+2025-05-25 12:40:44:4044 [35mhttp[39m: [35m::1 GET /api/v1/roulette/status/user_2sqXP056VpAlQlvRzgU44E3A8mj 200 778 - 899.885 ms[39m
+[35m[39m
+2025-05-26 16:55:42:5542 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=[0,222224]&age=[18,98]&gender=man&activity=justJoined&country=US 200 26 - 6318.144 ms[39m
+[35m[39m
+2025-05-26 16:58:18:5818 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=[0,222224]&age=[18,98]&gender=man&activity=justJoined&country=US 200 26 - 5819.023 ms[39m
+[35m[39m
+2025-05-26 16:58:32:5832 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=[0,222224]&age=[18,98]&gender=man&activity=justJoined 200 26 - 4024.070 ms[39m
+[35m[39m
+2025-05-28 09:00:56:056 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=[0,%20222228]&age=[18,45]&ethnicity=Black/African 200 1610 - 9650.830 ms[39m
+[35m[39m
+2025-05-29 15:36:28:3628 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=[0,%20222228]&age=[18,45]&ethnicity=Black/African 200 1610 - 8212.987 ms[39m
+[35m[39m
+2025-06-15 11:09:08:98 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=[0,%20222228]&age=[18,45]&ethnicity=Black/African 200 1535 - 8607.875 ms[39m
+[35m[39m
+2025-06-15 11:12:17:1217 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=[0,%20222228]&age=[18,45]&ethnicity=Black/African 200 1535 - 2930.487 ms[39m
+[35m[39m
+2025-06-15 11:12:41:1241 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=[0,%20222224]&age=[18,45]&ethnicity=Black/African 200 1535 - 6965.777 ms[39m
+[35m[39m
+2025-07-13 11:19:49:1949 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=[0,%20222224]&age=[18,45]&ethnicity=Black/African 500 139 - 13363.874 ms[39m
+[35m[39m
+2025-07-13 11:40:42:4042 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=[0,%20222224]&age=[18,45]&ethnicity=Black/African 200 1586 - 9387.902 ms[39m
+[35m[39m
+2025-07-13 11:40:47:4047 [32minfo[39m: [32mCache hit[39m
+2025-07-13 11:40:47:4047 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=[0,%20222224]&age=[18,45]&ethnicity=Black/African 200 1585 - 1058.944 ms[39m
+[35m[39m
+2025-07-14 18:50:50:5050 [35mhttp[39m: [35m::1 POST /api/auth/login 404 154 - 1835.512 ms[39m
+[35m[39m
+2025-07-14 18:51:17:5117 [35mhttp[39m: [35m::1 POST /api/auth/login 404 154 - 354.695 ms[39m
+[35m[39m
+2025-07-19 22:39:19:3919 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 1711.617 ms[39m
+[35m[39m
+2025-07-19 22:39:21:3921 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 1034 - 3675.148 ms[39m
+[35m[39m
+2025-07-19 22:39:21:3921 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 4141.778 ms[39m
+[35m[39m
+2025-07-19 22:39:26:3926 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 26 - 8986.817 ms[39m
+[35m[39m
+2025-07-19 22:39:33:3933 [35mhttp[39m: [35m::1 GET /api/v1/user/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 125 - 1039.277 ms[39m
+[35m[39m
+2025-07-19 22:39:34:3934 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 1085.411 ms[39m
+[35m[39m
+2025-07-19 22:39:34:3934 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 360.131 ms[39m
+[35m[39m
+2025-07-19 22:39:34:3934 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 370.125 ms[39m
+[35m[39m
+2025-07-19 22:39:34:3934 [35mhttp[39m: [35m::1 GET /api/v1/plans 200 2 - 1772.853 ms[39m
+[35m[39m
+2025-07-19 22:39:35:3935 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 348.145 ms[39m
+[35m[39m
+2025-07-19 22:39:35:3935 [32minfo[39m: [32mCache hit[39m
+2025-07-19 22:39:35:3935 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 25 - 671.375 ms[39m
+[35m[39m
+2025-07-19 22:40:30:4030 [35mhttp[39m: [35m::1 GET /api/v1/plans 200 2 - 433.132 ms[39m
+[35m[39m
+2025-07-19 22:40:31:4031 [35mhttp[39m: [35m::1 GET /api/v1/likes/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 794 - 869.921 ms[39m
+[35m[39m
+2025-07-19 22:40:31:4031 [35mhttp[39m: [35m::1 GET /api/v1/user/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 943.228 ms[39m
+[35m[39m
+2025-07-19 22:40:31:4031 [35mhttp[39m: [35m::1 GET /api/v1/profile-views/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 710 - 1186.290 ms[39m
+[35m[39m
+2025-07-19 23:07:56:756 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 1034 - 1682.162 ms[39m
+[35m[39m
+2025-07-19 23:07:56:756 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 2287.868 ms[39m
+[35m[39m
+2025-07-19 23:08:01:81 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 1034 - 793.395 ms[39m
+[35m[39m
+2025-07-19 23:08:01:81 [35mhttp[39m: [35m::1 GET /api/v1/user/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 125 - 802.296 ms[39m
+[35m[39m
+2025-07-19 23:08:01:81 [35mhttp[39m: [35m::1 GET /api/v1/plans 200 2 - 902.079 ms[39m
+[35m[39m
+2025-07-19 23:08:02:82 [35mhttp[39m: [35m::1 GET /api/v1/preference/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 560 - 262.686 ms[39m
+[35m[39m
+2025-07-19 23:08:02:82 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 266.380 ms[39m
+[35m[39m
+2025-07-19 23:08:07:87 [35mhttp[39m: [35m::1 GET /api/v1/plans 200 2 - 351.282 ms[39m
+[35m[39m
+2025-07-19 23:08:07:87 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 806.006 ms[39m
+[35m[39m
+2025-07-19 23:12:05:125 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 946.007 ms[39m
+[35m[39m
+2025-07-19 23:12:05:125 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 1053.157 ms[39m
+[35m[39m
+2025-07-19 23:12:05:125 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 1049.703 ms[39m
+[35m[39m
+2025-07-19 23:12:06:126 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 26 - 2329.494 ms[39m
+[35m[39m
+2025-07-19 23:12:09:129 [35mhttp[39m: [35m::1 GET /api/v1/user/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 125 - 356.878 ms[39m
+[35m[39m
+2025-07-19 23:12:09:129 [35mhttp[39m: [35m::1 GET /api/v1/likes/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 794 - 368.678 ms[39m
+[35m[39m
+2025-07-19 23:12:10:1210 [35mhttp[39m: [35m::1 GET /api/v1/profile-views/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 710 - 1398.873 ms[39m
+[35m[39m
+2025-07-19 23:12:10:1210 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 359.616 ms[39m
+[35m[39m
+2025-07-19 23:12:10:1210 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 1034 - 365.968 ms[39m
+[35m[39m
+2025-07-19 23:12:10:1210 [35mhttp[39m: [35m::1 GET /api/v1/plans 304 - - 1717.414 ms[39m
+[35m[39m
+2025-07-19 23:12:10:1210 [32minfo[39m: [32mCache hit[39m
+2025-07-19 23:12:10:1210 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 25 - 678.765 ms[39m
+[35m[39m
+2025-07-19 23:12:10:1210 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 749.287 ms[39m
+[35m[39m
+2025-07-19 23:12:16:1216 [35mhttp[39m: [35m::1 GET /api/v1/plans 200 2 - 397.353 ms[39m
+[35m[39m
+2025-07-19 23:12:16:1216 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 827.537 ms[39m
+[35m[39m
+2025-07-19 23:12:19:1219 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 1034 - 284.166 ms[39m
+[35m[39m
+2025-07-19 23:12:20:1220 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 828.695 ms[39m
+[35m[39m
+2025-07-20 00:23:04:234 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 26 - 9715.346 ms[39m
+[35m[39m
+2025-07-20 01:25:14:2514 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 26 - 8000.766 ms[39m
+[35m[39m
+2025-07-20 02:39:57:3957 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 304 - - 7923.319 ms[39m
+[35m[39m
+2025-07-20 03:41:53:4153 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 304 - - 9064.812 ms[39m
+[35m[39m
+2025-07-20 04:43:48:4348 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 26 - 8555.662 ms[39m
+[35m[39m
+2025-07-20 05:48:46:4846 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 26 - 8265.423 ms[39m
+[35m[39m
+2025-07-20 06:50:38:5038 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 304 - - 7685.353 ms[39m
+[35m[39m
+2025-07-20 08:04:56:456 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 26 - 8424.438 ms[39m
+[35m[39m
+2025-07-20 08:42:29:4229 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 1943.841 ms[39m
+[35m[39m
+2025-07-20 08:42:30:4230 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 26 - 3225.768 ms[39m
+[35m[39m
+2025-07-20 09:00:42:042 [35mhttp[39m: [35m::1 GET /api/v2/filling-stations 404 162 - 14.754 ms[39m
+[35m[39m
+2025-07-20 09:00:42:042 [35mhttp[39m: [35m::1 OPTIONS /api/v2/fuel-transactions/balance 404 175 - 10.005 ms[39m
+[35m[39m
+2025-07-20 09:10:43:1043 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 971.207 ms[39m
+[35m[39m
+2025-07-20 09:10:44:1044 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 1713.003 ms[39m
+[35m[39m
+2025-07-20 09:10:44:1044 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 2213.789 ms[39m
+[35m[39m
+2025-07-20 09:10:46:1046 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 283.862 ms[39m
+[35m[39m
+2025-07-20 09:10:47:1047 [35mhttp[39m: [35m::1 GET /api/v1/plans 200 454 - 956.173 ms[39m
+[35m[39m
+2025-07-20 09:10:48:1048 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 26 - 6066.744 ms[39m
+[35m[39m
+2025-07-20 09:10:58:1058 [35mhttp[39m: [35m::1 GET /api/v1/plans 200 454 - 451.999 ms[39m
+[35m[39m
+2025-07-20 09:11:13:1113 [35mhttp[39m: [35m::1 POST /api/v1/customer 200 49 - 907.174 ms[39m
+[35m[39m
+2025-07-20 09:11:15:1115 [35mhttp[39m: [35m::1 POST /api/v1/subscription 500 43 - 1951.800 ms[39m
+[35m[39m
+2025-07-20 09:14:24:1424 [35mhttp[39m: [35m::1 POST /api/v1/customer 200 49 - 1839.688 ms[39m
+[35m[39m
+2025-07-20 09:14:25:1425 [35mhttp[39m: [35m::1 POST /api/v1/subscription 500 43 - 1372.506 ms[39m
+[35m[39m
+2025-07-20 09:20:02:202 [35mhttp[39m: [35m::1 GET /api/v1/plans 200 454 - 2006.741 ms[39m
+[35m[39m
+2025-07-20 09:20:02:202 [35mhttp[39m: [35m::1 POST /api/v1/customer 200 49 - 1958.349 ms[39m
+[35m[39m
+2025-07-20 09:20:03:203 [35mhttp[39m: [35m::1 POST /api/v1/subscription 500 43 - 732.414 ms[39m
+[35m[39m
+2025-07-20 09:26:40:2640 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 582.710 ms[39m
+[35m[39m
+2025-07-20 09:26:41:2641 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 1516.583 ms[39m
+[35m[39m
+2025-07-20 09:26:41:2641 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 1532.806 ms[39m
+[35m[39m
+2025-07-20 09:26:41:2641 [35mhttp[39m: [35m::1 GET /api/v1/plans 304 - - 843.972 ms[39m
+[35m[39m
+2025-07-20 09:26:42:2642 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 26 - 2377.624 ms[39m
+[35m[39m
+2025-07-20 09:26:43:2643 [35mhttp[39m: [35m::1 GET /api/v1/plans 304 - - 378.266 ms[39m
+[35m[39m
+2025-07-20 09:26:47:2647 [35mhttp[39m: [35m::1 POST /api/v1/customer 200 49 - 854.638 ms[39m
+[35m[39m
+2025-07-20 09:26:48:2648 [35mhttp[39m: [35m::1 POST /api/v1/subscription 500 43 - 657.614 ms[39m
+[35m[39m
+2025-07-20 09:27:03:273 [35mhttp[39m: [35m::1 GET /api/v1/plans 304 - - 361.140 ms[39m
+[35m[39m
+2025-07-20 09:27:42:2742 [35mhttp[39m: [35m::1 GET /api/v1/plans 304 - - 423.060 ms[39m
+[35m[39m
+2025-07-20 09:27:43:2743 [35mhttp[39m: [35m::1 POST /api/v1/customer 200 49 - 941.604 ms[39m
+[35m[39m
+2025-07-20 09:27:43:2743 [35mhttp[39m: [35m::1 POST /api/v1/subscription 500 43 - 684.280 ms[39m
+[35m[39m
+2025-07-20 09:27:53:2753 [35mhttp[39m: [35m::1 GET /api/v1/plans 200 454 - 388.650 ms[39m
+[35m[39m
+2025-07-20 09:32:25:3225 [35mhttp[39m: [35m::1 POST /api/v1/customer 500 865 - 4197.567 ms[39m
+[35m[39m
+2025-07-20 09:32:27:3227 [35mhttp[39m: [35m::1 POST /api/v1/subscription 200 127 - 2506.343 ms[39m
+[35m[39m
+2025-07-20 09:35:54:3554 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 798.209 ms[39m
+[35m[39m
+2025-07-20 09:35:54:3554 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 26 - 1235.874 ms[39m
+[35m[39m
+2025-07-20 09:36:07:367 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 894.538 ms[39m
+[35m[39m
+2025-07-20 09:36:07:367 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:36:07:367 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 25 - 1143.528 ms[39m
+[35m[39m
+2025-07-20 09:36:29:3629 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 831.543 ms[39m
+[35m[39m
+2025-07-20 09:36:29:3629 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:36:29:3629 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 304 - - 1069.630 ms[39m
+[35m[39m
+2025-07-20 09:44:33:4433 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 1430.587 ms[39m
+[35m[39m
+2025-07-20 09:44:35:4435 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 26 - 3103.416 ms[39m
+[35m[39m
+2025-07-20 09:44:50:4450 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 773.439 ms[39m
+[35m[39m
+2025-07-20 09:44:50:4450 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:44:50:4450 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 25 - 1038.325 ms[39m
+[35m[39m
+2025-07-20 09:45:10:4510 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 931.241 ms[39m
+[35m[39m
+2025-07-20 09:45:11:4511 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:45:11:4511 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 25 - 1217.148 ms[39m
+[35m[39m
+2025-07-20 09:45:31:4531 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 278.681 ms[39m
+[35m[39m
+2025-07-20 09:45:31:4531 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 302.178 ms[39m
+[35m[39m
+2025-07-20 09:45:32:4532 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 704.807 ms[39m
+[35m[39m
+2025-07-20 09:45:32:4532 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:45:32:4532 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 304 - - 1063.193 ms[39m
+[35m[39m
+2025-07-20 09:45:32:4532 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 941.680 ms[39m
+[35m[39m
+2025-07-20 09:47:54:4754 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 278.914 ms[39m
+[35m[39m
+2025-07-20 09:47:54:4754 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 717.018 ms[39m
+[35m[39m
+2025-07-20 09:47:54:4754 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 794.839 ms[39m
+[35m[39m
+2025-07-20 09:47:54:4754 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 738.598 ms[39m
+[35m[39m
+2025-07-20 09:47:55:4755 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 26 - 1253.485 ms[39m
+[35m[39m
+2025-07-20 09:48:00:480 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 783.802 ms[39m
+[35m[39m
+2025-07-20 09:48:03:483 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,68%5D 200 26 - 3780.344 ms[39m
+[35m[39m
+2025-07-20 09:48:04:484 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,46%5D 200 26 - 4317.304 ms[39m
+[35m[39m
+2025-07-20 09:48:04:484 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,77%5D 200 26 - 4291.186 ms[39m
+[35m[39m
+2025-07-20 09:48:04:484 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,100%5D 200 26 - 4344.705 ms[39m
+[35m[39m
+2025-07-20 09:48:04:484 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,93%5D 200 26 - 4391.096 ms[39m
+[35m[39m
+2025-07-20 09:48:04:484 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 281.759 ms[39m
+[35m[39m
+2025-07-20 09:48:04:484 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,47%5D&age=%5B18,100%5D 200 26 - 3258.043 ms[39m
+[35m[39m
+2025-07-20 09:48:04:484 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 272.120 ms[39m
+[35m[39m
+2025-07-20 09:48:07:487 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,91%5D&age=%5B18,100%5D 200 8776 - 3727.497 ms[39m
+[35m[39m
+2025-07-20 09:48:08:488 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8776 - 3732.030 ms[39m
+[35m[39m
+2025-07-20 09:48:30:4830 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 964.807 ms[39m
+[35m[39m
+2025-07-20 09:48:30:4830 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:48:30:4830 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1291.535 ms[39m
+[35m[39m
+2025-07-20 09:48:32:4832 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 336.360 ms[39m
+[35m[39m
+2025-07-20 09:48:32:4832 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 348.228 ms[39m
+[35m[39m
+2025-07-20 09:48:32:4832 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:48:32:4832 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 626.376 ms[39m
+[35m[39m
+2025-07-20 09:48:33:4833 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 1679.515 ms[39m
+[35m[39m
+2025-07-20 09:48:34:4834 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:48:34:4834 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 639.867 ms[39m
+[35m[39m
+2025-07-20 09:48:34:4834 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:48:34:4834 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 662.055 ms[39m
+[35m[39m
+2025-07-20 09:48:37:4837 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 319.611 ms[39m
+[35m[39m
+2025-07-20 09:48:37:4837 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 332.722 ms[39m
+[35m[39m
+2025-07-20 09:48:38:4838 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:48:38:4838 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1338.975 ms[39m
+[35m[39m
+2025-07-20 09:48:39:4839 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 2412.996 ms[39m
+[35m[39m
+2025-07-20 09:48:41:4841 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:48:41:4841 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 662.989 ms[39m
+[35m[39m
+2025-07-20 09:48:41:4841 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:48:41:4841 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 672.564 ms[39m
+[35m[39m
+2025-07-20 09:48:49:4849 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 1010.656 ms[39m
+[35m[39m
+2025-07-20 09:48:49:4849 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 1018.715 ms[39m
+[35m[39m
+2025-07-20 09:48:50:4850 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:48:50:4850 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 304 - - 1324.384 ms[39m
+[35m[39m
+2025-07-20 09:48:51:4851 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 2313.018 ms[39m
+[35m[39m
+2025-07-20 09:48:51:4851 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:48:51:4851 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 703.802 ms[39m
+[35m[39m
+2025-07-20 09:48:51:4851 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:48:51:4851 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 704.083 ms[39m
+[35m[39m
+2025-07-20 09:49:09:499 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 866.733 ms[39m
+[35m[39m
+2025-07-20 09:49:09:499 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:49:09:499 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1054.452 ms[39m
+[35m[39m
+2025-07-20 09:49:13:4913 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 284.105 ms[39m
+[35m[39m
+2025-07-20 09:49:13:4913 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 280.440 ms[39m
+[35m[39m
+2025-07-20 09:49:13:4913 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:49:13:4913 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 510.453 ms[39m
+[35m[39m
+2025-07-20 09:49:14:4914 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 1404.952 ms[39m
+[35m[39m
+2025-07-20 09:49:14:4914 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:49:14:4914 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:49:14:4914 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 586.209 ms[39m
+[35m[39m
+2025-07-20 09:49:14:4914 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 586.082 ms[39m
+[35m[39m
+2025-07-20 09:49:31:4931 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 265.623 ms[39m
+[35m[39m
+2025-07-20 09:49:31:4931 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:49:31:4931 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 25 - 508.293 ms[39m
+[35m[39m
+2025-07-20 09:49:31:4931 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 518.334 ms[39m
+[35m[39m
+2025-07-20 09:49:31:4931 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 468.044 ms[39m
+[35m[39m
+2025-07-20 09:49:31:4931 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 794.856 ms[39m
+[35m[39m
+2025-07-20 09:49:35:4935 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 1099.383 ms[39m
+[35m[39m
+2025-07-20 09:49:35:4935 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:49:35:4935 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:49:35:4935 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,93%5D 200 25 - 1307.257 ms[39m
+[35m[39m
+2025-07-20 09:49:35:4935 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,46%5D 200 25 - 1340.095 ms[39m
+[35m[39m
+2025-07-20 09:49:36:4936 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:49:36:4936 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,100%5D 200 25 - 1867.238 ms[39m
+[35m[39m
+2025-07-20 09:49:36:4936 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 271.587 ms[39m
+[35m[39m
+2025-07-20 09:49:37:4937 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 822.054 ms[39m
+[35m[39m
+2025-07-20 09:49:38:4938 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,85%5D&age=%5B18,100%5D 200 2877 - 3516.241 ms[39m
+[35m[39m
+2025-07-20 09:49:38:4938 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,98%5D&age=%5B18,100%5D 200 2877 - 3544.359 ms[39m
+[35m[39m
+2025-07-20 09:49:39:4939 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,51%5D&age=%5B18,100%5D 200 1316 - 4046.897 ms[39m
+[35m[39m
+2025-07-20 09:50:43:5043 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 801.079 ms[39m
+[35m[39m
+2025-07-20 09:50:44:5044 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:50:44:5044 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,98%5D&age=%5B18,100%5D 200 2876 - 1036.339 ms[39m
+[35m[39m
+2025-07-20 09:50:48:5048 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 263.183 ms[39m
+[35m[39m
+2025-07-20 09:50:48:5048 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:50:48:5048 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,98%5D&age=%5B18,100%5D 200 2876 - 498.105 ms[39m
+[35m[39m
+2025-07-20 09:57:06:576 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 1174.948 ms[39m
+[35m[39m
+2025-07-20 09:57:07:577 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 1888.934 ms[39m
+[35m[39m
+2025-07-20 09:57:07:577 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 1957.811 ms[39m
+[35m[39m
+2025-07-20 09:57:08:578 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 26 - 3004.956 ms[39m
+[35m[39m
+2025-07-20 09:57:13:5713 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 838.164 ms[39m
+[35m[39m
+2025-07-20 09:57:14:5714 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,46%5D 200 26 - 1845.035 ms[39m
+[35m[39m
+2025-07-20 09:57:17:5717 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,65%5D 200 26 - 4549.855 ms[39m
+[35m[39m
+2025-07-20 09:57:17:5717 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,53%5D 200 26 - 4638.440 ms[39m
+[35m[39m
+2025-07-20 09:57:17:5717 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,73%5D 200 26 - 4632.518 ms[39m
+[35m[39m
+2025-07-20 09:57:17:5717 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,80%5D 200 26 - 4691.124 ms[39m
+[35m[39m
+2025-07-20 09:57:17:5717 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,91%5D 200 26 - 4048.536 ms[39m
+[35m[39m
+2025-07-20 09:57:18:5718 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,94%5D 200 26 - 4034.915 ms[39m
+[35m[39m
+2025-07-20 09:57:19:5719 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,100%5D 200 26 - 1309.003 ms[39m
+[35m[39m
+2025-07-20 09:57:21:5721 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,95%5D 200 26 - 3503.286 ms[39m
+[35m[39m
+2025-07-20 09:57:21:5721 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,96%5D 200 26 - 3450.914 ms[39m
+[35m[39m
+2025-07-20 09:57:21:5721 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,99%5D 200 26 - 3527.373 ms[39m
+[35m[39m
+2025-07-20 09:57:21:5721 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,44%5D&age=%5B18,100%5D 200 26 - 3494.329 ms[39m
+[35m[39m
+2025-07-20 09:57:22:5722 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,48%5D&age=%5B18,100%5D 200 7215 - 3843.796 ms[39m
+[35m[39m
+2025-07-20 09:57:22:5722 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,55%5D&age=%5B18,100%5D 200 7215 - 3758.479 ms[39m
+[35m[39m
+2025-07-20 09:57:24:5724 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,91%5D&age=%5B18,100%5D 304 - - 1626.209 ms[39m
+[35m[39m
+2025-07-20 09:57:24:5724 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,98%5D&age=%5B18,100%5D 200 2877 - 1608.610 ms[39m
+[35m[39m
+2025-07-20 09:57:24:5724 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 305.050 ms[39m
+[35m[39m
+2025-07-20 09:57:24:5724 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,65%5D&age=%5B18,100%5D 200 8776 - 3774.095 ms[39m
+[35m[39m
+2025-07-20 09:57:24:5724 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,60%5D&age=%5B18,100%5D 200 7215 - 3790.005 ms[39m
+[35m[39m
+2025-07-20 09:57:25:5725 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,72%5D&age=%5B18,100%5D 200 8776 - 3827.386 ms[39m
+[35m[39m
+2025-07-20 09:57:25:5725 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 282.401 ms[39m
+[35m[39m
+2025-07-20 09:57:25:5725 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,79%5D&age=%5B18,100%5D 200 8776 - 3787.475 ms[39m
+[35m[39m
+2025-07-20 09:57:25:5725 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8776 - 1638.501 ms[39m
+[35m[39m
+2025-07-20 09:57:30:5730 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 902.213 ms[39m
+[35m[39m
+2025-07-20 09:57:30:5730 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 904.920 ms[39m
+[35m[39m
+2025-07-20 09:57:31:5731 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:57:31:5731 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1171.992 ms[39m
+[35m[39m
+2025-07-20 09:57:32:5732 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 2155.524 ms[39m
+[35m[39m
+2025-07-20 09:57:32:5732 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:57:32:5732 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 578.128 ms[39m
+[35m[39m
+2025-07-20 09:57:32:5732 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:57:32:5732 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 586.693 ms[39m
+[35m[39m
+2025-07-20 09:57:53:5753 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 267.147 ms[39m
+[35m[39m
+2025-07-20 09:57:53:5753 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 272.099 ms[39m
+[35m[39m
+2025-07-20 09:57:53:5753 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 511.111 ms[39m
+[35m[39m
+2025-07-20 09:57:53:5753 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 496.550 ms[39m
+[35m[39m
+2025-07-20 09:57:54:5754 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:57:54:5754 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 25 - 1104.638 ms[39m
+[35m[39m
+2025-07-20 09:57:57:5757 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 270.032 ms[39m
+[35m[39m
+2025-07-20 09:57:57:5757 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:57:57:5757 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,46%5D 200 25 - 507.764 ms[39m
+[35m[39m
+2025-07-20 09:57:58:5758 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:57:58:5758 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,73%5D 200 25 - 1046.780 ms[39m
+[35m[39m
+2025-07-20 09:57:58:5758 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:57:58:5758 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,96%5D 200 25 - 510.529 ms[39m
+[35m[39m
+2025-07-20 09:57:59:5759 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:57:59:5759 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,100%5D 200 25 - 515.192 ms[39m
+[35m[39m
+2025-07-20 09:57:59:5759 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:57:59:5759 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,48%5D&age=%5B18,100%5D 200 7214 - 538.120 ms[39m
+[35m[39m
+2025-07-20 09:58:00:580 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,60%5D 200 26 - 3378.216 ms[39m
+[35m[39m
+2025-07-20 09:58:00:580 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,92%5D 200 26 - 3342.417 ms[39m
+[35m[39m
+2025-07-20 09:58:01:581 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,90%5D 200 26 - 3829.364 ms[39m
+[35m[39m
+2025-07-20 09:58:01:581 [32minfo[39m: [32mCache hit[39m
+2025-07-20 09:58:01:581 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 304 - - 500.760 ms[39m
+[35m[39m
+2025-07-20 09:58:01:581 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 277.970 ms[39m
+[35m[39m
+2025-07-20 09:58:01:581 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,81%5D 200 26 - 4380.157 ms[39m
+[35m[39m
+2025-07-20 09:58:01:581 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,86%5D 200 26 - 4499.623 ms[39m
+[35m[39m
+2025-07-20 09:58:01:581 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 297.469 ms[39m
+[35m[39m
+2025-07-20 09:58:03:583 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,71%5D&age=%5B18,100%5D 200 7273 - 3567.321 ms[39m
+[35m[39m
+2025-07-20 09:58:04:584 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,81%5D&age=%5B18,100%5D 200 7273 - 3664.542 ms[39m
+[35m[39m
+2025-07-20 09:59:42:5942 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8776 - 1589.212 ms[39m
+[35m[39m
+2025-07-20 09:59:42:5942 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 1895.008 ms[39m
+[35m[39m
+2025-07-20 10:00:46:046 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 814.385 ms[39m
+[35m[39m
+2025-07-20 10:00:46:046 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:00:46:046 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1080.429 ms[39m
+[35m[39m
+2025-07-20 10:00:56:056 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 824.501 ms[39m
+[35m[39m
+2025-07-20 10:00:56:056 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:00:56:056 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1061.283 ms[39m
+[35m[39m
+2025-07-20 10:01:04:14 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 919.528 ms[39m
+[35m[39m
+2025-07-20 10:01:04:14 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:01:04:14 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1223.132 ms[39m
+[35m[39m
+2025-07-20 10:02:22:222 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 1738.628 ms[39m
+[35m[39m
+2025-07-20 10:02:23:223 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8776 - 2426.490 ms[39m
+[35m[39m
+2025-07-20 10:02:28:228 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:02:28:228 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1067.490 ms[39m
+[35m[39m
+2025-07-20 10:02:28:228 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 1055.991 ms[39m
+[35m[39m
+2025-07-20 10:02:32:232 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 277.769 ms[39m
+[35m[39m
+2025-07-20 10:02:32:232 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:02:32:232 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 519.285 ms[39m
+[35m[39m
+2025-07-20 10:04:52:452 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 782.586 ms[39m
+[35m[39m
+2025-07-20 10:04:53:453 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8776 - 1497.299 ms[39m
+[35m[39m
+2025-07-20 10:05:15:515 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 811.076 ms[39m
+[35m[39m
+2025-07-20 10:05:15:515 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:05:15:515 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1138.402 ms[39m
+[35m[39m
+2025-07-20 10:05:46:546 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 832.069 ms[39m
+[35m[39m
+2025-07-20 10:05:46:546 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:05:46:546 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1106.693 ms[39m
+[35m[39m
+2025-07-20 10:06:01:61 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 773.146 ms[39m
+[35m[39m
+2025-07-20 10:06:01:61 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:06:01:61 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1023.064 ms[39m
+[35m[39m
+2025-07-20 10:06:27:627 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 799.362 ms[39m
+[35m[39m
+2025-07-20 10:06:28:628 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:06:28:628 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 304 - - 1013.309 ms[39m
+[35m[39m
+2025-07-20 10:07:03:73 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 288.259 ms[39m
+[35m[39m
+2025-07-20 10:07:04:74 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8776 - 1574.869 ms[39m
+[35m[39m
+2025-07-20 10:07:06:76 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:07:06:76 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 489.882 ms[39m
+[35m[39m
+2025-07-20 10:07:06:76 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 844.053 ms[39m
+[35m[39m
+2025-07-20 10:07:13:713 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 851.766 ms[39m
+[35m[39m
+2025-07-20 10:07:13:713 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:07:13:713 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1072.588 ms[39m
+[35m[39m
+2025-07-20 10:09:18:918 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 1629.818 ms[39m
+[35m[39m
+2025-07-20 10:09:19:919 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8776 - 2618.996 ms[39m
+[35m[39m
+2025-07-20 10:09:22:922 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:09:22:922 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 567.165 ms[39m
+[35m[39m
+2025-07-20 10:09:22:922 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 875.734 ms[39m
+[35m[39m
+2025-07-20 10:10:44:1044 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 788.785 ms[39m
+[35m[39m
+2025-07-20 10:10:44:1044 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:10:44:1044 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1066.854 ms[39m
+[35m[39m
+2025-07-20 10:11:28:1128 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 1013.108 ms[39m
+[35m[39m
+2025-07-20 10:11:29:1129 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8776 - 2351.871 ms[39m
+[35m[39m
+2025-07-20 10:11:52:1152 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 306.519 ms[39m
+[35m[39m
+2025-07-20 10:11:52:1152 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 911.715 ms[39m
+[35m[39m
+2025-07-20 10:11:52:1152 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 979.844 ms[39m
+[35m[39m
+2025-07-20 10:11:53:1153 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 1125.851 ms[39m
+[35m[39m
+2025-07-20 10:11:56:1156 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 26 - 4335.395 ms[39m
+[35m[39m
+2025-07-20 10:11:59:1159 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 937.011 ms[39m
+[35m[39m
+2025-07-20 10:12:01:121 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,46%5D 200 26 - 2058.848 ms[39m
+[35m[39m
+2025-07-20 10:12:01:121 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,86%5D 200 26 - 1474.319 ms[39m
+[35m[39m
+2025-07-20 10:12:02:122 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,92%5D 200 26 - 1480.769 ms[39m
+[35m[39m
+2025-07-20 10:12:02:122 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,100%5D 200 26 - 1474.186 ms[39m
+[35m[39m
+2025-07-20 10:12:03:123 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,76%5D 200 26 - 4536.725 ms[39m
+[35m[39m
+2025-07-20 10:12:03:123 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,62%5D 200 26 - 4621.172 ms[39m
+[35m[39m
+2025-07-20 10:12:03:123 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,70%5D 200 26 - 4590.640 ms[39m
+[35m[39m
+2025-07-20 10:12:04:124 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 340.026 ms[39m
+[35m[39m
+2025-07-20 10:12:04:124 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:12:04:124 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 600.542 ms[39m
+[35m[39m
+2025-07-20 10:12:04:124 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,82%5D 200 26 - 5162.336 ms[39m
+[35m[39m
+2025-07-20 10:12:04:124 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 332.212 ms[39m
+[35m[39m
+2025-07-20 10:12:07:127 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,74%5D&age=%5B18,100%5D 200 7273 - 4245.124 ms[39m
+[35m[39m
+2025-07-20 10:12:07:127 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,93%5D&age=%5B18,100%5D 200 7273 - 4316.973 ms[39m
+[35m[39m
+2025-07-20 10:12:08:128 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,46%5D&age=%5B18,100%5D 200 26 - 5692.235 ms[39m
+[35m[39m
+2025-07-20 10:12:36:1236 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 811.444 ms[39m
+[35m[39m
+2025-07-20 10:12:36:1236 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:12:36:1236 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1063.029 ms[39m
+[35m[39m
+2025-07-20 10:12:43:1243 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 269.536 ms[39m
+[35m[39m
+2025-07-20 10:12:44:1244 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:12:44:1244 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 25 - 526.860 ms[39m
+[35m[39m
+2025-07-20 10:12:44:1244 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 697.503 ms[39m
+[35m[39m
+2025-07-20 10:12:44:1244 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 821.431 ms[39m
+[35m[39m
+2025-07-20 10:12:44:1244 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 721.948 ms[39m
+[35m[39m
+2025-07-20 10:12:47:1247 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 265.096 ms[39m
+[35m[39m
+2025-07-20 10:12:47:1247 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:12:47:1247 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,82%5D 200 25 - 513.841 ms[39m
+[35m[39m
+2025-07-20 10:12:48:1248 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:12:48:1248 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,100%5D 200 25 - 1189.803 ms[39m
+[35m[39m
+2025-07-20 10:12:48:1248 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 263.526 ms[39m
+[35m[39m
+2025-07-20 10:12:48:1248 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:12:48:1248 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 304 - - 519.178 ms[39m
+[35m[39m
+2025-07-20 10:12:48:1248 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,96%5D 200 26 - 1967.506 ms[39m
+[35m[39m
+2025-07-20 10:12:49:1249 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 274.990 ms[39m
+[35m[39m
+2025-07-20 10:12:50:1250 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 816.026 ms[39m
+[35m[39m
+2025-07-20 10:12:50:1250 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:12:50:1250 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 304 - - 1072.292 ms[39m
+[35m[39m
+2025-07-20 10:12:50:1250 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,47%5D 200 26 - 3943.757 ms[39m
+[35m[39m
+2025-07-20 10:12:52:1252 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,45%5D&age=%5B18,100%5D 200 26 - 3854.118 ms[39m
+[35m[39m
+2025-07-20 10:12:52:1252 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,77%5D&age=%5B18,100%5D 200 7273 - 4185.159 ms[39m
+[35m[39m
+2025-07-20 10:13:16:1316 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 791.321 ms[39m
+[35m[39m
+2025-07-20 10:13:16:1316 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:13:16:1316 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1041.375 ms[39m
+[35m[39m
+2025-07-20 10:13:24:1324 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 839.638 ms[39m
+[35m[39m
+2025-07-20 10:13:24:1324 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:13:24:1324 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1078.583 ms[39m
+[35m[39m
+2025-07-20 10:14:12:1412 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 878.438 ms[39m
+[35m[39m
+2025-07-20 10:14:13:1413 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8776 - 2116.929 ms[39m
+[35m[39m
+2025-07-20 10:14:22:1422 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:14:22:1422 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1931.325 ms[39m
+[35m[39m
+2025-07-20 10:14:22:1422 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 2258.257 ms[39m
+[35m[39m
+2025-07-20 10:14:41:1441 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 513.260 ms[39m
+[35m[39m
+2025-07-20 10:14:42:1442 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 774.729 ms[39m
+[35m[39m
+2025-07-20 10:14:42:1442 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 773.402 ms[39m
+[35m[39m
+2025-07-20 10:14:42:1442 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 26 - 1222.184 ms[39m
+[35m[39m
+2025-07-20 10:14:44:1444 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 254.568 ms[39m
+[35m[39m
+2025-07-20 10:14:45:1445 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,46%5D 304 - - 1197.882 ms[39m
+[35m[39m
+2025-07-20 10:14:46:1446 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,93%5D 200 26 - 1206.442 ms[39m
+[35m[39m
+2025-07-20 10:14:46:1446 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,90%5D 200 26 - 1700.400 ms[39m
+[35m[39m
+2025-07-20 10:14:47:1447 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,95%5D 304 - - 1213.914 ms[39m
+[35m[39m
+2025-07-20 10:14:47:1447 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,100%5D 200 26 - 1199.139 ms[39m
+[35m[39m
+2025-07-20 10:14:47:1447 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,59%5D 200 26 - 3330.725 ms[39m
+[35m[39m
+2025-07-20 10:14:47:1447 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,48%5D&age=%5B18,100%5D 200 7215 - 1534.996 ms[39m
+[35m[39m
+2025-07-20 10:14:48:1448 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 261.851 ms[39m
+[35m[39m
+2025-07-20 10:14:48:1448 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,71%5D 200 26 - 3776.378 ms[39m
+[35m[39m
+2025-07-20 10:14:48:1448 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:14:48:1448 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 520.839 ms[39m
+[35m[39m
+2025-07-20 10:14:48:1448 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 270.808 ms[39m
+[35m[39m
+2025-07-20 10:14:48:1448 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,83%5D 200 26 - 4273.000 ms[39m
+[35m[39m
+2025-07-20 10:14:50:1450 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,66%5D&age=%5B18,100%5D 200 7273 - 3526.914 ms[39m
+[35m[39m
+2025-07-20 10:14:50:1450 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,89%5D&age=%5B18,100%5D 200 7273 - 3530.129 ms[39m
+[35m[39m
+2025-07-20 10:15:14:1514 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 803.951 ms[39m
+[35m[39m
+2025-07-20 10:15:14:1514 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:15:14:1514 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1090.355 ms[39m
+[35m[39m
+2025-07-20 10:15:36:1536 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:15:36:1536 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 519.945 ms[39m
+[35m[39m
+2025-07-20 10:15:37:1537 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 833.795 ms[39m
+[35m[39m
+2025-07-20 10:15:50:1550 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 835.166 ms[39m
+[35m[39m
+2025-07-20 10:15:51:1551 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:15:51:1551 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1084.289 ms[39m
+[35m[39m
+2025-07-20 10:16:02:162 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 817.971 ms[39m
+[35m[39m
+2025-07-20 10:16:03:163 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:16:03:163 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1082.712 ms[39m
+[35m[39m
+2025-07-20 10:16:14:1614 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 772.866 ms[39m
+[35m[39m
+2025-07-20 10:16:16:1616 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8776 - 2112.007 ms[39m
+[35m[39m
+2025-07-20 10:16:22:1622 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 269.667 ms[39m
+[35m[39m
+2025-07-20 10:16:22:1622 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:16:22:1622 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 25 - 508.227 ms[39m
+[35m[39m
+2025-07-20 10:16:22:1622 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 615.915 ms[39m
+[35m[39m
+2025-07-20 10:16:23:1623 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 785.365 ms[39m
+[35m[39m
+2025-07-20 10:16:23:1623 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 543.880 ms[39m
+[35m[39m
+2025-07-20 10:16:25:1625 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 278.214 ms[39m
+[35m[39m
+2025-07-20 10:16:28:1628 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 903.054 ms[39m
+[35m[39m
+2025-07-20 10:16:28:1628 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 294.932 ms[39m
+[35m[39m
+2025-07-20 10:16:29:1629 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,78%5D 200 26 - 4114.301 ms[39m
+[35m[39m
+2025-07-20 10:16:29:1629 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,50%5D 200 26 - 4158.196 ms[39m
+[35m[39m
+2025-07-20 10:16:30:1630 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,47%5D&age=%5B18,78%5D 200 26 - 4136.160 ms[39m
+[35m[39m
+2025-07-20 10:16:30:1630 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,93%5D&age=%5B18,78%5D 200 7273 - 4477.033 ms[39m
+[35m[39m
+2025-07-20 10:16:32:1632 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,78%5D 200 7273 - 5913.623 ms[39m
+[35m[39m
+2025-07-20 10:16:34:1634 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 315.409 ms[39m
+[35m[39m
+2025-07-20 10:16:34:1634 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 321.570 ms[39m
+[35m[39m
+2025-07-20 10:16:34:1634 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:16:34:1634 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,78%5D 200 7272 - 566.229 ms[39m
+[35m[39m
+2025-07-20 10:16:35:1635 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 1463.477 ms[39m
+[35m[39m
+2025-07-20 10:16:36:1636 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:16:36:1636 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,78%5D 200 7272 - 562.851 ms[39m
+[35m[39m
+2025-07-20 10:16:36:1636 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:16:36:1636 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,78%5D 200 7272 - 568.226 ms[39m
+[35m[39m
+2025-07-20 10:16:39:1639 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 300.864 ms[39m
+[35m[39m
+2025-07-20 10:16:39:1639 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:16:39:1639 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,78%5D 200 7272 - 556.847 ms[39m
+[35m[39m
+2025-07-20 10:16:39:1639 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 941.796 ms[39m
+[35m[39m
+2025-07-20 10:16:40:1640 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 1528.591 ms[39m
+[35m[39m
+2025-07-20 10:16:40:1640 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:16:40:1640 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,78%5D 200 7272 - 554.680 ms[39m
+[35m[39m
+2025-07-20 10:16:40:1640 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:16:40:1640 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,78%5D 200 7272 - 563.643 ms[39m
+[35m[39m
+2025-07-20 10:17:00:170 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 847.102 ms[39m
+[35m[39m
+2025-07-20 10:17:00:170 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:17:00:170 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,78%5D 304 - - 1091.696 ms[39m
+[35m[39m
+2025-07-20 10:17:04:174 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 272.479 ms[39m
+[35m[39m
+2025-07-20 10:17:04:174 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 275.558 ms[39m
+[35m[39m
+2025-07-20 10:17:04:174 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:17:04:174 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,78%5D 200 7272 - 501.186 ms[39m
+[35m[39m
+2025-07-20 10:17:06:176 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 1978.000 ms[39m
+[35m[39m
+2025-07-20 10:17:06:176 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:17:06:176 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,78%5D 200 7272 - 524.104 ms[39m
+[35m[39m
+2025-07-20 10:17:06:176 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:17:06:176 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,78%5D 200 7272 - 532.493 ms[39m
+[35m[39m
+2025-07-20 10:17:12:1712 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 934.710 ms[39m
+[35m[39m
+2025-07-20 10:17:12:1712 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:17:12:1712 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,78%5D 200 7272 - 1268.583 ms[39m
+[35m[39m
+2025-07-20 10:17:28:1728 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 866.390 ms[39m
+[35m[39m
+2025-07-20 10:17:29:1729 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:17:29:1729 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,78%5D 200 7272 - 1141.209 ms[39m
+[35m[39m
+2025-07-20 10:17:43:1743 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 796.484 ms[39m
+[35m[39m
+2025-07-20 10:17:43:1743 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:17:43:1743 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,78%5D 200 7272 - 1018.785 ms[39m
+[35m[39m
+2025-07-20 10:18:11:1811 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 985.883 ms[39m
+[35m[39m
+2025-07-20 10:18:11:1811 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:18:11:1811 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,78%5D 200 7272 - 1285.418 ms[39m
+[35m[39m
+2025-07-20 10:18:36:1836 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 838.603 ms[39m
+[35m[39m
+2025-07-20 10:18:37:1837 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,78%5D 200 7273 - 2158.061 ms[39m
+[35m[39m
+2025-07-20 10:18:51:1851 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 707.153 ms[39m
+[35m[39m
+2025-07-20 10:18:51:1851 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 935.681 ms[39m
+[35m[39m
+2025-07-20 10:18:51:1851 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 960.294 ms[39m
+[35m[39m
+2025-07-20 10:18:52:1852 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 26 - 2082.367 ms[39m
+[35m[39m
+2025-07-20 10:18:55:1855 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 304.910 ms[39m
+[35m[39m
+2025-07-20 10:18:56:1856 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,77%5D 200 26 - 1457.788 ms[39m
+[35m[39m
+2025-07-20 10:18:56:1856 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,99%5D 304 - - 1439.121 ms[39m
+[35m[39m
+2025-07-20 10:18:57:1857 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,93%5D 200 26 - 2040.275 ms[39m
+[35m[39m
+2025-07-20 10:18:57:1857 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,100%5D 200 26 - 1306.994 ms[39m
+[35m[39m
+2025-07-20 10:18:57:1857 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,45%5D&age=%5B18,100%5D 200 26 - 1268.326 ms[39m
+[35m[39m
+2025-07-20 10:18:58:1858 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,48%5D 200 26 - 3625.733 ms[39m
+[35m[39m
+2025-07-20 10:18:59:1859 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,65%5D&age=%5B18,100%5D 304 - - 1545.586 ms[39m
+[35m[39m
+2025-07-20 10:18:59:1859 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,77%5D&age=%5B18,100%5D 200 7273 - 1525.288 ms[39m
+[35m[39m
+2025-07-20 10:18:59:1859 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,88%5D 200 26 - 4646.399 ms[39m
+[35m[39m
+2025-07-20 10:19:00:190 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,97%5D 200 26 - 5448.196 ms[39m
+[35m[39m
+2025-07-20 10:19:00:190 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,89%5D&age=%5B18,100%5D 200 7273 - 1587.495 ms[39m
+[35m[39m
+2025-07-20 10:19:00:190 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,93%5D&age=%5B18,100%5D 200 7273 - 1563.798 ms[39m
+[35m[39m
+2025-07-20 10:19:01:191 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 286.453 ms[39m
+[35m[39m
+2025-07-20 10:19:01:191 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,52%5D&age=%5B18,100%5D 200 5772 - 4192.393 ms[39m
+[35m[39m
+2025-07-20 10:19:01:191 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 283.814 ms[39m
+[35m[39m
+2025-07-20 10:19:01:191 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8776 - 1536.758 ms[39m
+[35m[39m
+2025-07-20 10:19:02:192 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,84%5D&age=%5B18,100%5D 200 7333 - 3696.624 ms[39m
+[35m[39m
+2025-07-20 10:19:03:193 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,99%5D&age=%5B18,100%5D 200 7333 - 3735.907 ms[39m
+[35m[39m
+2025-07-20 10:23:05:235 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 1462.083 ms[39m
+[35m[39m
+2025-07-20 10:23:07:237 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8776 - 3019.060 ms[39m
+[35m[39m
+2025-07-20 10:23:26:2326 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 853.054 ms[39m
+[35m[39m
+2025-07-20 10:23:26:2326 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:23:26:2326 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1103.733 ms[39m
+[35m[39m
+2025-07-20 10:23:38:2338 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 771.429 ms[39m
+[35m[39m
+2025-07-20 10:23:38:2338 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:23:38:2338 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1067.620 ms[39m
+[35m[39m
+2025-07-20 10:24:01:241 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 825.145 ms[39m
+[35m[39m
+2025-07-20 10:24:01:241 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:24:01:241 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1062.285 ms[39m
+[35m[39m
+2025-07-20 10:24:50:2450 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:24:50:2450 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 519.699 ms[39m
+[35m[39m
+2025-07-20 10:24:50:2450 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 792.406 ms[39m
+[35m[39m
+2025-07-20 10:25:11:2511 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 540.644 ms[39m
+[35m[39m
+2025-07-20 10:25:11:2511 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 822.629 ms[39m
+[35m[39m
+2025-07-20 10:25:11:2511 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 832.892 ms[39m
+[35m[39m
+2025-07-20 10:25:12:2512 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 26 - 1814.168 ms[39m
+[35m[39m
+2025-07-20 10:25:15:2515 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 266.489 ms[39m
+[35m[39m
+2025-07-20 10:25:16:2516 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,48%5D 200 26 - 1242.368 ms[39m
+[35m[39m
+2025-07-20 10:25:16:2516 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,94%5D 200 26 - 1781.643 ms[39m
+[35m[39m
+2025-07-20 10:25:16:2516 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,100%5D 200 26 - 1779.360 ms[39m
+[35m[39m
+2025-07-20 10:25:17:2517 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,45%5D&age=%5B18,100%5D 200 26 - 1226.702 ms[39m
+[35m[39m
+2025-07-20 10:25:17:2517 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,52%5D&age=%5B18,100%5D 304 - - 1557.467 ms[39m
+[35m[39m
+2025-07-20 10:25:17:2517 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,60%5D&age=%5B18,100%5D 200 7215 - 1518.491 ms[39m
+[35m[39m
+2025-07-20 10:25:17:2517 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 286.987 ms[39m
+[35m[39m
+2025-07-20 10:25:18:2518 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,75%5D 200 26 - 3338.042 ms[39m
+[35m[39m
+2025-07-20 10:25:18:2518 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 282.311 ms[39m
+[35m[39m
+2025-07-20 10:25:19:2519 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8776 - 1554.992 ms[39m
+[35m[39m
+2025-07-20 10:25:20:2520 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,76%5D&age=%5B18,100%5D 200 7333 - 3622.010 ms[39m
+[35m[39m
+2025-07-20 10:25:20:2520 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,73%5D&age=%5B18,100%5D 200 7333 - 4318.889 ms[39m
+[35m[39m
+2025-07-20 10:25:21:2521 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 279.902 ms[39m
+[35m[39m
+2025-07-20 10:25:21:2521 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 280.617 ms[39m
+[35m[39m
+2025-07-20 10:25:21:2521 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,92%5D&age=%5B18,100%5D 200 7333 - 4272.090 ms[39m
+[35m[39m
+2025-07-20 10:25:21:2521 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:25:21:2521 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 536.866 ms[39m
+[35m[39m
+2025-07-20 10:25:22:2522 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 1454.487 ms[39m
+[35m[39m
+2025-07-20 10:25:23:2523 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:25:23:2523 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 524.124 ms[39m
+[35m[39m
+2025-07-20 10:25:23:2523 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:25:23:2523 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 532.673 ms[39m
+[35m[39m
+2025-07-20 10:25:27:2527 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 341.482 ms[39m
+[35m[39m
+2025-07-20 10:25:27:2527 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 341.455 ms[39m
+[35m[39m
+2025-07-20 10:25:28:2528 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:25:28:2528 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 304 - - 1389.280 ms[39m
+[35m[39m
+2025-07-20 10:25:29:2529 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 2406.516 ms[39m
+[35m[39m
+2025-07-20 10:25:29:2529 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:25:29:2529 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 635.811 ms[39m
+[35m[39m
+2025-07-20 10:25:29:2529 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:25:29:2529 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 636.711 ms[39m
+[35m[39m
+2025-07-20 10:25:32:2532 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 328.176 ms[39m
+[35m[39m
+2025-07-20 10:25:32:2532 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:25:32:2532 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 633.189 ms[39m
+[35m[39m
+2025-07-20 10:25:34:2534 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 334.765 ms[39m
+[35m[39m
+2025-07-20 10:25:35:2535 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:25:35:2535 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1241.492 ms[39m
+[35m[39m
+2025-07-20 10:25:35:2535 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 1926.875 ms[39m
+[35m[39m
+2025-07-20 10:25:36:2536 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 2205.236 ms[39m
+[35m[39m
+2025-07-20 10:25:36:2536 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:25:36:2536 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 614.739 ms[39m
+[35m[39m
+2025-07-20 10:25:36:2536 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:25:36:2536 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 624.357 ms[39m
+[35m[39m
+2025-07-20 10:25:37:2537 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 317.902 ms[39m
+[35m[39m
+2025-07-20 10:25:37:2537 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 330.042 ms[39m
+[35m[39m
+2025-07-20 10:25:37:2537 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:25:37:2537 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 608.542 ms[39m
+[35m[39m
+2025-07-20 10:25:37:2537 [35mhttp[39m: [35m::1 POST /api/v1/likes 400 31 - 941.937 ms[39m
+[35m[39m
+2025-07-20 10:25:38:2538 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:25:38:2538 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 304 - - 610.924 ms[39m
+[35m[39m
+2025-07-20 10:25:38:2538 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:25:38:2538 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 304 - - 627.050 ms[39m
+[35m[39m
+2025-07-20 10:26:05:265 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 593.863 ms[39m
+[35m[39m
+2025-07-20 10:26:05:265 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 880.563 ms[39m
+[35m[39m
+2025-07-20 10:26:05:265 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 879.850 ms[39m
+[35m[39m
+2025-07-20 10:26:05:265 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:26:05:265 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 25 - 1144.231 ms[39m
+[35m[39m
+2025-07-20 10:26:12:2612 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 1627.943 ms[39m
+[35m[39m
+2025-07-20 10:26:14:2614 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:26:14:2614 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 25 - 2758.665 ms[39m
+[35m[39m
+2025-07-20 10:26:15:2615 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 278.588 ms[39m
+[35m[39m
+2025-07-20 10:26:15:2615 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:26:15:2615 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 25 - 520.621 ms[39m
+[35m[39m
+2025-07-20 10:26:17:2617 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 269.339 ms[39m
+[35m[39m
+2025-07-20 10:26:18:2618 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:26:18:2618 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,100%5D 200 25 - 1035.124 ms[39m
+[35m[39m
+2025-07-20 10:26:18:2618 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,46%5D 200 26 - 1250.681 ms[39m
+[35m[39m
+2025-07-20 10:26:18:2618 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,78%5D 200 26 - 1253.042 ms[39m
+[35m[39m
+2025-07-20 10:26:19:2619 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 272.404 ms[39m
+[35m[39m
+2025-07-20 10:26:19:2619 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,96%5D 200 26 - 1755.968 ms[39m
+[35m[39m
+2025-07-20 10:26:19:2619 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:26:19:2619 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,92%5D&age=%5B18,100%5D 200 7332 - 505.951 ms[39m
+[35m[39m
+2025-07-20 10:26:20:2620 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,93%5D&age=%5B18,100%5D 200 7273 - 1557.830 ms[39m
+[35m[39m
+2025-07-20 10:26:22:2622 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,98%5D&age=%5B18,100%5D 200 2877 - 2094.662 ms[39m
+[35m[39m
+2025-07-20 10:26:22:2622 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,50%5D&age=%5B18,100%5D 200 7215 - 4188.053 ms[39m
+[35m[39m
+2025-07-20 10:26:22:2622 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,88%5D&age=%5B18,100%5D 200 8776 - 4151.638 ms[39m
+[35m[39m
+2025-07-20 10:26:23:2623 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:26:23:2623 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 304 - - 543.649 ms[39m
+[35m[39m
+2025-07-20 10:26:23:2623 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,94%5D&age=%5B18,100%5D 200 8776 - 4170.701 ms[39m
+[35m[39m
+2025-07-20 10:26:23:2623 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 289.901 ms[39m
+[35m[39m
+2025-07-20 10:26:23:2623 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 289.184 ms[39m
+[35m[39m
+2025-07-20 10:26:23:2623 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,95%5D&age=%5B18,100%5D 200 8776 - 4186.415 ms[39m
+[35m[39m
+2025-07-20 10:26:23:2623 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,96%5D&age=%5B18,100%5D 200 8776 - 4187.105 ms[39m
+[35m[39m
+2025-07-20 10:26:46:2646 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 962.981 ms[39m
+[35m[39m
+2025-07-20 10:26:46:2646 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:26:46:2646 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1194.435 ms[39m
+[35m[39m
+2025-07-20 10:27:03:273 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 266.138 ms[39m
+[35m[39m
+2025-07-20 10:27:03:273 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:27:03:273 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 304 - - 1045.662 ms[39m
+[35m[39m
+2025-07-20 10:27:05:275 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 265.878 ms[39m
+[35m[39m
+2025-07-20 10:27:05:275 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:27:05:275 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 530.601 ms[39m
+[35m[39m
+2025-07-20 10:27:26:2726 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 931.873 ms[39m
+[35m[39m
+2025-07-20 10:27:28:2728 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8776 - 2500.009 ms[39m
+[35m[39m
+2025-07-20 10:28:23:2823 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 1375.237 ms[39m
+[35m[39m
+2025-07-20 10:28:24:2824 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:28:24:2824 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1621.665 ms[39m
+[35m[39m
+2025-07-20 10:28:31:2831 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 817.242 ms[39m
+[35m[39m
+2025-07-20 10:28:32:2832 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:28:32:2832 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 304 - - 1048.431 ms[39m
+[35m[39m
+2025-07-20 10:30:27:3027 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 278.962 ms[39m
+[35m[39m
+2025-07-20 10:30:29:3029 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8776 - 2026.021 ms[39m
+[35m[39m
+2025-07-20 10:31:37:3137 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:31:37:3137 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 562.973 ms[39m
+[35m[39m
+2025-07-20 10:31:37:3137 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 857.208 ms[39m
+[35m[39m
+2025-07-20 10:31:51:3151 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 835.823 ms[39m
+[35m[39m
+2025-07-20 10:31:51:3151 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:31:51:3151 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1107.172 ms[39m
+[35m[39m
+2025-07-20 10:32:18:3218 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 492.702 ms[39m
+[35m[39m
+2025-07-20 10:32:18:3218 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 809.765 ms[39m
+[35m[39m
+2025-07-20 10:32:18:3218 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 821.436 ms[39m
+[35m[39m
+2025-07-20 10:32:19:3219 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 26 - 1804.319 ms[39m
+[35m[39m
+2025-07-20 10:32:20:3220 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 269.745 ms[39m
+[35m[39m
+2025-07-20 10:32:20:3220 [35mhttp[39m: [35m::1 GET /api/v1/plans 200 454 - 837.140 ms[39m
+[35m[39m
+2025-07-20 10:32:25:3225 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 791.569 ms[39m
+[35m[39m
+2025-07-20 10:32:26:3226 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,48%5D 200 26 - 1790.310 ms[39m
+[35m[39m
+2025-07-20 10:32:26:3226 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,75%5D 200 26 - 1756.464 ms[39m
+[35m[39m
+2025-07-20 10:32:26:3226 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,81%5D 200 26 - 1751.183 ms[39m
+[35m[39m
+2025-07-20 10:32:26:3226 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,95%5D 200 26 - 1224.107 ms[39m
+[35m[39m
+2025-07-20 10:32:27:3227 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,100%5D 200 26 - 1309.190 ms[39m
+[35m[39m
+2025-07-20 10:32:27:3227 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,44%5D&age=%5B18,100%5D 200 26 - 1266.407 ms[39m
+[35m[39m
+2025-07-20 10:32:28:3228 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,52%5D&age=%5B18,100%5D 200 5772 - 1563.667 ms[39m
+[35m[39m
+2025-07-20 10:32:28:3228 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,64%5D 200 26 - 4365.704 ms[39m
+[35m[39m
+2025-07-20 10:32:29:3229 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,89%5D 200 26 - 4345.973 ms[39m
+[35m[39m
+2025-07-20 10:32:29:3229 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,79%5D&age=%5B18,100%5D 200 8776 - 1554.718 ms[39m
+[35m[39m
+2025-07-20 10:32:29:3229 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,74%5D&age=%5B18,100%5D 200 7273 - 2098.635 ms[39m
+[35m[39m
+2025-07-20 10:32:30:3230 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,68%5D&age=%5B18,100%5D 200 8776 - 4252.175 ms[39m
+[35m[39m
+2025-07-20 10:32:31:3231 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,92%5D&age=%5B18,100%5D 200 7333 - 1525.896 ms[39m
+[35m[39m
+2025-07-20 10:32:31:3231 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 264.152 ms[39m
+[35m[39m
+2025-07-20 10:32:31:3231 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8776 - 1524.627 ms[39m
+[35m[39m
+2025-07-20 10:32:31:3231 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,78%5D&age=%5B18,100%5D 200 8776 - 3672.864 ms[39m
+[35m[39m
+2025-07-20 10:32:31:3231 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 264.729 ms[39m
+[35m[39m
+2025-07-20 10:32:32:3232 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,82%5D&age=%5B18,100%5D 200 8776 - 3646.427 ms[39m
+[35m[39m
+2025-07-20 10:32:32:3232 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,86%5D&age=%5B18,100%5D 200 8776 - 3661.960 ms[39m
+[35m[39m
+2025-07-20 10:32:36:3236 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 280.793 ms[39m
+[35m[39m
+2025-07-20 10:32:36:3236 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 779.440 ms[39m
+[35m[39m
+2025-07-20 10:32:37:3237 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:32:37:3237 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1086.019 ms[39m
+[35m[39m
+2025-07-20 10:32:38:3238 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 2011.401 ms[39m
+[35m[39m
+2025-07-20 10:32:38:3238 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:32:38:3238 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 304 - - 546.242 ms[39m
+[35m[39m
+2025-07-20 10:32:38:3238 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:32:38:3238 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 304 - - 547.823 ms[39m
+[35m[39m
+2025-07-20 10:32:41:3241 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 284.119 ms[39m
+[35m[39m
+2025-07-20 10:32:41:3241 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 284.516 ms[39m
+[35m[39m
+2025-07-20 10:32:42:3242 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:32:42:3242 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 304 - - 1151.142 ms[39m
+[35m[39m
+2025-07-20 10:32:43:3243 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 2116.781 ms[39m
+[35m[39m
+2025-07-20 10:32:43:3243 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:32:43:3243 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 525.195 ms[39m
+[35m[39m
+2025-07-20 10:32:43:3243 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:32:43:3243 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 530.674 ms[39m
+[35m[39m
+2025-07-20 10:32:52:3252 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 826.936 ms[39m
+[35m[39m
+2025-07-20 10:32:53:3253 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:32:53:3253 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1059.287 ms[39m
+[35m[39m
+2025-07-20 10:32:54:3254 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 308.156 ms[39m
+[35m[39m
+2025-07-20 10:32:54:3254 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 308.960 ms[39m
+[35m[39m
+2025-07-20 10:32:54:3254 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:32:54:3254 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 534.970 ms[39m
+[35m[39m
+2025-07-20 10:32:55:3255 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 1962.863 ms[39m
+[35m[39m
+2025-07-20 10:32:56:3256 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:32:56:3256 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 528.851 ms[39m
+[35m[39m
+2025-07-20 10:32:56:3256 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:32:56:3256 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 551.067 ms[39m
+[35m[39m
+2025-07-20 10:32:57:3257 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 286.069 ms[39m
+[35m[39m
+2025-07-20 10:32:57:3257 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 303.918 ms[39m
+[35m[39m
+2025-07-20 10:32:57:3257 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:32:57:3257 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 521.895 ms[39m
+[35m[39m
+2025-07-20 10:32:58:3258 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 1454.107 ms[39m
+[35m[39m
+2025-07-20 10:32:59:3259 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:32:59:3259 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 304 - - 530.843 ms[39m
+[35m[39m
+2025-07-20 10:32:59:3259 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:32:59:3259 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 304 - - 547.933 ms[39m
+[35m[39m
+2025-07-20 10:33:38:3338 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 1317.008 ms[39m
+[35m[39m
+2025-07-20 10:33:38:3338 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 1956.287 ms[39m
+[35m[39m
+2025-07-20 10:33:38:3338 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 1979.030 ms[39m
+[35m[39m
+2025-07-20 10:33:39:3339 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:33:39:3339 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 25 - 2222.800 ms[39m
+[35m[39m
+2025-07-20 10:33:41:3341 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 280.894 ms[39m
+[35m[39m
+2025-07-20 10:33:42:3342 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:33:42:3342 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,100%5D 200 25 - 558.325 ms[39m
+[35m[39m
+2025-07-20 10:33:42:3342 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,77%5D 200 26 - 1334.971 ms[39m
+[35m[39m
+2025-07-20 10:33:42:3342 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 278.528 ms[39m
+[35m[39m
+2025-07-20 10:33:43:3343 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:33:43:3343 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,44%5D&age=%5B18,100%5D 200 25 - 557.956 ms[39m
+[35m[39m
+2025-07-20 10:33:43:3343 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,90%5D 200 26 - 2051.799 ms[39m
+[35m[39m
+2025-07-20 10:33:44:3344 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,71%5D&age=%5B18,100%5D 200 7273 - 1623.050 ms[39m
+[35m[39m
+2025-07-20 10:33:44:3344 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,81%5D&age=%5B18,100%5D 200 7273 - 1634.791 ms[39m
+[35m[39m
+2025-07-20 10:33:45:3345 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,49%5D 200 26 - 4162.780 ms[39m
+[35m[39m
+2025-07-20 10:33:45:3345 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,63%5D 200 26 - 4137.651 ms[39m
+[35m[39m
+2025-07-20 10:33:45:3345 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:33:45:3345 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 532.368 ms[39m
+[35m[39m
+2025-07-20 10:33:45:3345 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,98%5D 200 26 - 4253.910 ms[39m
+[35m[39m
+2025-07-20 10:33:45:3345 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 307.818 ms[39m
+[35m[39m
+2025-07-20 10:33:45:3345 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 299.433 ms[39m
+[35m[39m
+2025-07-20 10:33:46:3346 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,89%5D&age=%5B18,100%5D 200 7273 - 1683.841 ms[39m
+[35m[39m
+2025-07-20 10:33:46:3346 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,61%5D&age=%5B18,100%5D 200 7215 - 3961.173 ms[39m
+[35m[39m
+2025-07-20 10:33:52:3352 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 994.560 ms[39m
+[35m[39m
+2025-07-20 10:33:52:3352 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:33:52:3352 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1179.456 ms[39m
+[35m[39m
+2025-07-20 10:33:56:3356 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 297.408 ms[39m
+[35m[39m
+2025-07-20 10:33:56:3356 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 298.280 ms[39m
+[35m[39m
+2025-07-20 10:33:56:3356 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:33:56:3356 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 556.656 ms[39m
+[35m[39m
+2025-07-20 10:33:58:3358 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 2146.792 ms[39m
+[35m[39m
+2025-07-20 10:33:59:3359 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:33:59:3359 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 556.121 ms[39m
+[35m[39m
+2025-07-20 10:33:59:3359 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:33:59:3359 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 556.462 ms[39m
+[35m[39m
+2025-07-20 10:37:53:3753 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 822.035 ms[39m
+[35m[39m
+2025-07-20 10:37:55:3755 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8776 - 2182.591 ms[39m
+[35m[39m
+2025-07-20 10:38:09:389 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 842.818 ms[39m
+[35m[39m
+2025-07-20 10:38:09:389 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:38:09:389 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1107.113 ms[39m
+[35m[39m
+2025-07-20 10:38:19:3819 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 820.434 ms[39m
+[35m[39m
+2025-07-20 10:38:19:3819 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:38:19:3819 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 304 - - 1097.521 ms[39m
+[35m[39m
+2025-07-20 10:38:34:3834 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 784.699 ms[39m
+[35m[39m
+2025-07-20 10:38:34:3834 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:38:34:3834 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1047.837 ms[39m
+[35m[39m
+2025-07-20 10:38:44:3844 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 1226.514 ms[39m
+[35m[39m
+2025-07-20 10:38:45:3845 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:38:45:3845 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 304 - - 2161.152 ms[39m
+[35m[39m
+2025-07-20 10:38:47:3847 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 299.385 ms[39m
+[35m[39m
+2025-07-20 10:38:48:3848 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:38:48:3848 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1153.957 ms[39m
+[35m[39m
+2025-07-20 10:38:50:3850 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 293.692 ms[39m
+[35m[39m
+2025-07-20 10:38:50:3850 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:38:50:3850 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 529.886 ms[39m
+[35m[39m
+2025-07-20 10:41:52:4152 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 893.615 ms[39m
+[35m[39m
+2025-07-20 10:41:53:4153 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8776 - 1671.448 ms[39m
+[35m[39m
+2025-07-20 10:42:10:4210 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 266.803 ms[39m
+[35m[39m
+2025-07-20 10:42:10:4210 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 736.495 ms[39m
+[35m[39m
+2025-07-20 10:42:11:4211 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 558.285 ms[39m
+[35m[39m
+2025-07-20 10:42:11:4211 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 873.134 ms[39m
+[35m[39m
+2025-07-20 10:42:12:4212 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,45%5D 200 26 - 1878.735 ms[39m
+[35m[39m
+2025-07-20 10:42:15:4215 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 265.562 ms[39m
+[35m[39m
+2025-07-20 10:42:16:4216 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,49%5D 200 26 - 1259.748 ms[39m
+[35m[39m
+2025-07-20 10:42:16:4216 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,80%5D 200 26 - 1278.745 ms[39m
+[35m[39m
+2025-07-20 10:42:16:4216 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,92%5D 200 26 - 1771.158 ms[39m
+[35m[39m
+2025-07-20 10:42:16:4216 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,43%5D&age=%5B18,100%5D 200 26 - 1800.655 ms[39m
+[35m[39m
+2025-07-20 10:42:17:4217 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:42:17:4217 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 532.206 ms[39m
+[35m[39m
+2025-07-20 10:42:17:4217 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,44%5D&age=%5B18,100%5D 200 26 - 1262.045 ms[39m
+[35m[39m
+2025-07-20 10:42:17:4217 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,61%5D&age=%5B18,100%5D 200 7215 - 1515.586 ms[39m
+[35m[39m
+2025-07-20 10:42:17:4217 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,77%5D&age=%5B18,100%5D 200 7273 - 1557.094 ms[39m
+[35m[39m
+2025-07-20 10:42:20:4220 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,87%5D&age=%5B18,100%5D 200 7273 - 3620.719 ms[39m
+[35m[39m
+2025-07-20 10:42:52:4252 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 834.691 ms[39m
+[35m[39m
+2025-07-20 10:42:53:4253 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:42:53:4253 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B2,100%5D&age=%5B18,100%5D 200 8775 - 1090.267 ms[39m
+[35m[39m
+2025-07-20 10:43:10:4310 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 841.784 ms[39m
+[35m[39m
+2025-07-20 10:43:10:4310 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 857.895 ms[39m
+[35m[39m
+2025-07-20 10:43:10:4310 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 892.604 ms[39m
+[35m[39m
+2025-07-20 10:43:11:4311 [35mhttp[39m: [35m::1 POST /api/v1/likes 400 31 - 1463.327 ms[39m
+[35m[39m
+2025-07-20 10:43:14:4314 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 344.965 ms[39m
+[35m[39m
+2025-07-20 10:43:14:4314 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 366.800 ms[39m
+[35m[39m
+2025-07-20 10:43:14:4314 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,100%5D 200 7273 - 4346.765 ms[39m
+[35m[39m
+2025-07-20 10:43:14:4314 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:43:14:4314 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,100%5D 200 7272 - 685.505 ms[39m
+[35m[39m
+2025-07-20 10:43:15:4315 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,100%5D 200 7273 - 5739.884 ms[39m
+[35m[39m
+2025-07-20 10:43:15:4315 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 1784.311 ms[39m
+[35m[39m
+2025-07-20 10:43:16:4316 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:43:16:4316 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,100%5D 200 7272 - 708.197 ms[39m
+[35m[39m
+2025-07-20 10:43:16:4316 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:43:16:4316 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,100%5D 200 7272 - 708.689 ms[39m
+[35m[39m
+2025-07-20 10:43:17:4317 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,100%5D 200 7273 - 5506.666 ms[39m
+[35m[39m
+2025-07-20 10:43:17:4317 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,100%5D 200 7273 - 6002.920 ms[39m
+[35m[39m
+2025-07-20 10:43:18:4318 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 369.063 ms[39m
+[35m[39m
+2025-07-20 10:43:18:4318 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 370.815 ms[39m
+[35m[39m
+2025-07-20 10:43:18:4318 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:43:18:4318 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,100%5D 200 7272 - 711.090 ms[39m
+[35m[39m
+2025-07-20 10:43:19:4319 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 1834.949 ms[39m
+[35m[39m
+2025-07-20 10:43:20:4320 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:43:20:4320 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,100%5D 200 7272 - 700.270 ms[39m
+[35m[39m
+2025-07-20 10:43:20:4320 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:43:20:4320 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,100%5D 200 7272 - 701.458 ms[39m
+[35m[39m
+2025-07-20 10:43:21:4321 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 368.540 ms[39m
+[35m[39m
+2025-07-20 10:43:21:4321 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 367.708 ms[39m
+[35m[39m
+2025-07-20 10:43:21:4321 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:43:21:4321 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,100%5D 200 7272 - 705.357 ms[39m
+[35m[39m
+2025-07-20 10:43:22:4322 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 1873.364 ms[39m
+[35m[39m
+2025-07-20 10:43:23:4323 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:43:23:4323 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,100%5D 304 - - 707.255 ms[39m
+[35m[39m
+2025-07-20 10:43:23:4323 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:43:23:4323 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,100%5D 304 - - 705.962 ms[39m
+[35m[39m
+2025-07-20 10:43:39:4339 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 878.697 ms[39m
+[35m[39m
+2025-07-20 10:43:39:4339 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:43:39:4339 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,100%5D 200 7272 - 1134.228 ms[39m
+[35m[39m
+2025-07-20 10:43:43:4343 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 293.392 ms[39m
+[35m[39m
+2025-07-20 10:43:43:4343 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:43:43:4343 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,100%5D 200 7272 - 512.173 ms[39m
+[35m[39m
+2025-07-20 10:43:53:4353 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 1596.405 ms[39m
+[35m[39m
+2025-07-20 10:43:53:4353 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:43:53:4353 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,100%5D 200 7272 - 2050.691 ms[39m
+[35m[39m
+2025-07-20 10:44:08:448 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 672.152 ms[39m
+[35m[39m
+2025-07-20 10:44:08:448 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 906.885 ms[39m
+[35m[39m
+2025-07-20 10:44:08:448 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 908.838 ms[39m
+[35m[39m
+2025-07-20 10:44:13:4413 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8776 - 5289.377 ms[39m
+[35m[39m
+2025-07-20 10:44:50:4450 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 783.120 ms[39m
+[35m[39m
+2025-07-20 10:44:50:4450 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:44:50:4450 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 1034.476 ms[39m
+[35m[39m
+2025-07-20 10:44:56:4456 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:44:56:4456 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 491.076 ms[39m
+[35m[39m
+2025-07-20 10:44:57:4457 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 826.121 ms[39m
+[35m[39m
+2025-07-20 10:45:50:4550 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:45:50:4550 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 523.216 ms[39m
+[35m[39m
+2025-07-20 10:45:50:4550 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 817.934 ms[39m
+[35m[39m
+2025-07-20 10:47:27:4727 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 804.177 ms[39m
+[35m[39m
+2025-07-20 10:47:28:4728 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8776 - 1539.331 ms[39m
+[35m[39m
+2025-07-20 10:47:44:4744 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 813.098 ms[39m
+[35m[39m
+2025-07-20 10:47:44:4744 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:47:44:4744 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 1087.537 ms[39m
+[35m[39m
+2025-07-20 10:47:46:4746 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 280.988 ms[39m
+[35m[39m
+2025-07-20 10:47:46:4746 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:47:46:4746 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 304 - - 550.449 ms[39m
+[35m[39m
+2025-07-20 10:48:26:4826 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 269.266 ms[39m
+[35m[39m
+2025-07-20 10:48:27:4827 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:48:27:4827 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 304 - - 1069.126 ms[39m
+[35m[39m
+2025-07-20 10:48:47:4847 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 832.054 ms[39m
+[35m[39m
+2025-07-20 10:48:47:4847 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:48:47:4847 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 1116.162 ms[39m
+[35m[39m
+2025-07-20 10:49:07:497 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 1893.322 ms[39m
+[35m[39m
+2025-07-20 10:49:08:498 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:49:08:498 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 2259.379 ms[39m
+[35m[39m
+2025-07-20 10:49:26:4926 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:49:26:4926 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 304 - - 539.309 ms[39m
+[35m[39m
+2025-07-20 10:49:26:4926 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 882.963 ms[39m
+[35m[39m
+2025-07-20 10:49:36:4936 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 823.242 ms[39m
+[35m[39m
+2025-07-20 10:49:38:4938 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8776 - 2105.062 ms[39m
+[35m[39m
+2025-07-20 10:50:16:5016 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 553.632 ms[39m
+[35m[39m
+2025-07-20 10:50:16:5016 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 826.301 ms[39m
+[35m[39m
+2025-07-20 10:50:16:5016 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 849.891 ms[39m
+[35m[39m
+2025-07-20 10:50:16:5016 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:50:16:5016 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 1104.714 ms[39m
+[35m[39m
+2025-07-20 10:50:44:5044 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 855.870 ms[39m
+[35m[39m
+2025-07-20 10:50:45:5045 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:50:45:5045 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 1116.126 ms[39m
+[35m[39m
+2025-07-20 10:50:49:5049 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:50:49:5049 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 532.739 ms[39m
+[35m[39m
+2025-07-20 10:50:50:5050 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 840.751 ms[39m
+[35m[39m
+2025-07-20 10:50:53:5053 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 283.183 ms[39m
+[35m[39m
+2025-07-20 10:50:53:5053 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:50:53:5053 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 537.571 ms[39m
+[35m[39m
+2025-07-20 10:51:06:516 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:51:06:516 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 304 - - 511.582 ms[39m
+[35m[39m
+2025-07-20 10:51:06:516 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 802.861 ms[39m
+[35m[39m
+2025-07-20 10:51:13:5113 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 805.701 ms[39m
+[35m[39m
+2025-07-20 10:51:13:5113 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:51:13:5113 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 1055.712 ms[39m
+[35m[39m
+2025-07-20 10:51:22:5122 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 809.732 ms[39m
+[35m[39m
+2025-07-20 10:51:22:5122 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:51:22:5122 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 1054.490 ms[39m
+[35m[39m
+2025-07-20 10:52:04:524 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 825.363 ms[39m
+[35m[39m
+2025-07-20 10:52:05:525 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8776 - 2202.799 ms[39m
+[35m[39m
+2025-07-20 10:52:34:5234 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 814.022 ms[39m
+[35m[39m
+2025-07-20 10:52:34:5234 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:52:34:5234 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 1063.769 ms[39m
+[35m[39m
+2025-07-20 10:52:53:5253 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 857.625 ms[39m
+[35m[39m
+2025-07-20 10:52:54:5254 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:52:54:5254 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 304 - - 1087.364 ms[39m
+[35m[39m
+2025-07-20 10:53:41:5341 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 804.857 ms[39m
+[35m[39m
+2025-07-20 10:53:41:5341 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:53:41:5341 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 1072.945 ms[39m
+[35m[39m
+2025-07-20 10:53:43:5343 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 285.365 ms[39m
+[35m[39m
+2025-07-20 10:53:43:5343 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 284.634 ms[39m
+[35m[39m
+2025-07-20 10:53:44:5344 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:53:44:5344 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 304 - - 518.326 ms[39m
+[35m[39m
+2025-07-20 10:53:44:5344 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 1377.274 ms[39m
+[35m[39m
+2025-07-20 10:53:45:5345 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:53:45:5345 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 516.401 ms[39m
+[35m[39m
+2025-07-20 10:53:45:5345 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:53:45:5345 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 523.145 ms[39m
+[35m[39m
+2025-07-20 10:53:47:5347 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 265.964 ms[39m
+[35m[39m
+2025-07-20 10:53:47:5347 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 267.549 ms[39m
+[35m[39m
+2025-07-20 10:53:47:5347 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:53:47:5347 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 304 - - 519.323 ms[39m
+[35m[39m
+2025-07-20 10:53:48:5348 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 1503.026 ms[39m
+[35m[39m
+2025-07-20 10:53:49:5349 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:53:49:5349 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:53:49:5349 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 603.377 ms[39m
+[35m[39m
+2025-07-20 10:53:49:5349 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 603.401 ms[39m
+[35m[39m
+2025-07-20 10:53:52:5352 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 277.511 ms[39m
+[35m[39m
+2025-07-20 10:53:52:5352 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 278.431 ms[39m
+[35m[39m
+2025-07-20 10:53:53:5353 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:53:53:5353 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 1106.687 ms[39m
+[35m[39m
+2025-07-20 10:53:54:5354 [35mhttp[39m: [35m::1 POST /api/v1/dislikes 201 134 - 1981.843 ms[39m
+[35m[39m
+2025-07-20 10:53:54:5354 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:53:54:5354 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 518.874 ms[39m
+[35m[39m
+2025-07-20 10:53:54:5354 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:53:54:5354 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 519.408 ms[39m
+[35m[39m
+2025-07-20 10:54:04:544 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 1085.249 ms[39m
+[35m[39m
+2025-07-20 10:54:04:544 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 1095.512 ms[39m
+[35m[39m
+2025-07-20 10:54:05:545 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:54:05:545 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 1415.985 ms[39m
+[35m[39m
+2025-07-20 10:54:06:546 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 2474.972 ms[39m
+[35m[39m
+2025-07-20 10:54:08:548 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8776 - 2110.877 ms[39m
+[35m[39m
+2025-07-20 10:54:08:548 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8776 - 2110.752 ms[39m
+[35m[39m
+2025-07-20 10:55:37:5537 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 1553.450 ms[39m
+[35m[39m
+2025-07-20 10:55:38:5538 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:55:38:5538 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 2041.278 ms[39m
+[35m[39m
+2025-07-20 10:59:17:5917 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 305.907 ms[39m
+[35m[39m
+2025-07-20 10:59:19:5919 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8776 - 1590.577 ms[39m
+[35m[39m
+2025-07-20 10:59:20:5920 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 266.230 ms[39m
+[35m[39m
+2025-07-20 10:59:20:5920 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:59:20:5920 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 553.523 ms[39m
+[35m[39m
+2025-07-20 10:59:39:5939 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 813.017 ms[39m
+[35m[39m
+2025-07-20 10:59:39:5939 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:59:39:5939 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 304 - - 1041.716 ms[39m
+[35m[39m
+2025-07-20 10:59:58:5958 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 774.346 ms[39m
+[35m[39m
+2025-07-20 10:59:58:5958 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 811.602 ms[39m
+[35m[39m
+2025-07-20 10:59:59:5959 [32minfo[39m: [32mCache hit[39m
+2025-07-20 10:59:59:5959 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 304 - - 1089.412 ms[39m
+[35m[39m
+2025-07-20 10:59:59:5959 [35mhttp[39m: [35m::1 POST /api/v1/likes 400 31 - 1320.930 ms[39m
+[35m[39m
+2025-07-20 11:00:00:00 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:00:00:00 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 506.071 ms[39m
+[35m[39m
+2025-07-20 11:00:00:00 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:00:00:00 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 509.517 ms[39m
+[35m[39m
+2025-07-20 11:00:00:00 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 293.021 ms[39m
+[35m[39m
+2025-07-20 11:00:00:00 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 293.844 ms[39m
+[35m[39m
+2025-07-20 11:00:00:00 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:00:00:00 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 513.104 ms[39m
+[35m[39m
+2025-07-20 11:00:01:01 [35mhttp[39m: [35m::1 POST /api/v1/likes 400 31 - 810.691 ms[39m
+[35m[39m
+2025-07-20 11:00:03:03 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:00:03:03 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 504.018 ms[39m
+[35m[39m
+2025-07-20 11:00:03:03 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:00:03:03 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 507.826 ms[39m
+[35m[39m
+2025-07-20 11:00:05:05 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 270.060 ms[39m
+[35m[39m
+2025-07-20 11:00:05:05 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 285.998 ms[39m
+[35m[39m
+2025-07-20 11:00:06:06 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:00:06:06 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 1044.130 ms[39m
+[35m[39m
+2025-07-20 11:00:07:07 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 1961.129 ms[39m
+[35m[39m
+2025-07-20 11:00:07:07 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:00:07:07 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 507.500 ms[39m
+[35m[39m
+2025-07-20 11:00:07:07 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:00:07:07 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 531.878 ms[39m
+[35m[39m
+2025-07-20 11:01:09:19 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:01:09:19 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 1550.178 ms[39m
+[35m[39m
+2025-07-20 11:01:09:19 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 1835.060 ms[39m
+[35m[39m
+2025-07-20 11:01:28:128 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 763.401 ms[39m
+[35m[39m
+2025-07-20 11:01:30:130 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8776 - 2049.621 ms[39m
+[35m[39m
+2025-07-20 11:01:32:132 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 275.256 ms[39m
+[35m[39m
+2025-07-20 11:01:32:132 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 290.254 ms[39m
+[35m[39m
+2025-07-20 11:01:32:132 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:01:32:132 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 493.178 ms[39m
+[35m[39m
+2025-07-20 11:01:32:132 [35mhttp[39m: [35m::1 POST /api/v1/likes 400 31 - 778.184 ms[39m
+[35m[39m
+2025-07-20 11:01:33:133 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:01:33:133 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 494.966 ms[39m
+[35m[39m
+2025-07-20 11:01:33:133 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:01:33:133 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 519.224 ms[39m
+[35m[39m
+2025-07-20 11:01:36:136 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 275.639 ms[39m
+[35m[39m
+2025-07-20 11:01:36:136 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 289.539 ms[39m
+[35m[39m
+2025-07-20 11:01:36:136 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:01:36:136 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 523.890 ms[39m
+[35m[39m
+2025-07-20 11:01:37:137 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 1349.346 ms[39m
+[35m[39m
+2025-07-20 11:01:37:137 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:01:37:137 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 500.690 ms[39m
+[35m[39m
+2025-07-20 11:01:37:137 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:01:37:137 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 519.893 ms[39m
+[35m[39m
+2025-07-20 11:01:48:148 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 885.743 ms[39m
+[35m[39m
+2025-07-20 11:01:48:148 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 891.085 ms[39m
+[35m[39m
+2025-07-20 11:01:48:148 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:01:48:148 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 1133.828 ms[39m
+[35m[39m
+2025-07-20 11:01:51:151 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 3426.326 ms[39m
+[35m[39m
+2025-07-20 11:01:51:151 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:01:51:151 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 521.014 ms[39m
+[35m[39m
+2025-07-20 11:01:51:151 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:01:51:151 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 521.420 ms[39m
+[35m[39m
+2025-07-20 11:02:04:24 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 960.192 ms[39m
+[35m[39m
+2025-07-20 11:02:04:24 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:02:04:24 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 304 - - 1255.603 ms[39m
+[35m[39m
+2025-07-20 11:02:05:25 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 340.886 ms[39m
+[35m[39m
+2025-07-20 11:02:06:26 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:02:06:26 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 304 - - 618.233 ms[39m
+[35m[39m
+2025-07-20 11:02:29:229 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 268.552 ms[39m
+[35m[39m
+2025-07-20 11:02:29:229 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:02:29:229 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 500.106 ms[39m
+[35m[39m
+2025-07-20 11:02:29:229 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 546.330 ms[39m
+[35m[39m
+2025-07-20 11:02:30:230 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 789.177 ms[39m
+[35m[39m
+2025-07-20 11:02:30:230 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 482.671 ms[39m
+[35m[39m
+2025-07-20 11:02:33:233 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 263.170 ms[39m
+[35m[39m
+2025-07-20 11:02:33:233 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 274.962 ms[39m
+[35m[39m
+2025-07-20 11:02:33:233 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:02:33:233 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 507.697 ms[39m
+[35m[39m
+2025-07-20 11:02:34:234 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 1865.513 ms[39m
+[35m[39m
+2025-07-20 11:02:35:235 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:02:35:235 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 515.693 ms[39m
+[35m[39m
+2025-07-20 11:02:35:235 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:02:35:235 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 516.536 ms[39m
+[35m[39m
+2025-07-20 11:02:38:238 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 270.186 ms[39m
+[35m[39m
+2025-07-20 11:02:38:238 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 280.985 ms[39m
+[35m[39m
+2025-07-20 11:02:39:239 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:02:39:239 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 1061.664 ms[39m
+[35m[39m
+2025-07-20 11:02:40:240 [35mhttp[39m: [35m::1 POST /api/v1/likes 201 128 - 1899.797 ms[39m
+[35m[39m
+2025-07-20 11:02:40:240 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:02:40:240 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 512.951 ms[39m
+[35m[39m
+2025-07-20 11:02:40:240 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:02:40:240 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 524.517 ms[39m
+[35m[39m
+2025-07-20 11:04:58:458 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 265.995 ms[39m
+[35m[39m
+2025-07-20 11:04:59:459 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8776 - 2139.942 ms[39m
+[35m[39m
+2025-07-20 11:05:07:57 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 810.406 ms[39m
+[35m[39m
+2025-07-20 11:05:07:57 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:05:07:57 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 1029.461 ms[39m
+[35m[39m
+2025-07-20 11:05:10:510 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 290.147 ms[39m
+[35m[39m
+2025-07-20 11:05:10:510 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:05:10:510 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 546.792 ms[39m
+[35m[39m
+2025-07-20 11:05:22:522 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 805.318 ms[39m
+[35m[39m
+2025-07-20 11:05:22:522 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:05:22:522 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 304 - - 1072.278 ms[39m
+[35m[39m
+2025-07-20 11:05:24:524 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 276.965 ms[39m
+[35m[39m
+2025-07-20 11:05:24:524 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:05:24:524 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 529.825 ms[39m
+[35m[39m
+2025-07-20 11:05:47:547 [35mhttp[39m: [35m::1 POST /api/v1/stream/token 200 311 - 957.560 ms[39m
+[35m[39m
+2025-07-20 11:05:47:547 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 1027.925 ms[39m
+[35m[39m
+2025-07-20 11:05:47:547 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 1046.325 ms[39m
+[35m[39m
+2025-07-20 11:05:47:547 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:05:47:547 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 1339.186 ms[39m
+[35m[39m
+2025-07-20 11:05:50:550 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 344.402 ms[39m
+[35m[39m
+2025-07-20 11:05:50:550 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 356.973 ms[39m
+[35m[39m
+2025-07-20 11:05:50:550 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:05:50:550 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 674.372 ms[39m
+[35m[39m
+2025-07-20 11:05:52:552 [35mhttp[39m: [35m::1 POST /api/v1/likes 400 31 - 2833.051 ms[39m
+[35m[39m
+2025-07-20 11:05:53:553 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:05:53:553 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 691.285 ms[39m
+[35m[39m
+2025-07-20 11:05:53:553 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:05:53:553 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 692.419 ms[39m
+[35m[39m
+2025-07-20 11:05:55:555 [35mhttp[39m: [35m::1 GET /api/v1/matches/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 2 - 329.974 ms[39m
+[35m[39m
+2025-07-20 11:05:55:555 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 339.983 ms[39m
+[35m[39m
+2025-07-20 11:05:55:555 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:05:55:555 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 659.514 ms[39m
+[35m[39m
+2025-07-20 11:05:56:556 [35mhttp[39m: [35m::1 POST /api/v1/likes 400 31 - 1035.168 ms[39m
+[35m[39m
+2025-07-20 11:05:56:556 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:05:56:556 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 653.313 ms[39m
+[35m[39m
+2025-07-20 11:05:56:556 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:05:56:556 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 681.306 ms[39m
+[35m[39m
+2025-07-20 11:08:22:822 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 1140.223 ms[39m
+[35m[39m
+2025-07-20 11:08:23:823 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8776 - 2471.493 ms[39m
+[35m[39m
+2025-07-20 11:08:33:833 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 846.247 ms[39m
+[35m[39m
+2025-07-20 11:08:34:834 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:08:34:834 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 1060.947 ms[39m
+[35m[39m
+2025-07-20 11:09:10:910 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 808.888 ms[39m
+[35m[39m
+2025-07-20 11:09:10:910 [35mhttp[39m: [35m::1 GET /api/v1/preference/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 560 - 817.695 ms[39m
+[35m[39m
+2025-07-20 11:09:21:921 [35mhttp[39m: [35m::1 GET /api/v1/user/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 132 - 900.694 ms[39m
+[35m[39m
+2025-07-20 11:10:30:1030 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 887.677 ms[39m
+[35m[39m
+2025-07-20 11:10:30:1030 [35mhttp[39m: [35m::1 GET /api/v1/user/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 132 - 900.963 ms[39m
+[35m[39m
+2025-07-20 11:10:31:1031 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8776 - 1669.194 ms[39m
+[35m[39m
+2025-07-20 11:10:53:1053 [35mhttp[39m: [35m::1 GET /api/v1/user/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 132 - 824.097 ms[39m
+[35m[39m
+2025-07-20 11:10:53:1053 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 872.640 ms[39m
+[35m[39m
+2025-07-20 11:10:53:1053 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:10:53:1053 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 1101.726 ms[39m
+[35m[39m
+2025-07-20 11:11:21:1121 [35mhttp[39m: [35m::1 GET /api/v1/user/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 132 - 951.450 ms[39m
+[35m[39m
+2025-07-20 11:11:21:1121 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 304 - - 969.895 ms[39m
+[35m[39m
+2025-07-20 11:11:22:1122 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:11:22:1122 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 200 8775 - 1276.023 ms[39m
+[35m[39m
+2025-07-20 11:11:42:1142 [35mhttp[39m: [35m::1 GET /api/v1/profile/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 950 - 801.712 ms[39m
+[35m[39m
+2025-07-20 11:11:44:1144 [35mhttp[39m: [35m::1 GET /api/v1/user/user_2sdmDHHLWWoDjZyLl4NXVSmOpxr 200 132 - 2605.338 ms[39m
+[35m[39m
+2025-07-20 11:11:44:1144 [32minfo[39m: [32mCache hit[39m
+2025-07-20 11:11:44:1144 [35mhttp[39m: [35m::1 GET /api/v1/users?userId=user_2sdmDHHLWWoDjZyLl4NXVSmOpxr&radius=%5B0,%20222222%5D&age=%5B18,45%5D 304 - - 2847.191 ms[39m
+[35m[39m
