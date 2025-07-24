@@ -303,6 +303,9 @@
                 },
                 "likedId": {
                   "example": "any"
+                },
+                "superLike": {
+                  "example": "any"
                 }
               }
             }
