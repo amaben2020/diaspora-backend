@@ -1,4 +1,10 @@
-import { pgTable, primaryKey, text, timestamp } from 'drizzle-orm/pg-core';
+import {
+  boolean,
+  pgTable,
+  primaryKey,
+  text,
+  timestamp,
+} from 'drizzle-orm/pg-core';
 import { usersTable } from './usersTable.ts';
 import { relations } from 'drizzle-orm';
 
@@ -12,6 +18,7 @@ export const likesTable = pgTable(
       .notNull()
       .references(() => usersTable.id, { onDelete: 'cascade' }),
     likedAt: timestamp('liked_at', { withTimezone: true }).defaultNow(),
+    superLike: boolean('super_like').default(false).notNull(),
   },
   (table) => ({
     primaryKey: primaryKey({ columns: [table.likerId, table.likedId] }),

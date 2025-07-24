@@ -29,6 +29,6 @@ export const getLikedOrDislikedUserIds = async (currentUserId: string) => {
   return new Set([
     ...likedUserIds.map(({ userId }) => userId),
     ...dislikedUserIds.map(({ userId }) => userId),
-    ...matchedUserIds.map(({ userId }) => userId), // Include matched users
+    ...matchedUserIds.map(({ userId }) => userId),
   ]);
 };
