@@ -165,3 +165,47 @@ export const getLikedUsersController = tryCatchFn(async (req, res) => {
     res.status(500).json({ error: 'Failed to fetch liked users' });
   }
 });
+
+export const getReceivedLikesController = tryCatchFn(async (req, res) => {
+  const { userId } = req.params;
+
+  if (!userId) {
+    return res.status(400).json({ error: 'Missing userId' });
+  }
+
+  try {
+    const receivedLikes = await db
+      .select({
+        likedId: likesTable.likerId, // the person who liked *you*
+        likedAt: likesTable.likedAt,
+        superLike: likesTable.superLike,
+        user: sql`json_build_object(
+          'id', ${usersTable.id},
+          'name', ${usersTable.displayName},
+          'email', ${usersTable.email}
+        )`,
+        images: sql`COALESCE(
+          (SELECT array_agg(${imagesTable.imageUrl})
+           FROM ${imagesTable}
+           WHERE ${imagesTable.userId} = ${likesTable.likerId}),
+          ARRAY[]::text[]
+        )`,
+      })
+      .from(likesTable)
+      .where(eq(likesTable.likedId, userId)) // ← This is the key change
+      .leftJoin(usersTable, eq(likesTable.likerId, usersTable.id))
+      .groupBy(
+        likesTable.likerId,
+        likesTable.likedAt,
+        likesTable.superLike,
+        usersTable.id,
+        usersTable.displayName,
+        usersTable.email,
+      );
+
+    res.status(200).json(receivedLikes);
+  } catch (error) {
+    console.error('Error fetching received likes:', error);
+    res.status(500).json({ error: 'Failed to fetch received likes' });
+  }
+});
