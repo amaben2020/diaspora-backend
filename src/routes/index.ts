@@ -17,6 +17,7 @@ import reportsRouter from './report.ts';
 import blockRouter from './block.ts';
 import boostRouter from './boost.ts';
 import streamRouter from './stream.ts';
+import getHelpRoute from './getHelp.ts';
 
 const router = express.Router();
 
@@ -39,5 +40,6 @@ router.use('', reportsRouter);
 router.use('', blockRouter);
 router.use('', boostRouter);
 router.use('', streamRouter);
+router.use('', getHelpRoute);
 
 export default router;

@@ -1,3 +1,4 @@
+export { getHelpTable } from './getHelpTable';
 export { profileViewsTable } from './profileViews.ts';
 export { imagesTable } from './imagesTable.ts';
 export { loveLettersTable } from './loveLettersTable.ts';

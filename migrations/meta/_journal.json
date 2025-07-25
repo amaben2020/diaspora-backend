@@ -253,6 +253,13 @@
       "when": 1753286811432,
       "tag": "0035_breezy_logan",
       "breakpoints": true
+    },
+    {
+      "idx": 36,
+      "version": "7",
+      "when": 1753440844024,
+      "tag": "0036_huge_valkyrie",
+      "breakpoints": true
     }
   ]
 }
