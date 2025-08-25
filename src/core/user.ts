@@ -79,6 +79,11 @@ export const updateUser = async (
 };
 
 export const getUser = async (id: string) => {
+  const image = await db
+    .select()
+    .from(imagesTable)
+    .where(eq(imagesTable.userId, id));
+
   const [user = undefined] = await db
     .select({
       displayName: usersTable.displayName,
@@ -90,8 +95,9 @@ export const getUser = async (id: string) => {
     .where(eq(usersTable.id, id))
     .leftJoin(paymentsTable, eq(usersTable.id, paymentsTable.userId));
 
-  return user;
+  return { ...user, image: image[0].imageUrl };
 };
+
 export type TGender = 'man' | 'woman' | 'nonbinary';
 
 export async function getUsers(
