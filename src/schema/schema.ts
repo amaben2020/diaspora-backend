@@ -1,3 +1,4 @@
+export { getHelpTable } from './getHelpTable';
 export { profileViewsTable } from './profileViews.ts';
 export { imagesTable } from './imagesTable.ts';
 export { loveLettersTable } from './loveLettersTable.ts';
@@ -13,3 +14,8 @@ export { usersTable } from './usersTable.ts';
 export { chatsTable } from './chatTable.ts';
 export { profilesTable } from './profileTable.ts';
 export { favoritesTable } from './favoriteTable.ts';
+export { rouletteSessionsTable } from './rouletteTable.ts';
+export { reportsTable } from './reportTable.ts';
+export { blocksTable } from './blockTable.ts';
+export { premiumFeaturesTable } from './premiumFeatureTable.ts';
+export { rouletteMatchesTable } from './rouletteTable.ts';

@@ -89,27 +89,6 @@ export const getSubscriptionPlans = async () => {
 
 export const handleWebhookEvent = async (event: Stripe.Event) => {
   switch (event.type) {
-    // case 'invoice.payment_succeeded':
-    //   const invoice = event.data.object as Stripe.Invoice;
-    //   const subscriptionId = invoice.subscription as string;
-    //   const subscription = await stripe.subscriptions.retrieve(subscriptionId);
-    //   const customerId = subscription.customer as string;
-    //   console.log('INVOICE OBJECT=====>', invoice);
-    //   console.log('SUBSCRIPTION =====>', subscription);
-
-    //   // Update user's payment status and next billing date
-    //   await db
-    //     .update(paymentsTable)
-    //     .set({
-    //       paymentStatus: 'active',
-    //       nextBillingDate: new Date(subscription.current_period_end * 1000),
-    //       lastUpdated: new Date(),
-    //       // TODO: i need to pass in diaspora-economy, business or first class here
-    //       subscriptionType: 'paid',
-    //     })
-    //     .where(eq(paymentsTable.stripeCustomerId, customerId));
-    //   break;
-
     case 'payment_intent.succeeded':
       console.log('yeah man');
       break;
@@ -122,6 +101,8 @@ export const handleWebhookEvent = async (event: Stripe.Event) => {
       });
       const customerId = subscription.customer as string;
 
+      console.log('invoice', invoice);
+
       // Extract plan name from the first line item
       let subscriptionType = 'paid'; // default fallback
       if (invoice.lines?.data?.length > 0) {
@@ -129,6 +110,7 @@ export const handleWebhookEvent = async (event: Stripe.Event) => {
         if (lineItem.description) {
           // Extract the plan name from description
           const match = lineItem.description.match(/Diaspora (.+?) \(at/);
+          console.log('LINE ITEM', lineItem);
           if (match && match[1]) {
             subscriptionType = match[1].toLowerCase().replace(/\s+/g, '-');
           }

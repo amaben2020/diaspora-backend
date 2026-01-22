@@ -2,11 +2,18 @@ import { locationSchema } from '../../models/index.ts';
 
 import { tryCatchFn } from '../../utils/tryCatch.ts';
 import { createLocation } from '../../core/location.ts';
+// import { createProfile } from '../../core/profile.ts';
 
 export const locationCreateController = tryCatchFn(async (req, res, next) => {
   const { userId, latitude, longitude } = locationSchema.parse(req.body);
 
   const data = await createLocation({ userId, latitude, longitude });
+
+  // await createProfile({
+  //   userId: userId as string,
+  //   bio: 'Enter your bio',
+  //   interests: [''],
+  // });
 
   if (!userId) res.status(400).send('User id not found');
 

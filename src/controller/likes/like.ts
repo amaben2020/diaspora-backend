@@ -5,9 +5,10 @@ import { matchesTable } from '../../schema/matchesTable.ts';
 import { usersTable } from '../../schema/usersTable.ts';
 import { likesTable } from '../../schema/likesTable.ts';
 import { imagesTable } from '../../schema/imagesTable.ts';
+import { admin } from './../../services/fcm.ts';
 
 export const likeUserController = tryCatchFn(async (req, res, next) => {
-  const { likerId, likedId } = req.body;
+  const { likerId, likedId, superLike = false } = req.body;
 
   // Validate input
   if (!likerId || !likedId) {
@@ -16,6 +17,7 @@ export const likeUserController = tryCatchFn(async (req, res, next) => {
   }
 
   // Check if both users exist before proceeding
+  // TODO: refactor to use isUserExist
   const [likerExists] = await db
     .select()
     .from(usersTable)
@@ -29,7 +31,7 @@ export const likeUserController = tryCatchFn(async (req, res, next) => {
     .limit(1);
 
   if (!likerExists || !likedExists) {
-    res.status(404).json({ error: 'One or both users do not exist' });
+    return res.status(404).json({ error: 'One or both users do not exist' });
   }
 
   // Check if the like already exists
@@ -47,8 +49,26 @@ export const likeUserController = tryCatchFn(async (req, res, next) => {
   // Insert the like into the database
   const [like = undefined] = await db
     .insert(likesTable)
-    .values({ likerId, likedId })
+    .values({ likerId, likedId, superLike })
     .returning();
+
+  if (likedExists?.fcmToken) {
+    const payload = {
+      notification: {
+        title: `New Like 💖 from ${likerExists.displayName}`,
+        body: `${likerExists.displayName} just liked you! Open the app to check.`,
+      },
+      // the token belongs to who's being liked so they get the notification
+      token: likedExists?.fcmToken,
+    };
+
+    try {
+      await admin.messaging().send(payload);
+      console.log(`Notification sent to ${likedExists.id}`);
+    } catch (err) {
+      console.error('Error sending FCM notification:', err);
+    }
+  }
 
   if (!like) {
     res.status(500).json({ error: 'Failed to create like' });
@@ -102,65 +122,6 @@ export const likeUserController = tryCatchFn(async (req, res, next) => {
   res.status(201).json(like);
 });
 
-// export const getLikedUsersController = tryCatchFn(async (req, res) => {
-//   const { userId } = req.params;
-
-//   // Validate input
-//   if (!userId) {
-//     return res.status(400).json({ error: 'Missing userId' });
-//   }
-
-//   try {
-//     // Get all likes where the user is the liker
-//     const likedRecords = await db
-//       .select({
-//         likedId: likesTable.likedId,
-//         likedAt: likesTable.likedAt,
-//         user: {
-//           id: usersTable.id,
-//           name: usersTable.displayName,
-//           email: usersTable.email,
-//         },
-//         image: {
-//           imageUrl: imagesTable.imageUrl,
-//           // Add other image fields if needed
-//         },
-//       })
-//       .from(likesTable)
-//       .where(eq(likesTable.likerId, userId))
-//       .leftJoin(usersTable, eq(likesTable.likedId, usersTable.id))
-//       .leftJoin(imagesTable, eq(likesTable.likedId, imagesTable.userId));
-
-//     // Group records by user
-//     const groupedUsers = likedRecords.reduce((acc, record) => {
-//       const existingUser = acc.find((user) => user.user.id === record.likedId);
-
-//       if (existingUser) {
-//         // If user exists, just add the image if it exists
-//         if (record.image?.imageUrl) {
-//           existingUser.images.push(record.image.imageUrl);
-//         }
-//       } else {
-//         // Create new user entry
-//         const newUser = {
-//           likedId: record.likedId,
-//           likedAt: record.likedAt,
-//           user: record.user,
-//           images: record.image?.imageUrl ? [record.image.imageUrl] : [],
-//         };
-//         acc.push(newUser);
-//       }
-
-//       return acc;
-//     }, []);
-
-//     res.status(200).json(groupedUsers);
-//   } catch (error) {
-//     console.error('Error fetching liked users:', error);
-//     res.status(500).json({ error: 'Failed to fetch liked users' });
-//   }
-// });
-
 export const getLikedUsersController = tryCatchFn(async (req, res) => {
   const { userId } = req.params;
 
@@ -173,6 +134,7 @@ export const getLikedUsersController = tryCatchFn(async (req, res) => {
       .select({
         likedId: likesTable.likedId,
         likedAt: likesTable.likedAt,
+        superLike: likesTable.superLike,
         user: sql`json_build_object(
           'id', ${usersTable.id},
           'name', ${usersTable.displayName},
@@ -191,6 +153,7 @@ export const getLikedUsersController = tryCatchFn(async (req, res) => {
       .groupBy(
         likesTable.likedId,
         likesTable.likedAt,
+        likesTable.superLike,
         usersTable.id,
         usersTable.displayName,
         usersTable.email,
@@ -200,5 +163,49 @@ export const getLikedUsersController = tryCatchFn(async (req, res) => {
   } catch (error) {
     console.error('Error fetching liked users:', error);
     res.status(500).json({ error: 'Failed to fetch liked users' });
+  }
+});
+
+export const getReceivedLikesController = tryCatchFn(async (req, res) => {
+  const { userId } = req.params;
+
+  if (!userId) {
+    return res.status(400).json({ error: 'Missing userId' });
+  }
+
+  try {
+    const receivedLikes = await db
+      .select({
+        likedId: likesTable.likerId, // the person who liked *you*
+        likedAt: likesTable.likedAt,
+        superLike: likesTable.superLike,
+        user: sql`json_build_object(
+          'id', ${usersTable.id},
+          'name', ${usersTable.displayName},
+          'email', ${usersTable.email}
+        )`,
+        images: sql`COALESCE(
+          (SELECT array_agg(${imagesTable.imageUrl})
+           FROM ${imagesTable}
+           WHERE ${imagesTable.userId} = ${likesTable.likerId}),
+          ARRAY[]::text[]
+        )`,
+      })
+      .from(likesTable)
+      .where(eq(likesTable.likedId, userId)) // ← This is the key change
+      .leftJoin(usersTable, eq(likesTable.likerId, usersTable.id))
+      .groupBy(
+        likesTable.likerId,
+        likesTable.likedAt,
+        likesTable.superLike,
+        usersTable.id,
+        usersTable.displayName,
+        usersTable.email,
+      );
+
+    res.status(200).json(receivedLikes);
+  } catch (error) {
+    console.error('Error fetching received likes:', error);
+    res.status(500).json({ error: 'Failed to fetch received likes' });
   }
 });

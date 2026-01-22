@@ -5,6 +5,7 @@ import { profilesTable } from '../../schema/profileTable.ts';
 import { usersTable } from '../../schema/usersTable.ts';
 import { preferencesTable } from '../../schema/preferencesTable.ts';
 import { imagesTable } from '../../schema/imagesTable.ts';
+import { createProfile } from '../../core/profile.ts';
 
 export const createProfileController = tryCatchFn(async (req, res) => {
   const { userId, bio, interests } = req.body;
@@ -13,15 +14,7 @@ export const createProfileController = tryCatchFn(async (req, res) => {
     return res.status(400).json({ error: 'Missing userId' });
   }
 
-  // TODO: Move all db calls to core and implement zod schema
-  const [profile] = await db
-    .insert(profilesTable)
-    .values({
-      userId,
-      bio,
-      interests,
-    })
-    .returning();
+  const profile = await createProfile({ userId, bio, interests });
 
   return res.status(201).json(profile);
 });
@@ -46,11 +39,20 @@ export const getProfileController = tryCatchFn(async (req, res) => {
         name: usersTable.displayName,
         email: usersTable.email,
         age: usersTable.birthday,
+        gender: usersTable.gender,
       },
       preferences: {
         id: preferencesTable.id,
         lookingFor: preferencesTable.lookingToDate,
         zodiac: preferencesTable.zodiac,
+        religion: preferencesTable.religion,
+        education: preferencesTable.education,
+        age: preferencesTable.age,
+        minNumberOfPhotos: preferencesTable.minNumberOfPhotos,
+        hasBio: preferencesTable.hasBio,
+        ethnicity: preferencesTable.ethnicity,
+        height: preferencesTable.height,
+        connections: preferencesTable.connections,
       },
       images: sql`JSON_ARRAYAGG(${imagesTable.imageUrl})`.as('images'),
     })
@@ -67,6 +69,8 @@ export const getProfileController = tryCatchFn(async (req, res) => {
   if (!profile) {
     return res.status(404).json({ error: 'Profile not found' });
   }
+
+  // TODO: Ensure the profile returns what's necessary
 
   return res.status(200).json(profile);
 });

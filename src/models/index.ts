@@ -22,16 +22,50 @@ export const preferencesSchema = z.object({
   userId: z.string().optional(),
   createdAt: z.string().datetime().optional(),
   updatedAt: z.string().datetime().optional(),
+
+  // Personal info
   ethnicity: z.string().max(50).optional(),
   pronouns: z.string().max(50).optional(),
   zodiac: z.string().max(50).optional(),
   bio: z.string().max(50).optional(),
+  gender: z.string().max(50).optional(),
+  height: z.string().max(50).optional(),
+  age: z.string().max(50).optional(),
+
+  // Preferences
   interests: z.array(z.string()).optional(),
+  lookingToDate: z.array(z.string()).optional(),
+
+  // Lifestyle
   smoking: z.boolean().optional(),
   drinking: z.boolean().optional(),
   religion: z.string().max(50).optional(),
   education: z.string().max(50).optional(),
-  lookingToDate: z.array(z.string()).optional(),
+  pets: z.string().max(50).optional(),
+  familyPlans: z.string().max(50).optional(),
+  language: z.string().max(50).optional(),
+
+  // Settings
+  distance: z.string().max(50).optional(),
+  hasBio: z.boolean().optional(),
+  minNumberOfPhotos: z.string().optional(),
+  connections: z.string().optional(),
+
+  // New profile fields
+  jobTitle: z.string().max(100).optional(),
+  company: z.string().max(100).optional(),
+  school: z.string().max(100).optional(),
+  sexuality: z.string().max(50).optional(),
+  bodyType: z.string().max(50).optional(),
+  dietaryPreference: z.string().max(50).optional(),
+  sleepingHabits: z.string().max(50).optional(),
+  workoutFrequency: z.string().max(50).optional(),
+  loveLanguage: z.string().max(50).optional(),
+  travelPlans: z.string().max(100).optional(),
+  personality: z.string().max(50).optional(),
+  relationshipStatus: z.string().max(50).optional(),
+  willingToRelocate: z.boolean().optional(),
+  opennessToLongDistance: z.boolean().optional(),
 });
 
 export const imagesSchema = z.object({

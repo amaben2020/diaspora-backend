@@ -1,0 +1,1 @@
+ALTER TABLE "roulette_sessions" ALTER COLUMN "updated_at" DROP NOT NULL;

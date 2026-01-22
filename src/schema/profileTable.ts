@@ -5,10 +5,12 @@ import { usersTable } from './usersTable.ts';
 export const profilesTable = pgTable('profiles', {
   id: uuid('id').defaultRandom().primaryKey(),
   userId: text('user_id')
-    .references(() => usersTable.id)
+    .references(() => usersTable.id, {
+      onDelete: 'cascade',
+    })
     .unique(),
-  bio: text('bio'),
-  interests: jsonb('interests').$type<string[]>(),
+  bio: text('bio').default('...'),
+  interests: jsonb('interests').$type<string[]>().default(['...']),
   createdAt: timestamp('created_at').defaultNow(),
   updatedAt: timestamp('updated_at').defaultNow(),
 });

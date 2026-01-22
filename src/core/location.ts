@@ -15,6 +15,7 @@ export const createLocation = async ({
     parseFloat(latitude),
     parseFloat(longitude),
   );
+
   if (country?.abrv) {
     const location = await db
       .insert(locationsTable)
@@ -29,7 +30,19 @@ export const createLocation = async ({
     return location;
   }
 
-  return null;
+  //TODO:  remove this later when google api is back, simply return null
+  const mockLocation = await db
+    .insert(locationsTable)
+    .values({
+      userId,
+      latitude: '9.044679',
+      longitude: '7.51913154046585',
+      countryAbbreviation: 'NG',
+    })
+    .returning();
+
+  return mockLocation;
+  // return null
 };
 
 export const updateLocation = async ({
