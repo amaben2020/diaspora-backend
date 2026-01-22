@@ -50,6 +50,22 @@ export const preferencesSchema = z.object({
   hasBio: z.boolean().optional(),
   minNumberOfPhotos: z.string().optional(),
   connections: z.string().optional(),
+
+  // New profile fields
+  jobTitle: z.string().max(100).optional(),
+  company: z.string().max(100).optional(),
+  school: z.string().max(100).optional(),
+  sexuality: z.string().max(50).optional(),
+  bodyType: z.string().max(50).optional(),
+  dietaryPreference: z.string().max(50).optional(),
+  sleepingHabits: z.string().max(50).optional(),
+  workoutFrequency: z.string().max(50).optional(),
+  loveLanguage: z.string().max(50).optional(),
+  travelPlans: z.string().max(100).optional(),
+  personality: z.string().max(50).optional(),
+  relationshipStatus: z.string().max(50).optional(),
+  willingToRelocate: z.boolean().optional(),
+  opennessToLongDistance: z.boolean().optional(),
 });
 
 export const imagesSchema = z.object({

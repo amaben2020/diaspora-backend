@@ -156,7 +156,7 @@ const userGetSchema = z.object({
   userId: z.string(),
   radius: z.string(),
   age: z.string(),
-  gender: z.enum(['man', 'woman', 'nonbinary']).optional(),
+  gender: z.string().optional(), // Accepts JSON array string e.g. '["man", "woman"]'
   activity: z.literal('justJoined').optional(),
   country: z.string().optional(),
   smoking: z.string().optional(),
@@ -195,7 +195,18 @@ export const userGetsController = tryCatchFn(async (req, res) => {
       hasBio,
     } = userGetSchema.parse(req.query);
 
-    const cacheKey = `all-users-with-locations-${userId}-${radius}-${age}-${gender}-${activity}-${country}-${smoking}-${ethnicity}-${zodiac}-${height}-${drinking}-${educationLevel}-${familyPlans}-${lookingFor}-${minPhotos}-${hasBio}`;
+    // Parse gender as array (accepts JSON array string or single value)
+    let parsedGender: string[] | undefined;
+    if (gender) {
+      try {
+        const parsed = JSON.parse(gender);
+        parsedGender = Array.isArray(parsed) ? parsed : [parsed];
+      } catch {
+        parsedGender = [gender];
+      }
+    }
+
+    const cacheKey = `all-users-with-locations-${userId}-${radius}-${age}-${JSON.stringify(parsedGender)}-${activity}-${country}-${smoking}-${ethnicity}-${zodiac}-${height}-${drinking}-${educationLevel}-${familyPlans}-${lookingFor}-${minPhotos}-${hasBio}`;
 
     const cachedUsers = await redisClient.get(cacheKey);
 
@@ -249,7 +260,7 @@ export const userGetsController = tryCatchFn(async (req, res) => {
       String(userId),
       parsedRadius,
       parsedAge,
-      gender,
+      parsedGender,
       activity,
       country?.toUpperCase(),
     );

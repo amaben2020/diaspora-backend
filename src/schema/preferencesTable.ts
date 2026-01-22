@@ -60,6 +60,22 @@ export const preferencesTable = pgTable(
     minNumberOfPhotos: varchar('min_photos').default(''),
     connections: varchar('connections').default(''),
 
+    // New profile fields
+    jobTitle: varchar('job_title', { length: 100 }).default(''),
+    company: varchar('company', { length: 100 }).default(''),
+    school: varchar('school', { length: 100 }).default(''),
+    sexuality: varchar('sexuality', { length: 50 }).default(''),
+    bodyType: varchar('body_type', { length: 50 }).default(''),
+    dietaryPreference: varchar('dietary_preference', { length: 50 }).default(''),
+    sleepingHabits: varchar('sleeping_habits', { length: 50 }).default(''),
+    workoutFrequency: varchar('workout_frequency', { length: 50 }).default(''),
+    loveLanguage: varchar('love_language', { length: 50 }).default(''),
+    travelPlans: varchar('travel_plans', { length: 100 }).default(''),
+    personality: varchar('personality', { length: 50 }).default(''),
+    relationshipStatus: varchar('relationship_status', { length: 50 }).default(''),
+    willingToRelocate: boolean('willing_to_relocate').default(false),
+    opennessToLongDistance: boolean('openness_to_long_distance').default(false),
+
     // lookingToDate: datingPreferenceEnum('looking_to_date'),
   },
   (table) => ({

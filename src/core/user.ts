@@ -104,7 +104,7 @@ export async function getUsers(
   currentUserId: string,
   radiusRange: number[],
   ageRange: number[],
-  gender?: string,
+  gender?: string[],
   activity?: 'justJoined',
   country?: string,
 ) {
@@ -156,7 +156,9 @@ export async function getUsers(
     .leftJoin(userActivityTable, eq(usersTable.id, userActivityTable.userId))
     .where(
       and(
-        gender ? eq(usersTable.gender, gender) : undefined,
+        gender && gender.length > 0
+          ? inArray(usersTable.gender, gender)
+          : undefined,
         activity === 'justJoined'
           ? gte(usersTable.createdAt, twentyFourHoursAgo)
           : undefined,
